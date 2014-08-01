@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <div class="p-comment-content forum-post-body-container">
+                
+                <!-- Body -->
+                <div class="j-comment-body-container p-comment-body forum-post-body-content">
+                    <!-- Content -->
+                    
+                        <div id="forum-post-body-1" class="j-comment-body forum-post-body u-typography-format text" itemprop="text"><div class="iframe-center" style="text-align:center"><span style="font-family:'trebuchet ms', geneva"><strong class="bbc"><span style="font-size:x-large">JSON FORMATTING EXAMPLES</span><br>
+(for /tellraw, /title, books, and signs)</strong></span><br>
+<br>
+<font style="color:#f00"><strong class="bbc">Note: this post contains 1.8 content. Not all of it will work in previous versions.</strong></font></div>
+<br>
+<hr class="bbc"><br>
+<div class="iframe-center" style="text-align:center"><span style="font-family:'trebuchet ms', geneva"><strong class="bbc"><span style="font-size:large"><span id="INDEX">INDEX</span></span></strong></span></div>
+<br>
+<span style="font-family:tahoma, arial, helvetica, sans-serif"><span style="font-family:tahoma, arial, helvetica, sans-serif">1. <a href="#INTRO">Introduction</a><br>
+2. <a href="#SYNTAX">Standard Syntax</a> <img src="http://www.skylinerw.com/images/json/icons/tellraw.png"> <img src="http://www.skylinerw.com/images/json/icons/title.png"> <img src="http://www.skylinerw.com/images/json/icons/book.png"> <img src="http://www.skylinerw.com/images/json/icons/sign.png"></span></span><br>
+<div style="margin-left:30px"> <span style="font-size:x-small">i. <a href="#SYNTAXcomponent">Text Component</a><br>
+ii. <a href="#SYNTAXtellraw">/tellraw</a><br>
+iii. <a href="#SYNTAXtitle">/title</a><br>
+iv. <a href="#SYNTAXbook">Books</a><br>
+v. <a href="#SYNTAXsign">Signs</a></span> </div>
+<span style="font-family:tahoma, arial, helvetica, sans-serif"><span style="font-family:tahoma, arial, helvetica, sans-serif">3. <a href="#TEXTUAL">Text Formatting</a> <img src="http://www.skylinerw.com/images/json/icons/tellraw.png"> <img src="http://www.skylinerw.com/images/json/icons/title.png"> <img src="http://www.skylinerw.com/images/json/icons/book.png"> <img src="http://www.skylinerw.com/images/json/icons/sign.png"></span></span><br>
+<div style="margin-left:30px"> <span style="font-size:x-small">i. <a href="#TEXTUALcolors">Colors</a><br>
+ii. <a href="#TEXTUALoptions">Options</a></span> </div>
+<span style="font-family:tahoma, arial, helvetica, sans-serif"><span style="font-family:tahoma, arial, helvetica, sans-serif">4. <a href="#ESCAPE">Escaping</a><br>
+5. <a href="#ACTIONS">Chat Functions</a> <img src="http://www.skylinerw.com/images/json/icons/tellraw.png"> <img src="http://www.skylinerw.com/images/json/icons/book.png"> <img src="http://www.skylinerw.com/images/json/icons/sign.png"></span></span><br>
+<div style="margin-left:30px"> <span style="font-size:x-small">i. <a href="#ACTIONSclick">"clickEvent"</a><br>
+ii. <a href="#ACTIONShover">"hoverEvent"</a><br>
+iii. <a href="#ACTIONSinsertion">"insertion"</a></span> </div>
+<span style="font-family:tahoma, arial, helvetica, sans-serif"><span style="font-family:tahoma, arial, helvetica, sans-serif">6. <a href="#ALTTEXT">Alternatives to "text"</a> <img src="http://www.skylinerw.com/images/json/icons/tellraw.png"> <img src="http://www.skylinerw.com/images/json/icons/title.png"> <img src="http://www.skylinerw.com/images/json/icons/book.png"> <img src="http://www.skylinerw.com/images/json/icons/sign.png"></span></span><br>
+<div style="margin-left:30px"> <span style="font-size:x-small">i. <a href="#ALTTEXTscore">"score"</a><br>
+ii. <a href="#ALTTEXTselector">"selector"</a><br>
+iii. <a href="#ALTTEXTtranslate">"translate"</a></span> </div>
+<span style="font-family:tahoma, arial, helvetica, sans-serif"><span style="font-family:tahoma, arial, helvetica, sans-serif">7. <a href="#EXTRA">Adding More Text</a> <img src="http://www.skylinerw.com/images/json/icons/tellraw.png"> <img src="http://www.skylinerw.com/images/json/icons/title.png"> <img src="http://www.skylinerw.com/images/json/icons/book.png"> <img src="http://www.skylinerw.com/images/json/icons/sign.png"></span></span><br>
+<div style="margin-left:30px"> <span style="font-size:x-small">i. <a href="#EXTRAextra">"extra"</a><br>
+ii. <a href="#EXTRAinherit">Inheritance</a></span> </div>
+<span style="font-family:tahoma, arial, helvetica, sans-serif">8. <a href="#UNICODE">Unicode</a> <img src="http://www.skylinerw.com/images/json/icons/tellraw.png"> <img src="http://www.skylinerw.com/images/json/icons/title.png"> <img src="http://www.skylinerw.com/images/json/icons/book.png"> <img src="http://www.skylinerw.com/images/json/icons/sign.png"><br>
+9. <a href="#TRIGGER">/trigger</a> <img src="http://www.skylinerw.com/images/json/icons/tellraw.png"> <img src="http://www.skylinerw.com/images/json/icons/book.png"> <img src="http://www.skylinerw.com/images/json/icons/sign.png"><br>
+10. <a href="#FAQ">FAQ</a><br>
+11. <a href="#OUTRO">Outro</a></span><br>
+<br>
+<hr class="bbc"><br>
+<div class="iframe-center" style="text-align:center"><span style="font-family:'trebuchet ms', geneva"><strong class="bbc"><span style="font-size:x-large"><span id="INTRO">INTRODUCTION</span></span></strong></span></div>
+<br>
+<span style="font-family:tahoma, arial, helvetica, sans-serif">This is not a tutorial on the JSON format itself. Instead, this will provide examples of JSON usage in Minecraft, specifically through the "/tellraw" and "/title" commands. Most command syntax provided will include indentation for simpler reading. Each will have a spoiler tag displaying a condensed version for copying and pasting. Some commands will have image examples to display the end result.<br>
+<br>
+Formatting features will have icons to indicate which commands can successfully access specific features:</span><br>
+<br>
+<strong class="bbc">/tellraw: </strong> <img src="http://www.skylinerw.com/images/json/icons/tellraw.png"><br>
+<strong class="bbc">/title: </strong> <img src="http://www.skylinerw.com/images/json/icons/title.png"><br>
+<strong class="bbc">Books: </strong> <img src="http://www.skylinerw.com/images/json/icons/book.png"><br>
+<strong class="bbc">Signs: </strong> <img src="http://www.skylinerw.com/images/json/icons/sign.png"><br>
+<br>
+<span style="font-family:tahoma, arial, helvetica, sans-serif">If you have any questions concerning the /tellraw or /title commands, feel free to ask in the comments. This can include debugging a command you're having an issue with, requesting a specific command from scratch, or just a general question about the topic. Be sure to check the <a href="#FAQ"><em class="bbc">FAQ</em></a> for typical questions before asking.</span><br>
+<br>
+<hr class="bbc"><br>
+<div class="iframe-center" style="text-align:center"><span style="font-family:'trebuchet ms', geneva"><strong class="bbc"><span style="font-size:x-large"><span id="SYNTAX">STANDARD SYNTAX</span></span></strong></span></div>
+<div class="iframe-right" style="text-align:right"><a href="#INDEX"><img src="http://www.skylinerw.com/images/json/icons/top.png"></a></div>
+<br>
+<div class="iframe-center" style="text-align:center"><span style="font-family:'trebuchet ms', geneva"><em class="bbc"><u><span style="font-size:large"><span id="SYNTAXcomponent">Text Component</span></span></u></em><br>
+<img src="http://www.skylinerw.com/images/json/icons/tellraw.png"> <img src="http://www.skylinerw.com/images/json/icons/title.png"> <img src="http://www.skylinerw.com/images/json/icons/book.png"> <img src="http://www.skylinerw.com/images/json/icons/sign.png"></span></div>
+<br>
+<span style="font-family:tahoma, arial, helvetica, sans-serif"><span style="font-family:tahoma, arial, helvetica, sans-serif">The visual structure of the <acronym title="Java Script Object Notation" class="bbc">JSON</acronym> format is similar to the <acronym title="Named Binary Tag" class="bbc">NBT</acronym> format seen in dataTags. Strings use quotation marks to encase text, lists are indicated by square brackets, and compounds are indicated by curly brackets. Here is a list containing every tag used with Minecraft's JSON text component as used in command syntax:<br>
+<br>
+<pre>{
+ text:"[text]",
+ selector:"[selector]",
+ insertion:"[text]",
+ translate:"[lang]",
+ color:[color],
+ bold:[true/false],
+ italic:[true/false],
+ underlined:[true/false],
+ strikethrough:[true/false],
+ obfuscated:[true/false],
+ clickEvent:{
+ action:[action],
+ value:"[value/URL]"
+ },
+ hoverEvent:{
+ action:[action],
+ value:"[value/JSON/NBT]"
+ },
+ score:{
+ name:"[player]",
+ objective:"[objective]"
+ },
+ with:[
+ [JSON]
+ ],
+ extra:[
+ [JSON]
+ ]
+}</pre></span></span><br>
+<div class="iframe-center" style="text-align:center"><span style="font-size:x-small">Note: if the above is not up-to-date, you can check the <a href="http://minecraft.gamepedia.com/Commands#Raw_JSON_Text" target="">Minecraft Wiki</a> instead.</span></div>
+<br>
+<div class="iframe-center" style="text-align:center"><span style="font-family:'trebuchet ms', geneva"><em class="bbc"><u><span style="font-size:large"><span id="SYNTAXtellraw">/tellraw</span></span></u></em><br>
+<img src="http://www.skylinerw.com/images/json/icons/tellraw.png"></span></div>
+<br>
+<span style="font-family:tahoma, arial, helvetica, sans-serif">The /tellraw command allows you to insert a formatted message into the chat, which includes several functions for player interaction.<br>
+<br>
+<strong class="bbc"><font style="color:#00f">Syntax:</font></strong><br>
+<pre>/tellraw [player] [JSON]</pre> <br>
+The <em class="bbc">[player]</em> will be the one who receives the message, allowing you to send messages to specific players via selector parameters. <em class="bbc">[JSON]</em> is the text component, which can be added in several different ways. The first is simply adding a single word, in which spaces will break the syntax:<br>
+<br>
+<strong class="bbc"><font style="color:#45f200">Right:</font></strong><br>
+<pre>/tellraw @a Hello</pre> <strong class="bbc"><font style="color:#b30000">Wrong:</font></strong><br>
+<pre>/tellraw @a Hello there</pre> <br>
+If more text is needed, you will need to encase the text within quotation marks. Note that this does not give you access to any of the text component syntax features, and simply uses the <a href="#TEXTUAL"><em class="bbc">"text"</em></a> tag for the output. This means you will still not be able to apply color (or other formatting options) to text, nor use functions such as <a href="#ACTIONSclick"><em class="bbc">"clickEvent"</em></a> or <a href="#ACTIONShover"><em class="bbc">"hoverEvent</em></a>.<br>
+<br>
+<strong class="bbc"><font style="color:#45f200">Right:</font></strong><br>
+<pre>/tellraw @a "Hello there"</pre> <strong class="bbc"><font style="color:#b30000">Wrong:</font></strong><br>
+<pre>/tellraw @a "Hello there",color:blue</pre> <br>
+If you wish to gain access to all of the features, you must use the full text component syntax, opening with curly brackets and properly labeling tags. Curly brackets indicate the root compound tag that holds the text component. Within it will contain all of the tags used in text manipulation, though not all features are available depending on its usage. For example, the <em class="bbc">"clickEvent"</em> tag is not usable in the /title command, but can be used in /tellraw.<br>
+<br>
+<strong class="bbc"><font style="color:#45f200">Right:</font></strong><br>
+<pre>/tellraw @a {text:"Hello there",color:blue}</pre> <strong class="bbc"><font style="color:#b30000">Wrong:</font></strong><br>
+<pre>/tellraw @a {"Hello there",color:blue}</pre> <br>
+Alternatively, you may start directly within the <a href="#EXTRA"><em class="bbc">"extra"</em></a> tag to quickly insert more text. This will require you to open the JSON with square brackets instead, as the <em class="bbc">"extra"</em> tag is a list while the root component is a compound.<br>
+<br>
+<strong class="bbc"><font style="color:#45f200">Right:</font></strong><br>
+<pre>/tellraw @a [{text:"Hello there",color:blue}]</pre> <strong class="bbc"><font style="color:#45f200">Right:</font></strong><br>
+<pre>/tellraw @a ["Hello there"]</pre> <strong class="bbc"><font style="color:#b30000">Wrong:</font></strong><br>
+<pre>/tellraw @a {{text:"Hello there",color:blue}}</pre> <strong class="bbc"><font style="color:#b30000">Wrong:</font></strong><br>
+<pre>/tellraw @a [Hello there]</pre></span><br>
+<div class="iframe-center" style="text-align:center"><span style="font-family:'trebuchet ms', geneva"><em class="bbc"><u><span style="font-size:large"><span id="SYNTAXtitle">/title</span></span></u></em><br>
+<img src="http://www.skylinerw.com/images/json/icons/title.png"></span></div>
+<br>
+<span style="font-family:tahoma, arial, helvetica, sans-serif"><span style="font-family:tahoma, arial, helvetica, sans-serif">The /title command allows you to display large text within the center of the screen for a specified duration. This includes a large title and a smaller subtitle.<br>
+<br>
+<strong class="bbc"><font style="color:#00f">Syntax:</font></strong><br>
+<pre>/title [player] [title|subtitle] [JSON]</pre></span></span><br>
+<div class="spoiler-button-wrapper"><a class="button">Other (click to show)</a></div><div class="spoiler" data-spoiler-title="Other"><pre>/title [player] [clear|reset]</pre><pre>/title [player] times [fadeIn] [stay] [fadeOut]</pre></div>
+<span style="font-family:tahoma, arial, helvetica, sans-serif"><br>
+The /title command follows the same syntax requirements for the JSON message as <a href="#SYNTAXtellraw"><em class="bbc">/tellraw</em></a>. Each time the /title command runs a 'title', the stored 'subtitle' is displayed and removed from storage. This means you will have to create a subtitle each time you want it to appear. A single word can be displayed by excluding quotation marks, but that would be the limit of your command.<br>
+<br>
+<strong class="bbc"><font style="color:#45f200">Right:</font></strong><br>
+<pre>/title @a title Hello</pre> <strong class="bbc"><font style="color:#b30000">Wrong:</font></strong><br>
+<pre>/title @a title Hello there</pre> <br>
+You would then use quotation marks to insert more text. Note that with the /title command, you can have a blank 'title' by merely opening and closing the quotation marks while inserting no text, and the stored 'subtitle' will still be displayed. As stated earlier, this method of inserting text cannot be formatted.<br>
+<br>
+<strong class="bbc"><font style="color:#45f200">Right:</font></strong><br>
+<pre>/title @a title "Hello there"</pre> <strong class="bbc"><font style="color:#b30000">Wrong:</font></strong><br>
+<pre>/title @a title "Hello there",color:blue</pre> <br>
+Just like the /tellraw command, the /title command will require you to open the root text component with curly brackets. You can also begin within the <em class="bbc">"extra"</em> tag by using square brackets instead, but will instead have to follow the <em class="bbc">"extra"</em> format, as it is a list instead of compound.<br>
+<br>
+<strong class="bbc"><font style="color:#45f200">Right:</font></strong><br>
+<pre>/title @a title {text:"Hello there",color:blue}</pre> <strong class="bbc"><font style="color:#45f200">Right:</font></strong><br>
+<pre>/title @a title [{"Hello there",color:blue}]</pre> <strong class="bbc"><font style="color:#b30000">Wrong:</font></strong><br>
+<pre>/title @a title {"Hello there",color:blue}</pre> <strong class="bbc"><font style="color:#b30000">Wrong:</font></strong><br>
+<pre>/title @a title [text:"Hello there",color:blue]</pre></span><br>
+<div class="iframe-center" style="text-align:center"><span style="font-family:'trebuchet ms', geneva"><em class="bbc"><u><span style="font-size:large"><span id="SYNTAXbook">Books</span></span></u></em><br>
+<img src="http://www.skylinerw.com/images/json/icons/book.png"></span></div>
+<br>
+<span style="font-family:tahoma, arial, helvetica, sans-serif">The <strong class="bbc">pages</strong> tag for "minecraft:written_book" has gained access to the JSON text component in 14w25a. This will allow you to provide books that have formatted text without the use of the section symbol, as well as gaining the ability to use other text component features, such as <a href="#ALTTEXTscore"><em class="bbc">"score"</em></a>.<br>
+<br>
+The syntax requires the tag definition of the <strong class="bbc">pages</strong> tag. The tag-type is "string", so you will encase the text with quotation marks. Because of this, all inlaid quotation marks within the raw JSON must be <a href="#ESCAPE">escaped</a>. You must also have both the <strong class="bbc">title</strong> and <strong class="bbc">author</strong> tags for the books themselves in order to display any text within the <strong class="bbc">pages</strong> tag. The title/author must be between 0 and 16 characters, thus both can be left blank so long as they exist.<br>
+<br>
+<strong class="bbc"><font style="color:#45f200">Right:</font></strong><br>
+<pre>/give @p minecraft:written_book 1 0 {title:"",author:"",pages:["{text:\"Hello there\",color:blue}"]}</pre> <strong class="bbc"><font style="color:#45f200">Right:</font></strong><br>
+<pre>/give @p minecraft:written_book 1 0 {title:"",author:"",pages:["{text:\"Hello \",color:blue}","there"]}</pre> <strong class="bbc"><font style="color:#b30000">Wrong:</font></strong><br>
+<pre>/give @p minecraft:written_book 1 0 {title:"",author:"",pages:["{text:"Hello there",color:blue}"]}</pre> <strong class="bbc"><font style="color:#b30000">Wrong:</font></strong><br>
+<pre>/give @p minecraft:written_book 1 0 {title:"",author:"",pages:["{text:"Hello ",color:blue}","there"]}</pre></span><br>
+<div class="iframe-center" style="text-align:center"><span style="font-family:'trebuchet ms', geneva"><em class="bbc"><u><span style="font-size:large"><span id="SYNTAXsign">Signs</span></span></u></em><br>
+<img src="http://www.skylinerw.com/images/json/icons/sign.png"></span></div>
+<br>
+<span style="font-family:tahoma, arial, helvetica, sans-serif">The <strong class="bbc">Text1</strong>, <strong class="bbc">Text2</strong>, <strong class="bbc">Text3</strong>, and <strong class="bbc">Text4</strong> tags for "minecraft:standing_sign" or "minecraft:wall_sign" have also gained access to the JSON text component in 14w25a. Again, this will allow you to format text without the use of the section symbol, as well as gaining the ability to use other text component features.<br>
+<br>
+Just like books, the tag-type must be labeled and all inlaid quotation marks within the raw JSON must be <a href="#ESCAPE">escaped</a>.<br>
+<br>
+<strong class="bbc"><font style="color:#45f200">Right:</font></strong><br>
+<pre>/setblock ~ ~1 ~ minecraft:standing_sign 0 replace {Text1:"{text:\"Hello there\",color:blue}"}</pre> <strong class="bbc"><font style="color:#45f200">Right:</font></strong><br>
+<pre>/setblock ~ ~1 ~ minecraft:standing_sign 0 replace {Text1:"{text:\"Hello\",color:blue}",Text2:"there"}</pre> <strong class="bbc"><font style="color:#b30000">Wrong:</font></strong><br>
+<pre>/setblock ~ ~1 ~ minecraft:standing_sign 0 replace {Text1:"{text:"Hello there",color:blue}"}</pre> <strong class="bbc"><font style="color:#b30000">Wrong:</font></strong><br>
+<pre>/setblock ~ ~1 ~ minecraft:standing_sign 0 replace {Text1:"{text:"Hello",color:blue}",Text2:"there"}</pre></span><br>
+<br>
+<hr class="bbc"><br>
+<div class="iframe-center" style="text-align:center"><span style="font-family:'trebuchet ms', geneva"><strong class="bbc"><span style="font-size:x-large"><span id="TEXTUAL">TEXT FORMATTING</span></span></strong></span></div>
+<br>
+<div class="iframe-center" style="text-align:center"><span style="font-family:'trebuchet ms', geneva"><em class="bbc"><u><span style="font-size:large"><span id="TEXTUALcolors">Colors</span></span></u></em><br>
+<img src="http://www.skylinerw.com/images/json/icons/tellraw.png"> <img src="http://www.skylinerw.com/images/json/icons/title.png"> <img src="http://www.skylinerw.com/images/json/icons/book.png"> <img src="http://www.skylinerw.com/images/json/icons/sign.png"></span></div>
+<br>
+<span style="font-family:tahoma, arial, helvetica, sans-serif"><span style="font-family:tahoma, arial, helvetica, sans-serif">Currently (14w28a) we are restricted to a predetermined list of colors that we can choose from for our text. The <em class="bbc">"color"</em> tag is used for selecting one of the colors, with the default being white. Note that colors, like all formatting options and functions, are <a href="#EXTRAinherit">inherited</a> by text children (such as via the <a href="#EXTRA"><em class="bbc">"extra"</em></a> tag). List of available colors:<br>
+<br>
+</span></span><br>
+<div style="margin-left:30px"> <img src="http://www.skylinerw.com/images/json/examples/colors/colors.png"> </div>
+<span style="font-family:tahoma, arial, helvetica, sans-serif"><span style="font-family:tahoma, arial, helvetica, sans-serif"><br>
+<strong class="bbc"><font style="color:#00f">Examples:</font></strong><br>
+<pre>/tellraw @a {
+ text:"Hello there",
+ color:gold
+}</pre> <pre>/title @a subtitle {
+ text:"there",
+ color:blue
+}
+
+/title @a title {
+ text:"Hello",
+ color:gold
+}</pre> <pre>/give @a minecraft:written_book 1 0 {
+ title:"",
+ author:"",
+ pages:[
+ "{
+ text:\"Hello there\",
+ color:gold
+ }"
+ ]
+}</pre> <pre>/setblock ~ ~1 ~ minecraft:standing_sign 0 replace {
+ Text1:"{
+ text:\"Hello\",
+ color:gold
+ }",
+ Text2:"{
+ text:\"there\",
+ color:blue
+ }"
+}</pre></span></span><br>
+<div class="spoiler-button-wrapper"><a class="button">Condensed (click to show)</a></div><div class="spoiler" data-spoiler-title="Condensed"><pre>/tellraw @a {text:"Hello there",color:gold}</pre> <pre>/title @a subtitle {text:"there",color:blue}
+/title @a title {text:"Hello",color:gold}</pre><pre>/give @a minecraft:written_book 1 0 {title:"",author:"",pages:["{text:\"Hello there\",color:gold}"]}</pre><pre>/setblock ~ ~1 ~ minecraft:standing_sign 0 replace {Text1:"{text:\"Hello\",color:gold}",Text2:"{text:\"there\",color:blue}"}</pre></div>
+<div class="iframe-center" style="text-align:center"><img src="http://www.skylinerw.com/images/json/examples/colors/1.png"><br>
+<img src="http://www.skylinerw.com/images/json/examples/colors/2.png"><br>
+<img src="http://www.skylinerw.com/images/json/examples/colors/3.png"><br>
+<img src="http://www.skylinerw.com/images/json/examples/colors/4.png"></div>
+<br>
+<div class="iframe-center" style="text-align:center"><span style="font-family:'trebuchet ms', geneva"><em class="bbc"><u><span style="font-size:large"><span id="TEXTUALoptions">Options</span></span></u></em><br>
+<img src="http://www.skylinerw.com/images/json/icons/tellraw.png"> <img src="http://www.skylinerw.com/images/json/icons/title.png"> <img src="http://www.skylinerw.com/images/json/icons/book.png"> <img src="http://www.skylinerw.com/images/json/icons/sign.png"></span></div>
+<br>
+<span style="font-family:tahoma, arial, helvetica, sans-serif"><span style="font-family:tahoma, arial, helvetica, sans-serif">Along with color, you can assign different text emphases, such as bold, italic, and underlined. Each of these tags are booleans, meaning you'll only use "true" or "false" as the value. By default, all of these tags are set to "false". A list of the available options:<br>
+<br>
+</span></span><br>
+<div style="margin-left:30px"> <strong class="bbc">bold:true</strong><br>
+<em class="bbc">italic:true</em><br>
+<u>underlined:true</u><br>
+<del>strikethrough:true</del><br>
+<a href="http://www.skylinerw.com/images/json/examples/options/obfuscated.gif" target="">obfuscated:true</a> </div>
+<span style="font-family:tahoma, arial, helvetica, sans-serif"><span style="font-family:tahoma, arial, helvetica, sans-serif"><br>
+<strong class="bbc"><font style="color:#00f">Examples:</font></strong><br>
+<pre>/tellraw @a {
+ text:"Hello there",
+ bold:true,
+ italic:true,
+ underlined:true,
+ strikethrough:true,
+ obfuscated:true
+}</pre> <pre>/title @a subtitle {
+ text:"there",
+ bold:true,
+ italic:true
+}
+
+/title @a title {
+ text:"Hello",
+ underlined:true,
+ strikethrough:true,
+ obfuscated:true
+}</pre> <pre>/give @a minecraft:written_book 1 0 {
+ title:"",
+ author:"",
+ pages:[
+ "{
+ text:\"Hello there\",
+ bold:true,
+ italic:true,
+ underlined:true,
+ strikethrough:true,
+ obfuscated:true
+ }"
+ ]
+}</pre> <pre>/setblock ~ ~1 ~ minecraft:standing_sign 0 replace {
+ Text1:"{
+ text:\"Hello\",
+ underlined:true,
+ strikethrough:true,
+ obfuscated:true
+ }",
+ Text2:"{
+ text:\"there\",
+ bold:true,
+ italic:true
+ }"
+}</pre></span></span><br>
+<div class="spoiler-button-wrapper"><a class="button">Condensed (click to show)</a></div><div class="spoiler" data-spoiler-title="Condensed"><pre>/tellraw @a {text:"Hello there",bold:true,italic:true,underlined:true,strikethrough:true,obfuscated:true}</pre> <pre>/title @a subtitle {text:"there",bold:true,italic:true}
+/title @a title {text:"Hello",underlined:true,strikethrough:true,obfuscated:true}</pre><pre>/give @a minecraft:written_book 1 0 {title:"",author:"",pages:["{text:\"Hello there\",bold:true,italic:true,underlined:true,strikethrough:true,obfuscated:true}"]}</pre><pre>/setblock ~ ~1 ~ minecraft:standing_sign 0 replace {Text1:"{text:\"Hello\",underlined:true,strikethrough:true,obfuscated:true}",Text2:"{text:\"there\",bold:true,italic:true}"}</pre></div>
+<div class="iframe-center" style="text-align:center"><img src="http://www.skylinerw.com/images/json/examples/options/1.png"><br>
+<img src="http://www.skylinerw.com/images/json/examples/options/2.png"><br>
+<img src="http://www.skylinerw.com/images/json/examples/options/3.png"><br>
+<img src="http://www.skylinerw.com/images/json/examples/options/4.png"></div>
+<br>
+<hr class="bbc"><br>
+<div class="iframe-center" style="text-align:center"><span style="font-family:'trebuchet ms', geneva"><strong class="bbc"><span style="font-size:x-large"><span id="ESCAPE">ESCAPING</span></span></strong></span></div>
+<br>
+<span style="font-family:tahoma, arial, helvetica, sans-serif">There are instances where you end up using quotation marks within quotation marks, such as in <em class="bbc">"clickEvent"</em> or <em class="bbc">"hoverEvent"</em> values. These quotation marks will tell the game that the tag has ended early, and the remaining text throws an error for being out of place. For example:<br>
+<br>
+<pre>text:"I said "hello there" 59 times so far"</pre> <br>
+The tag's resulting content is:<br>
+<br>
+<pre>text:"I said "</pre> <br>
+And the remaining text outside the tag does not follow proper JSON syntax, thus the command fails to execute. In order to get around this, one of two methods can be used. First, you can swap out the tags' double quotation marks for single (or vice versa). However, if you use any single quotation marks within the text, the same problem will occur. Ultimately, the second method will need to be used, in which you apply a backslash character just before the quotation mark. This tells the game to not use that quotation mark to end the tag. You will have to do this for all quotation marks:<br>
+<br>
+<pre>text:'I said "hello there" 60 times so far'</pre> <pre>text:"I said \"hello there\" 61 times so far"</pre></span><br>
+<hr class="bbc"><br>
+<div class="iframe-center" style="text-align:center"><span style="font-family:'trebuchet ms', geneva"><strong class="bbc"><span style="font-size:x-large"><span id="ACTIONS">CHAT FUNCTIONS</span></span></strong></span></div>
+<br>
+<div class="iframe-center" style="text-align:center"><span style="font-family:'trebuchet ms', geneva"><em class="bbc"><u><span style="font-size:large"><span id="ACTIONSclick">"clickEvent"</span></span></u></em><br>
+<img src="http://www.skylinerw.com/images/json/icons/tellraw.png"> <img src="http://www.skylinerw.com/images/json/icons/book.png"> <img src="http://www.skylinerw.com/images/json/icons/sign.png"><br>
+<strong class="bbc"><font style="color:#f00">NOTE: Web Links must be enabled to use this feature (Options -&gt; Multiplayer Settings)</font></strong></span></div>
+<br>
+<span style="font-family:tahoma, arial, helvetica, sans-serif"><span style="font-family:tahoma, arial, helvetica, sans-serif">The <em class="bbc">"clickEvent"</em> function allows you to detect when the player clicks on text provided through the /tellraw command, within books, or on signs. Once clicked, a selected <em class="bbc">"action"</em> is performed. These actions are accompanied by a <em class="bbc">"value"</em> to be used based on the action. The <em class="bbc">"clickEvent"</em> tag is a compound, thus it encases its data with curly brackets.<br>
+<br>
+Chat text and books require left-clicking to use the <em class="bbc">"clickEvent"</em>, while signs require right-clicking. If there is a <em class="bbc">"clickEvent"</em> anywhere on the sign, it will be run. However, only the root <em class="bbc">"clickEvent"</em> will function in each of the <strong class="bbc">Text1/2/3/4</strong> tags, so you cannot use the <em class="bbc">"extra"</em> tag with child events. If there is a <em class="bbc">"clickEvent"</em> present in each of the signs' text tags, all of them will be run at the same time upon clicking.<br>
+<br>
+</span></span><br>
+<div style="margin-left:30px"> <span style="font-size:medium"><strong class="bbc">run_command</strong> = The player clicking will automatically insert the <em class="bbc">"value"</em> into chat as if they were typing it themselves. Thus commands can be run, but the player can also simply insert text into the chat. Base coordinates will be that of the player, meaning a simple <em class="bbc">@p</em> will be the player clicking. Due to its behaviour, players who are not OP'd will not be capable of running many commands. <em class="bbc">"value"</em> will also be limited by the 100-character limit players have. The <a href="#TRIGGER">/trigger</a> command was created to overcome these issues.</span> </div>
+<span style="font-family:tahoma, arial, helvetica, sans-serif"><span style="font-family:tahoma, arial, helvetica, sans-serif"><br>
+<strong class="bbc"><font style="color:#00f">Examples:</font></strong><br>
+<pre>/tellraw @a {
+ text:"Click.",
+ clickEvent:{
+ action:run_command,
+ value:"/say Clicked."
+ }
+}</pre> <pre>/tellraw @a {
+ text:"Click.",
+ clickEvent:{
+ action:run_command,
+ value:"Clicked."
+ }
+}</pre> <pre>/give @a minecraft:written_book 1 0 {
+ title:"",
+ author:"",
+ pages:[
+ "{
+ text:\"Click.\",
+ clickEvent:{
+ action:run_command,
+ value:\"/say Clicked.\"
+ }
+ }"
+ ]
+}</pre> <pre>/setblock ~ ~1 ~ minecraft:standing_sign 0 replace {
+ Text1:"{
+ text:\"Click.\",
+ clickEvent:{
+ action:run_command,
+ value:\"/say Clicked.\"
+ }
+ }"
+}</pre></span></span><br>
+<div class="spoiler-button-wrapper"><a class="button">Condensed (click to show)</a></div><div class="spoiler" data-spoiler-title="Condensed"><pre>/tellraw @a {text:"Click.",clickEvent:{action:run_command,value:"/say Clicked."}}</pre> <pre>/tellraw @a {text:"Click.",clickEvent:{action:run_command,value:"Clicked."}}</pre><pre>/give @a minecraft:written_book 1 0 {title:"",author:"",pages:["{text:\"Click.\",clickEvent:{action:run_command,value:\"/say Clicked.\"}}"]}</pre><pre>/setblock ~ ~1 ~ minecraft:standing_sign 0 replace {Text1:"{text:\"Click.\",clickEvent:{action:run_command,value:\"/say Clicked.\"}}"}</pre></div>
+<div class="iframe-center" style="text-align:center"><img src="http://www.skylinerw.com/images/json/examples/actions/clickEvent/1.png"><br>
+<img src="http://www.skylinerw.com/images/json/examples/actions/clickEvent/2.png"></div>
+<span style="font-family:tahoma, arial, helvetica, sans-serif"><span style="font-family:tahoma, arial, helvetica, sans-serif"><br>
+</span></span><br>
+<div style="margin-left:30px"> <span style="font-size:medium"><strong class="bbc">suggest_command</strong> = The player clicking will automatically replace all text within their chat textbox with the <em class="bbc">"value"</em>. This differs from <a href="#ACTIONSinsertion"><em class="bbc">"insertion"</em></a> in that it does not require shift to be held, and that it will replace text within the textbox rather than append at the end. <em class="bbc">"value"</em> does not necessarily need to be a command. <strong class="bbc">Does not function for books or signs.</strong></span> </div>
+<span style="font-family:tahoma, arial, helvetica, sans-serif"><span style="font-family:tahoma, arial, helvetica, sans-serif"><br>
+<strong class="bbc"><font style="color:#00f">Example:</font></strong><br>
+<pre>/tellraw @a {
+ text:"Click.",
+ clickEvent:{
+ action:suggest_command,
+ value:"Hello there"
+ }
+}</pre></span></span><br>
+<div class="spoiler-button-wrapper"><a class="button">Condensed (click to show)</a></div><div class="spoiler" data-spoiler-title="Condensed"><pre>/tellraw @a {text:"Click.",clickEvent:{action:suggest_command,value:"Hello there"}}</pre></div>
+<div class="iframe-center" style="text-align:center"><img src="http://www.skylinerw.com/images/json/examples/actions/clickEvent/3.png"></div>
+<span style="font-family:tahoma, arial, helvetica, sans-serif"><span style="font-family:tahoma, arial, helvetica, sans-serif"><br>
+</span></span><br>
+<div style="margin-left:30px"> <span style="font-size:medium"><strong class="bbc">open_url</strong> = The player clicking will be prompted to open the specified website. <em class="bbc">"value"</em> must begin with "http://". <strong class="bbc">Does not function for signs.</strong></span> </div>
+<span style="font-family:tahoma, arial, helvetica, sans-serif"><span style="font-family:tahoma, arial, helvetica, sans-serif"><br>
+<strong class="bbc"><font style="color:#00f">Example:</font></strong><br>
+<pre>/tellraw @a {
+ text:"Click.",
+ clickEvent:{
+ action:open_url,
+ value:"http://www.skylinerw.com"
+ }
+}</pre> <pre>/give @a minecraft:written_book 1 0 {
+ title:"",
+ author:"",
+ pages:[
+ "{
+ text:\"Click.\",
+ clickEvent:{
+ action:open_url,
+ value:\"http://www.skylinerw.com\"
+ }
+ }"
+ ]
+}</pre></span></span><br>
+<div class="spoiler-button-wrapper"><a class="button">Condensed (click to show)</a></div><div class="spoiler" data-spoiler-title="Condensed"><pre>/tellraw @a {text:"Click.",clickEvent:{action:open_url,value:"http://www.skylinerw.com"}}</pre><pre>/give @a minecraft:written_book 1 0 {title:"",author:"",pages:["{text:\"Click.\",clickEvent:{action:open_url,value:\"http://www.skylinerw.com\"}}"]}</pre></div>
+<br>
+<div class="iframe-center" style="text-align:center"><span style="font-family:'trebuchet ms', geneva"><em class="bbc"><u><span style="font-size:large"><span id="ACTIONShover">"hoverEvent"</span></span></u></em><br>
+<img src="http://www.skylinerw.com/images/json/icons/tellraw.png"> <img src="http://www.skylinerw.com/images/json/icons/book.png"></span></div>
+<br>
+<span style="font-family:tahoma, arial, helvetica, sans-serif"><span style="font-family:tahoma, arial, helvetica, sans-serif">The <em class="bbc">"hoverEvent"</em> function allows you to perform a specific action when a player hovers over text provided by the /tellraw command. These actions are currently limited to displaying further text at the mouse cursor. The text shown is dependent on the <em class="bbc">"value"</em>, in which the format of the text can differ depending on the action. Just like the <a href="#ACTIONSclick"><em class="bbc">"clickEvent"</em></a>, this compound tag contains its data within curly brackets.<br>
+<br>
+</span></span><br>
+<div style="margin-left:30px"> <span style="font-size:medium"><strong class="bbc">show_text</strong> = Intangible, formatable text appears at the cursor. The <em class="bbc">"value"</em> will be the <a href="#SYNTAXcomponent">text component</a>, which is inserted as though you're creating the JSON for a /tellraw or /title command. This means the text can either be encased in only quotation marks, curly brackets to start within the root of the component, or square brackets to start in the <a href="#EXTRA"><em class="bbc">"extra"</em></a> tag. This will allow you to apply colors and other options to the hover text.</span> </div>
+<span style="font-family:tahoma, arial, helvetica, sans-serif"><span style="font-family:tahoma, arial, helvetica, sans-serif"><br>
+<strong class="bbc"><font style="color:#00f">Examples:</font></strong><br>
+<pre>/tellraw @a {
+ text:"Hover.",
+ hoverEvent:{
+ action:show_text,
+ value:"Hello there."
+ }
+}</pre> <pre> /tellraw @a {
+ text:"Hover.",
+ hoverEvent:{
+ action:show_text,
+ value:{text:"Hello there.",color:blue}
+ }
+}</pre> <pre> /tellraw @a {
+ text:"Hover.",
+ hoverEvent:{
+ action:show_text,
+ value:[{text:"Hello there.",color:blue}]
+ }
+}</pre> <pre>/give @a minecraft:written_book 1 0 {
+ title:"",
+ author:"",
+ pages:[
+ "{
+ text:\"Hover.\",
+ hoverEvent:{
+ action:show_text,
+ value:\"Hello there.\"
+ }
+ }"
+ ]
+}</pre></span></span><br>
+<div class="spoiler-button-wrapper"><a class="button">Condensed (click to show)</a></div><div class="spoiler" data-spoiler-title="Condensed"><pre>/tellraw @a {text:"Hover.",hoverEvent:{action:show_text,value:"Hello there."}}</pre><pre>/tellraw @a {text:"Hover.",hoverEvent:{action:show_text,value:{text:"Hello there.",color:blue}}}</pre><pre>/tellraw @a {text:"Hover.",hoverEvent:{action:show_text,value:[{text:"Hello there.",color:blue}]}}</pre><pre>/give @a minecraft:written_book 1 0 {title:"",author:"",pages:["{text:\"Hover.\",hoverEvent:{action:show_text,value:\"Hello there.\"}}"]}</pre></div>
+<div class="iframe-center" style="text-align:center"><img src="http://www.skylinerw.com/images/json/examples/actions/hoverEvent/1.png"><br>
+<img src="http://www.skylinerw.com/images/json/examples/actions/hoverEvent/2.png"></div>
+<span style="font-family:tahoma, arial, helvetica, sans-serif"><span style="font-family:tahoma, arial, helvetica, sans-serif"><br>
+</span></span><br>
+<div style="margin-left:30px"> <span style="font-size:medium"><strong class="bbc">show_item</strong> = Intangible text appears at the cursor, defaulting to the format in which Minecraft items are displayed. The <em class="bbc">"value"</em> will contain NBT data for the item, starting at the root item tree. Unlike the text component, you must encase the NBT data in quotation marks. This will result in the need to <a href="#ESCAPE">escape</a> recessive quotes. See the <a href="http://minecraft.gamepedia.com/Player.dat_format#Item_structure" target="">Wiki</a> for more information on the NBT format for items.</span> </div>
+<span style="font-family:tahoma, arial, helvetica, sans-serif"><span style="font-family:tahoma, arial, helvetica, sans-serif"><br>
+<strong class="bbc"><font style="color:#00f">Example:</font></strong><br>
+<pre>/tellraw @a {
+ text:"Hover.",
+ hoverEvent:{
+ action:show_item,
+ value:"{id:minecraft:iron_pickaxe,tag:{ench:[{id:16,lvl:1}],display:{Lore:[\"Hello there.\"]}}}"
+ }
+}</pre></span></span><br>
+<div class="spoiler-button-wrapper"><a class="button">Condensed (click to show)</a></div><div class="spoiler" data-spoiler-title="Condensed"><pre>/tellraw @a {text:"Hover.",hoverEvent:{action:show_item,value:"{id:minecraft:iron_pickaxe,tag:{ench:[{id:16,lvl:1}],display:{Lore:[\"Hello there.\"]}}}"}}</pre></div>
+<div class="iframe-center" style="text-align:center"><img src="http://www.skylinerw.com/images/json/examples/actions/hoverEvent/3.png"></div>
+<span style="font-family:tahoma, arial, helvetica, sans-serif"><span style="font-family:tahoma, arial, helvetica, sans-serif"><br>
+</span></span><br>
+<div style="margin-left:30px"> <span style="font-size:medium"><strong class="bbc">show_entity</strong> = Intangible and unformatable text appears at the cursor. <em class="bbc">"value"</em> must follow a specific format for displaying very basic entity data. The <em class="bbc">"value"</em> only has three tags (none of which are required), being 'name' for the custom entity name, 'type' for the entity ID, and 'id' for the UUID. <em class="bbc">"value"</em> must also be encased in quotation marks.</span> </div>
+<span style="font-family:tahoma, arial, helvetica, sans-serif"><span style="font-family:tahoma, arial, helvetica, sans-serif"><br>
+<strong class="bbc"><font style="color:#00f">Example:</font></strong><br>
+<pre>/tellraw @a {<br>
+ text:"Hover.",<br>
+ hoverEvent:{<br>
+ action:show_entity,<br>
+ value:"{name:\"Bob\",type:Creeper,id:00000000-0000-0000-0000-000000000000}"<br>
+ }<br>
+}<br>
+</pre></span></span><br>
+<div class="spoiler-button-wrapper"><a class="button">Condensed (click to show)</a></div><div class="spoiler" data-spoiler-title="Condensed"><pre>/tellraw @a {text:"Hover.",hoverEvent:{action:show_entity,value:"{name:\"Bob\",type:Creeper,id:00000000-0000-0000-0000-000000000000}"}}</pre></div>
+<div class="iframe-center" style="text-align:center"><img src="http://www.skylinerw.com/images/json/examples/actions/hoverEvent/4.png"></div>
+<span style="font-family:tahoma, arial, helvetica, sans-serif"><span style="font-family:tahoma, arial, helvetica, sans-serif"><br>
+</span></span><br>
+<div style="margin-left:30px"> <span style="font-size:medium"><strong class="bbc">show_achievement</strong> = Intangible and unformatable text appears at the cursor. <em class="bbc">"value"</em> will be the achievement ID (starting with "achievement") or statistic ID, which will fill in the blanks for the presented and pre-formatted text. You can find a list of achievement IDs <a href="http://minecraft.gamepedia.com/Achievements#List_of_achievements" target="">here</a> and statistic IDs <a href="http://minecraft.gamepedia.com/Statistics#List_of_general_statistics" target="">here</a>.</span> </div>
+<span style="font-family:tahoma, arial, helvetica, sans-serif"><span style="font-family:tahoma, arial, helvetica, sans-serif"><br>
+<strong class="bbc"><font style="color:#00f">Examples:</font></strong><br>
+<pre>/tellraw @a {
+ text:"Hover.",
+ hoverEvent:{
+ action:show_achievement,
+ value:"achievement.theEnd2"
+ }
+}</pre> <pre>/tellraw @a {
+ text:"Hover.",
+ hoverEvent:{
+ action:show_achievement,
+ value:"stat.damageDealt"
+ }
+}</pre></span></span><br>
+<div class="spoiler-button-wrapper"><a class="button">Condensed (click to show)</a></div><div class="spoiler" data-spoiler-title="Condensed"><pre>/tellraw @a {text:"Hover.",hoverEvent:{action:show_achievement,value:"achievement.theEnd2"}}</pre> <pre>/tellraw @a {text:"Hover.",hoverEvent:{action:show_achievement,value:"stat.damageDealt"}}</pre></div>
+<div class="iframe-center" style="text-align:center"><img src="http://www.skylinerw.com/images/json/examples/actions/hoverEvent/5.png"><br>
+<img src="http://www.skylinerw.com/images/json/examples/actions/hoverEvent/6.png"></div>
+<br>
+<div class="iframe-center" style="text-align:center"><span style="font-family:'trebuchet ms', geneva"><em class="bbc"><u><span style="font-size:large"><span id="ACTIONSinsertion">"insertion"</span></span></u></em><br>
+<img src="http://www.skylinerw.com/images/json/icons/tellraw.png"></span></div>
+<br>
+<span style="font-family:tahoma, arial, helvetica, sans-serif"><span style="font-family:tahoma, arial, helvetica, sans-serif">Unlike <em class="bbc">"clickEvent"</em> and <em class="bbc">"hoverEvent"</em>, <em class="bbc">"insertion"</em> is a single string with one purpose: upon holding shift and left-clicking the text, the player will append the value of the tag at the end of what is currently in their chat textbox. If there is not enough room for the entire value, what <em class="bbc">will</em> fit will be inserted. This function can be seen in Minecraft when using the /say command to display entities; shift-clicking the entity name will insert the UUID into your textbox using the <em class="bbc">"insertion"</em> method.<br>
+<br>
+<strong class="bbc"><font style="color:#00f">Example:</font></strong><br>
+<pre>/tellraw @a {
+ text:"Click.",
+ insertion:"Hello there."
+}</pre></span></span><br>
+<div class="spoiler-button-wrapper"><a class="button">Condensed (click to show)</a></div><div class="spoiler" data-spoiler-title="Condensed"><pre>/tellraw @a {text:"Click.",insertion:"Hello there."}</pre></div>
+<div class="iframe-center" style="text-align:center"><img src="http://www.skylinerw.com/images/json/examples/actions/insertion/1.png"></div>
+<br>
+<hr class="bbc"><br>
+<div class="iframe-center" style="text-align:center"><span style="font-family:'trebuchet ms', geneva"><strong class="bbc"><span style="font-size:x-large"><span id="ALTTEXT">ALTERNATIVES TO "TEXT"</span></span></strong></span></div>
+<br>
+<div class="iframe-center" style="text-align:center"><span style="font-family:'trebuchet ms', geneva"><em class="bbc"><u><span style="font-size:large"><span id="ALTTEXTscore">"score"</span></span></u></em><br>
+<img src="http://www.skylinerw.com/images/json/icons/tellraw.png"> <img src="http://www.skylinerw.com/images/json/icons/title.png"> <img src="http://www.skylinerw.com/images/json/icons/sign.png"></span></div>
+<br>
+<span style="font-family:tahoma, arial, helvetica, sans-serif"><span style="font-family:tahoma, arial, helvetica, sans-serif">The "score" function displays the score value of a specified objective and matching player. This resulting text is used instead of the root <em class="bbc">"text"</em> tag. If you need to insert more text than this, you will have to use the <a href="#EXTRAextra">"extra"</a> tag.<br>
+<br>
+The <em class="bbc">"name"</em> tag can be a player selector. You can also use an asterisk (*) in place of the <em class="bbc">"name"</em> to have the objective score of the viewing player display to them (essentially, players would see their own scores).<br>
+<br>
+<strong class="bbc"><font style="color:#00f">Examples:</font></strong><br>
+<pre>/tellraw @a {
+ score:{
+ name:"Skylinerw",
+ objective:"TEST"
+ }
+}</pre> <pre>/tellraw @a {
+ score:{
+ name:"*",
+ objective:"TEST"
+ }
+}</pre> <pre>/tellraw @a {
+ text:"Your score is: ",
+ extra:[
+ {
+ score:{
+ name:"*",
+ objective:"TEST"
+ }
+ }
+ ]
+}</pre> <pre>/tellraw @a [
+ "Your score is: ",
+ {
+ score:{
+ name:"*",
+ objective:"TEST"
+ }
+ }
+]</pre> <pre>/setblock ~ ~1 ~ minecraft:standing_sign 0 replace {
+ Text1:"{
+ score:{
+ name:\"@p\",
+ objective:\"TEST\"
+ }
+ }"
+}</pre></span></span><br>
+<div class="spoiler-button-wrapper"><a class="button">Condensed (click to show)</a></div><div class="spoiler" data-spoiler-title="Condensed"><pre>/tellraw @a {score:{name:"Skylinerw",objective:"TEST"}}</pre><pre>/tellraw @a {score:{name:"*",objective:"TEST"}}</pre><pre>/tellraw @a {text:"Your score is: ",extra:[{score:{name:"*",objective:"TEST"}}]}</pre><pre>/tellraw @a ["Your score is: ",{score:{name:"*",objective:"TEST"}}]</pre><pre>/setblock ~ ~1 ~ minecraft:standing_sign 0 replace {Text1:"{score:{name:\"@p\",objective:\"TEST\"}}"}</pre></div>
+<div class="iframe-center" style="text-align:center"><img src="http://www.skylinerw.com/images/json/examples/alttext/score/1.png"><br>
+<img src="http://www.skylinerw.com/images/json/examples/alttext/score/2.png"></div>
+<br>
+<div class="iframe-center" style="text-align:center"><span style="font-family:'trebuchet ms', geneva"><em class="bbc"><u><span style="font-size:large"><span id="ALTTEXTselector">"selector"</span></span></u></em><br>
+<img src="http://www.skylinerw.com/images/json/icons/tellraw.png"> <img src="http://www.skylinerw.com/images/json/icons/title.png"> <img src="http://www.skylinerw.com/images/json/icons/sign.png"></span></div>
+<br>
+<span style="font-family:tahoma, arial, helvetica, sans-serif"><span style="font-family:tahoma, arial, helvetica, sans-serif">To compensate for the inability to use player selectors to display player names, the <em class="bbc">"selector"</em> tag allows you to input a selector to display a player (or entity) name that matches the parameters. This will replace the <em class="bbc">"text"</em> tag for display, so again you will have to use the <em class="bbc">"extra"</em> tag to insert more text.<br>
+<br>
+<strong class="bbc"><font style="color:#00f">Examples:</font></strong><br>
+<pre>/tellraw @a {
+ selector:"@e"
+}</pre> <pre> /tellraw @a {
+ selector:"@a[score_TEST_min=1]"
+}</pre> <pre>/tellraw @a {
+ text:"Hello there, ",
+ extra:[
+ {
+ selector:"@p"
+ },
+ "."
+ ]
+}</pre> <pre>/tellraw @a [
+ "Hello there, ",
+ {
+ selector:"@p"
+ },
+ "."
+]</pre> <pre>/setblock ~ ~1 ~ minecraft:standing_sign 0 replace {
+ Text1:
+ "{
+ selector:\"@p\"
+ }"
+}</pre></span></span><br>
+<div class="spoiler-button-wrapper"><a class="button">Condensed (click to show)</a></div><div class="spoiler" data-spoiler-title="Condensed"><pre>/tellraw @a {selector:"@e"}</pre><pre>/tellraw @a {selector:"@a[score_TEST_min=1]"}</pre><pre>/tellraw @a {text:"Hello there, ",extra:[{selector:"@p"},"."]}</pre><pre>/tellraw @a ["Hello there, ",{selector:"@p"},"."]</pre><pre>/setblock ~ ~1 ~ minecraft:standing_sign 0 replace {Text1:"{selector:\"@p\"}"}</pre></div>
+<div class="iframe-center" style="text-align:center"><img src="http://www.skylinerw.com/images/json/examples/alttext/selector/1.png"><br>
+<img src="http://www.skylinerw.com/images/json/examples/alttext/selector/2.png"><br>
+<img src="http://www.skylinerw.com/images/json/examples/alttext/selector/3.png"></div>
+<br>
+<div class="iframe-center" style="text-align:center"><span style="font-family:'trebuchet ms', geneva"><em class="bbc"><u><span style="font-size:large"><span id="ALTTEXTtranslate">"translate"</span></span></u></em><br>
+<img src="http://www.skylinerw.com/images/json/icons/tellraw.png"> <img src="http://www.skylinerw.com/images/json/icons/title.png"> <img src="http://www.skylinerw.com/images/json/icons/book.png"> <img src="http://www.skylinerw.com/images/json/icons/sign.png"></span></div>
+<br>
+<span style="font-family:tahoma, arial, helvetica, sans-serif"><span style="font-family:tahoma, arial, helvetica, sans-serif">Language files can be accessed to display translatable text using the <em class="bbc">"translate"</em> tag. The resulting output will be dependent on what language the viewer has selected. As usual, this replaces the <em class="bbc">"text"</em> tag. Some translatable text require additional arguments to fill in blanks, in which the <em class="bbc">"with"</em> list-tag will provide such text. The <em class="bbc">"with"</em> tag, like <em class="bbc">"extra"</em>, is a list of text components. This means you can format the text to what you'd like, as well as inserting functions or using other alternative texts (such as displaying a score or player name, or even another translation). If arguments are not properly provided, the argument will be left blank instead.<br>
+<br>
+<strong class="bbc"><font style="color:#00f">Examples:</font></strong><br>
+<pre>/tellraw @a {
+ translate:"item.ghastTear.name"
+}</pre> <pre>NOTE: achievement.openInventory.desc = Press '%1$s' to open your inventory.
+
+/tellraw @a {
+ translate:"achievement.openInventory.desc",
+ with:[
+ "ESC"
+ ]
+}</pre> <pre>/tellraw @a {
+ translate:"achievement.openInventory.desc",
+ with:[
+ {
+ selector:"@p",
+ color:gold
+ }
+ ]
+}</pre> <pre>/give @a minecraft:written_book 1 0 {
+ title:"",
+ author:"",
+ pages:[
+ "{
+ translate:\"achievement.openInventory.desc\",
+ with:[
+ \"ESC\"
+ ]
+ }"
+ ]
+}</pre> <pre>/setblock ~ ~1 ~ minecraft:standing_sign 0 replace {
+ Text1:"{
+ translate:\"achievement.openInventory.desc\",
+ with:[
+ {
+ text:\"ESC\",
+ color:gold
+ }
+ ]
+ }"
+}</pre></span></span><br>
+<div class="spoiler-button-wrapper"><a class="button">Condensed (click to show)</a></div><div class="spoiler" data-spoiler-title="Condensed"><pre>/tellraw @a {translate:"item.ghastTear.name"}</pre><pre>/tellraw @a {translate:"achievement.openInventory.desc",with:["ESC"]}</pre><pre>/tellraw @a {translate:"achievement.openInventory.desc",with:[{selector:"@p",color:gold}]}</pre><pre>/give @a minecraft:written_book 1 0 {title:"",author:"",pages:["{translate:\"achievement.openInventory.desc\",with:[\"ESC\"]}"]}</pre><pre>/setblock ~ ~1 ~ minecraft:standing_sign 0 replace {Text1:"{translate:\"achievement.openInventory.desc\",with:[{text:\"ESC\",color:gold}]}"}</pre></div>
+<div class="iframe-center" style="text-align:center"><img src="http://www.skylinerw.com/images/json/examples/alttext/translate/1.png"><br>
+<img src="http://www.skylinerw.com/images/json/examples/alttext/translate/2.png"><br>
+<img src="http://www.skylinerw.com/images/json/examples/alttext/translate/3.png"></div>
+<br>
+<hr class="bbc"><br>
+<div class="iframe-center" style="text-align:center"><span style="font-family:'trebuchet ms', geneva"><strong class="bbc"><span style="font-size:x-large"><span id="EXTRA">ADDING MORE TEXT</span></span></strong></span></div>
+<br>
+<div class="iframe-center" style="text-align:center"><span style="font-family:'trebuchet ms', geneva"><em class="bbc"><u><span style="font-size:large"><span id="EXTRAextra">"extra"</span></span></u></em><br>
+<img src="http://www.skylinerw.com/images/json/icons/tellraw.png"> <img src="http://www.skylinerw.com/images/json/icons/title.png"> <img src="http://www.skylinerw.com/images/json/icons/book.png"> <img src="http://www.skylinerw.com/images/json/icons/sign.png"></span></div>
+<br>
+<span style="font-family:tahoma, arial, helvetica, sans-serif"><span style="font-family:tahoma, arial, helvetica, sans-serif">The <em class="bbc">"exra"</em> tag is a list of text components, which is essentially a collection of individual texts. Typically this should not be used for very simple, unedited text. However, if you would like only a single word out of a sentence to be clicked on, or have different words be different colors, then you will have to use this tag.<br>
+<br>
+There are two methods of instantiating an <em class="bbc">"extra"</em> tag. First is the normal method, in which you open at the root of the component, defining the required text display (via an applicable method, such as <em class="bbc">"text"</em> or <em class="bbc">"translate"</em>) and then the <em class="bbc">"extra"</em> tag.<br>
+<br>
+<strong class="bbc"><font style="color:#00f">Examples:</font></strong><br>
+<pre>/tellraw @a {
+ text:"Hello ",
+ extra:[
+ "there."
+ ]
+}</pre> <pre>/give @a minecraft:written_book 1 0 {
+ title:"",
+ author:"",
+ pages:[
+ "{
+ text:\"Hello \",
+ extra:[
+ \"there.\"
+ ]
+ }"
+ ]
+}</pre></span></span><br>
+<div class="spoiler-button-wrapper"><a class="button">Condensed (click to show)</a></div><div class="spoiler" data-spoiler-title="Condensed"><pre>/tellraw @a {text:"Hello ",extra:["there."]}</pre><pre>/give @a minecraft:written_book 1 0 {title:"",author:"",pages:["{text:\"Hello \",extra:[\"there.\"]}"]}</pre></div>
+<div class="iframe-center" style="text-align:center"><img src="http://www.skylinerw.com/images/json/examples/extra/extra/1.png"></div>
+<span style="font-family:tahoma, arial, helvetica, sans-serif"><span style="font-family:tahoma, arial, helvetica, sans-serif"><br>
+The other method is to open the raw JSON text within the <em class="bbc">"extra"</em> tag by using square brackets instead of curly. This will require you to follow the standard format for the <em class="bbc">"extra"</em> tag.<br>
+<br>
+<strong class="bbc"><font style="color:#00f">Example:</font></strong><br>
+<pre>/tellraw @a [
+ "Hello ",
+ "there."
+]</pre> <pre>/give @a minecraft:written_book 1 0 {
+ title:"",
+ author:"",
+ pages:[
+ "[
+ \"Hello \",
+ \"there.\"
+ ]"
+ ]
+}</pre></span></span><br>
+<div class="spoiler-button-wrapper"><a class="button">Condensed (click to show)</a></div><div class="spoiler" data-spoiler-title="Condensed"><pre>/tellraw @a ["Hello ","there."]</pre><pre>/give @a minecraft:written_book 1 0 {title:"",author:"",pages:["[\"Hello \",\"there.\"]"]}</pre></div>
+<span style="font-family:tahoma, arial, helvetica, sans-serif"><span style="font-family:tahoma, arial, helvetica, sans-serif"><br>
+Because each list item is an individual text component, you must follow the <a href="#SYNTAX">syntax</a> for instantiating raw JSON text. If you need to colorize the text, you must open the root (now child) compound tag.<br>
+<br>
+<strong class="bbc"><font style="color:#00f">Examples:</font></strong><br>
+<pre>/tellraw @a {
+ text:"Hello ",
+ extra:[
+ {
+ text:"there.",
+ color:blue
+ }
+ ]
+}</pre> <pre>/tellraw @a {
+ text:"Hello ",
+ extra:[
+ {
+ text:"there ",
+ color:blue
+ },
+ {
+ selector:"@p"
+ },
+ "!"
+ ]
+}</pre> <pre>/tellraw @a [
+ "Hello ",
+ {
+ text:"there ",
+ color:blue
+ },
+ {
+ selector:"@p"
+ },
+ "!"
+]</pre> <pre>/give @a minecraft:written_book 1 0 {
+ title:"",
+ author:"",
+ pages:[
+ "[
+ \"Hello \",
+ {
+ text:\"there \",
+ color:blue
+ },
+ {
+ selector:\"@p\"
+ },
+ \"!\"
+ ]"
+ ]
+}</pre></span></span><br>
+<div class="spoiler-button-wrapper"><a class="button">Condensed (click to show)</a></div><div class="spoiler" data-spoiler-title="Condensed"><pre>/tellraw @a {text:"Hello ",extra:["there."]}</pre> <pre>/tellraw @a {text:"Hello ",extra:[{text:"there ",color:blue},{selector:"@p"},"!"]}</pre> <pre>/tellraw @a ["Hello ",{text:"there ",color:blue},{selector:"@p"},"!"]</pre><pre>/give @a minecraft:written_book 1 0 {title:"",author:"",pages:["[\"Hello \",{text:\"there \",color:blue},{selector:\"@p\"},\"!\"]"]}</pre></div>
+<div class="iframe-center" style="text-align:center"><img src="http://www.skylinerw.com/images/json/examples/extra/extra/2.png"><br>
+<img src="http://www.skylinerw.com/images/json/examples/extra/extra/3.png"></div>
+<br>
+<div class="iframe-center" style="text-align:center"><span style="font-family:'trebuchet ms', geneva"><em class="bbc"><u><span style="font-size:large"><span id="EXTRAinherit">Inheritance</span></span></u></em><br>
+<img src="http://www.skylinerw.com/images/json/icons/tellraw.png"> <img src="http://www.skylinerw.com/images/json/icons/title.png"> <img src="http://www.skylinerw.com/images/json/icons/book.png"> <img src="http://www.skylinerw.com/images/json/icons/sign.png"></span></div>
+<br>
+<span style="font-family:tahoma, arial, helvetica, sans-serif"><span style="font-family:tahoma, arial, helvetica, sans-serif">When you use the <em class="bbc">"extra"</em> tag, the text within it will inherit <em class="bbc">all</em> properties of the parent (or root) component. This includes colors, emphasis options, and all functions such as <em class="bbc">"clickEvent"</em> and <em class="bbc">"hoverEvent"</em>.<br>
+<br>
+<strong class="bbc"><font style="color:#00f">Example:</font></strong><br>
+<pre>/tellraw @a {
+ text:"Hello ",
+ color:gold,
+ extra:[
+ "there."
+ ]
+}</pre></span></span><br>
+<div class="spoiler-button-wrapper"><a class="button">Condensed (click to show)</a></div><div class="spoiler" data-spoiler-title="Condensed"><pre>/tellraw @a {text:"Hello ",color:gold,extra:["there."]}</pre></div>
+<div class="iframe-center" style="text-align:center"><img src="http://www.skylinerw.com/images/json/examples/extra/inherit/1.png"></div>
+<span style="font-family:tahoma, arial, helvetica, sans-serif"><span style="font-family:tahoma, arial, helvetica, sans-serif"><br>
+To avoid having all extra text inherit from the root, you can instead leave the root <em class="bbc">"text"</em> blank. Instantiating the raw JSON with the <em class="bbc">"extra"</em> tag will <em class="bbc">not</em> prevent inheritance, and instead chooses the first listed text component's properties as the parent.<br>
+<br>
+<strong class="bbc"><font style="color:#00f">Examples:</font></strong><br>
+<pre>/tellraw @a {
+ text:"",
+ extra:[
+ {
+ text:"Hello ",
+ color:gold
+ },
+ "there."
+ ]
+}</pre> <pre>/tellraw @a [
+ {
+ text:"Hello ",
+ color:gold
+ },
+ "there."
+]</pre></span></span><br>
+<div class="spoiler-button-wrapper"><a class="button">Condensed (click to show)</a></div><div class="spoiler" data-spoiler-title="Condensed"><pre>/tellraw @a {text:"Hello ",color:gold,extra:["there."]}</pre> <pre>/tellraw @a [{text:"Hello ",color:gold},"there."]</pre></div>
+<div class="iframe-center" style="text-align:center"><img src="http://www.skylinerw.com/images/json/examples/extra/inherit/2.png"><br>
+<img src="http://www.skylinerw.com/images/json/examples/extra/inherit/1.png"></div>
+<span style="font-family:tahoma, arial, helvetica, sans-serif"><span style="font-family:tahoma, arial, helvetica, sans-serif"><br>
+You can insert <em class="bbc">"extra"</em> tags within themselves, in which they will receive the properties of the immediate parent. Any unspecified properties will inherit from each parent upward until it reaches the root.<br>
+<br>
+<strong class="bbc"><font style="color:#00f">Example:</font></strong><br>
+<pre>/tellraw @a {
+ text:"",
+ bold:true,
+ extra:[
+ {
+ text:"Hello ",
+ color:gold,
+ extra:[
+ {
+ text:"there ",
+ color:aqua,
+ extra:[
+ {
+ selector:"@p",
+ underlined:true,
+ extra:[
+ {
+ text:"!!!",
+ color:yellow
+ }
+ ]
+ }
+ ]
+ }
+ ]
+ }
+ ]
+}</pre></span></span><br>
+<div class="spoiler-button-wrapper"><a class="button">Condensed (click to show)</a></div><div class="spoiler" data-spoiler-title="Condensed"><pre>/tellraw @a {text:"",bold:true,extra:[{text:"Hello ",color:gold,extra:[{text:"there ",color:aqua,extra:[{selector:"@p",underlined:true,extra:[{text:"!!!",color:yellow}]}]}]}]}</pre></div>
+<div class="iframe-center" style="text-align:center"><img src="http://www.skylinerw.com/images/json/examples/extra/inherit/3.png"></div>
+<span style="font-family:tahoma, arial, helvetica, sans-serif"><br>
+In the above command, the "!!!" is yellow and inherits the underline from the parent above, and the bold from the root. This child has its own color specified, so it will not inherit it from any parent.</span><br>
+<br>
+<hr class="bbc"><br>
+<div class="iframe-center" style="text-align:center"><span style="font-family:'trebuchet ms', geneva"><strong class="bbc"><span style="font-size:x-large"><span id="UNICODE">UNICODE</span></span></strong></span><br>
+<img src="http://www.skylinerw.com/images/json/icons/tellraw.png"> <img src="http://www.skylinerw.com/images/json/icons/title.png"> <img src="http://www.skylinerw.com/images/json/icons/book.png"> <img src="http://www.skylinerw.com/images/json/icons/sign.png"></div>
+<br>
+<span style="font-family:tahoma, arial, helvetica, sans-serif"><span style="font-family:tahoma, arial, helvetica, sans-serif">Minecraft's JSON text includes unicode support, which allows you to enter a large number of characters not normally accessible via the standard keyboard. The format for a unicode character is <u>\u####</u> in which # represents the unicode number. For example, to display the runic letter "o", which has a unicode character of <em class="bbc">16DF</em>:<br>
+<br>
+<pre>/tellraw @a "Hello there \u16DF"</pre></span></span><br>
+<div class="iframe-center" style="text-align:center"><img src="http://www.skylinerw.com/images/json/examples/unicode/1.png"></div>
+<span style="font-family:tahoma, arial, helvetica, sans-serif"><span style="font-family:tahoma, arial, helvetica, sans-serif"><br>
+The unicode's insertion can be prevented by applying a backslash before the format:<br>
+<br>
+<pre>/tellraw @a "Hello there \\u16DF"</pre></span></span><br>
+<div class="iframe-center" style="text-align:center"><img src="http://www.skylinerw.com/images/json/examples/unicode/2.png"></div>
+<span style="font-family:tahoma, arial, helvetica, sans-serif"><br>
+You can find a list of unicode characters here: <a href="http://www.unicode.org/charts/" target="">http://www.unicode.org/charts/</a></span><br>
+<br>
+<hr class="bbc"><br>
+<div class="iframe-center" style="text-align:center"><span style="font-family:'trebuchet ms', geneva"><strong class="bbc"><span style="font-size:x-large"><span id="TRIGGER">/TRIGGER</span></span></strong></span><br>
+<img src="http://www.skylinerw.com/images/json/icons/tellraw.png"> <img src="http://www.skylinerw.com/images/json/icons/book.png"> <img src="http://www.skylinerw.com/images/json/icons/sign.png"></div>
+<br>
+Coming soon<sup class="bbc">TM</sup> <br>
+<hr class="bbc"><br>
+<div class="iframe-center" style="text-align:center"><span style="font-family:'trebuchet ms', geneva"><strong class="bbc"><span style="font-size:x-large"><span id="FAQ">FAQ</span></span></strong></span></div>
+<br>
+<strong class="bbc">Q. Can multiple "clickEvents" be run at the same time?</strong><br>
+<em class="bbc">A. No, you can only activate one "clickEvent" at a time. If you have multiple clickEvents for the same text, the last "clickEvent" that is entered will be the one that runs, while the others are ignored.</em><br>
+<br>
+<strong class="bbc">Q. Is there any way to run multiple commands in one click?</strong><br>
+<em class="bbc">A. Not directly. You must use external methods, such as using /trigger within the "clickEvent" and detecting the change in score using a redstone clock. You would then use that signal to activate other command blocks. Currently (14w25a) the "clickEvent" for signs can run all clickEvents at the same time, though it's possible this may be a slight bug (only time will tell).</em><br>
+<br>
+<strong class="bbc">Q. Can I run commands relative to the player that originally could not, such as /setblock?</strong><br>
+<em class="bbc">A. Yes, the player becomes the initiator of the command, thus any relative coordinates will be of that player. It would be better to use /trigger and /execute combined, as the player must be OP'd to use /setblock in the /tellraw command.</em><br>
+<br>
+<strong class="bbc">Q. What if I have the player run a command such as <em class="bbc">/effect @p[score_NAME_min=1] 14 1000000</em>?</strong><br>
+<em class="bbc">A. The nearest player to the player clicking would be themselves. Thus the @p selector would select the player running the command. However, if that player does not match the parameters (score_NAME_min), the next player (being the one closest to the initiator) will be selected instead, continuing until a player finally matches.</em><br>
+<br>
+<strong class="bbc">Q. Does the player clicking need to be OP'd?</strong><br>
+<em class="bbc">A. Yes. The /trigger command was added to overcome this.</em><br>
+<br>
+<strong class="bbc">Q. Do I need to put quotes around every single variable and value?</strong><br>
+<em class="bbc">A. No, the only time you need to include quotation marks is for values you expect to use spaces or commas, such as the "text" and "value" tags. The names themselves don't need to be in quotes, but the values do.</em><br>
+<br>
+<strong class="bbc">Q. What is the character limit for command blocks?</strong><br>
+<em class="bbc">A. The character limit is 32,767 characters.</em><br>
+<br>
+<strong class="bbc">Q. What is the character limit for the "value" tag for "clickEvents"?</strong><br>
+<em class="bbc">A. Currently, commands run through the clickEvent are run through the player clicking. So if I were to click, I am the one running that command (not the command block). Players have a character limit of 100, so if your "value" exceeds this amount, the command will not run properly.</em><br>
+<br>
+<strong class="bbc">Q. Can I use player selectors (@p, @a, @r) within the JSON text?</strong><br>
+<em class="bbc">A. No, the standard JSON string tags do not parse player selectors. You must use the "selector" tag to display unknown player names.</em><br>
+<br>
+<strong class="bbc">Q. Can a newline be inserted?</strong><br>
+<em class="bbc">A. Not within chat or title output. It is possible to use the newline character (\n) in the "hoverEvent's" 'show_text' action to go to a new line. Newlines can be inserted into books to go to the next line on the page. Signs do push the text down, but it is not visible.</em><br>
+<br>
+<strong class="bbc">Q. Can I reset all formatting options in one tag?</strong><br>
+<em class="bbc">A. No such "reset" tag exists for the text component. In previous formatting methods using the section symbol (§), one could use "§r" to reset all formatting options back to default, but there is no proper feature for this.</em><br>
+<br>
+<strong class="bbc">Q. Do I have to include arguments with translatable text that requires them?</strong><br>
+<em class="bbc">A. No. Any unprovided arguments will be left blank. The order in which you insert the text components in the "with" tag is the same order that it fills in the arguments.</em><br>
+<br>
+<strong class="bbc">Q. Is there an easy method to create /tellraw commands?</strong><br>
+<em class="bbc">A. Yes, linked below is a useful web-based tool for creating /tellraw commands.</em><br>
+<br>
+<strong class="bbc">Q. Is the /tellraw and /title format the same as the format used in NBT data?</strong><br>
+<em class="bbc">A. Both use the JSON format. However, in-game the parsing rules are different. For example, you can encase the labels with quotation marks in the /tellraw and /title commands, but not in NBT data for /summon, /setblock, or other commands using NBT data. Eventually, all string tags will allow you to use the JSON text component to apply text formatting.</em><br>
+<br>
+<hr class="bbc"><br>
+<div class="iframe-center" style="text-align:center"><span style="font-family:'trebuchet ms', geneva"><strong class="bbc"><span style="font-size:x-large"><span id="OUTRO">OUTRO</span></span></strong></span></div>
+<br>
+<span style="font-family:tahoma, arial, helvetica, sans-serif">If you have any questions, just ask! If there is outdated, missing, or incorrect information, please correct me by leaving a reply in this topic or sending me a private message. I will attempt to keep this topic up-to-date, though will be hesitant in the case of snapshots.<br>
+<br>
+Useful links:<br>
+<br>
+Web service for creating /tellraw commands: <a href="http://www.minecraftforum.net/topic/1980545-snapshot-website-to-generate-tellraw-commands/" target="">http://www.minecraftforum.net/topic/1980545-snapshot-website-to-generate-tellraw-commands/</a><br>
+Bug report concerning the inability to hide /tellraw 'run_command' output from the chat via the commandBlockOutput gamerule: <a href="https://bugs.mojang.com/browse/MC-35431" target="">https://bugs.mojang.com/browse/MC-35431</a><br>
+Bug report concerning the inability to display player scores in translatable text using *: <a href="https://bugs.mojang.com/browse/MC-50176" target="_blank">https://bugs.mojang.com/browse/MC-50176</a><br>
+Bug report concerning the inability to display player names in translatable text using "selector": <a href="https://bugs.mojang.com/browse/MC-55333" target="_blank">https://bugs.mojang.com/browse/MC-55333</a></span></div>
+                    
+            
+                   
+            
+                    <!-- Attachments -->
+                                                      
+                </div>
+            </div>
+	
+  </body>
