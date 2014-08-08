@@ -6,6 +6,6 @@ along with markdown since I always forget how to use it
 
 ==================
 
-[Visit GitHub!](www.github.com)
+![GitHub Logo](https://avatars3.githubusercontent.com/u/7948941?v=1&s=60.png) [Visit GitHub!](www.github.com)
 
 >>Tester of github and website functionality
