@@ -8,4 +8,4 @@ along with markdown since I always forget how to use it
 
 [Visit GitHub!](www.github.com)
 
-Testing out github and website functionality
+>>Tester of github and website functionality
