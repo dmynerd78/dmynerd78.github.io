@@ -1,11 +1,7 @@
-#Hello. This is a read me file. 
+2CubedBot - Website
 ```
-This repository was made so I could test out how github works,
-along with markdown since I always forget how to use it
+Does this make absolutely no sense at all? 
+[Click here!](www.dminer78.com)
 ```
 
 ==================
-
-![GitHub Logo](imgsrc.png) [Visit GitHub!](www.github.com)
-
->>Tester of github and website functionality
