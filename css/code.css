@@ -1,0 +1,70 @@
+/*********************************************************************************/
+/*                                                                          */
+/*********************************************************************************/
+
+table
+{
+	border: 5px solid #E1E1E8;
+	border-radius: 4px;
+	text-align: left;
+	font-size: 78%;
+}
+
+td,
+th
+{
+	padding-left: 0.5em;
+}
+
+.border tr,
+.border td
+{
+	border: 5px solid #E1E1E8;
+}
+	
+.red
+{
+	color: #D44950;	
+}
+
+.orange
+{
+	color: #C30;
+}
+
+.darkBlue
+{
+	color: #2F6F9F;
+}
+
+.lightBlue
+{
+	color: #4F9FCF;
+}
+
+.cyan
+{
+	color: #099;
+}
+
+.gray
+{
+	color: #999;
+}
+
+.purple
+{
+	color: #99F;
+}
+
+.lightBackground
+{
+	background: #F5FAFA;
+	width: 100%;
+}
+
+.darkBackground
+{
+	background: #E8EDEC;
+	width: 100%;
+}
