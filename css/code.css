@@ -8,6 +8,20 @@ table
 	border-radius: 4px;
 	text-align: left;
 	font-size: 78%;
+	
+	counter-reset: rowNumber;
+}
+
+table tr
+{
+	counter-increment: rowNumber;
+}
+
+table tr td:first-child::before 
+{
+    content: counter(rowNumber);
+    min-width: 1em;
+    margin-right: 0.5em;
 }
 
 td,
@@ -20,6 +34,11 @@ th
 .border td
 {
 	border: 5px solid #E1E1E8;
+}
+
+.borderCode tr
+{
+	border: 2px solid #E1E1E8;
 }
 	
 .red
