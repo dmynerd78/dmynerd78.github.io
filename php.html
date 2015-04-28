@@ -118,16 +118,85 @@
 								
 								<table class="borderCode">
 									<tr>
-										<td></td>
 										<td><span class="red">&lt;?php</span></td>
 									</tr>
 									<tr>
-										<td></td>
-										<td><span class="darkBlue">Hello,</span> <span class="red">[user]</span><span class="darkBlue">! You are a Mod!</span></td>
+										<td><span class="gray">/* Subject and Email Vars  */</span></td>
 									</tr>
 									<tr>
-										<td></td>
-										<td><span class="darkBlue">Hello,</span> <span class="red">[user]</span><span class="darkBlue">! You are a Viewer!</span></td>
+										<td><span class="lightBlue space">$emailSubject = '2CubedBot - Help Form!';</span></td>
+									</tr>
+									<tr>
+										<td><span class="lightBlue space">$emailAddress = 'dminer789@gmail.com';</span></td>
+									</tr>
+									<tr>
+										<td><span class="gray">/* Set Vars to Info */</span></td>
+									</tr>
+									<tr>
+										<td><span class="lightBlue space">$nameInput = $_POST['name'];</span></td>
+									</tr>
+									<tr>
+										<td><span class="lightBlue space">$emailInput = $_POST['email'];</span></td>
+									</tr>
+									<tr>
+										<td><span class="lightBlue space">$messageInput = $_POST['message'];</span></td>
+									</tr>
+									<tr>
+										<td><span class="darkBlue space">$body = &lt;&lt;&lt;EOD</span></td>
+									</tr>
+									<tr>
+										<td><span class="darkBlue">&lt;br /&gt;&lt;hr&gt;&lt;br /&gt;</span></td>
+									</tr>
+									<tr>
+										<td><span class="darkBlue">Name: $name &lt;br /&gt;</span></td>
+									</tr>
+									<tr>
+										<td><span class="darkBlue">Email: $email &lt;br /&gt;</span></td>
+									</tr>
+									<tr>
+										<td><span class="darkBlue">Message: $message &lt;br /&gt;</span></td>
+									</tr>
+									<tr>
+										<td><span class="darkBlue">EOD;</span></td>
+									</tr>
+									<tr>
+										<td><span class="lightBlue space">$headers = "From: $email\r\n";</span></td>
+									</tr>
+									<tr>
+										<td><span class="lightBlue space">$headers .= "Content-type: text/html\r\n";</span></td>
+									</tr>
+									<tr>
+										<td><span class="lightBlue space">$success = mail($emailAddress, $emailSubject, $body, $headers);</span></td>
+									</tr>
+									<tr>
+										<td><span class="gray">/* Alert user that email is sent */</span></td>
+									</tr>
+									<tr>
+										<td><span class="darkBlue space">$alert = &lt;&lt;&lt;EOD</span></td>
+									</tr>
+									<tr>
+										<td><span class="darkBlue">&lt;html&gt;</span></td>
+									</tr>
+									<tr>
+										<td><span class="darkBlue">&lt;style&gt;</span></td>
+									</tr>
+									<tr>
+										<td><span class="darkBlue">alert("The form has been sent!");</span></td>
+									</tr>
+									<tr>
+										<td><span class="darkBlue">&lt;/style&gt;</span></td>
+									</tr>
+									<tr>
+										<td><span class="darkBlue">&lt;/html&gt;</span></td>
+									</tr>
+									<tr>
+										<td><span class="darkBlue">EOD;</span></td>
+									</tr>
+									<tr>
+										<td><span class="lightBlue">echo "$alert";</span></td>
+									</tr>
+									<tr>
+										<td><span class="red">?&gt;</span></td>
 									</tr>
 								</table>
 								

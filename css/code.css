@@ -22,6 +22,14 @@ table tr td:first-child::before
     content: counter(rowNumber);
     min-width: 1em;
     margin-right: 0.5em;
+	color: #099; /* Cyan color */
+	padding-right: 1em;
+	/* border-right: 1px solid #E1E1E8; */
+}
+
+.space
+{
+	padding-left: 1.5em;
 }
 
 td,
