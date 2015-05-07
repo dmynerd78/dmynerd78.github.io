@@ -33,7 +33,7 @@
 				alert(text);
 			}
 		
-			var url = (window.location.href.split("?"))[1];
+			var url = window.location.href.split("?")[1];
 			if (typeof url === "undefined" || typeof url === "null" || url == "") {
 						console.log("No link in url to forward to. Add '?[url here]' to forward a user somewhere! :D");
 			} else {
@@ -53,7 +53,7 @@
 				<!-- Header -->
 					<div class="container">
 						<header id="page-header">
-							<h1><a href="index.html" id="logo"><span>Dminer78</span> 'on pretty much everything'</a></h1>
+							<h1><a href="index.html" id="logo"><span>Dminer78</span> on pretty much everything</a></h1>
 							<nav id="nav">
 								<ul>
 									<li><a href="2CubedBot/index.html">2CubedBot</a></li>
@@ -89,8 +89,6 @@
 										<a href="" class="arrow" title="Totally not stolen from Dragnoz >.>">Minecraft Resources</i></a>
 										<ul>
 											<li><a href="http://khroki.github.io/MCEdit-Unified/" target="_blank" class="menu-link">MCEdit Fork</a></li>
-											<li><a href="http://worldpresets.com/" target="_blank" class="menu-link">Minecraft World Presets</a></li>
-											<li><a href="http://www.dragnoz.com/create-3d-objects-and-import-to-minecraft-via-tinkercad/" target="_blank" class="menu-link">Tinkercad (3D objects)</a></li>
 											<li>
 												<span class="arrow">Generators</span>
 												<ul>
@@ -101,15 +99,21 @@
 													<li><a href="http://bimbimma.com/mcstacker/" target="_blank" class="menu-link">Summon Generator Comprehensive</a></li>
 													<li><a href="http://www.minecraftupdates.com/commands" target="_blank" class="menu-link">Summon Mob Generator</a></li>
 													<li><a href="http://www.minecraftupdates.com/fireworks" target="_blank" class="menu-link">Generate Fireworks</a></li>
-													<li><a href="http://ezekielelin.com/minecraft/tellraw/" target="_blank" class="menu-link">Generate Tellraw</a></li>
-													<li><a href="http://ezekielelin.com/minecraft/give/" target="_blank" class="menu-link">Give Command Generator</a></li>
-													<li><a href="http://ezekielelin.com/minecraft/randcmdblock.php" target="_blank" class="menu-link">Commandblock in Dispenser Generator</a></li>
+													<li><a href="http://minecraftjson.com/" target="_blank" class="menu-link">Tellraw Generator</a></li>
+													<li><a href="http://ezekielelin.com/give/" target="_blank" class="menu-link">Give Generator</a></li>
+													<li><a href="http://worldpresets.com/" target="_blank" class="menu-link">World Preset Generator</a></li>
 													<li><a href="http://commandgeneratorforminecraft.com/" target="_blank" class="menu-link">Command Generator</a></li>
 													<li><a href="http://sirwood.altervista.org/mc/ttc/ttcreator.html" target="_blank" class="menu-link">Top Text Creator by GersinMC</a></li>
-													<li><a href="http://www.summon-helper.net/" target="_blank" class="menu-link">Summon Helper [Slow loading but good]</a></li>
+													<li><a href="http://www.summon-helper.net/" target="_blank" class="menu-link">Summon Helper [Slow loading but works]</a></li>
+													<li><a href="http://www.dragnoz.com/minecraft-title-generator/" target="_blank" class="menu-link">Title Generator</a></li>
 													<li><a href="http://www.dragnoz.com/minecraft-title-generator/" target="_blank" class="menu-link">Minecraft Title Generator</a></li>
 													<li><a href="http://www.dragnoz.com/minecraft-animated-texture-generator/" target="_blank" class="menu-link">Minecraft Animated Texture MCMETA Generator</a></li>
 													<li><a href="http://www.dragnoz.com/pack-custom-sound-generators/" target="_blank" class="menu-link">Sounds json Generator</a></li>
+													<!--
+													<li><a href="http://ezekielelin.com/minecraft/tellraw/" target="_blank" class="menu-link">Generate Tellraw</a></li>
+													<li><a href="http://ezekielelin.com/minecraft/give/" target="_blank" class="menu-link">Give Command Generator</a></li>
+													<li><a href="http://ezekielelin.com/minecraft/randcmdblock.php" target="_blank" class="menu-link">Commandblock in Dispenser Generator</a></li>
+													-->
 												</ul>
 											</li>
 											<li><a href="http://minecraft.novaskin.me/" target="_blank" class="menu-link">Novaskin Editor</a></li>
@@ -160,7 +164,7 @@
 
 									<!-- Slide 3 -->
 										<div class="slide">
-											<h2 class="caption-1">Twitch</h2>
+											<h2 class="caption-1">Beam/Twitch</h2>
 											<p class="caption-2">I try to livestream during the weekends. Follow me on Twitter to see who I watch</p>
 											<img src="images/slide03.jpg" alt="" />
 										</div>
@@ -210,41 +214,47 @@
 									<!-- Article -->
 										<article class="featured">
 											<header>
-												<h2><img src="images/profile_filled.png" /> About me...</h2>
-												<span class="byline">As everyone knows, I'm dminer</span>
+												<h2><img src="images/profile_filled.png" /> Hello</h2>
+												<span class="byline">As everyone knows, I'm Dminer. . .</span>
 											</header>
 											<p>How I got such an unoriginal name I have no idea; blame my younger self. I've had a 
 											love for video games for as long as I can remember. One day, a friend showed me Minecraft, 
-											and I'm still addicted and I've met so many amazing people through the game and I've 
-											even started to learn how to program because of it. Hopefully I'll be able to </p>
+											and I've been addicted for years now. I've met so many amazing people through the game; 
+											even started to learn how to program because of it. Just being part of this community 
+											is an amazing experience. One that I will never forget. My goal in life is to make 
+											someone else's life just a bit better. Just making someone smile or laugh is all I 
+											need to keep on going. So please enjoy your stay! 
+											And above all remember, <span style="font-style: italic;">smiles go for miles.</span></p>
 											<div class="grid-spaced">
 												<div class="row">
 													<div class="6u"><section>
-														<a href="#" class="image image-fit"><img src="images/pic01.jpg" alt="" /></a>
+														<a class="image image-fit"><img src="images/pic01.jpg" alt="" /></a>
 														<h3>Tutorials</h3>
 														<p>I have a variety of tutorials that I plan to make. Currently I just have 
-														tutorials for Minecraft. From looking for that lost item to making sure
-														you don't load up your save in the wrong version.</p>
+														tutorials for Minecraft. However, they can help you in a variety of ways. 
+														From looking for that lost item to making sure you don't load up your 
+														save in the wrong version.</p>
 													</section></div>
 													<div class="6u"><section>
-														<a href="#" class="image image-fit"><img src="images/pic02.jpg" alt="" /></a>
+														<a class="image image-fit"><img src="images/pic02.jpg" alt="" /></a>
 														<h3>Let's Plays</h3>
-														<p>I currently do a Minecraft Let's Play on the Cherry Patch SMP server,
-														but I have done a PMD Sky no-mic playthrough. I'm considering doing 
+														<p>I currently do two Minecraft Let's Plays. One is on the Cherry Patch SMP 
+														server while the other is a single player world with a bit of a twist.
+														I have also done a PMD Sky no-mic playthrough. I'm considering doing 
 														more let's plays in the future, but as it stands, I don't have any ideas</p>
 													</section></div>
 												</div>
 												<div class="row">
 													<div class="6u"><section>
-														<a href="#" class="image image-fit"><img src="images/pic03.jpg" alt="" /></a>
+														<a class="image image-fit"><img src="images/pic03.jpg" alt="" /></a>
 														<h3>Livestreaming</h3>
 														<p>Currently, I have not the best of uploads so it's extremely difficult for
 														me to stream at higher qualities. However, I do plan on doing more in the 
-														future. I'm extremely active on Twitch though so if you would like to
+														future. I'm extremely active in the community however, so if you would like to
 														learn about some pretty epic people follow me on Twitter!</p>
 													</section></div>
 													<div class="6u"><section>
-														<a href="#" class="image image-fit"><img src="images/pic04.jpg" alt="" /></a>
+														<a class="image image-fit"><img src="images/pic04.jpg" alt="" /></a>
 														<h3>Tweeting like a bird</h3>
 														<p>I have no idea why it's so popular, but I do show off some pretty epic
 														people as well as show when I upload a video! I do tend to make a dminer														
