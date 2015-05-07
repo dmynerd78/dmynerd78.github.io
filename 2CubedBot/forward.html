@@ -12,24 +12,34 @@
 	
 	<body style="background-color: #DCE3E2; color: #666666; text-align: center;">
 		<script>
+			var alertUser = function(text) {
+				console.log(text);
+				alert(text);
+			}
+			
 			var url = (window.location.href.split("?"))[1];
 			var startup = function() {
 			//alert("Started")
 				setTimeout(function(){
-					if (typeof url === "undefined" || typeof url === "null") {
-						alert("Can not forward you to an undefined location!");
+					if (typeof url === "undefined" || typeof url === "null" || url == "") {
+						alertUser("Can not forward you to an undefined location!");
 					} else {
-						var div = document.getElementById('inform');
-						div.innerHTML = div.innerHTML + 'Forwarding you now';
-						
-						(function myLoop (i) {
-							setTimeout(function () {   
-								div.innerHTML = div.innerHTML + '.'
-								if (--i) myLoop(i);     			//  while condition is true decrease i
-							}, 75)
-						})(3);                        				//  amount of times to run
-						
-						window.location = url; 						// forward user
+						if (url.startsWith("http")) {
+							var divInform = document.getElementById('inform');
+							divinform.innerHTML = divInform.innerHTML + 'Forwarding you now';
+							
+							(function myLoop (i) {
+								setTimeout(function () {   
+									divInform.innerHTML = divInform.innerHTML + '.'
+									if (--i) myLoop(i);     			//  while condition is true decrease i
+								}, 75)
+							})(3);                        				//  amount of times to run
+							
+							window.location = url; 						// forward user
+							
+						} else {
+							alertUser("'" + url + "' is not a valid URL. Make sure to include 'http://' or the equivalent of it in the URL.");
+						}
 					}
 				}, 2500)
 			}

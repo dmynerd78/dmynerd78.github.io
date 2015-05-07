@@ -28,14 +28,19 @@
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->	
 		
 		<script type="text/javascript">
+			var alertUser = function(text) {
+				console.log(text);
+				alert(text);
+			}
+		
 			var url = (window.location.href.split("?"))[1];
-			if (typeof url === "undefined" || typeof url === "null") {
-						console.log("No link in url to forward to. Add '?[url here]' to forward a user somewhere!");
+			if (typeof url === "undefined" || typeof url === "null" || url == "") {
+						console.log("No link in url to forward to. Add '?[url here]' to forward a user somewhere! :D");
 			} else {
 				if (url.startsWith("http")) {
 					window.location = "2CubedBot/forward.html?" + url;
 				} else {
-					alert("'" + url + "'" + " is not a valid URL. Make sure to include http:// or the equivalent of it in the URL.");
+					alertUser("'" + url + "' is not a valid URL. Make sure to include 'http://' or the equivalent of it in the URL.");
 				}
 			}
 		</script>
