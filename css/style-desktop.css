@@ -330,16 +330,6 @@
 
 			#banner .captions:after
 			{
-				content: "\f0a9";
-				font-family: FontAwesome;
-				text-decoration: none;
-				font-size: 55px;
-				font-style: normal;
-				font-weight: normal;
-				line-height: 1;
-				-webkit-font-smoothing:antialiased;
-				-moz-osx-font-smoothing:grayscale;
-
 				cursor: default;
 				display: block;
 				width: 48px;
