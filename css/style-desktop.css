@@ -88,7 +88,7 @@
 	{
 		background: #3E3E3E;
 		color: white;
-		border-bottom: solid 1px #d9d9d9;
+		border-bottom: solid 1px #B91715;
 		padding: 2.5em 0 2.5em 0;
 	}
 
@@ -102,7 +102,7 @@
 	#footer-wrapper
 	{
 		background: #3E3E3E;
-		border-top: solid 1px #d9d9d9;
+		border-top: solid 1px #B91715;
 		padding: 5em 0 5em 0;
 		text-align: center;
 	}
@@ -593,7 +593,7 @@
 
 	#copyright
 	{
-		border-top: solid 1px #d9d9d9;
+		border-top: solid 1px #B91715;
 		text-align: center;
 		padding: 5em 0 6em 0;
 		color: #a0a0a0;
