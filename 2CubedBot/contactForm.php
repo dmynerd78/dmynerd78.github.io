@@ -3,7 +3,7 @@
 /* Subject and Email Vars  */
 
 	$emailSubject = '2CubedBot - Help Form!';
-	$emailAddress = 'dminer789@gmail.com';
+	$emailAddress = 'dminer78@dminer78.com';
 	
 /* Set Vars to Info */
 
