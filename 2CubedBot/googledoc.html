@@ -10,6 +10,7 @@
 		<script src="js/jquery.scrollzer.min.js"></script>
 		<script src="js/skel.min.js"></script>
 		<script src="js/skel-layers.min.js"></script>
+		<script src="../js/ads.js"></script>
 		<script src="../js/copyright.js"></script>
 		<script src="js/init.js"></script>
 		<link rel="stylesheet" href="css/code.css">
@@ -20,6 +21,11 @@
 		</noscript>
 		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+		<script type="text/javascript">
+			if(window.canRunAds === undefined){
+				alert("Heads up!\nYou're currently using adblocker. My site does not have any ads and will only limit the content which you see on my site.");
+			}
+		</script>
 	</head>
 	<body>
 

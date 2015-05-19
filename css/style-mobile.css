@@ -338,6 +338,7 @@
 		
 		#banner .captions
 		{
+			text-align: center;
 			position: relative;
 			background: #2f2f2f url('images/overlay.png');
 			color: #fff;

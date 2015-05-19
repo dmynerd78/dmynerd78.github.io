@@ -19,6 +19,7 @@
 		<script src="js/skel.min.js"></script>
 		<script src="js/skel-layers.min.js"></script>
 		<script src="js/init.js"></script>
+		<script src="js/ads.js"></script>
 		<script src="js/copyright.js"></script>
 		<noscript>
 			<link rel="stylesheet" href="css/skel.css" />
@@ -42,6 +43,10 @@
 				} else {
 					alertUser("'" + url + "' is not a valid URL. Make sure to include 'http://' or the equivalent of it in the URL.");
 				}
+			}
+			
+			if(window.canRunAds === undefined) {
+				alert("Heads up!\nYou're currently using adblocker. My site does not have any ads and will only limit the content which you see on my site.");
 			}
 		</script>
 	</head>
@@ -121,7 +126,7 @@
 									</li>
 									<li><a target="_blank" href="http://youtube.com/user/dminer78"><i class="fa fa-youtube-play"></i></a></li>
 									<li><a target="_blank" href="http://twitter.com/dminer78"><i class="fa fa-twitter"></i></a></li>
-									<!-- Make user confirm --><li><a href="#" onclick="alertUser('Moving over to Beam: https://beam.pro/dminer78/');"><i class="fa fa-twitch"></i></a></li>
+									<li><a target="_blank" href="http://twitch.tv/dminer78/"><i class="fa fa-twitch"></i></a></li>
 									<li><a target="_blank" href="http://github.com/dminer78"><i class="fa fa-github"></i></a></li>
 								</ul>
 							</nav>
@@ -158,8 +163,15 @@
 									<!-- Slide 3 -->
 										<div class="slide">
 											<h2 class="caption-1">Beam/Twitch</h2>
-											<p class="caption-2">I try to livestream during the weekends. Follow me on Twitter to see who I watch</p>
+											<p class="caption-2">I try to livestream during the weekends. Follow me on Twitter to see when I stream</p>
 											<img src="images/slide03.jpg" alt="" />
+										</div>
+										
+									<!-- Slide 4 -->
+										<div class="slide">
+											<h2 class="caption-1">Images</h2>
+											<p class="caption-2">I've been trying to get better at graphics. Click <a href="gallery/index.html" style="color: white;">here</a> to see some!</p>
+											<img src="images/slide02.jpg" alt="" />
 										</div>
 
 								</div>
