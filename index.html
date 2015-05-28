@@ -1,60 +1,184 @@
 <!DOCTYPE HTML>
 <!--
-	Apex by Pixelarity
+	Spectral by Pixelarity
 	pixelarity.com @pixelarity
 	License: pixelarity.com/license
 -->
 <html>
 	<head>
-		<title>The site of the Dminer</title>
-		<link rel="icon" href="favicon.ico" type="image/x-icon"> 
-		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>The Site of the Dminer</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
-		<script src="js/pace.min.js"></script>
-		<link href="css/pace.css" rel="stylesheet" />
+		
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="css/style.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+		
 		<script src="js/ads.js"></script>
 		<script src="js/copyright.js"></script>
-		
-		<script type="text/javascript">
-			var alertUser = function(text) {
-				console.log(text);
-				alert(text);
-			}
-		
-			var url = window.location.href.split("?")[1];
-			if (typeof url === "undefined" || typeof url === "null" || url == "") {
-						console.log("No link in url to forward to. Add '?[url here]' to forward a user somewhere! :D");
-			} else {
-				if (url.startsWith("http")) {
-					window.location = "2CubedBot/forward.html?" + url;
-				} else {
-					alertUser("'" + url + "' is not a valid URL. Make sure to include 'http://' or the equivalent of it in the URL.");
-				}
-			}
-			
-			if(window.canRunAds === undefined) {
-				alert("Heads up!\nYou're currently using adblocker. My site does not have any ads and will only limit the content which you see on my site.");
-			}
-		</script>
 	</head>
-	<body style="text-align: center;">
-		<div>
-			<h2>Revamping Site...</h2>
-			<h4>Sorry for any inconveniences</h4>
-			<br><a href="gallery/index.html">Images</a> | <a href="2CubedBot/index.html">2CubedBot</a>
-		</div>
-		
+	<body class="landing">
 
-		<script>
-		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
 
-		  ga('create', 'UA-62452305-1', 'auto');
-		  ga('send', 'pageview');
-		</script>
+				<!-- Header -->
+					<header id="header" class="alt">
+						<h1><a href="index.html">Dminer78 everywhere</a></h1>
+						<nav id="nav">
+							<ul>
+								<li class="special">
+									<a href="#" class="menuToggle"><span>Menu</span></a>
+									<div id="menu">
+										<ul>
+											<li><a href="index.html">Home</a></li>
+											<li><a href="gallery/index.html">Gallery</a></li>
+											<li><a href="http://github.com/dminer78/IRewriteC" target="_blank"><em>IR</em>ewrite<em>C</em></a></li>
+											<li><a href="letsmodreboot/index.html">LetsModReboot</a></li>
+											<li><a href="2CubedBot/index.html">2CubedBot (ARCHIVED)</a></li>
+											<li><a href="noms/index.html">Food</a></li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Banner -->
+					<section id="banner">
+						<div class="inner">
+							<h2>Welcome</h2>
+							<p>To my website...<br />
+							Please enjoy your stay</p>
+							<!--<ul class="actions">
+								<li><a href="#" class="button special">Buddon</a></li>
+							</ul>-->
+						</div>
+						<a href="#one" class="more scrolly">Explore the Site</a>
+					</section>
+
+				<!-- One -->
+					<section id="one" class="wrapper style1 special">
+						<div class="inner">
+							<header class="major">
+								<h2>Who Am I?</h2>
+								<p>Hello, my name is Dminer. <br />
+								I'm an book lover, video game enthusiast, and beginner coder. <br />
+								I also hate waking up in the mornings.</p>
+							</header>
+							<ul class="icons major">
+								<li><span class="icon fa-gamepad major style1"><span class="label">Lorem</span></span></li>
+								<li><span class="icon fa-wifi major style2"><span class="label">Ipsum</span></span></li>
+								<li><span class="icon fa-code major style3"><span class="label">Dolor</span></span></li>
+							</ul>
+						</div>
+					</section>
+
+				<!-- CTA -->
+					<section id="cta" class="wrapper style4">
+					</section>
+
+				<!-- Three -->
+					<section id="three" class="wrapper style3 special">
+						<div class="inner">
+							<header class="major">
+								<h2>What Do I Enjoy Doing?</h2>
+								<p>I have many hobbies. <br /> 
+								From streaming to recording to making puns as well as coding</p>
+							</header>
+							<ul class="features">
+								<li class="icon fa-book">
+									<h3>Tutorials</h3>
+									<p>I have a variety of tutorials that I plan to make. Currently I just have 
+										tutorials for Minecraft. However, they can help you in a variety of ways. 
+										From looking for that lost item to making sure you don't load up your 
+										save in the wrong version.</p>
+								</li>
+								<li class="icon fa-microphone">
+									<h3>Let's Plays</h3>
+									<p>I currently do two Minecraft Let's Plays. One is on the Cherry Patch SMP 
+										server while the other is a single player world with a bit of a twist.
+										I have also done a PMD Sky no-mic playthrough. I'm considering doing 
+										more let's plays in the future, but as it stands, I don't have any ideas</p>
+								</li>
+								<li class="icon fa-upload">
+									<h3>Livestreaming</h3>
+									<p>Currently, I have not the best of uploads so it's extremely difficult for
+										me to stream at higher qualities. However, I do plan on doing more in the 
+										future. I'm extremely active in the community however, so if you would like to
+										learn about some pretty epic people follow me on Twitter!</p>
+								</li>
+								<li class="icon fa-twitter">
+									<h3>Tweeting</h3>
+									<p>I have no idea why it's so popular, but I do show off some pretty epic
+										people as well as show when I upload a video! I do tend to make a dminer														
+										wall once in a while, but it's only 3-4 messages. So don't be afraid to hit 
+										that small little follow button!</p>
+								</li>
+								<li class="icon fa-terminal">
+									<h3>Coding</h3>
+									<p>I'm not the best of coders, but I do enjoy the technical side of games.
+									I'm learning Python and Java. CSS, HTML, and JS too obviously.
+									I can't do very much, but I'm learning. Slow and steady!</p>
+								</li>
+								<li class="icon fa-flag-o">
+									<h3>Flag</h3>
+									<p>I have no idea what to put here so I'll just leave this flag here...
+									I hope you enjoy this flag and remember it forever</p>
+								</li>
+							</ul>
+						</div>
+					</section>
+
+				<!-- CTA -->
+					<section id="cta" class="wrapper style4">
+						<div class="inner">
+							<header>
+								<h2>TL;DR</h2>
+								<p>Want a TL;DR? Just click the links to the right</p>
+							</header>
+							<ul class="actions vertical">
+								<li><a href="gallery/index.html" class="button fit special">Gallery</a></li>
+								<li><a href="http://github.com/dminer78/IRewriteC" class="button fit">IRC Bot</a></li>
+							</ul>
+						</div>
+					</section>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<ul class="icons">
+							<li><a href="http://twitter.com/dminer78/" target="_blank" class="icon fa-twitter"></a></li>
+							<li><a href="http://youtube.com/user/dminer78/" target="_blank" class="icon fa-youtube-play"></a></li>
+							<li><a href="http://twitch.tv/dminer78/" target="_blank" class="icon fa-twitch"></a></li>
+							<li><a href="http://github.com/dminer78/" target="_blank" class="icon fa-github"></a></li>
+						</ul>
+						<ul class="copyright">
+							<li>&copy; Dminer78</li>
+							<li>All rights reserved</li>
+						</ul>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="js/jquery.min.js"></script>
+			<script src="js/jquery.scrollex.min.js"></script>
+			<script src="js/jquery.scrolly.min.js"></script>
+			<script src="js/skel.min.js"></script>
+			<script src="js/init.js"></script>
+			
+			<script>
+			  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+			  ga('create', 'UA-62452305-1', 'auto');
+			  ga('send', 'pageview');
+			</script>
+
 	</body>
 </html>
