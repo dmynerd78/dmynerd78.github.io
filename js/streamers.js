@@ -1,29 +1,37 @@
 
 var getStreamer = function(streamer) {
+	beamLink = "https://beam.pro/"
+	twitchLink = "http://twitch.tv/dminer78/"
 	switch (streamer) {
 		
-		//Beam Streamers
+		//Beam Streamers 'https://s3.amazonaws.com/uploads.beam.pro/avatars/' + imgID +  '-128x128.jpg?v=0'
 		case "duke":
-			text = "Today is Saturday";
+			imgID = "3526";
+			link = beamLink + "duke"
 			break;
 			
-		//Twitch Streamers
+		//Twitch Streamers 'http://static-cdn.jtvnw.net/jtv_user_pictures/' + streamer + '-profile_image-' + imgID + '-300x300.png'
+		
 		case "mk":
-			text = "Today is Sunday";
+			imgID = "da828105cacf6407";
+			link =  twitchLink + "MKtheWorst";
 			break;
 			
 		//Custom Beam Streamer
 		case "b/" + streamer:
-			text = "Today is Sunday";
+			imgID = "unknownStreamer";
+			link = beamLink + streamer;
 			break;
 		
 		//Custom Twitch Streamers
 		case "t/" + streamer:
-			text = "Today is Sunday";
+			imgID = "unknownStreamer";
+			link = twitchLink + streamer;
 			break;
 			
 		//Error finding streamer
-		default: 
+		default:
+			imgID = "unknownStreamer";
 			text = "Unable to find streamer: " + streamer;
 	};
 	console.log(text);
