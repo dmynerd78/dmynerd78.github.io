@@ -1,5 +1,13 @@
 beamLink = "https://beam.pro/";
-twitchLink = "http://twitch.tv/dminer78/";
+twitchLink = "http://twitch.tv/";
+
+var imageBeam = function(ID) {
+	return 'https://s3.amazonaws.com/uploads.beam.pro/avatars/' + ID +  '-128x128.jpg?v=0';
+}
+
+var imageTwitch = function(name, ID) {
+	return 'http://static-cdn.jtvnw.net/jtv_user_pictures/' + name + '-profile_image-' + ID + '-300x300.png'
+}
 
 var getStreamer = function(streamer) {
 
@@ -7,70 +15,70 @@ var getStreamer = function(streamer) {
 		
 		//Beam Streamers 'https://s3.amazonaws.com/uploads.beam.pro/avatars/' + imgID +  '-128x128.jpg?v=0'
 		case "2cubed":
-			imgID = "2547";
+			imgID = imageBeam("2547");
 			link = beamLink + "2cubed"
 			break;
 		case "ben":
-			imgID = "3303";
+			imgID = imageBeam("3303");
 			link = beamLink + "benbaptist"
 			break;
 		case "chris":
-			imgID = "3171";
+			imgID = imageBeam("3171");
 			link = beamLink + "swchris"
 			break;
 		case "coach":
-			imgID = "2i70n2qw-4255";
+			imgID = imageBeam("2i70n2qw-4255");
 			link = beamLink + "coachwraymc"
 			break;
 		case "dav":
-			imgID = "2275"; //Dav has default picture. Using userID for imgID. Prooooobably won't work if like Coach's or Deci's
+			imgID = imageBeam("2275"); //Dav has default picture. Using userID for imgID. Prooooobably won't work if like Coach's or Deci's
 			link = beamLink + "davkas"
 			break;
 		case "deci":
-			imgID = "l1rz9ayv-2257";
+			imgID = imageBeam("l1rz9ayv-2257");
 			link = beamLink + "decitm"
 			break;
 		case "derpo":
-			imgID = "3579";
+			imgID = imageBeam("3579");
 			link = beamLink + "home_derpo"
 			break;
 		case "dot":
-			imgID = "3652";
+			imgID = imageBeam("3652");
 			link = beamLink + "dot83"
 			break;
 		case "duke":
-			imgID = "3526";
+			imgID = imageBeam("3526");
 			link = beamLink + "duke"
 			break;
 		case "graph":
-			imgID = "2266";
+			imgID = imageBeam("2266");
 			link = beamLink + "graphoniac"
 			break;
 		case "kirei":
-			imgID = "203";
+			imgID = imageBeam("203");
 			link = beamLink + "kirei"
 			break;
 		case "max":
-			imgID = "3532";
+			imgID = imageBeam("3532");
 			link = beamLink + "maxampere"
 		case "ping":
-			imgID = "3983"; //Again, default picture. Assuming imgID = userID
+			imgID = imageBeam("3983"); //Again, default picture. Assuming imgID = userID
 			link = beamLink + "pingpong1109"
 			break;
 		case "smb":
-			imgID = "910";
+			imgID = imageBeam("910");
 			link = beamLink + "smblive"
 			break;
 		case "theo":
-			imgID = "617";
+			imgID = imageBeam("617");
 			link = beamLink + "theo_the_ape"
 			break;
 		case "xcentrik":
-			imgID = "3107";
+			imgID = imageBeam("3107");
 			link = beamLink + "xcentrik4"
 			break;
 		case "xyn":
-			imgID = "3599";
+			imgID = imageBeam("3599");
 			link = beamLink + "xyntak"
 			break;
 			
@@ -144,7 +152,7 @@ var getStreamer = function(streamer) {
 		//Error finding streamer
 		default:
 			imgID = "";
-			link=""
+			link = ""
 			console.warn("Unable to find streamer: " + streamer)
 	};
 	
