@@ -31,10 +31,9 @@
 				alert("Heads up!\nYou're currently using adblocker. My site does not have any ads and will only limit the content which you see on my site.");
 			}
 			
-			try {
-				var url = window.location.href.split("?")[1];
-			} catch(e) {
-				alert("Unable to read streamers from url: " + e)
+			var url = window.location.href.split("?")[1];
+			if (typeof url === "undefined" || typeof url === "null" || url == "") {
+				alert("Unable to read streamers from url");
 			}
 			getStreamer(1);
 		</script>
@@ -50,11 +49,11 @@
 			</div>
 			
 			<div class="col span_1_of_3">
-			This is column 2
+			Streamer 2
 			</div>
 			
 			<div class="col span_1_of_3">
-			This is column 3
+			Streamer 3
 			</div>
 		</div>
 

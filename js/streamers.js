@@ -17,6 +17,10 @@ var getStreamer = function(streamer) {
 			imgID = "";
 			link = beamLink + "swchris"
 			break;
+		case "coach":
+			imgID = "";
+			link = beamLink + "coachwraymc"
+			break;
 		case "dav":
 			imgID = "";
 			link = beamLink + "davkas"
