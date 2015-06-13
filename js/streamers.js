@@ -7,35 +7,35 @@ var getStreamer = function(streamer) {
 		
 		//Beam Streamers 'https://s3.amazonaws.com/uploads.beam.pro/avatars/' + imgID +  '-128x128.jpg?v=0'
 		case "2cubed":
-			imgID = "";
+			imgID = "2547";
 			link = beamLink + "2cubed"
 			break;
 		case "ben":
-			imgID = "";
+			imgID = "3303";
 			link = beamLink + "benbaptist"
 			break;
 		case "chris":
-			imgID = "";
+			imgID = "3171";
 			link = beamLink + "swchris"
 			break;
 		case "coach":
-			imgID = "";
+			imgID = "2i70n2qw-4255";
 			link = beamLink + "coachwraymc"
 			break;
 		case "dav":
-			imgID = "";
+			imgID = "2275"; //Dav has default picture. Using userID for imgID. Prooooobably won't work if like Coach's or Deci's
 			link = beamLink + "davkas"
 			break;
 		case "deci":
-			imgID = "";
+			imgID = "l1rz9ayv-2257";
 			link = beamLink + "decitm"
 			break;
 		case "derpo":
-			imgID = "";
+			imgID = "3579";
 			link = beamLink + "home_derpo"
 			break;
 		case "dot":
-			imgID = "";
+			imgID = "3652";
 			link = beamLink + "dot83"
 			break;
 		case "duke":
@@ -43,34 +43,34 @@ var getStreamer = function(streamer) {
 			link = beamLink + "duke"
 			break;
 		case "graph":
-			imgID = "";
+			imgID = "2266";
 			link = beamLink + "graphoniac"
 			break;
 		case "kirei":
-			imgID = "";
+			imgID = "203";
 			link = beamLink + "kirei"
 			break;
 		case "max":
-			imgID = "";
+			imgID = "3532";
 			link = beamLink + "maxampere"
 		case "ping":
-			imgID = "";
+			imgID = "3983"; //Again, default picture. Assuming imgID = userID
 			link = beamLink + "pingpong1109"
 			break;
 		case "smb":
-			imgID = "";
+			imgID = "910";
 			link = beamLink + "smblive"
 			break;
 		case "theo":
-			imgID = "";
+			imgID = "617";
 			link = beamLink + "theo_the_ape"
 			break;
 		case "xcentrik":
-			imgID = "";
+			imgID = "3107";
 			link = beamLink + "xcentrik4"
 			break;
 		case "xyn":
-			imgID = "";
+			imgID = "3599";
 			link = beamLink + "xyntak"
 			break;
 			
