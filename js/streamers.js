@@ -1,7 +1,8 @@
+beamLink = "https://beam.pro/";
+twitchLink = "http://twitch.tv/dminer78/";
 
 var getStreamer = function(streamer) {
-	beamLink = "https://beam.pro/"
-	twitchLink = "http://twitch.tv/dminer78/"
+
 	switch (streamer) {
 		
 		//Beam Streamers 'https://s3.amazonaws.com/uploads.beam.pro/avatars/' + imgID +  '-128x128.jpg?v=0'
@@ -143,6 +144,9 @@ var getStreamer = function(streamer) {
 		//Error finding streamer
 		default:
 			imgID = "";
+			link=""
 			console.warn("Unable to find streamer: " + streamer)
 	};
+	
+	return [imgID, link];
 };

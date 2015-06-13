@@ -31,11 +31,23 @@
 				alert("Heads up!\nYou're currently using adblocker. My site does not have any ads and will only limit the content which you see on my site.");
 			}
 			
-			var url = window.location.href.split("?")[1];
-			if (typeof url === "undefined" || typeof url === "null" || url == "") {
-				alert("Unable to read streamers from url");
+			try {
+				var url = (window.location.href.split("?")[1]).split("&");
+			} catch(e) {
+				//if (typeof url === "undefined" || typeof url === "null" || url == "") {
+				alert("Unable to read streamers from url:\n" + e);
 			}
-			getStreamer(1);
+			
+			for(i = 0; i < url.length; i++) {
+				if(url[i] != "") {
+					currentStreamer = getStreamer(url[i]);
+					console.group()
+					console.info("Streamer: " + url[i])
+					console.info("imgID: " + currentStreamer[0])
+					console.info("Link: " + currentStreamer[1])
+					console.groupEnd()
+				}
+			}
 		</script>
 	</head>
 	<body>
