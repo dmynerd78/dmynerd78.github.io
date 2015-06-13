@@ -6,3 +6,12 @@ body {
 	background: #2B2B2B;
 	color: #D8D8D8;
 }
+
+a {
+	color: #79ABFF;
+}
+
+footer {
+	border-width: 25%;
+	border-top: 2px solid white;
+}

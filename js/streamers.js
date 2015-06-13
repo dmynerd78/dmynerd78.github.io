@@ -1,32 +1,30 @@
 
 var getStreamer = function(streamer) {
 	switch (streamer) {
+		
+		//Beam Streamers
 		case "duke":
 			text = "Today is Saturday";
 			break;
+			
+		//Twitch Streamers
 		case "mk":
 			text = "Today is Sunday";
 			break;
-		case "theo":
+			
+		//Custom Beam Streamer
+		case "b/" + streamer:
 			text = "Today is Sunday";
 			break;
-		case "chris":
+		
+		//Custom Twitch Streamers
+		case "t/" + streamer:
 			text = "Today is Sunday";
 			break;
-		case "graph":
-			text = "Today is Sunday";
-			break;
-		case "ick":
-			text = "Today is Sunday";
-			break;
-		case "mk":
-			text = "Today is Sunday";
-			break;
-		case "mk":
-			text = "Today is Sunday";
-			break;
+			
+		//Error finding streamer
 		default: 
 			text = "Unable to find streamer: " + streamer;
 	};
-	alert(text);
+	console.log(text);
 };
