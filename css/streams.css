@@ -41,12 +41,6 @@ hr {
 	background-image: -ms-linear-gradient(left, #2B2B2B, #D8D8D8, #2B2B2B);
 	background-image: -o-linear-gradient(left, #2B2B2B, #D8D8D8, #2B2B2B); 
 	
-	/*
-	height: 10px;
-	border: 0;
-	box-shadow: 0 10px 10px -10px #8c8b8b inset;
-	*/
-	
 }
 
 footer {

@@ -33,7 +33,8 @@
 			
 			try {
 				var url = (window.location.href.split("?")[1]).split("&");
-				url.unshift("dminer")
+				url.unshift("dminer");
+				console.info("Streamers in link: " + url + "\nURL: " + window.location.href)
 			} catch(e) {
 				//if (typeof url === "undefined" || typeof url === "null" || url == "") {
 				document.write(e + "<br />URL: " + window.location.href);
@@ -49,7 +50,7 @@
 					console.info("imgID: " + currentStreamer[0]);
 					console.info("Link: " + currentStreamer[1]);
 					console.groupEnd();
-					document.write(currentStreamer[2] + "<br /> <img src='" + currentStreamer[0] + "'  /><br /><br /><a href='" + currentStreamer[1] + "' class='button' target='_blank'></a><br /><br />");
+					document.write(currentStreamer[2] + "<br /> <img src='" + currentStreamer[0] + "' alt='" + currentStreamer[2] + "s Profile Picture'  /><br /><br /><a href='" + currentStreamer[1] + "' class='button' target='_blank'></a><br /><br />");
 				}
 			}
 			document.write("</div>");
