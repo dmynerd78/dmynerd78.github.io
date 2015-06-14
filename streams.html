@@ -118,6 +118,12 @@
 				alert("Heads up!\nYou're currently using adblocker. My site does not have any ads and will only limit the content which you see on my site.");
 			}
 			
+			function imgError(image) {
+				image.onerror = "";
+				image.src = "images/unknownStreamer.png";
+				return true;
+			}
+			
 			try {
 				var url = (window.location.href.split("?")[1]).split("&");
 				url.unshift("You found a secret!", "dminer");
@@ -137,7 +143,8 @@
 						console.info("Link: " + currentStreamer[1]);
 						console.groupEnd();
 						
-						document.getElementById(i).innerHTML = currentStreamer[2] + "<br /> <img src='" + currentStreamer[0] + "' alt='" + currentStreamer[2] + " Profile Picture' /><br /><br />" <!-- onError="this.onerror=null;this.src='images/unknownStreamer.png'" -->
+						document.getElementById(i).innerHTML = currentStreamer[2] + "<br /> <img src='" + currentStreamer[0] + "' alt='" + currentStreamer[2] + " Profile Picture' onError='imgError(this);' /><br /><br />"
+						
 						if(currentStreamer[1] != "") {
 							document.getElementById(i).innerHTML += "<a href='" + currentStreamer[1] + "' class='button' target='_blank'></a><br /><br />"
 						} else {
