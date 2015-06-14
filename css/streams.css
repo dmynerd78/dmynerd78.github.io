@@ -17,20 +17,16 @@ a {
 	color: #79ABFF;
 }
 
-.stream {
-	
+.col img {
+	width: 100px;
+	height: 100px;
+	border: 3px solid #3a3a3a;
+	border-radius: 3px;
 }
 
-	.stream img {
-		width: 100px;
-		height: 100px;
-		border: 3px solid #3a3a3a;
-		border-radius: 3px;
-	}
-	
-	.stream a:before {
-		content: 'Go to their channel!';
-	}
+.col a:before {
+	content: 'Go to their channel!';
+}
 
 hr {
 	width: 78%;
@@ -95,13 +91,6 @@ footer {
 	margin: 0px;
 }
 
-/*  SECTIONS  */
-.section {
-	clear: both;
-	padding: 0px;
-	margin: 0px;
-}
-
 /*  COLUMN SETUP  */
 .col {
 	display: block;
@@ -115,7 +104,6 @@ footer {
 .group:after { content:""; display:table; }
 .group:after { clear:both;}
 .group { zoom:1; /* For IE 6/7 */ }
-
 /*  GRID OF THREE  */
 .span_3_of_3 { width: 100%; }
 .span_2_of_3 { width: 66.13%; }

@@ -2,6 +2,7 @@
 <!--
 	http://www.w3schools.com/jsref/met_node_appendchild.asp
 	http://www.w3schools.com/js/js_switch.asp
+	http://www.howtocreate.co.uk/tutorials/javascript/dombasics
 	
 	http://www.w3schools.com/tags/att_link_media.asp
 	http://www.responsivegridsystem.com/
@@ -26,6 +27,92 @@
 		
 		<script src="js/copyright.js"></script>
 		<script src="js/ads.js"></script>
+	</head>
+	<body>
+		
+		<h1>Amazing Streamers</h1>
+		<h4>Check out everyone! I'm sure you'll find someone you enjoy watching!</h4>
+		<hr>
+		<div id="warning">
+		
+		</div>
+		<br />
+		<div class="streams">
+			<div class="section group">
+				<div id="1" class="col span_1_of_3">
+				</div>
+				<div id="2" class="col span_1_of_3">
+				</div>
+				<div id="3" class="col span_1_of_3">
+				</div>
+			</div>
+			
+			<div class="section group">
+				<div id="4" class="col span_1_of_3">
+				</div>
+				<div id="5" class="col span_1_of_3">
+				</div>
+				<div id="6" class="col span_1_of_3">
+				</div>
+			</div>
+			
+			<div class="section group">
+				<div id="7" class="col span_1_of_3">
+				</div>
+				<div id="8" class="col span_1_of_3">
+				</div>
+				<div id="9" class="col span_1_of_3">
+				</div>
+			</div>
+			
+			<div class="section group">
+				<div id="10" class="col span_1_of_3">
+				</div>
+				<div id="11" class="col span_1_of_3">
+				</div>
+				<div id="12" class="col span_1_of_3">
+				</div>
+			</div>
+			
+			<div class="section group">
+				<div id="13" class="col span_1_of_3">
+				</div>
+				<div id="14" class="col span_1_of_3">
+				</div>
+				<div id="15" class="col span_1_of_3">
+				</div>
+			</div>
+			
+			<div class="section group">
+				<div id="16" class="col span_1_of_3">
+				</div>
+				<div id="17" class="col span_1_of_3">
+				</div>
+				<div id="18" class="col span_1_of_3">
+				</div>
+			</div>
+			
+			<div class="section group">
+				<div id="19" class="col span_1_of_3">
+				</div>
+				<div class="col span_1_of_3">
+				</div>
+				<div id="20" class="col span_1_of_3">
+				</div>
+			</div>
+			
+		</div>
+		
+		<!-- Footer -->
+		<hr>
+		<footer>
+			<ul class='copyright'>
+				<li>&copy; dminer78. All rights reserved.</li>
+				<li>Did something go wrong? <a href='http://twitter.com/dminer78' target='_blank'>Tweet at me!</a></li>
+			</ul>
+			
+		
+
 		<script type="text/javascript">
 			if(window.canRunAds === undefined){
 				alert("Heads up!\nYou're currently using adblocker. My site does not have any ads and will only limit the content which you see on my site.");
@@ -33,56 +120,36 @@
 			
 			try {
 				var url = (window.location.href.split("?")[1]).split("&");
-				url.unshift("dminer");
+				url.unshift("You found a secret!", "dminer");
 				console.info("Streamers in link: " + url + "\nURL: " + window.location.href)
 			} catch(e) {
 				//if (typeof url === "undefined" || typeof url === "null" || url == "") {
-				document.write("<h1>Unable to get streamers from URL</h1>");
-				document.write(e + "<br />URL: " + window.location.href);
-				document.write("<hr><footer><ul class='copyright'><li>&copy; dminer78. All rights reserved.</li><li>Did something go wrong? <a href='http://twitter.com/dminer78' target='_blank'>Tweet at me!</a></li></ul>")
+				document.getElementById('warning').innerHTML = "<h1>Unable to get streamers from URL</h1>" + e + "<br />URL: " + window.location.href;
 			}
 			
-			document.write("<div class='stream'>")
-			for(i = 0; i < url.length; i++) {
-				if(url[i] != "") {
-					currentStreamer = getStreamer(url[i]);
-					console.group();
-					console.info("Streamer: " + url[i]);
-					console.info("imgID: " + currentStreamer[0]);
-					console.info("Link: " + currentStreamer[1]);
-					console.groupEnd();
-					document.write(currentStreamer[2] + "<br /> <img src='" + currentStreamer[0] + "' alt='" + currentStreamer[2] + "s Profile Picture'  /><br /><br />");
-					if(currentStreamer[1] != "") {
-						document.write("<a href='" + currentStreamer[1] + "' class='button' target='_blank'></a><br /><br />");
-					} else {
-						document.write("<br /><br />")
+			if(url.length <= 21) {
+				for(i = 1; i < url.length; i++) {
+					if(url[i] != "") {
+						currentStreamer = getStreamer(url[i]);
+						console.group();
+						console.info("Streamer: " + url[i]);
+						console.info("imgID: " + currentStreamer[0]);
+						console.info("Link: " + currentStreamer[1]);
+						console.groupEnd();
+						
+						document.getElementById(i).innerHTML = currentStreamer[2] + "<br /> <img src='" + currentStreamer[0] + "' alt='" + currentStreamer[2] + "s Profile Picture'  /><br /><br />"
+						if(currentStreamer[1] != "") {
+							document.getElementById(i).innerHTML += "<a href='" + currentStreamer[1] + "' class='button' target='_blank'></a><br /><br />"
+						} else {
+							document.getElementById(i).innerHTML += "<br /><br />";
+						}
 					}
 				}
+			} else {
+				document.getElementById('warning').innerHTML = "<h1>" + (url.length - 1) + " is too many streamers!</h1><h3>The maximum is 20!</h3>";
 			}
-			document.write("</div>");
-			document.write("<hr><footer><ul class='copyright'><li>&copy; dminer78. All rights reserved.</li><li>Did something go wrong? <a href='http://twitter.com/dminer78' target='_blank'>Tweet at me!</a></li></ul>")
 		</script>
-	</head>
-	<body>
-	
-		<!-- Streamers -->
-		<!--
-		<div class="section group">
-			<div class="col span_1_of_3 stream">
-				<img src="http://static-cdn.jtvnw.net/jtv_user_pictures/dminer78-profile_image-cf1a9b082582c8ea-300x300.png">
-				<h3>Dminer78</h3>
-				<a href="http://twitch.tv/dminer78" class="button" target="_blank"></a>
-			</div>
 			
-			<div class="col span_1_of_3">
-			Streamer 2
-			</div>
-			
-			<div class="col span_1_of_3">
-			Streamer 3
-			</div>
-		</div>-->
-
 		<script>
 		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
