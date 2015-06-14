@@ -137,7 +137,7 @@
 						console.info("Link: " + currentStreamer[1]);
 						console.groupEnd();
 						
-						document.getElementById(i).innerHTML = currentStreamer[2] + "<br /> <img src='" + currentStreamer[0] + "' alt='" + currentStreamer[2] + "s Profile Picture'  /><br /><br />"
+						document.getElementById(i).innerHTML = currentStreamer[2] + "<br /> <img src='" + currentStreamer[0] + "' alt='" + currentStreamer[2] + " Profile Picture' /><br /><br />" <!-- onError="this.onerror=null;this.src='images/unknownStreamer.png'" -->
 						if(currentStreamer[1] != "") {
 							document.getElementById(i).innerHTML += "<a href='" + currentStreamer[1] + "' class='button' target='_blank'></a><br /><br />"
 						} else {
