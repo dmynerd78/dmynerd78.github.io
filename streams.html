@@ -33,6 +33,7 @@
 			
 			try {
 				var url = (window.location.href.split("?")[1]).split("&");
+				url.unshift("dminer")
 			} catch(e) {
 				//if (typeof url === "undefined" || typeof url === "null" || url == "") {
 				alert("Unable to read streamers from url:\n" + e);
@@ -47,11 +48,11 @@
 					console.info("imgID: " + currentStreamer[0]);
 					console.info("Link: " + currentStreamer[1]);
 					console.groupEnd();
-					
-					document.write(url[i] + "<br /> <img src='" + currentStreamer[0] + "'  /><br /><br /><a href='" + currentStreamer[1] + "' class='button' target='_blank'></a><br /><br />");
+					document.write(currentStreamer[2] + "<br /> <img src='" + currentStreamer[0] + "'  /><br /><br /><a href='" + currentStreamer[1] + "' class='button' target='_blank'></a><br /><br />");
 				}
 			}
 			document.write("</div>");
+			document.write("<hr><footer><ul class='copyright'><li>&copy; dminer78. All rights reserved.</li><li>Need some beautiful images? <a href='gallery/index.html' target='_blank'>Click here!</a></li></ul>")
 		</script>
 	</head>
 	<body>
