@@ -129,9 +129,19 @@ var getStreamer = function(streamer) {
 			imgID = imageTwitch("cf1a9b082582c8ea");
 			link =  twitchLink + username;
 			break;
+		case "esp":
+			username = "ESP4Him";
+			imgID = imageTwitch("3c2dfd41fec490bc", "jpeg");
+			link =  twitchLink + username;
+			break;
 		case "g4":
 			username = "G4ivl3_0v3r";
 			imgID = imageTwitch("3fe25dcffe3750b2");
+			link =  twitchLink + username;
+			break;
+		case "nihon":
+			username = "NihonTiger";
+			imgID = imageTwitch("961c7e8fbe67b6b5");
 			link =  twitchLink + username;
 			break;
 		case "ick":
@@ -154,11 +164,6 @@ var getStreamer = function(streamer) {
 			imgID = imageTwitch("da828105cacf6407", "jpeg");
 			link =  twitchLink + username;
 			break;
-		case "nihon":
-			username = "NihonTiger";
-			imgID = imageTwitch("961c7e8fbe67b6b5");
-			link =  twitchLink + username;
-			break;
 		case "paul":
 			username = "PaulFTW87";
 			imgID = imageTwitch("1994f8f767a37a01");
@@ -177,6 +182,11 @@ var getStreamer = function(streamer) {
 		case "shadow":
 			username = "TricksterShadow";
 			imgID = imageTwitch("3551bcd31e14acf2");
+			link =  twitchLink + username;
+			break;
+		case "steve":
+			username = "PHDSteve";
+			imgID = imageTwitch("e205b4c8494d4c43", "jpeg");
 			link =  twitchLink + username;
 			break;
 		case "wyld":
