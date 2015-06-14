@@ -13,6 +13,10 @@ body {
 	font-weight: 400;
 }
 
+#warning {
+	color: #D25252;
+}
+
 a {
 	color: #79ABFF;
 }
