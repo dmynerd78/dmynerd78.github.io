@@ -42,16 +42,16 @@
 			for(i = 0; i < url.length; i++) {
 				if(url[i] != "") {
 					currentStreamer = getStreamer(url[i]);
-					console.group()
-					console.info("Streamer: " + url[i])
-					console.info("imgID: " + currentStreamer[0])
-					console.info("Link: " + currentStreamer[1])
-					console.groupEnd()
+					console.group();
+					console.info("Streamer: " + url[i]);
+					console.info("imgID: " + currentStreamer[0]);
+					console.info("Link: " + currentStreamer[1]);
+					console.groupEnd();
 					
-					document.write(url[i] + "<br /> <img src='" + currentStreamer[0] + "'  /><br /><br /><a href='" + currentStreamer[1] + "' class='button' target='_blank'></a><br /><br />")
+					document.write(url[i] + "<br /> <img src='" + currentStreamer[0] + "'  /><br /><br /><a href='" + currentStreamer[1] + "' class='button' target='_blank'></a><br /><br />");
 				}
 			}
-			document.write("</div>")
+			document.write("</div>");
 		</script>
 	</head>
 	<body>

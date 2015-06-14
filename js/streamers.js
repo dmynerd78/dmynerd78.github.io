@@ -136,7 +136,7 @@ var getStreamer = function(streamer) {
 			break;
 		case "mk":
 			username = "mktheworst";
-			imgID = "da828105cacf6407";
+			imgID = imageTwitch("da828105cacf6407");
 			link =  twitchLink + username;
 			break;
 		case "nihon":
