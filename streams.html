@@ -36,7 +36,8 @@
 				url.unshift("dminer")
 			} catch(e) {
 				//if (typeof url === "undefined" || typeof url === "null" || url == "") {
-				alert("Unable to read streamers from url:\n" + e);
+				document.write(e + "<br />URL: " + window.location.href);
+				document.write("<hr><footer><ul class='copyright'><li>&copy; dminer78. All rights reserved.</li><li>Did something go wrong? <a href='http://twitter.com/dminer78' target='_blank'>Tweet at me!</a></li></ul>")
 			}
 			
 			document.write("<div class='stream'>")
@@ -52,7 +53,7 @@
 				}
 			}
 			document.write("</div>");
-			document.write("<hr><footer><ul class='copyright'><li>&copy; dminer78. All rights reserved.</li><li>Need some beautiful images? <a href='gallery/index.html' target='_blank'>Click here!</a></li></ul>")
+			document.write("<hr><footer><ul class='copyright'><li>&copy; dminer78. All rights reserved.</li><li>Did something go wrong? <a href='http://twitter.com/dminer78' target='_blank'>Tweet at me!</a></li></ul>")
 		</script>
 	</head>
 	<body>
