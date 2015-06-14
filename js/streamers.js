@@ -40,6 +40,11 @@ var getStreamer = function(streamer) {
 			imgID = imageBeam("2i70n2qw-4255");
 			link = beamLink + username;
 			break;
+		case "cpatcharmy":
+			username = "CherrypatchArmy";
+			imgID = imageBeam("6pydelr8-5849");
+			link = beamLink + username;
+			break;
 		case "dav":
 			username = "Davkas";
 			imgID = imageBeam("2275"); // Dav has default picture. Using userID for imgID. Prooooobably won't work if like Coach's or Deci's
