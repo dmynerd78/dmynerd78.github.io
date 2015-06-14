@@ -5,8 +5,12 @@ var imageBeam = function(ID) {
 	return 'https://s3.amazonaws.com/uploads.beam.pro/avatars/' + ID +  '-128x128.jpg?v=0';
 }
 
-var imageTwitch = function(ID) {
-	return 'http://static-cdn.jtvnw.net/jtv_user_pictures/' + username + '-profile_image-' + ID + '-300x300.png'
+var imageTwitch = function(ID, ext) {
+	if(ext === undefined) {
+		return 'http://static-cdn.jtvnw.net/jtv_user_pictures/' + username + '-profile_image-' + ID + '-300x300.png'
+	} else {
+		return 'http://static-cdn.jtvnw.net/jtv_user_pictures/' + username + '-profile_image-' + ID + '-300x300.' + ext;
+	}
 }
 
 var getStreamer = function(streamer) {
@@ -136,7 +140,7 @@ var getStreamer = function(streamer) {
 			break;
 		case "mk":
 			username = "mktheworst";
-			imgID = imageTwitch("da828105cacf6407");
+			imgID = imageTwitch("da828105cacf6407", "jpeg");
 			link =  twitchLink + username;
 			break;
 		case "nihon":
