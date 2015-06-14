@@ -29,7 +29,7 @@ a {
 	}
 	
 	.stream a:before {
-		content: 'Click to watch the stream!';
+		content: 'Go to their channel!';
 	}
 
 hr {
