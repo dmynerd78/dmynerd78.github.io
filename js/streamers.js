@@ -183,26 +183,22 @@ var getStreamer = function(streamer) {
 			imgID = imageTwitch("689b33e7c409d7fa");
 			link =  twitchLink + username;
 			break;
-		
-		//TODO Fix custom Twitch/Beam streams
-		
-		// Custom Beam Streamer
-		case "b/" + streamer:
-			imgID = "";
-			link = beamLink + streamer;
-			break;
-		
-		// Custom Twitch Streamers
-		case "t/" + streamer:
-			imgID = "";
-			link = twitchLink + streamer;
-			break;
 			
 		// Error finding streamer
 		default:
-			imgID = "";
-			link = ""
-			console.warn("Unable to find streamer: " + streamer)
+			imgID = "images/unknownStreamer.png";
+			if(streamer.startsWith("b/")) {
+				username = streamer.replace("b/", "");
+				link = beamLink + username;
+			} else if(streamer.startsWith("t/")) {
+				username = streamer.replace("t/", "");
+				link = twitchLink + username;
+			} else {
+				username = "'" + streamer + "' is not a valid username!"
+				link = ""
+				console.warn("Unable to find streamer: " + streamer)
+			}
+			
 	};
 	return [imgID, link, username];
 };

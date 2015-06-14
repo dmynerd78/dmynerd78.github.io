@@ -50,7 +50,12 @@
 					console.info("imgID: " + currentStreamer[0]);
 					console.info("Link: " + currentStreamer[1]);
 					console.groupEnd();
-					document.write(currentStreamer[2] + "<br /> <img src='" + currentStreamer[0] + "' alt='" + currentStreamer[2] + "s Profile Picture'  /><br /><br /><a href='" + currentStreamer[1] + "' class='button' target='_blank'></a><br /><br />");
+					document.write(currentStreamer[2] + "<br /> <img src='" + currentStreamer[0] + "' alt='" + currentStreamer[2] + "s Profile Picture'  /><br /><br />");
+					if(currentStreamer[1] != "") {
+						document.write("<a href='" + currentStreamer[1] + "' class='button' target='_blank'></a><br /><br />");
+					} else {
+						document.write("<br /><br />")
+					}
 				}
 			}
 			document.write("</div>");
@@ -58,6 +63,7 @@
 		</script>
 	</head>
 	<body>
+	
 		<!-- Streamers -->
 		<!--
 		<div class="section group">
@@ -75,20 +81,6 @@
 			Streamer 3
 			</div>
 		</div>-->
-
-		<!-- Footer -->
-		<!--
-		<hr>
-		<footer>
-			
-			<!-- Copyright -->
-			<!--
-				<ul class="copyright">
-					<li>&copy; dminer78. All rights reserved.</li>
-					<li>Need some beautiful images? <a href="gallery/index.html" target="_blank">Click here!</a></li>
-				</ul>
-			
-		</footer>-->
 
 		<script>
 		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
