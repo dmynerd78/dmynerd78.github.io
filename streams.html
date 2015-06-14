@@ -39,63 +39,63 @@
 		<br />
 		<div class="streams">
 			<div class="section group">
+				<div id="0" class="col span_1_of_3">
+				</div>
 				<div id="1" class="col span_1_of_3">
 				</div>
 				<div id="2" class="col span_1_of_3">
 				</div>
-				<div id="3" class="col span_1_of_3">
-				</div>
 			</div>
 			
 			<div class="section group">
+				<div id="3" class="col span_1_of_3">
+				</div>
 				<div id="4" class="col span_1_of_3">
 				</div>
 				<div id="5" class="col span_1_of_3">
 				</div>
-				<div id="6" class="col span_1_of_3">
-				</div>
 			</div>
 			
 			<div class="section group">
+				<div id="6" class="col span_1_of_3">
+				</div>
 				<div id="7" class="col span_1_of_3">
 				</div>
 				<div id="8" class="col span_1_of_3">
 				</div>
-				<div id="9" class="col span_1_of_3">
-				</div>
 			</div>
 			
 			<div class="section group">
+				<div id="9" class="col span_1_of_3">
+				</div>
 				<div id="10" class="col span_1_of_3">
 				</div>
 				<div id="11" class="col span_1_of_3">
 				</div>
-				<div id="12" class="col span_1_of_3">
-				</div>
 			</div>
 			
 			<div class="section group">
+				<div id="12" class="col span_1_of_3">
+				</div>
 				<div id="13" class="col span_1_of_3">
 				</div>
 				<div id="14" class="col span_1_of_3">
 				</div>
-				<div id="15" class="col span_1_of_3">
-				</div>
 			</div>
 			
 			<div class="section group">
+				<div id="15" class="col span_1_of_3">
+				</div>
 				<div id="16" class="col span_1_of_3">
 				</div>
 				<div id="17" class="col span_1_of_3">
 				</div>
-				<div id="18" class="col span_1_of_3">
-				</div>
 			</div>
 			
 			<div class="section group">
-				<div id="19" class="col span_1_of_3">
+				<div id="18" class="col span_1_of_3">
 				</div>
-				<div class="col span_1_of_3">
+				<div id="19" class="col span_1_of_3">
 				</div>
 				<div id="20" class="col span_1_of_3">
 				</div>
@@ -126,7 +126,7 @@
 			
 			try {
 				var url = (window.location.href.split("?")[1]).split("&");
-				url.unshift("You found a secret!", "dminer");
+				url.unshift("dminer");
 				console.info("Streamers in link: " + url + "\nURL: " + window.location.href)
 			} catch(e) {
 				//if (typeof url === "undefined" || typeof url === "null" || url == "") {
@@ -134,7 +134,7 @@
 			}
 			
 			if(url.length <= 21) {
-				for(i = 1; i < url.length; i++) {
+				for(i = 0; i < url.length; i++) {
 					if(url[i] != "") {
 						currentStreamer = getStreamer(url[i]);
 						console.group();
