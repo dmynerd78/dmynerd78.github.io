@@ -5,151 +5,184 @@ var imageBeam = function(ID) {
 	return 'https://s3.amazonaws.com/uploads.beam.pro/avatars/' + ID +  '-128x128.jpg?v=0';
 }
 
-var imageTwitch = function(name, ID) {
-	return 'http://static-cdn.jtvnw.net/jtv_user_pictures/' + name + '-profile_image-' + ID + '-300x300.png'
+var imageTwitch = function(ID) {
+	return 'http://static-cdn.jtvnw.net/jtv_user_pictures/' + username + '-profile_image-' + ID + '-300x300.png'
 }
 
 var getStreamer = function(streamer) {
 
 	switch (streamer) {
 		
-		//Beam Streamers 'https://s3.amazonaws.com/uploads.beam.pro/avatars/' + imgID +  '-128x128.jpg?v=0'
+		// Beam Streamers 'https://s3.amazonaws.com/uploads.beam.pro/avatars/' + imgID +  '-128x128.jpg?v=0'
+		// https://beam.pro/api/v1/channels/USER
+		
 		case "2cubed":
+			username = "2cubed";
 			imgID = imageBeam("2547");
-			link = beamLink + "2cubed"
+			link = beamLink + username;
 			break;
 		case "ben":
+			username = "benbaptist";
 			imgID = imageBeam("3303");
-			link = beamLink + "benbaptist"
+			link = beamLink + username;
 			break;
 		case "chris":
+			username = "swchris";
 			imgID = imageBeam("3171");
-			link = beamLink + "swchris"
+			link = beamLink + username;
 			break;
 		case "coach":
+			username = "coachwraymc";
 			imgID = imageBeam("2i70n2qw-4255");
-			link = beamLink + "coachwraymc"
+			link = beamLink + username;
 			break;
 		case "dav":
-			imgID = imageBeam("2275"); //Dav has default picture. Using userID for imgID. Prooooobably won't work if like Coach's or Deci's
-			link = beamLink + "davkas"
+			username = "davkas";
+			imgID = imageBeam("2275"); // Dav has default picture. Using userID for imgID. Prooooobably won't work if like Coach's or Deci's
+			link = beamLink + username;
 			break;
 		case "deci":
+			username = "decitm";
 			imgID = imageBeam("l1rz9ayv-2257");
-			link = beamLink + "decitm"
+			link = beamLink + username;
 			break;
 		case "derpo":
+			username = "home_derpo";
 			imgID = imageBeam("3579");
-			link = beamLink + "home_derpo"
+			link = beamLink + username;
 			break;
 		case "dot":
+			username = "dot83";
 			imgID = imageBeam("3652");
-			link = beamLink + "dot83"
+			link = beamLink + username;
 			break;
 		case "duke":
+			username = "duke";
 			imgID = imageBeam("3526");
-			link = beamLink + "duke"
+			link = beamLink + username;
 			break;
 		case "graph":
+			username = "graphoniac";
 			imgID = imageBeam("2266");
-			link = beamLink + "graphoniac"
+			link = beamLink + username;
 			break;
 		case "kirei":
+			username = "kirei";
 			imgID = imageBeam("203");
-			link = beamLink + "kirei"
+			link = beamLink + username;
 			break;
 		case "max":
+			username = "maxampere";
 			imgID = imageBeam("3532");
-			link = beamLink + "maxampere"
+			link = beamLink + username;
 		case "ping":
-			imgID = imageBeam("3983"); //Again, default picture. Assuming imgID = userID
-			link = beamLink + "pingpong1109"
+			username = "pingpong1109";
+			imgID = imageBeam("3983"); // Again, default picture. Assuming imgID = userID
+			link = beamLink + username;
 			break;
 		case "smb":
+			username = "smblive";
 			imgID = imageBeam("910");
-			link = beamLink + "smblive"
+			link = beamLink + username;
 			break;
 		case "theo":
+			username = "theo_the_ape";
 			imgID = imageBeam("617");
-			link = beamLink + "theo_the_ape"
+			link = beamLink + username;
 			break;
 		case "xcentrik":
+			username = "xcentrik4";
 			imgID = imageBeam("3107");
-			link = beamLink + "xcentrik4"
+			link = beamLink + username;
 			break;
 		case "xyn":
+			username = "xyntak";
 			imgID = imageBeam("3599");
-			link = beamLink + "xyntak"
+			link = beamLink + username;
 			break;
 			
-		//Twitch Streamers 'http://static-cdn.jtvnw.net/jtv_user_pictures/' + streamer + '-profile_image-' + imgID + '-300x300.png'
+		// Twitch Streamers 'http://static-cdn.jtvnw.net/jtv_user_pictures/' + streamer + '-profile_image-' + imgID + '-300x300.png'
+		// https://api.twitch.tv/kraken/users/USER
 		
 		case "brhysh":
-			imgID = "";
-			link =  twitchLink + "brhysh1";
+			username = "brhysh1";
+			imgID = imageTwitch("2deae5228438f83e");
+			link =  twitchLink + username;
 			break;
 		case "chough":
-			imgID = "";
-			link =  twitchLink + "choughington";
+			username = "choughington";
+			imgID = imageTwitch("c726d206e64c116e");
+			link =  twitchLink + username;
 			break;
 		case "g4":
-			imgID = "";
-			link =  twitchLink + "g4ivl3_0v3r";
+			username = "g4ivl3_0v3r";
+			imgID = imageTwitch("3fe25dcffe3750b2");
+			link =  twitchLink + username;
 			break;
 		case "ick":
-			imgID = "";
-			link =  twitchLink + "ickabodx";
+			username = "ickabodx";
+			imgID = imageTwitch("1f2f256239790c5d");
+			link =  twitchLink + username;
 			break;
 		case "kebb":
-			imgID = "";
-			link =  twitchLink + "kebbrokk";
+			username = "kebbrokk";
+			imgID = imageTwitch("03507287bc00788b");
+			link =  twitchLink + username;
 			break;
 		case "mcg":
-			imgID = "";
-			link =  twitchLink + "mc_guitarist1795";
+			username = "mc_guitarist1795";
+			imgID = imageTwitch("4119e7b41f0d0d47");
+			link =  twitchLink + username;
 			break;
 		case "mk":
+			username = "mktheworst";
 			imgID = "da828105cacf6407";
-			link =  twitchLink + "mktheworst";
+			link =  twitchLink + username;
 			break;
 		case "nihon":
-			imgID = "";
-			link =  twitchLink + "nihontiger";
+			username = "nihontiger";
+			imgID = imageTwitch("961c7e8fbe67b6b5");
+			link =  twitchLink + username;
 			break;
 		case "paul":
-			imgID = "";
-			link =  twitchLink + "paulftw87";
+			username = "paulftw87";
+			imgID = imageTwitch("1994f8f767a37a01");
+			link =  twitchLink + username;
 			break;
 		case "pixel":
-			imgID = "";
-			link = twitchLink + "pixelhunter101"
+			username = "pixelhunter101";
+			imgID = imageTwitch("cebeb4636a1643a7");
+			link = twitchLink + username;
 			break;
 		case "punz":
-			imgID = "";
-			link = twitchLink + "punz0matic_5k"
+			username = "punz0matic_5k";
+			imgID = imageTwitch("4b3a56452814bba7");
+			link = twitchLink + username;
 			break;
 		case "shadow":
-			imgID = "";
-			link =  twitchLink + "trickstershadow";
+			username = "trickstershadow";
+			imgID = imageTwitch("3551bcd31e14acf2");
+			link =  twitchLink + username;
 			break;
 		case "wyld":
-			imgID = "";
-			link =  twitchLink + "wyld";
+			username = "wyld";
+			imgID = imageTwitch("689b33e7c409d7fa");
+			link =  twitchLink + username;
 			break;
 			
-		//Custom Beam Streamer
+		// Custom Beam Streamer
 		case "b/" + streamer:
 			imgID = "";
 			link = beamLink + streamer;
 			break;
 		
-		//Custom Twitch Streamers
+		// Custom Twitch Streamers
 		case "t/" + streamer:
 			imgID = "";
 			link = twitchLink + streamer;
 			break;
 			
-		//Error finding streamer
+		// Error finding streamer
 		default:
 			imgID = "";
 			link = ""
