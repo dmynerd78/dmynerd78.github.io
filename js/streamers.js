@@ -52,7 +52,7 @@ var getStreamer = function(streamer) {
 			break;
 		case "deci":
 			username = "DeciTM";
-			imgID = imageBeam("l1rz9ayv-2257");
+			imgID = imageBeam("nk8feb3w-2257");
 			link = beamLink + username;
 			break;
 		case "derpo":
@@ -84,6 +84,7 @@ var getStreamer = function(streamer) {
 			username = "Maxampere";
 			imgID = imageBeam("3532");
 			link = beamLink + username;
+			break;
 		case "ping":
 			username = "Pingpong1109";
 			imgID = imageBeam("3983"); // Again, default picture. Assuming imgID = userID
@@ -165,12 +166,12 @@ var getStreamer = function(streamer) {
 			break;
 		case "pixel":
 			username = "PixelHunter101";
-			imgID = imageTwitch("cebeb4636a1643a7");
+			imgID = imageTwitch("cebeb4636a1643a7", "jpeg");
 			link = twitchLink + username;
 			break;
 		case "punz":
 			username = "Punz0matic_5k";
-			imgID = imageTwitch("4b3a56452814bba7");
+			imgID = imageTwitch("4b3a56452814bba7", "jpeg");
 			link = twitchLink + username;
 			break;
 		case "shadow":
@@ -180,7 +181,7 @@ var getStreamer = function(streamer) {
 			break;
 		case "wyld":
 			username = "Wyld";
-			imgID = imageTwitch("689b33e7c409d7fa");
+			imgID = imageTwitch("689b33e7c409d7fa", "jpeg");
 			link =  twitchLink + username;
 			break;
 			

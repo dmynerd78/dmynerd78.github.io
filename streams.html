@@ -37,6 +37,7 @@
 				console.info("Streamers in link: " + url + "\nURL: " + window.location.href)
 			} catch(e) {
 				//if (typeof url === "undefined" || typeof url === "null" || url == "") {
+				document.write("<h1>Unable to get streamers from URL</h1>");
 				document.write(e + "<br />URL: " + window.location.href);
 				document.write("<hr><footer><ul class='copyright'><li>&copy; dminer78. All rights reserved.</li><li>Did something go wrong? <a href='http://twitter.com/dminer78' target='_blank'>Tweet at me!</a></li></ul>")
 			}
