@@ -183,7 +183,9 @@ var getStreamer = function(streamer) {
 			imgID = imageTwitch("689b33e7c409d7fa");
 			link =  twitchLink + username;
 			break;
-			
+		
+		//TODO Fix custom Twitch/Beam streams
+		
 		// Custom Beam Streamer
 		case "b/" + streamer:
 			imgID = "";
@@ -202,6 +204,5 @@ var getStreamer = function(streamer) {
 			link = ""
 			console.warn("Unable to find streamer: " + streamer)
 	};
-	
 	return [imgID, link, username];
 };
