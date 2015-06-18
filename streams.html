@@ -1,3 +1,10 @@
 <script>
-	window.location.href = "http://dminer78.com/s?" + window.location.href.split("?")[1];
+
+	args = window.location.href.split("?")[1];
+	if (typeof args === "undefined" || typeof args === "null") {
+		window.location.href = "http://dminer78.com/s/";
+	} else {
+		window.location.href = "http://dminer78.com/s?" + args;
+	}
+	
 </script>
