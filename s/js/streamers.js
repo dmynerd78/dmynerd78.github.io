@@ -75,6 +75,11 @@ var getStreamer = function(streamer) {
 			imgID = imageBeam("2266");
 			link = beamLink + username;
 			break;
+			username = "Graphic";
+		case "graphic":
+			imgID = imageBeam("318");
+			link = beamLink + username;
+			break;
 		case "kirei":
 			username = "Kirei";
 			imgID = imageBeam("203");
