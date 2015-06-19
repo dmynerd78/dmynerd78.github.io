@@ -134,6 +134,11 @@ var getStreamer = function(streamer) {
 			imgID = imageTwitch("cf1a9b082582c8ea");
 			link =  twitchLink + username;
 			break;
+		case "erijah":
+			username = "Erijah";
+			imgID = imageTwitch("ffcde58ae40d3752");
+			link =  twitchLink + username;
+			break;
 		case "esp":
 			username = "ESP4Him";
 			imgID = imageTwitch("3c2dfd41fec490bc", "jpeg");
