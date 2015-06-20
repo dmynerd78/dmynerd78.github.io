@@ -199,10 +199,22 @@ var getStreamer = function(streamer) {
 			imgID = imageTwitch("e205b4c8494d4c43", "jpeg");
 			link =  twitchLink + username;
 			break;
+		case "supermc":
+			username = "SuperMCGamer";
+			imgID = imageTwitch("6187faccbd382743");
+			link =  twitchLink + username;
+			break;
 		case "wyld":
 			username = "Wyld";
 			imgID = imageTwitch("689b33e7c409d7fa", "jpeg");
 			link =  twitchLink + username;
+			break;
+		case "zeldathon":
+			username = "SuperMCGamer";
+			link =  twitchLink + username;
+			username = "FunForFreedom";
+			imgID = imageTwitch("706a82d7581a9e5f", "jpeg");
+			username = "Zeldathon";
 			break;
 			
 		// Error finding streamer
