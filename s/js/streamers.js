@@ -20,7 +20,7 @@ var getStreamer = function(streamer) {
 		// Beam Streamers 'https://s3.amazonaws.com/uploads.beam.pro/avatars/' + imgID +  '-128x128.jpg?v=0'
 		// https://beam.pro/api/v1/channels/USER
 		
-		case "2cubed":
+		case "cubed":
 			username = "2Cubed";
 			imgID = imageBeam("2547");
 			link = beamLink + username;
@@ -38,6 +38,11 @@ var getStreamer = function(streamer) {
 		case "coach":
 			username = "Coachwraymc";
 			imgID = imageBeam("2i70n2qw-4255");
+			link = beamLink + username;
+			break;
+		case "cherry":
+			username = "CherryPGamer";
+			imgID = imageBeam("4044");
 			link = beamLink + username;
 			break;
 		case "cpatcharmy":
