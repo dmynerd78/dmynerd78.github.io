@@ -12,6 +12,7 @@
 		<meta name="keywords" content="beam, twitch, youtube, dminer, miner, dminer78" />
 		<meta name="author" content="Dminer78">
 		<link rel="icon" href="favicon.ico" type="image/x-icon">
+		<meta name="norton-safeweb-site-verification" content="crl3a23xq6qqm0-aptwlk6qh4pgg3mydegxuvjg9hourl4o7ie-etlw6azi6m33ojz7tnkn66milsvzh5b44zf2b-75oibck31gpqjikjkulhss4hxmanajetc9wy6il" />
 		
 		<script src="js/pace.min.js"></script>
 		<link href="css/pace.css" rel="stylesheet" />
@@ -28,6 +29,27 @@
 		</noscript>
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
 		<script src="../js/copyright.js"></script>
+		<script type="text/javascript">
+-			var alertUser = function(text) {
+-				console.log(text);
+-				alert(text);
+-			}
+-		
+-			var url = window.location.href.split("?")[1];
+-			if (typeof url === "undefined" || typeof url === "null" || url == "") {
+-						console.log("No link in url to forward to. Add '?[url here]' to forward a user somewhere! :D");
+-			} else {
+-				if (url.startsWith("http")) {
+-					window.location = "2CubedBot/forward.html?" + url;
+-				} else {
+-					alertUser("'" + url + "' is not a valid URL. Make sure to include 'http://' or the equivalent of it in the URL.");
+-				}
+-			}
+-			
+-			if(window.canRunAds === undefined) {
+-				alert("Heads up!\nYou're currently using adblocker. My site does not have any ads and will only limit the content which you see on my site.");
+-			}
+-		</script>
 	</head>
 	<body>
 
