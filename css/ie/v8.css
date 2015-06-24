@@ -1,95 +1,57 @@
 /*
-	Spectral by Pixelarity
+	Astral by Pixelarity
 	pixelarity.com @pixelarity
 	License: pixelarity.com/license
 */
 
-/* Icon */
+/*********************************************************************************/
+/* Basic                                                                         */
+/*********************************************************************************/
 
-	.icon.major {
-		border: none;
+	body
+	{
+		background-image: url('../images/bg.jpg');
+		background-size: cover;
+		-ms-behavior: url('css/ie/backgroundsize.min.htc');
 	}
 
-		.icon.major:before {
-			font-size: 3em;
+	/* Section/Article */
+
+		section,
+		article
+		{
 		}
+		
+			section > .last-child,
+			article > .last-child
+			{
+				margin-bottom: 0;
+			}
 
-/* Form */
+			section.last-child,
+			article.last-child
+			{
+				margin-bottom: 0;
+			}
 
-	label {
-		color: #2E3842;
+/*********************************************************************************/
+/* Nav                                                                           */
+/*********************************************************************************/
+	
+	#nav
+	{
 	}
-
-	input[type="text"],
-	input[type="password"],
-	input[type="email"],
-	select,
-	textarea {
-		border: solid 1px #dfdfdf;
-	}
-
-/* Button */
-
-	input[type="submit"],
-	input[type="reset"],
-	input[type="button"],
-	button,
-	.button {
-		border: solid 2px #dfdfdf;
-	}
-
-		input[type="submit"].special,
-		input[type="reset"].special,
-		input[type="button"].special,
-		button.special,
-		.button.special {
-			border: 0 !important;
+	
+		#nav a
+		{
 		}
-
-/* Page Wrapper + Menu */
-
-	#menu {
-		display: none;
-	}
-
-	body.is-menu-visible #menu {
-		display: block;
-	}
-
-/* Header */
-
-	#header nav > ul > li > a.menuToggle:after {
-		display: none;
-	}
-
-/* Banner + Wrapper (style4) */
-
-	#banner,
-	.wrapper.style4 {
-		-ms-behavior: url("css/ie/backgroundsize.min.htc");
-	}
-
-		#banner:before,
-		.wrapper.style4:before {
-			display: none;
-		}
-
-/* Banner */
-
-	#banner .more {
-		height: 4em;
-	}
-
-		#banner .more:after {
-			display: none;
-		}
-
-/* Main */
-
-	#main > header {
-		-ms-behavior: url("css/ie/backgroundsize.min.htc");
-	}
-
-		#main > header:before {
-			display: none;
-		}
+		
+			#nav a span
+			{
+				display: none;
+			}
+			
+			#nav a:before
+			{
+				font-size: 1.75em;
+			}

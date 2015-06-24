@@ -1,203 +1,131 @@
 <!DOCTYPE HTML>
 <!--
-	Spectral by Pixelarity
+	Astral by Pixelarity
 	pixelarity.com @pixelarity
 	License: pixelarity.com/license
 -->
 <html>
 	<head>
-		<title>The Site of the Dminer</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="description" content="Dminer78's homepage! Contains everything you need to know about me!" />
-		<meta name="keywords" content="dminer,minecraft,youtube,livestream," />
-		<meta name="norton-safeweb-site-verification" content="crl3a23xq6qqm0-aptwlk6qh4pgg3mydegxuvjg9hourl4o7ie-etlw6azi6m33ojz7tnkn66milsvzh5b44zf2b-75oibck31gpqjikjkulhss4hxmanajetc9wy6il" />
+		<title>The site of the DMiner</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="Dminer78's official site" />
+		<meta name="keywords" content="beam, twitch, youtube, dminer, miner, dminer78" />
+		<meta name="author" content="Dminer78">
+		<link rel="icon" href="favicon.ico" type="image/x-icon">
+		
+		<script src="js/pace.min.js"></script>
+		<link href="css/pace.css" rel="stylesheet" />
 		
 		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="css/style.css" />
-		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-desktop.css" />
+			<link rel="stylesheet" href="css/style-noscript.css" />
+		</noscript>
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
-		
-		<script src="js/ads.js"></script>
-		<script src="js/copyright.js"></script>
-		<script type="text/javascript">
-			var alertUser = function(text) {
-				console.log(text);
-				alert(text);
-			}
-		
-			var url = window.location.href.split("?")[1];
-			if (typeof url === "undefined" || typeof url === "null" || url == "") {
-						console.log("No link in url to forward to. Add '?[url here]' to forward a user somewhere! :D");
-			} else {
-				if (url.startsWith("http")) {
-					window.location = "2CubedBot/forward.html?" + url;
-				} else {
-					alertUser("'" + url + "' is not a valid URL. Make sure to include 'http://' or the equivalent of it in the URL.");
-				}
-			}
-			
-			if(window.canRunAds === undefined) {
-				alert("Heads up!\nYou're currently using adblocker. My site does not have any ads and will only limit the content which you see on my site.");
-			}
-		</script>
+		<script src="../js/copyright.js"></script>
 	</head>
-	<body class="landing">
+	<body>
 
-		<!-- Page Wrapper -->
-			<div id="page-wrapper">
+		<!-- Wrapper-->
+			<div id="wrapper">
+				
+				<!-- Nav -->
+					<nav id="nav">
+						<a href="#me" class="icon fa-home active"><span>Home</span></a>
+						<a href="#about" class="icon fa-info-circle"><span>About Me</span></a>
+						<!--<a href="#contact" class="icon fa-envelope"><span>Contact</span></a>-->
+						<a><span></span></a>
+						<a href="http://twitter.com/dminer78" target="_blank" class="icon fa-twitter"><span>Twitter</span></a>
+						<a href="http://youtube.com/user/dminer78" target="_blank" class="icon fa-youtube-play"><span>Youtube</span></a>
+						<a href="http://twitch.tv/dminer78/" target="_blank" class="icon fa-twitch"></a>
+						<a href="http://github.com/dminer78/" target="_blank" class="icon fa-github"></a>
+					</nav>
 
-				<!-- Header -->
-					<header id="header" class="alt">
-						<h1><a href="index.html">Dminer78 everywhere</a></h1>
-						<nav id="nav">
-							<ul>
-								<li class="special">
-									<a href="#" class="menuToggle"><span>Menu</span></a>
-									<div id="menu">
-										<ul>
-											<li><a href="index.html">Home</a></li>
-											<li><a href="gallery/index.html">Gallery</a></li>
-											<li><a href="http://github.com/dminer78/IRewriteC" target="_blank"><em>IR</em>ewrite<em>C</em></a></li>
-											<li><a href="letsmodreboot/index.html">LetsModReboot</a></li>
-											<li><a href="2CubedBot/index.html">2CubedBot (ARCHIVED)</a></li>
-											<li><a href="noms/index.html">Food</a></li>
-										</ul>
+				<!-- Main -->
+					<div id="main">
+						
+						<!-- Me -->
+							<article id="me" class="panel">
+								<header>
+									<h1>Welcome...</h1>
+									<p>To my humble website!</p>
+								</header>
+								<a href="#about" class="jumplink pic">
+									<span class="arrow icon fa-chevron-right"><span>See my work</span></span>
+									<img src="images/me.jpg" alt="" />
+								</a>
+							</article>
+
+						<!-- About Me --> 
+							<article id="about" class="panel">
+								<header>
+									<h2>About Me</h2>
+								</header>
+								<p>
+									Hello! I am a random minor who enjoys programming as well as gaming. 
+									I play a variety of games from Minecraft to Euro Truck Simulator 2. 
+									I am known for always being <a href="noms/index.html" target="_blank">hungry</a>, and I may cause entire groups to talk about food. 
+									I also hate waking up in the mornings...
+								</p>
+								
+								<header>
+									<h2>Social Media</h2>
+								</header>
+								<p>
+									I'm on the <a href="http://youtube.com/user/dminer78" target="_blank">'tubes</a> as well as <a href="http://twitter.com/dminer78" target="_blank">twitter</a>, <a href="http://twitch.tv/dminer78" target="_blank">twitch</a>, and <a href="https://beam.pro/dminer78" target="_blank">beam</a> :D
+								</p>
+							</article>
+
+						<!-- Contact -->
+							<article id="contact" class="panel">
+								<header>
+									<h2>Contact Me</h2>
+								</header>
+								<form action="#" method="post">
+									<div>
+										<div class="row">
+											<div class="6u">
+												<input type="text" name="name" placeholder="Name" />
+											</div>
+											<div class="6u">
+												<input type="text" name="email" placeholder="Email" />
+											</div>
+										</div>
+										<div class="row">
+											<div class="12u">
+												<input type="text" name="subject" placeholder="Subject" />
+											</div>
+										</div>
+										<div class="row">
+											<div class="12u">
+												<textarea name="message" placeholder="Message" rows="8"></textarea>
+											</div>
+										</div>
+										<div class="row">
+											<div class="12u">
+												<input type="submit" value="Send Message" />
+											</div>
+										</div>
 									</div>
-								</li>
-							</ul>
-						</nav>
-					</header>
+								</form>
+							</article>
 
-				<!-- Banner -->
-					<section id="banner">
-						<div class="inner">
-							<h2>Welcome</h2>
-							<p>To my website...<br />
-							Please enjoy your stay</p>
-							<!--<ul class="actions">
-								<li><a href="#" class="button special">Buddon</a></li>
-							</ul>-->
-						</div>
-						<a href="#one" class="more scrolly">Explore the Site</a>
-					</section>
-
-				<!-- One -->
-					<section id="one" class="wrapper style1 special">
-						<div class="inner">
-							<header class="major">
-								<h2>Who Am I?</h2>
-								<p>Hello, my name is Dminer. <br />
-								I'm an book lover, video game enthusiast, and beginner coder. <br />
-								I also hate waking up in the mornings.</p>
-							</header>
-							<ul class="icons major">
-								<li><span class="icon fa-gamepad major style1"><span class="label">Lorem</span></span></li>
-								<li><span class="icon fa-wifi major style2"><span class="label">Ipsum</span></span></li>
-								<li><span class="icon fa-code major style3"><span class="label">Dolor</span></span></li>
-							</ul>
-						</div>
-					</section>
-
-				<!-- CTA -->
-					<section id="cta" class="wrapper style4">
-						<div class="inner">
-							<header>
-								<h2>Too lazy to ready everything?</h2>
-								<p>Want a TL;DR? Just click the links to the right</p>
-							</header>
-							<ul class="actions vertical">
-								<li><a href="gallery/index.html" class="button fit special">Gallery</a></li>
-								<li><a href="http://github.com/dminer78/IRewriteC" class="button fit">IRC Bot</a></li>
-							</ul>
-						</div>
-					</section>
-
-				<!-- Three -->
-					<section id="three" class="wrapper style3 special">
-						<div class="inner">
-							<header class="major">
-								<h2>What Do I Enjoy Doing?</h2>
-								<p>I have many hobbies. <br /> 
-								From streaming to recording to making puns</p>
-							</header>
-							<ul class="features">
-								<li class="icon fa-book">
-									<h3>Tutorials</h3>
-									<p>I have a variety of tutorials that I plan to make. Currently I just have 
-										tutorials for Minecraft. However, they can help you in a variety of ways. 
-										From looking for that lost item to making sure you don't load up your 
-										save in the wrong version.</p>
-								</li>
-								<li class="icon fa-microphone">
-									<h3>Let's Plays</h3>
-									<p>I currently do two Minecraft Let's Plays. One is on the Cherry Patch SMP 
-										server while the other is a single player world with a bit of a twist.
-										I have also done a PMD Sky no-mic playthrough. I'm considering doing 
-										more let's plays in the future, but as it stands, I don't have any ideas</p>
-								</li>
-								<li class="icon fa-upload">
-									<h3>Livestreaming</h3>
-									<p>Currently, I have not the best of uploads so it's extremely difficult for
-										me to stream at higher qualities. However, I do plan on doing more in the 
-										future. I'm extremely active in the community however, so if you would like to
-										learn about some pretty epic people follow me on Twitter!</p>
-								</li>
-								<li class="icon fa-twitter">
-									<h3>Tweeting</h3>
-									<p>I have no idea why it's so popular, but I do show off some pretty epic
-										people as well as show when I upload a video! I do tend to make a dminer														
-										wall once in a while, but it's only 3-4 messages. So don't be afraid to hit 
-										that small little follow button!</p>
-								</li>
-								<li class="icon fa-terminal">
-									<h3>Coding</h3>
-									<p>I'm not the best of coders, but I do enjoy the technical side of games.
-									I'm learning Python and Java. CSS, HTML, and JS too obviously.
-									I can't do very much, but I'm learning. Slow and steady!</p>
-								</li>
-								<li class="icon fa-picture-o">
-									<h3>Images</h3>
-									<p>I work on a variety of images. From 
-									photography to creating my own stream 
-									overlay, I try to do my best to capture the scene.</p>
-								</li>
-							</ul>
-						</div>
-					</section>
-
+					</div>
+		
 				<!-- Footer -->
-					<footer id="footer">
-						<ul class="icons">
-							<li><a href="http://twitter.com/dminer78/" target="_blank" class="icon fa-twitter"></a></li>
-							<li><a href="http://youtube.com/user/dminer78/" target="_blank" class="icon fa-youtube-play"></a></li>
-							<li><a href="http://twitch.tv/dminer78/" target="_blank" class="icon fa-twitch"></a></li>
-							<li><a href="http://github.com/dminer78/" target="_blank" class="icon fa-github"></a></li>
-						</ul>
+					<div id="footer">
 						<ul class="copyright">
 							<li>&copy; Dminer78</li>
 							<li>All rights reserved</li>
 						</ul>
-					</footer>
-
+					</div>
+		
 			</div>
-
-		<!-- Scripts -->
-			<script src="js/jquery.min.js"></script>
-			<script src="js/jquery.scrollex.min.js"></script>
-			<script src="js/jquery.scrolly.min.js"></script>
-			<script src="js/skel.min.js"></script>
-			<script src="js/init.js"></script>
-			
-			<script>
-			  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-			  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-			  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-			  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-			  ga('create', 'UA-62452305-1', 'auto');
-			  ga('send', 'pageview');
-			</script>
 
 	</body>
 </html>
