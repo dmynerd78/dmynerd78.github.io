@@ -120,10 +120,22 @@
 				return true;
 			}
 			
+			function cleanArray(actual){
+				var newArray = new Array();
+				for(var i = 0; i<actual.length; i++){
+					if (actual[i]){
+						newArray.push(actual[i]);
+					}
+				}
+				return newArray;
+			}
+			
 			try {
 				var url = (window.location.href.split("?")[1]).split("&");
+				url = cleanArray(url);
 				url.unshift("dminer");
-				console.info("Streamers in link: " + url + "\nURL: " + window.location.href)
+				
+				console.info("Streamers in link: " + url + "\nURL: " + window.location.href);
 			} catch(e) {
 				//if (typeof url === "undefined" || typeof url === "null" || url == "") {
 				document.getElementById('warning').innerHTML = "<h1>Unable to get streamers from URL</h1>" + e + "<br />URL: " + window.location.href;
@@ -132,6 +144,8 @@
 			if(url.length <= 21) {
 				for(i = 0; i < url.length; i++) {
 					if(url[i] != "") {
+
+						//Debug 
 						currentStreamer = getStreamer(url[i]);
 						console.group();
 						console.info("Streamer: " + url[i]);
@@ -139,13 +153,9 @@
 						console.info("Link: " + currentStreamer[1]);
 						console.groupEnd();
 						
+						//HTML
 						document.getElementById(i).innerHTML = currentStreamer[2] + "<br /> <img src='" + currentStreamer[0] + "' alt='" + currentStreamer[2] + " Profile Picture' onError='imgError(this);' /><br /><br />"
-						
-						if(currentStreamer[1] != "") {
-							document.getElementById(i).innerHTML += "<a href='" + currentStreamer[1] + "' class='button' target='_blank'></a><br /><br />"
-						} else {
-							document.getElementById(i).innerHTML += "<br /><br />";
-						}
+						document.getElementById(i).innerHTML += "<a href='" + currentStreamer[1] + "' class='button' target='_blank'></a><br /><br />";
 					}
 				}
 			} else {
