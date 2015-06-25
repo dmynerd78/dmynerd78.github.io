@@ -129,6 +129,11 @@ var getStreamer = function(streamer) {
 			imgID = imageTwitch("2deae5228438f83e");
 			link =  twitchLink + username;
 			break;
+		case "chaotic":
+			username = "ChaoticIntake";
+			imgID = imageTwitch("1884788acb7f31e5");
+			link =  twitchLink + username;
+			break;
 		case "chough":
 			username = "Choughington";
 			imgID = imageTwitch("c726d206e64c116e");
@@ -137,6 +142,11 @@ var getStreamer = function(streamer) {
 		case "dminer":
 			username = "Dminer78";
 			imgID = imageTwitch("cf1a9b082582c8ea");
+			link =  twitchLink + username;
+			break;
+		case "dwarf":
+			username = "Dwarfufgood";
+			imgID = imageTwitch("1df256abfefc661c", "jpeg");
 			link =  twitchLink + username;
 			break;
 		case "erijah":
