@@ -143,23 +143,23 @@
 			
 			if(url.length <= 21) {
 				for(i = 0; i < url.length; i++) {
-					if(url[i] != "") {
 
-						//Debug 
-						currentStreamer = getStreamer(url[i]);
-						console.group();
-						console.info("Streamer: " + url[i]);
-						console.info("imgID: " + currentStreamer[0]);
-						console.info("Link: " + currentStreamer[1]);
-						console.groupEnd();
-						
-						//HTML
-						document.getElementById(i).innerHTML = currentStreamer[2] + "<br /> <img src='" + currentStreamer[0] + "' alt='" + currentStreamer[2] + " Profile Picture' onError='imgError(this);' /><br /><br />"
-						document.getElementById(i).innerHTML += "<a href='" + currentStreamer[1] + "' class='button' target='_blank'></a><br /><br />";
-					}
+					//Debug 
+					/*
+					console.group();
+					console.info("Streamer: " + url[i]);
+					console.info("imgID: " + currentStreamer[0]);
+					console.info("Link: " + currentStreamer[1]);
+					console.groupEnd();
+					*/
+					
+					//HTML
+					currentStreamer = getStreamer(url[i]);
+					document.getElementById(i).innerHTML = currentStreamer[2] + "<br /> <img src='" + currentStreamer[0] + "' alt='" + currentStreamer[2] + " Profile Picture' onError='imgError(this);' /><br /><br />"
+					document.getElementById(i).innerHTML += "<a href='" + currentStreamer[1] + "' class='button' target='_blank'></a><br /><br />";
 				}
 			} else {
-				document.getElementById('warning').innerHTML = "<h1>" + (url.length - 1) + " is too many streamers!</h1><h3>The maximum is 20!</h3>";
+				document.getElementById('warning').innerHTML = "<h1>" + (url.length - 1) + " is too many streamers!</h1><h3>The maximum you can add is 20!</h3>";
 			}
 		</script>
 			
