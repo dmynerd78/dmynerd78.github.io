@@ -229,13 +229,6 @@ var getStreamer = function(streamer) {
 			imgID = imageTwitch("689b33e7c409d7fa", "jpeg");
 			link =  twitchLink + username;
 			break;
-		case "zeldathon":
-			username = "SuperMCGamer";
-			link =  twitchLink + username;
-			username = "FunForFreedom";
-			imgID = imageTwitch("706a82d7581a9e5f", "jpeg");
-			username = "Zeldathon";
-			break;
 			
 		// Error finding streamer
 		default:
