@@ -136,6 +136,9 @@
 				url.unshift("dminer");
 				
 				console.info("Streamers in link: " + url + "\nURL: " + window.location.href);
+				
+				document.title = "Amazing Streamers (" + url + ")"
+				
 			} catch(e) {
 				//if (typeof url === "undefined" || typeof url === "null" || url == "") {
 				document.getElementById('warning').innerHTML = "<h1>Unable to get streamers from URL</h1>" + e + "<br />URL: " + window.location.href;
