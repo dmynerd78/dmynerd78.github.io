@@ -90,6 +90,11 @@ var getStreamer = function(streamer) {
 			imgID = imageBeam("203");
 			link = beamLink + username;
 			break;
+		case "lofty":
+			username = "Lofty";
+			imgID = imageBeam("3924");
+			link = beamLink + username;
+			break;
 		case "max":
 			username = "Maxampere";
 			imgID = imageBeam("3532");
