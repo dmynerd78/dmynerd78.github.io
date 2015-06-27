@@ -171,7 +171,7 @@ var getStreamer = function(streamer) {
 			break;
 		case "wyld":
 			username = "Wyld";
-			return [imageTwitch("689b33e7c409d7fa", "jpeg"), linkTwitch(username), "Wyld Cluckington Master"];
+			return [imageTwitch("689b33e7c409d7fa", "jpeg"), linkTwitch(username), "Wyld 'Cluckington Master'"];
 			break;
 
 		// Error finding streamer
