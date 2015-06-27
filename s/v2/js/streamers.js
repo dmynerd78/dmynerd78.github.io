@@ -60,6 +60,9 @@ var getStreamer = function(streamer) {
 		case "duke":
 			return [imageBeam("3526"), linkBeam("Duke"), "The Duke Minecraft"];
 			break;
+		case "em":
+				return [imageBeam("5301"), linkBeam("HumansOnFire"), "Humans On Fire (Em)"];
+				break;
 		case "graph":
 			return [imageBeam("2266"), linkBeam("Graphoniac"), "Graphoniac"];
 			break;
@@ -93,7 +96,7 @@ var getStreamer = function(streamer) {
 
 		// Twitch Streamers 'http://static-cdn.jtvnw.net/jtv_user_pictures/' + streamer + '-profile_image-' + imgID + '-300x300.png'
 		// https://api.twitch.tv/kraken/users/USER
-		
+
 		case "brhysh":
 			username = "Brhysh";
 			return [imageTwitch("2deae5228438f83e"), linkTwitch(username), "Brhysh the Lumberjack"];
@@ -182,10 +185,10 @@ var getStreamer = function(streamer) {
 			} else {
 				username = "'" + streamer + "' is not a valid username!";
 				url = "#";
-				
+
 				console.warn("Unable to find streamer: " + streamer);
 			}
-			
+
 			return ["images/unknownStreamer.png", url, username];
 	};
 };
