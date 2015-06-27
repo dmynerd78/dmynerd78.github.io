@@ -61,8 +61,8 @@ var getStreamer = function(streamer) {
 			return [imageBeam("3526"), linkBeam("Duke"), "The Duke Minecraft"];
 			break;
 		case "em":
-				return [imageBeam("5301"), linkBeam("HumansOnFire"), "Humans On Fire (Em)"];
-				break;
+			return [imageBeam("5301"), linkBeam("HumansOnFire"), "Humans On Fire (Em)"];
+			break;
 		case "graph":
 			return [imageBeam("2266"), linkBeam("Graphoniac"), "Graphoniac"];
 			break;
@@ -159,7 +159,7 @@ var getStreamer = function(streamer) {
 			break;
 		case "punz":
 			username = "Punz0matic_5k";
-			return [imageTwitch("4b3a56452814bba7", "jpeg"), linkTwitch(username), "The famous Pixelhunter"];
+			return [imageTwitch("4b3a56452814bba7", "jpeg"), linkTwitch(username), "Punz '#blamePunz' 0Matic"];
 			break;
 		case "shadow":
 			username = "TricksterShadow";
