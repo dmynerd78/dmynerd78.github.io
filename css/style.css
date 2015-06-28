@@ -40,6 +40,11 @@
 		color: #777777;
 	}
 	
+	#twitter-widget-0
+	{
+		width: 100%;
+	}
+	
 	strong, b
 	{
 		font-weight: 400;
