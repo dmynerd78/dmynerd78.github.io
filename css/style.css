@@ -40,7 +40,7 @@
 		color: #777777;
 	}
 	
-	div .twitter *
+	div .twitter > *
 	{
 		width: 100%;
 		text-align: center;
