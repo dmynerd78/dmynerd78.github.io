@@ -27,6 +27,9 @@ var getStreamer = function(streamer) {
 		// Beam Streamers 'https://s3.amazonaws.com/uploads.beam.pro/avatars/' + imgID +  '-128x128.jpg?v=0'
 		// https://beam.pro/api/v1/channels/USER
 
+		case "ali":
+			return [imageBeam("u29yvkt9-28597"), linkBeam("AliTF"), "Ali"];
+			break;
 		case "cubed":
 			return [imageBeam("2547"), linkBeam("2Cubed"), "2Cubed"];
 			break;
