@@ -30,6 +30,10 @@
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
 		<script src="../js/copyright.js"></script>
 		<script type="text/javascript">
+			document.getElementById("twitter-widget-0").addEventListener("onload",function(){
+				window.frames[0].document.body.innerHTML  = "<style>#twitter-widget-0 {width: 100%;}</style>" + window.frames[0].document.body.innerHTML ;
+			})
+		
 -			var alertUser = function(text) {
 -				console.log(text);
 -				alert(text);
