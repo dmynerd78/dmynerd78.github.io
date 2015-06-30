@@ -40,10 +40,9 @@
 		color: #777777;
 	}
 	
-	div .twitter > *
+	div #twitter-widget-0
 	{
-		width: 100%;
-		text-align: center;
+		width:100%;
 	}
 	
 	strong, b
