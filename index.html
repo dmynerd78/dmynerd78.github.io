@@ -30,9 +30,37 @@
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
 		<script src="../js/copyright.js"></script>
 		<script type="text/javascript">
-			document.getElementById("twitter-widget-0").addEventListener("onload",function(){
-				window.frames[0].document.body.innerHTML  = "<style>#twitter-widget-0 {width: 100%;}</style>" + window.frames[0].document.body.innerHTML ;
-			})
+			function loadTwitter(d,s,id){
+			var js,fjs=d.getElementsByTagName(s)[0];
+			if(!d.getElementById(id)){
+				js=d.createElement(s);
+				js.id=id;
+				js.src="//platform.twitter.com/widgets.js";
+				fjs.parentNode.insertBefore(js,fjs);
+				
+			}
+		}
+		
+		function removeTwitter(id){
+			jQuery('script[id='+id+']').remove();
+			jQuery('iframe.twitter-timeline').remove();
+		}
+		
+		function addTwitter(options){
+			var linkStr = '<a class="twitter-timeline"';
+			linkStr += (options.width)?' width="'+options.width+'"':'';
+			linkStr += (options.height)?' height="'+options.height+'"':'';
+			linkStr += (options.color)?' data-link-color="'+options.color+'"':'';
+			linkStr += (options.theme)?' data-theme="'+options.theme+'"':'';
+			linkStr += ' href="https://twitter.com/dminer78" data-widget-id="571825589892284416">Tweets by @dminer78</a>'; 
+			jQuery(linkStr).insertAfter(options.element);
+		}
+		
+		function showTwitter(id,options) {
+			removeTwitter(id);
+			addTwitter(options);
+			loadTwitter(document,'script',id);
+		}
 		
 -			var alertUser = function(text) {
 -				console.log(text);
