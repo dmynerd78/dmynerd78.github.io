@@ -66,6 +66,9 @@ var getStreamer = function(streamer) {
 		case "em":
 			return [imageBeam("5301"), linkBeam("HumansOnFire"), "Humans On Fire (Em)"];
 			break;
+		case "eve":
+			return [imageBeam("dj7cpil1-1811"), linkBeam("Evelyn3905"), "Evelyn"];
+			break;
 		case "graph":
 			return [imageBeam("2266"), linkBeam("Graphoniac"), "Graphoniac"];
 			break;
