@@ -6,8 +6,12 @@ var linkTwitch = function(user) {
 	return "http://twitch.tv/" + user.toLowerCase();
 }
 
-var imageBeam = function(ID) {
-	return 'https://s3.amazonaws.com/uploads.beam.pro/avatars/' + ID +  '-128x128.jpg?v=0';
+var imageBeam = function(ID, ext) {
+	if(ext === undefined) {
+		return 'https://s3.amazonaws.com/uploads.beam.pro/avatars/' + ID +  '-128x128.jpg?v=0';
+	} else {
+		return 'https://s3.amazonaws.com/uploads.beam.pro/avatars/' + ID +  '-128x128.jpg' + ext + '?v=0';
+	}
 }
 
 var imageTwitch = function(ID, ext) {
@@ -28,7 +32,7 @@ var getStreamer = function(streamer) {
 		// https://beam.pro/api/v1/channels/USER
 
 		case "ali":
-			return [imageBeam("u29yvkt9-28597"), linkBeam("AliTF"), "Ali"];
+			return [imageBeam("u29yvkt9-28597", "undefined"), linkBeam("AliTF"), "Ali"];
 			break;
 		case "cubed":
 			return [imageBeam("2547"), linkBeam("2Cubed"), "2Cubed"];
@@ -116,6 +120,10 @@ var getStreamer = function(streamer) {
 			username = "Dminer78";
 			return [imageTwitch("cf1a9b082582c8ea"), linkTwitch(username), "D 'Food' 78"];
 			break;
+		case "draax":
+			username = "DraaxLP";
+			return [imageTwitch("fa81760ec4c3ebf6"), linkTwitch(username), "Draax"];
+			break;
 		case "dwarf":
 			username = "DwarfufGood";
 			return [imageTwitch("1df256abfefc661c", "jpeg"), linkTwitch(username), "DwarfufGood"];
@@ -139,6 +147,10 @@ var getStreamer = function(streamer) {
 		case "ick":
 			username = "ickabodx";
 			return [imageTwitch("1f2f256239790c5d"), linkTwitch(username), "Ickabodx"];
+			break;
+		case "igamer":
+			username = "theofficialigamer";
+			return [imageTwitch("0c3d9cbd97024349"), linkTwitch(username), "iGamer"];
 			break;
 		case "kebb":
 			username = "Kebbrokk";
