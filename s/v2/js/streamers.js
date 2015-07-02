@@ -146,7 +146,7 @@ var getStreamer = function(streamer) {
 			break;
 		case "igamer":
 			username = "theofficialigamer";
-			return [imageTwitch("0c3d9cbd97024349"), linkTwitch(username), "iGamer"];
+			return [imageTwitch("0c3d9cbd97024349", "jpeg"), linkTwitch(username), "iGamer"];
 			break;
 		case "kebb":
 			username = "Kebbrokk";
