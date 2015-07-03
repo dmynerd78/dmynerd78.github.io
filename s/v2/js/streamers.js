@@ -167,6 +167,10 @@ var getStreamer = function(streamer) {
 			username = "MKTheWorst";
 			return [imageTwitch("da828105cacf6407", "jpeg"), linkTwitch(username), "MK 'NOT' the Worst"];
 			break;
+		case "nightfalcon":
+			username = "Nightfalcon4";
+			return [imageTwitch("ebd464ae7baeecc5"), linkTwitch(username), "Night Falcon"];
+			break;
 		case "paul":
 			username = "PaulFTW87";
 			return [imageTwitch("1994f8f767a37a01"), linkTwitch(username), "Paul FTW"];
@@ -178,6 +182,10 @@ var getStreamer = function(streamer) {
 		case "punz":
 			username = "Punz0matic_5k";
 			return [imageTwitch("4b3a56452814bba7", "jpeg"), linkTwitch(username), "Punz '#blamePunz' 0Matic"];
+			break;
+		case "tater":
+			username = "Taterswag";
+			return [imageTwitch("7db75bb31bbcbc68"), linkTwitch(username), "Tater Swag"];
 			break;
 		case "shadow":
 			username = "TricksterShadow";
