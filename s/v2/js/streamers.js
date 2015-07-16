@@ -84,6 +84,9 @@ var getStreamer = function(streamer) {
 		case "max":
 			return [imageBeam("3532"), linkBeam("Maxampere"), "Max Ampere"];
 			break;
+		case "pg":
+			return [imageBeam("b0je2cmo-5637"), linkBeam("peacegirl96"), "Peace 'War' Girl"];
+			break;
 		case "ping":
 			return [imageBeam("3983"), linkBeam("pingpong1109"), "Ping Pong"];
 			break;
