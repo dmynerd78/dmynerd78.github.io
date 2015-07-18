@@ -72,6 +72,9 @@ var getStreamer = function(streamer) {
 		case "eve":
 			return [imageBeam("dj7cpil1-1811"), linkBeam("Evelyn3905"), "Evelyn"];
 			break;
+		case "fullstack":
+			return [imageBeam("9g4r2iiu-19318"), linkBeam("FullstackGaming"), "Fullstack Server"];
+			break;
 		case "graph":
 			return [imageBeam("2266"), linkBeam("Graphoniac"), "Graphoniac"];
 			break;
@@ -92,6 +95,9 @@ var getStreamer = function(streamer) {
 			break;
 		case "ping":
 			return [imageBeam("3983"), linkBeam("pingpong1109"), "Ping Pong"];
+			break;
+		case "suego":
+			return [imageBeam("d2do6f5a-13553"), linkBeam("SuegoFaults"), "SuegoFaults Server"];
 			break;
 		case "smb":
 			return [imageBeam("910"), linkBeam("SMBLive"), "SMB Live"];
