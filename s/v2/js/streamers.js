@@ -57,6 +57,9 @@ var getStreamer = function(streamer) {
 		case "derpo":
 			return [imageBeam("3579"), linkBeam("Home_Derpo"), "Home Derpo"];
 			break;
+		case "ditchthelabel":
+			return [imageBeam("d2do6f5a-13553"), linkBeam("SuegoFaults"), "#DitchTheLabel Charity Stream"];
+			break;
 		case "dot":
 			return [imageBeam("3652"), linkBeam("Dot83"), "Dot83"];
 			break;
@@ -197,6 +200,10 @@ var getStreamer = function(streamer) {
 		case "steve":
 			username = "PHDSteve";
 			return [imageTwitch("e205b4c8494d4c43", "jpeg"), linkTwitch(username), "PHD Steve"];
+			break;
+		case "tatty":
+			username = "TattyBudderfly";
+			return [imageTwitch("7d937ce8cdf9d6d2"), linkTwitch(username), "Tatty 'Art' Budderfly"];
 			break;
 		case "wyld":
 			username = "Wyld";
