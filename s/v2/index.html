@@ -143,6 +143,12 @@
 			
 			if(url.length <= 21) {
 				for(i = 0; i < url.length; i++) {
+				
+					console.group();
+					console.info("Streamer: " + url[i]);
+					console.info("imgID: " + currentStreamer[0]);
+					console.info("Link: " + currentStreamer[1]);
+					console.groupEnd();
 
 					currentStreamer = getStreamer(url[i]);
 					document.getElementById(i).innerHTML = currentStreamer[2] + "<br /> <img src='" + currentStreamer[0] + "' alt='" + currentStreamer[2] + " Profile Picture' onError='imgError(this);' /><br /><br />"

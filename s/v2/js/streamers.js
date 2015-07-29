@@ -90,6 +90,9 @@ var getStreamer = function(streamer) {
 		case "max":
 			return [imageBeam("3532"), linkBeam("Maxampere"), "Max Ampere"];
 			break;
+		case "nite":
+			return [imageBeam("3606"), linkBeam("nite97m"), "Nite"];
+			break;
 		case "pg":
 			return [imageBeam("b0je2cmo-5637"), linkBeam("peacegirl96"), "Peace 'War' Girl"];
 			break;
