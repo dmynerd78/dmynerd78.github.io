@@ -69,22 +69,22 @@ nav a:hover {
 	transition: background 1s;
 }
 
-.youtube {
+.youtube:hover {
     color: #CC181E;
     transition: color 1s;
 }
 
-.twitter {
+.twitter:hover {
     color: #6CADDE;
     transition: color 1s;
 }
 
-.twitch {
+.twitch:hover {
     color: #6541A5;
     transition: color 1s;
 }
 
-.github {
+.github:hover {
     color: #171515;
     transition: color 1s;
 }
