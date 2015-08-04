@@ -172,7 +172,7 @@ var getStreamer = function(streamer) {
 			break;
 		case "maddiie":
 			username = "MaddiieManeater";
-			return [imageTwitch("c5f5c7c88cf1656a"), linkTwitch(username), "Maddiie Man Eater"];
+			return [imageTwitch("c5f5c7c88cf1656a"), linkTwitch(username), "Maddiie"];
 			break;
 		case "mcg":
 			username = "mc_guitarist1795";
