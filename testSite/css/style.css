@@ -1,10 +1,15 @@
+@font-face {
+   font-family: Exo;
+   src: url("../fonts/Exo.ttf");
+}
+
 html {	
 	height:100%;
 	width:100%;
 	margin:0;
 	padding:0;
-	font-family:Raleway;
-	background-image: url("https://unsplash.imgix.net/photo-1428278953961-a8bc45e05f72?q=75&fm=jpg&w=1080&fit=max&s=cd36b500e3592b105c49e220d1b84c31");
+	font-family: 'Exo', sans-serif;
+	background-image: url("../images/bg.jpg");
 	background-size:cover;
 	background-attachment:fixed;
 	background-repeat:no-repeat;
@@ -12,56 +17,76 @@ html {
 }
 
 body {
-    color:white;
+    color: white;
 }
 
 section:nth-of-type(1) {
 	position:fixed;
-	top:0;
-	bottom:0;
-	left:0;
-	right:0;
-	height:100%;
-	width:100%;
-	background-color:rgba(40,40,40,0.7);
-	text-align:center;
-	padding-top:28vh;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 100%;
+	width: 100%;
+	background-color: rgba(40,40,40,0.7);
+	text-align: center;
+	padding-top: 5em;
 }
 
 nav {
-	position:fixed;
-	top:0;
-	left:0;
-	right:0;
-	z-index:999;
-	height:60px;
-	width:100%;
-	padding-left:10px;
-	line-height:60px;
-	box-sizing:border-box;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 999;
+	height: 60px;
+	width: 100%;
+	padding-left: 10px;
+	line-height: 60px;
+	box-sizing: border-box;
 	background: rgba(255, 255, 255, 0.25);
 	transition: background-color 0.5s;
-	font-size:2em;
+	font-size: 2em;
 }
+
 nav a  {
-	position:relative;
-	display:inline-block;
-	height:61px;
-	width:120px;
-	margin:0;
-	box-sizing:border-box;
-	float:right;
-	text-align:center;
-	border-bottom:3px solid rgba(255,255,255,0);
-	font-size:0.5em;
-	color:white;
-	text-decoration:none;
-	transition:border-bottom 1s;
+	position: relative;
+	display: inline-block;
+	height: 61px;
+	width: 120px;
+	margin: 0;
+	box-sizing: border-box;
+	float: right;
+	text-align: center;
+	font-size: 0.5em;
+	color: white;
+	text-decoration: none;
+	transition:background 0.8s
 }
 
 nav a:hover {
 	background: rgba(255, 255, 255, 0.30);
 	transition: background 1s;
+}
+
+.youtube {
+    color: #CC181E;
+    transition: color 1s;
+}
+
+.twitter {
+    color: #6CADDE;
+    transition: color 1s;
+}
+
+.twitch {
+    color: #6541A5;
+    transition: color 1s;
+}
+
+.github {
+    color: #171515;
+    transition: color 1s;
 }
 
 footer {
