@@ -3,7 +3,7 @@
    src: url("../fonts/Exo.ttf");
 }
 
-html {	
+html {
 	height:100%;
 	width:100%;
 	margin:0;
@@ -52,7 +52,7 @@ nav {
 nav a  {
 	position: relative;
 	display: inline-block;
-	height: 61px;
+	height: 60px;
 	width: 120px;
 	margin: 0;
 	box-sizing: border-box;
@@ -65,28 +65,76 @@ nav a  {
 }
 
 nav a:hover {
+    background: #C9CACD;
 	background: rgba(255, 255, 255, 0.30);
 	transition: background 1s;
 }
 
+nav a .fa {
+    height: 60px;
+	width: 120px;
+    transition: text-shadow 0.5s;
+	transition: color 0.5s;
+}
+
+nav a .fa:hover {
+    text-shadow:
+   -1px -1px 0 #fff,  
+    1px -1px 0 #fff,
+    -1px 1px 0 #fff,
+     1px 1px 0 #fff;
+}
+
 .youtube:hover {
     color: #CC181E;
-    transition: color 1s;
 }
 
 .twitter:hover {
     color: #6CADDE;
-    transition: color 1s;
 }
 
 .twitch:hover {
     color: #6541A5;
-    transition: color 1s;
 }
 
 .github:hover {
     color: #171515;
-    transition: color 1s;
+}
+
+aside {
+	position:fixed;
+	left:0;
+	top:0;
+	bottom:0;
+	height:100%;
+	width:40%;
+	background-color:#333;
+	opacity:0.7;
+	color:white;
+	text-align:center;
+	border-right:3px solid #222;
+	box-sizing:border-box;
+}
+
+aside #content {	
+	position: relative;
+ 	top: 32%;
+	transform: translateY(-50%);
+}
+
+aside hr {
+	width:90%;
+	height:4px;
+	border:none;
+	border-radius:1px;
+	background-image: -webkit-linear-gradient(left, #2B2B2B, #D8D8D8, #2B2B2B);
+	background-image: -moz-linear-gradient(left, #2B2B2B, #D8D8D8, #2B2B2B);
+	background-image: -ms-linear-gradient(left, #2B2B2B, #D8D8D8, #2B2B2B);
+	background-image: -o-linear-gradient(left, #2B2B2B, #D8D8D8, #2B2B2B); 
+}
+
+aside footer a {
+	color:white;
 }
 
 footer {
@@ -103,4 +151,45 @@ footer {
 
 footer a {
 	color: white;
+}
+
+/*  SECTIONS  */
+.section {
+	clear: both;
+	padding: 0px;
+	margin: 0px;
+}
+
+/*  COLUMN SETUP  */
+.col {
+	display: block;
+	float:left;
+	margin: 1% 0 1% 1.6%;
+}
+.col:first-child { margin-left: 0; }
+
+/*  GROUPING  */
+.group:before,
+.group:after { content:""; display:table; }
+.group:after { clear:both;}
+.group { zoom:1; /* For IE 6/7 */ }
+
+/*  GRID OF TWO  */
+.span_2_of_2 {
+	width: 100%;
+}
+.span_1_of_2 {
+	width: 49.2%;
+}
+
+/*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
+
+@media only screen and (max-width: 480px) {
+	.col { 
+		margin: 1% 0 1% 0%;
+	}
+}
+
+@media only screen and (max-width: 480px) {
+	.span_2_of_2, .span_1_of_2 { width: 100%; }
 }
