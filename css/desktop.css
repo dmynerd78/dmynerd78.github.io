@@ -10,18 +10,14 @@ html {
 	padding:0;
 	font-family: 'Exo', sans-serif;
 	background-image: url("../images/bg.jpg");
-	background-size: cover;
-	background-attachment: fixed;
-	background-repeat: no-repeat;
+	background-size:cover;
+	background-attachment:fixed;
+	background-repeat:no-repeat;
 	background-position: center;
 }
 
 body {
     color: white;
-}
-
-a {
-	color: white;
 }
 
 section:nth-of-type(1) {
@@ -63,6 +59,7 @@ nav a  {
 	float: right;
 	text-align: center;
 	font-size: 0.5em;
+	color: white;
 	text-decoration: none;
 	transition:background 0.8s
 }
@@ -71,11 +68,6 @@ nav a:hover {
     background: #C9CACD;
 	background: rgba(255, 255, 255, 0.30);
 	transition: background 1s;
-	text-shadow:
-   -1px -1px 0 #fff,  
-    1px -1px 0 #fff,
-    -1px 1px 0 #fff,
-     1px 1px 0 #fff;
 }
 
 nav a .fa {
@@ -83,6 +75,14 @@ nav a .fa {
 	width: 120px;
     transition: text-shadow 0.5s;
 	transition: color 0.5s;
+}
+
+nav a .fa:hover {
+    text-shadow:
+   -1px -1px 0 #fff,  
+    1px -1px 0 #fff,
+    -1px 1px 0 #fff,
+     1px 1px 0 #fff;
 }
 
 .youtube:hover {
@@ -159,4 +159,8 @@ footer {
 	height: 30px;
 	line-height: 30px;
 	font-size: smaller;
+}
+
+footer a {
+	color: white;
 }

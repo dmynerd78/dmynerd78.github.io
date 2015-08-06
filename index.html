@@ -13,36 +13,41 @@
 		<link href="css/paceCustom.css" rel="stylesheet" />
 		
 		
-		<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+		<link rel="stylesheet" href="css/desktop.css" type="text/css" media="all" />
 		<link rel="stylesheet" href="css/font-awesome.min.css">
 		
-		<script src="../js/copyright.js"></script>
+		<script src="js/copyright.js"></script>
+		<script src="js/ads.js"></script>
 		<script type="text/javascript">
--			var alertUser = function(text) {
--				console.log(text);
--				alert(text);
--			}
--		
--			var url = window.location.href.split("?")[1];
--			if (typeof url === "undefined" || typeof url === "null" || url == "") {
--						console.log("No link in url to forward to. Add '?[url here]' to forward a user somewhere! :D");
--			} else {
--				if (url.startsWith("http")) {
--					window.location = "2CubedBot/forward.html?" + url;
--				} else {
--					alertUser("'" + url + "' is not a valid URL. Make sure to include 'http://' or the equivalent of it in the URL.");
--				}
--			}
--			
--			if(window.canRunAds === undefined) {
--				alert("Heads up!\nYou're currently using adblocker. My site does not have any ads and will only limit the content which you see on my site.");
--			}
--		</script>
+			var alertUser = function(text) {
+				console.log(text);
+				alert(text);
+			}
+			
+			if(screen.width <= 500 || screen.height <= 500) {
+			    alert("The site is still under construction. No mobile site yet, sorry :(")
+			}
+		
+			var url = window.location.href.split("?")[1];
+			if (typeof url === "undefined" || typeof url === "null" || url == "") {
+						console.log("No link in url to forward to. Add '?[url here]' to forward a user somewhere! :D");
+			} else {
+				if (url.startsWith("http")) {
+					window.location = "2CubedBot/forward.html?" + url;
+				} else {
+					alertUser("'" + url + "' is not a valid URL. Make sure to include 'http://' or the equivalent of it in the URL.");
+				}
+			}
+			
+			if(window.canRunAds === undefined) {
+				alert("Heads up!\nYou're currently using adblocker. My site does not have any ads and will only limit the content which you see on my site.");
+			}
+		</script>
     </head>
      <body>
       <nav>
         <!-- TODO: Change nav bar and bg if mobile -->
-        Welcome!
+        Dminer78
         <a href="#"><i class="fa fa-github github"></i></a>
         <a href="#"><i class="fa fa-twitch twitch"></i></a>
         <a href="#"><i class="fa fa-twitter twitter"></i></a>
@@ -51,11 +56,17 @@
       <section>
         <aside>
 			<div id="content">
-				<h1>Welcome!</h1>
+				<h1 style="padding-top: 10em;">Welcome!</h1>
 				<h2>To My <em>Lair!</em>&nbsp; Wait that's not right...</h2>
 				<hr />
 				<h1>Welcome to my website thingy!</h1>
 				<p>Where I do things! And other things! And... uhm... What else do I do again?</p>
+				<br>
+				<div class="twitter">
+				    <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/dminer78" data-widget-id="571825589892284416">Tweets by @dminer78</a>
+                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+				</div>
+          
 			</div>
 			<footer>
 				Special thanks to <a href="http://chillibyte.github.io">Deep Sohelia</a> for help and the templates
