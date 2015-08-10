@@ -43,10 +43,6 @@
 					alertUser("'" + url + "' is not a valid URL. Make sure to include 'http://' or the equivalent of it in the URL.");
 				}
 			}
-			
-			if(window.canRunAds === undefined) {
-				alert("Heads up!\nYou're browser is blocking ads! There are no ads on this site, and it will only make your viewing experience worse");
-			}
             
 		</script>
     </head>
@@ -68,7 +64,7 @@
 				<h1>Welcome to my website thingy!</h1>
 				<p>Where I do things! And other things! And... uhm... What else do I do again?</p>
 				<br>
-				<div class="twitter">
+				<div id="twitter">
 				    <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/dminer78" data-widget-id="571825589892284416fi">Tweets by @dminer78</a>
                 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 				</div>
@@ -79,7 +75,7 @@
 			</footer>
 		</aside>
 		<article class="body">
-		    <p>Some videos you might find interesting to watch</p>
+		    <h1 id="header">Some videos you might find interesting to watch</h1>
 		    <!-- <a href="https://www.youtube.com/watch?v=QH2Py76Z91Y" target="_blank"><img class="thumbnail" src="https://i.ytimg.com/vi/QH2Py76Z91Y/mqdefault.jpg" /></a>-->
 		    <div id="videos">
 		        <div class="section group">
@@ -129,6 +125,10 @@
                     document.getElementById(i).innerHTML = "<a href='https://www.youtube.com/watch?v=" + (videoObject[i])[1] +  " ' target='_blank'>" + "<img class='thumbnail' src='https://i.ytimg.com/vi/"+ (videoObject[i])[1] + "/mqdefault.jpg' />"  + "</a>";
                 }
             }, 1000);
+            
+            if(window.canRunAds === undefined) {
+				document.getElementById("twitter").innerHTML = "<p class='warning'>You currently have an ad blocker enabled which disables some of the links on this site :(</p"
+			}
       </script>
       
       <script>

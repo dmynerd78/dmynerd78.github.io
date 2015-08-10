@@ -31,6 +31,19 @@ hr {
 	background-image: -o-linear-gradient(left, #2B2B2B, #D8D8D8, #2B2B2B); 
 }
 
+section:nth-of-type(1) {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 100%;
+	width: 100%;
+	background-color: rgba(40,40,40,0.7);
+	text-align: center;
+	padding-top: 5em;
+}
+
 .youtube:hover {
     color: #CC181E;
 }
@@ -47,15 +60,6 @@ hr {
     color: #171515;
 }
 
-section:nth-of-type(1) {
-	position: fixed;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	height: 100%;
-	width: 100%;
-	background-color: rgba(40,40,40,0.7);
-	text-align: center;
-	padding-top: 5em;
+.warning {
+    color: #D25252;
 }
