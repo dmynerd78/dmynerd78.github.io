@@ -18,6 +18,9 @@
 		<link rel="stylesheet" href="css/style-mobile.css" type="text/css" media="all and (max-width: 500px)" />
 		<link rel="stylesheet" href="css/font-awesome.min.css">
 		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="js/ytGetUploads.js"></script>
+		
 		<script src="js/copyright.js"></script>
 		<script src="js/ads.js"></script>
 		<script type="text/javascript">
@@ -44,16 +47,17 @@
 			if(window.canRunAds === undefined) {
 				alert("Heads up!\nYou're browser is blocking ads! There are no ads on this site, and it will only make your viewing experience worse");
 			}
+            
 		</script>
     </head>
      <body>
       <nav>
         <!-- TODO: Mobile CSS Sheet -->
         Hello!
-        <a href="#"><i class="fa fa-github github"></i></a>
-        <a href="#"><i class="fa fa-twitch twitch"></i></a>
-        <a href="#"><i class="fa fa-twitter twitter"></i></a>
-        <a href="#"><i class="fa fa-youtube-play youtube"></i></a>
+        <a href="http://github.com/dminer78" target="_blank"><i class="fa fa-github github"></i></a>
+        <a href="http://twitch.tv/dminer78" target="_blank"><i class="fa fa-twitch twitch"></i></a>
+        <a href="http://twitter.com/dminer78" target="_blank"><i class="fa fa-twitter twitter"></i></a>
+        <a href="http://youtube.com/user/dminer78" target="_blank"><i class="fa fa-youtube-play youtube"></i></a>
       </nav>
       <section>
         <aside>
@@ -76,15 +80,56 @@
 		</aside>
 		<article class="body">
 		    <p>Some videos you might find interesting to watch</p>
-		    <div class="videos">
-		        <a href="https://www.youtube.com/watch?v=QH2Py76Z91Y" target="_blank"><img class="thumbnail" src="https://i.ytimg.com/vi/QH2Py76Z91Y/mqdefault.jpg" /></a>
-		        <a href="https://www.youtube.com/watch?v=gXR54LoedfY" target="_blank"><img claas="thumbnail" src="https://i.ytimg.com/vi/gXR54LoedfY/mqdefault.jpg" /></a>
+		    <!-- <a href="https://www.youtube.com/watch?v=QH2Py76Z91Y" target="_blank"><img class="thumbnail" src="https://i.ytimg.com/vi/QH2Py76Z91Y/mqdefault.jpg" /></a>-->
+		    <div id="videos">
+		        <div class="section group">
+                	<div id="1" class="col span_1_of_3">
+                	</div>
+                	<div id="2" class="col span_1_of_3">
+                	</div>
+                	<div id="3" class="col span_1_of_3">
+                	</div>
+                </div>
+                
+                <div class="section group">
+                	<div id="4" class="col span_1_of_3">
+                	</div>
+                	<div id="5" class="col span_1_of_3">
+                	</div>
+                	<div id="6" class="col span_1_of_3">
+                	</div>
+                </div>
+                
+                <div class="section group">
+                	<div id="7" class="col span_1_of_3">
+                	</div>
+                	<div id="8" class="col span_1_of_3">
+                	</div>
+                	<div id="9" class="col span_1_of_3">
+                	</div>
+                </div>
 	        </div>
 		</article>
       </section>
       <footer>
             &copy; dminer78 2015&nbsp;
       </footer>
+      
+      <script>
+      videoObject = {};
+          $.getJSON("https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=10&playlistId=UU5FioLwX2ZgjPbpB84FCf-Q&key=AIzaSyB6wccXxgBeO6VJ5EHV-zTrBvWTKZE8H0k", function(data) {
+            $.each(data.items, function(i,val) {
+             videoObject[i] = [val.snippet.title, val.snippet.resourceId.videoId]
+             console.log(videoObject[i])
+             });
+            });
+            
+            setTimeout(function(){
+                for(i = 1; i < 10; i++) {
+                    document.getElementById(i).innerHTML = "<a href='https://www.youtube.com/watch?v=" + (videoObject[i])[1] +  " ' target='_blank'>" + "<img class='thumbnail' src='https://i.ytimg.com/vi/"+ (videoObject[i])[1] + "/mqdefault.jpg' />"  + "</a>";
+                }
+            }, 1000);
+      </script>
       
       <script>
     	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
