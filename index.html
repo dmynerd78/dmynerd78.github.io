@@ -14,23 +14,17 @@
 		
 		<!-- Organize css sheets -->
 		<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
-		<link rel="stylesheet" href="css/style-desktop.css" type="text/css" media="all" />
-		<link rel="stylesheet" href="css/style-mobile.css" type="text/css" media="all and (max-width: 500px)" />
+		<!--<link rel="stylesheet" href="css/style-desktop.css" type="text/css" media="all" />
+		<link rel="stylesheet" href="css/style-mobile.css" type="text/css" media="all and (max-width: 500px)" />-->
 		<link rel="stylesheet" href="css/font-awesome.min.css">
 		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-		<script src="js/ytGetUploads.js"></script>
-		
-		<script src="js/copyright.js"></script>
-		<script src="js/ads.js"></script>
+		<script src="js/css.js"></script>
+
 		<script type="text/javascript">
 			var alertUser = function(text) {
 				console.log(text);
 				alert(text);
-			}
-			
-			if(screen.width <= 500 || screen.height <= 500) {
-			    alert("The site is still under construction. No mobile site yet, sorry :(")
 			}
 		
 			var url = window.location.href.split("?")[1];
@@ -40,7 +34,7 @@
 				if (url.startsWith("http")) {
 					window.location = "2CubedBot/forward.html?" + url;
 				} else {
-					//alertUser("'" + url + "' is not a valid URL. Make sure to include 'http://' or the equivalent of it in the URL.");
+					console.log("'" + url + "' is not a valid URL. Make sure to include 'http://' or the equivalent of it in the URL.");
 				}
 			}
             
@@ -50,10 +44,11 @@
       <nav>
         <!-- TODO: Mobile CSS Sheet -->
         Hello!
-        <a href="http://github.com/dminer78" target="_blank"><i class="fa fa-github github"></i></a>
-        <a href="http://twitch.tv/dminer78" target="_blank"><i class="fa fa-twitch twitch"></i></a>
-        <a href="http://twitter.com/dminer78" target="_blank"><i class="fa fa-twitter twitter"></i></a>
-        <a href="http://youtube.com/user/dminer78" target="_blank"><i class="fa fa-youtube-play youtube"></i></a>
+        <a href="http://github.com/dminer78" target="_blank" title="Github"><i class="fa fa-github github"></i></a>
+        <a href="http://twitch.tv/dminer78" target="_blank" title="Twitch"><i class="fa fa-twitch twitch"></i></a>
+        <a href="http://twitter.com/dminer78" target="_blank" title="Twitter"><i class="fa fa-twitter twitter"></i></a>
+        <a href="http://youtube.com/user/dminer78" target="_blank" title="Youtube"><i class="fa fa-youtube-play youtube"></i></a>
+        <a href="http://unsplash.com/dminer78" target="_blank" title="Unsplash"><i class="fa fa-camera github"></i></a>
       </nav>
       <section>
         <aside>
@@ -65,8 +60,10 @@
 				<p>Where I do things! And other things! And... uhm... What else do I do again?</p>
 				<br>
 				<div id="twitter">
+				<!--
 				    <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/dminer78" data-widget-id="571825589892284416fi">Tweets by @dminer78</a>
                 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                -->
 				</div>
           
 			</div>
@@ -111,6 +108,9 @@
             &copy; dminer78 2015&nbsp;
       </footer>
       
+      <script src="js/copyright.js"></script>
+	  <script src="js/ads.js"></script>
+      <!--
       <script>
       videoObject = {};
           $.getJSON("https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=10&playlistId=UU5FioLwX2ZgjPbpB84FCf-Q&key=AIzaSyB6wccXxgBeO6VJ5EHV-zTrBvWTKZE8H0k", function(data) {
@@ -130,6 +130,7 @@
 				document.getElementById("twitter").innerHTML = "<p class='warning'>You currently have an ad blocker enabled which disables some of the links on this site :(<br /><br />There are <em>zero</em> on this site so you can disable it if you chose to</p>";
 			}
       </script>
+      -->
       
       <script>
     	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
