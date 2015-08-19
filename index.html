@@ -34,7 +34,7 @@
 				if (url.startsWith("http")) {
 					window.location = "2CubedBot/forward.html?" + url;
 				} else {
-					console.log("'" + url + "' is not a valid URL. Make sure to include 'http://' or the equivalent of it in the URL.");
+					console.log("'" + url + "' is not a valid URL. Make sure to include 'http://' or the equivalent of it in the URL."); //TODO Change to url=
 				}
 			}
             
@@ -61,7 +61,7 @@
 				<br>
 				<div id="twitter">
 				    <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/dminer78" data-widget-id="571825589892284416fi">Tweets by @dminer78</a>
-                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 				</div>
           
 			</div>
@@ -74,29 +74,29 @@
 		    <!-- <a href="https://www.youtube.com/watch?v=QH2Py76Z91Y" target="_blank"><img class="thumbnail" src="https://i.ytimg.com/vi/QH2Py76Z91Y/mqdefault.jpg" /></a>-->
 		    <div id="videos">
 		        <div class="section group">
+                	<div id="0" class="col span_1_of_3">
+                	</div>
                 	<div id="1" class="col span_1_of_3">
                 	</div>
                 	<div id="2" class="col span_1_of_3">
                 	</div>
-                	<div id="3" class="col span_1_of_3">
-                	</div>
                 </div>
                 
                 <div class="section group">
+                	<div id="3" class="col span_1_of_3">
+                	</div>
                 	<div id="4" class="col span_1_of_3">
                 	</div>
                 	<div id="5" class="col span_1_of_3">
                 	</div>
-                	<div id="6" class="col span_1_of_3">
-                	</div>
                 </div>
                 
                 <div class="section group">
+                	<div id="6" class="col span_1_of_3">
+                	</div>
                 	<div id="7" class="col span_1_of_3">
                 	</div>
                 	<div id="8" class="col span_1_of_3">
-                	</div>
-                	<div id="9" class="col span_1_of_3">
                 	</div>
                 </div>
 	        </div>
@@ -110,7 +110,7 @@
 	  <script src="js/ads.js"></script>
       <script>
       videoObject = {};
-          $.getJSON("https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=10&playlistId=UU5FioLwX2ZgjPbpB84FCf-Q&key=AIzaSyB6wccXxgBeO6VJ5EHV-zTrBvWTKZE8H0k", function(data) {
+          $.getJSON("https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=9&playlistId=UU5FioLwX2ZgjPbpB84FCf-Q&key=AIzaSyB6wccXxgBeO6VJ5EHV-zTrBvWTKZE8H0k", function(data) {
             $.each(data.items, function(i,val) {
              videoObject[i] = [val.snippet.title, val.snippet.resourceId.videoId]
              console.log(videoObject[i])
@@ -118,7 +118,7 @@
             });
             
             setTimeout(function(){
-                for(i = 1; i < 10; i++) {
+                for(i = 0; i < 10; i++) {
                     document.getElementById(i).innerHTML = "<a href='https://www.youtube.com/watch?v=" + (videoObject[i])[1] +  " ' target='_blank'>" + "<img class='thumbnail' src='https://i.ytimg.com/vi/"+ (videoObject[i])[1] + "/mqdefault.jpg' />"  + "</a>";
                 }
             }, 1000);
