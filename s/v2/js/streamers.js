@@ -72,6 +72,9 @@ var getStreamer = function(streamer) {
 		case "eve":
 			return [imageBeam("dj7cpil1-1811"), linkBeam("Evelyn3905"), "Evelyn"];
 			break;
+		case "ferria":
+			return [imageBeam("mwlg5sxa", "undefined"), linkBeam("FerriaForever"), "Ferria Forever"];
+			break;
 		case "fullstack":
 			return [imageBeam("9g4r2iiu-19318"), linkBeam("FullstackGaming"), "Fullstack Server"];
 			break;
