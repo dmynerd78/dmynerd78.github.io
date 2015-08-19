@@ -90,6 +90,9 @@ var getStreamer = function(streamer) {
 		case "max":
 			return [imageBeam("3532"), linkBeam("Maxampere"), "Max Ampere"];
 			break;
+		case "sweet":
+			return [imageBeam("5286"), linkBeam("MNSweet"), "'Max' MNSweet"];
+			break;
 		case "nite":
 			return [imageBeam("3606"), linkBeam("nite97m"), "Nite"];
 			break;
@@ -205,6 +208,14 @@ var getStreamer = function(streamer) {
 		case "shadow":
 			username = "TricksterShadow";
 			return [imageTwitch("3551bcd31e14acf2"), linkTwitch(username), "Trickster Shadow"];
+			break;
+		case "shelby":
+			username = "shelbyfrasier";
+			return [imageTwitch("31648edb1a8f6804", "jpeg"), linkTwitch(username), "Shelby Frasier"];
+			break;
+		case "sheep":
+			username = "mrsheepco";
+			return [imageTwitch("6e87b667d772fd2c", "jpeg"), linkTwitch(username), "Mr Sheep Co"];
 			break;
 		case "steve":
 			username = "PHDSteve";
