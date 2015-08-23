@@ -2,39 +2,8 @@ html {
     background-image: url("../images/bg/desktop.jpg");
 }
 
-nav {
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	z-index: 999;
-	height: 60px;
-	width: 100%;
-	padding-left: 10px;
-	line-height: 60px;
-	box-sizing: border-box;
-	background: rgba(255, 255, 255, 0.25);
-	transition: background-color 0.5s;
-	font-size: 2em;
-}
-
-nav a  {
-	position: relative;
-	display: inline-block;
-	height: 60px;
-	width: 120px;
-	margin: 0;
-	box-sizing: border-box;
-	float: right;
-	text-align: center;
-	font-size: 0.5em;
-	text-decoration: none;
-	transition:background 0.8s
-}
-
-nav a .fa {
-    height: 60px;
-	width: 120px;
+hr {
+    width: 15%;
 }
 
 footer {

@@ -1,3 +1,14 @@
 html {
     background-image: url("../images/bg/mobile.jpg");
 }
+
+nav a {
+    width:90px;
+}
+nav a:after {
+    width:90px;
+}
+
+hr {
+    width: 75%;
+}

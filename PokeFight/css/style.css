@@ -26,10 +26,37 @@ html {
 	background-position: center;
 }
 
+nav {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 999;
+	height: 60px;
+	width: 100%;
+	padding-left: 10px;
+	line-height: 60px;
+	box-sizing: border-box;
+	background: rgba(255, 255, 255, 0.25);
+	transition: background-color 0.5s;
+	font-size: 2em;
+}
+
 nav a {
-    color: #font-family: Capitals,Impact,fantasy;;
+    font-family: Capitals,Impact,fantasy;
     transition: text-shadow 0.5s;
 	transition: color 0.5s;
+	position: relative;
+	display: inline-block;
+	height: 60px;
+	width: 120px;
+	margin: 0;
+	box-sizing: border-box;
+	float: right;
+	text-align: center;
+	font-size: 0.5em;
+	text-decoration: none;
+	transition:background 0.8s
 }
 
 nav a:hover {
@@ -44,6 +71,11 @@ nav a .fa:hover {
     1px -1px 0 #fff,
     -1px 1px 0 #fff,
      1px 1px 0 #fff;
+}
+
+nav a .fa {
+    height: 60px;
+	width: 120px;
 }
 
 ul {
@@ -98,6 +130,20 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 hr {
-    width: 15%;
     opacity: 0.45;
+}
+
+/* TODO */
+
+#gdoc {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    z-index: 200;
+}
+
+iframe#gdoc {
+    overflow: hidden;
+    height: 900px;
+    width: 550px;
 }
