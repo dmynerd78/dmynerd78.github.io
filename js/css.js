@@ -1,8 +1,10 @@
-if(window.innerWidth <= 700 || window.innerHeight <= 700 || screen.width <= 700 || screen.height <= 700) {
+if(screen.width <= 700 || screen.height <= 700) {
     alert("Mobile site is still under construction. Sorry for the inconvenience");
     $('head').append('<link rel="stylesheet" href="css/style-mobile.css" type="text/css" />');
     console.log("MOBILE css sheet appended");
+    mobile = true
 } else {
     $('head').append('<link rel="stylesheet" href="css/style-desktop.css" type="text/css" />');
     console.log("DESKTOP css sheet appended");
+    mobile = false
 }
