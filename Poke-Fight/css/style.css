@@ -133,8 +133,6 @@ hr {
     opacity: 0.45;
 }
 
-/* TODO */
-
 #gdoc {
     margin: 0;
     padding: 0;
@@ -146,4 +144,13 @@ iframe#gdoc {
     overflow: hidden;
     height: 900px;
     width: 550px;
+}
+
+footer {
+    z-index: 9001;
+}
+
+#ascrail2000 {
+    padding-right: 5px;
+    opacity: 0.5;
 }
