@@ -142,8 +142,10 @@ hr {
 
 iframe#gdoc {
     overflow: hidden;
+    overflow-y: hidden;
     height: 900px;
     width: 550px;
+    padding-bottom: 2em;
 }
 
 footer {
