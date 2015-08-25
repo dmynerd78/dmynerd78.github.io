@@ -149,7 +149,16 @@ iframe#gdoc {
 }
 
 footer {
-    z-index: 9001;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	left: 0;
+	right: 0;
+	text-align: right;
+	height: 30px;
+	line-height: 30px;
+	font-size: smaller;
+	z-index: 9001;
 }
 
 #ascrail2000 {

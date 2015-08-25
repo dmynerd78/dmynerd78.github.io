@@ -6,18 +6,6 @@ hr {
     width: 15%;
 }
 
-footer {
-	position: fixed;
-	bottom: 0;
-	width: 100%;
-	left: 0;
-	right: 0;
-	text-align: right;
-	height: 30px;
-	line-height: 30px;
-	font-size: smaller;
-}
-
 /* TODO: Make hover look cleaner and add transitions */
 /* http://stackoverflow.com/questions/2011142/how-to-change-the-style-of-title-attribute-inside-the-anchor-tag */
 
