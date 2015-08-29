@@ -120,34 +120,15 @@ a {
     padding-bottom: 1em;
 }
 
-/* http://stackoverflow.com/questions/7061420/how-do-i-animate-a-glowing-effect-on-text */
-/* http://www.w3schools.com/cssref/css3_pr_animation-keyframes.asp */
-/* http://stackoverflow.com/questions/16783554/how-to-make-css-animation-to-play-every-10-seconds */
-
-#FAQ:target, #howtoplay:target, #code:target {
-    /* Add moz- webkit- o- etc to DESKTOP css file */
-    animation: glow 3s infinite;
-}
-
-@keyframes glow {
-    0% {
-        text-shadow: 0 0 1px #2F9A9F; /* E8F3F8 DBE6EC */
-        color: #E8F3F8;
-    }
-    50% {
-        text-shadow: 0 0 4px #2F9A9F;
-        color: #80D2D5;
-    }
-    100% {
-        text-shadow: 0 0 1px #2F9A9F;
-        color: #E8F3F8;
-    }
-}
-
 /* http://www.colourlovers.com/palette/490780/The_First_Raindrop */
 
 .question {
-    color: #73C6D4;
+    color: #19C2FF;
+    text-shadow:
+   -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+     1px 1px 0 #000;
 }
 
 .answer {
@@ -184,6 +165,30 @@ footer {
 	line-height: 30px;
 	font-size: smaller;
 	z-index: 9001;
+}
+
+/* http://stackoverflow.com/questions/7061420/how-do-i-animate-a-glowing-effect-on-text */
+/* http://www.w3schools.com/cssref/css3_pr_animation-keyframes.asp */
+/* http://stackoverflow.com/questions/16783554/how-to-make-css-animation-to-play-every-10-seconds */
+
+#FAQ:target, #howtoplay:target, #code:target {
+    /* Add moz- webkit- o- etc to DESKTOP css file */
+    animation: glow 3s infinite;
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 1px #2F9A9F; /* E8F3F8 DBE6EC */
+        color: #E8F3F8;
+    }
+    50% {
+        text-shadow: 0 0 4px #2F9A9F;
+        color: #80D2D5;
+    }
+    100% {
+        text-shadow: 0 0 1px #2F9A9F;
+        color: #E8F3F8;
+    }
 }
 
 #ascrail2000 {
