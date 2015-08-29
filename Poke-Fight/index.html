@@ -14,9 +14,7 @@ All pokemon use same XP formula instead of different types
 Install page
 Source code link
 Link to unsplash
-LInk to Deep (for being awesome)
-
-Logo
+Link to Deep (for being awesome)
 -->
 
 <html>
@@ -38,6 +36,7 @@ Logo
 		<script src="js/css.js"></script>
 		
 		<script src="js/jquery.nicescroll.min.js"></script>
+		<script src="js/bg.js"></script>
     </head>
     <body>
       <nav>
@@ -51,25 +50,38 @@ Logo
 		<article class="body">
 		    <h1 id="header">Poke-Fight: A Text-Based Pokemon Battle!</h1>
 		    
-		    <!-- Shrink image down -->
+		    <!-- TODO: Shrink image down ( -->
 		    <img src="images/header.png" /><br />
-		    Pokemon drawings by <a href="http://red-flare.deviantart.com/" target="_blank">Red-Flare</a>
+		    <h4>Pokemon drawings by <a href="http://red-flare.deviantart.com/" target="_blank">Red-Flare</a></h4>
 		    
 		    <h3 id="FAQ" >Frequently Asked Questions (FAQ)</h3>
+		    <div class="body_nav"><a href="#FAQ">FAQ</a> | <a href="#howtoplay">How to Play the Game</a> | <a href="#code">Source Code</a></div>
 		    <ul>
 		        <li class="question">When will the program be fully functional?</li>
-		        <li class="answer">I do not know as of yet. This is my first large python project</li>
+		        <li class="answer">It probably won't be complete in the near future since this is my first large python project</li>
 		        <hr>
 		        <li class="question">What do I need to use to run the program?</li>
-		        <li class="answer">You must have python 3 installed. Go to the <a href="#" target="_blank">install page</a> for details</li>
+		        <li class="answer">You must have python 3 installed. Go to the <a href="install.html">install page</a> for details</li>
 		        <hr>
 		        <li class="question">How do I see colors on Windows?</li>
-		        <li class="answer">You must have ansicons installed. Go to the <a href="#" target="_blank">install page</a> for details</li>
+		        <li class="answer">You must have ansicons installed. Go to the <a href="install.html">install page</a> for details</li>
 		        <hr>
 		        <li class="question">What generation is this based off of?</li>
 		        <li class="answer">This is based on Gerneration IV (<strong>BEFORE</strong> B&amp;W) which means<br />
 		        <em title="Honestly, I hate them. I'm an old schooler, deal with it">NO FAIRY OR MEGA EVOLUTIONS</em></li>
 		    </ul>
+		    
+		    <h3 id="howtoplay">How does the game work?</h3>
+		    <div class="body_nav"><a href="#FAQ">FAQ</a> | <a href="#howtoplay">How to Play the Game</a> | <a href="#code">Source Code</a></div>
+		        <ul>
+		            <li>You start off the game with a couple of pokemon. Type 'list' to see them all when selecting a pokemon.</li>
+		            <li>To obtain a pokemon that you do not have you must get it by doing 'random'</li>
+		        </ul>
+		        
+		    <h3 id="code">Source Code</h3>
+		    <div class="body_nav"><a href="#FAQ">FAQ</a> | <a href="#howtoplay">How to Play the Game</a> | <a href="#code">Source Code</a></div>
+		    
+		    <p>The entire project is on Github! If you want to report a bug, suggest an idea, or just look at the code hit the button below: </p>
 		    <a href="http://github.com/dminer78/Poke-Fight/" target="_blank" class="button"><button>Go to the source code</button></a>
             </article>
             
@@ -78,6 +90,10 @@ Logo
       </footer>
       
       <script src="../js/copyright.js"></script>
+      		
+		<!--[if IE]>
+        	console.log("Error displaying colored text: Using depricated browser");
+        <![endif]-->
       <script>
     	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

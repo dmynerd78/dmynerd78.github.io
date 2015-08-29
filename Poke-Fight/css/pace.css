@@ -44,3 +44,7 @@
 
   pointer-events: none;
 }
+
+.pace-inactive {
+    display: none !important;
+}
