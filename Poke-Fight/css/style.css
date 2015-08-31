@@ -39,11 +39,10 @@ nav {
 	box-sizing: border-box;
 	background: rgba(255, 255, 255, 0.25);
 	transition: background-color 0.5s;
-	font-size: 2em;
 }
 
 nav a {
-    font-family: Capitals,Impact,fantasy;
+    color: #fff;
     transition: text-shadow 0.5s;
 	transition: color 0.5s;
 	position: relative;
@@ -56,6 +55,7 @@ nav a {
 	text-align: center;
 	font-size: 0.5em;
 	text-decoration: none;
+	text-shadow: 2px 2px 4px #000000;
 	transition:background 0.8s
 }
 

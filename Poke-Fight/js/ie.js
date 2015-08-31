@@ -1,0 +1,1 @@
+console.log("ERROR: Unable to display colored text in console: Depricated browser");
