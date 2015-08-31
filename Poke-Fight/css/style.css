@@ -39,6 +39,7 @@ nav {
 	box-sizing: border-box;
 	background: rgba(255, 255, 255, 0.25);
 	transition: background-color 0.5s;
+	text-shadow: 2px 2px 4px #000000;
 }
 
 nav a {
@@ -55,7 +56,6 @@ nav a {
 	text-align: center;
 	font-size: 0.5em;
 	text-decoration: none;
-	text-shadow: 2px 2px 4px #000000;
 	transition:background 0.8s
 }
 
@@ -165,6 +165,31 @@ footer {
 	line-height: 30px;
 	font-size: smaller;
 	z-index: 9001;
+}
+
+/* http://www.colourlovers.com/palette/358131/devastating_loss */
+
+button {
+    background: #428BCA;
+    border: 0;
+    color: #fff;
+    padding: 12px;
+    font-size: 20px;
+    height: 60px;
+    width: 150px;
+    margin: 25px 25px;
+    text-align: center;
+    -webkit-border-radius: 5;
+    -moz-border-radius: 5;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 0px 10px #666666;
+    -moz-box-shadow: 0px 0px 10px #666666;
+    box-shadow: 0px 0px 10px #666666;
+    transition: all 0.3s ease 0s;
+}
+
+button:hover {
+  background: #3071A9
 }
 
 /* http://stackoverflow.com/questions/7061420/how-do-i-animate-a-glowing-effect-on-text */
