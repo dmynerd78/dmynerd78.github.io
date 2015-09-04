@@ -23,6 +23,10 @@ var imageTwitch = function(ID, ext) {
 var getStreamer = function(streamer) {
 
 	switch (streamer) {
+	    
+	    case "smbdnd":
+	        return [imageBeam("910"), "http://smbtabletop.smblive.net/", "[18+] SMB DnD"];
+			break;
 
 		// Beam Streamers 'https://s3.amazonaws.com/uploads.beam.pro/avatars/' + imgID +  '-128x128.jpg?v=0'
 		// https://beam.pro/api/v1/channels/USER

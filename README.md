@@ -1,6 +1,6 @@
-Dminer's Website
+# Dminer's Website
 
-Does this make absolutely no sense at all? 
+Does this make absolutely no sense at all?
 [Click here!](http://dminer78.com)
 
-[Youtube](http://youtube.com/user/dminer78) | [Twitter](http://twitter.com/dminer78)
+Does this make absolutely no sense at all?

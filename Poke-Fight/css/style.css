@@ -171,6 +171,7 @@ footer {
 
 button {
     background: #428BCA;
+    cursor: pointer;
     border: 0;
     color: #fff;
     padding: 12px;
