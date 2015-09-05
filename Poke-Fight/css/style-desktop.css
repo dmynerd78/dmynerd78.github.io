@@ -19,6 +19,7 @@ a[title]:hover:after {
   z-index: 20;
   white-space: nowrap;
   width: 105px;
+  text-shadow: none;
   
   background-image: -moz-linear-gradient(top, #eeeeee, #cccccc);
   background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #eeeeee),color-stop(1, #cccccc));
