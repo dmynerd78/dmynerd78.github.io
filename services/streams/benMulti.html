@@ -1,0 +1,190 @@
+<html>
+	<head>
+		<title>Ben's Multistream Generator</title>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="skin/minimalist.css">
+		<style type="text/css">
+/*		   body { font: 12px "Myriad Pro", "Lucida Grande", sans-serif; text-align: center; padding-top: 5%; }*/
+			.flowplayer { width: 60%; float: left;}
+			body{
+				width: 100%;
+				height: 100%;
+				margin: 0px;
+				background-color: black;
+				color: white;
+			}
+			.chat-vertical{
+				width: 40%;
+				height: 100%; 
+				float: right;
+			}
+			.chat-horizontal{
+				width:100%;
+				height: 55%;
+				display: block;
+			}
+			.chat iframe{
+				height: 100%;
+				width: 100%;
+			}
+			#player-horizontal{
+				width: 100%;
+				height: 45%;
+			}
+			#player-vertical{
+				width: 60%;
+				height: 100%;
+			}
+			.stream{
+				float: left;
+				background-color: #dedede;
+				display: block;
+				overflow: hidden;
+			}
+			.s6{
+				width: 33.333339%;
+				height: 50%;
+			}
+			.s5{
+				width: 20%;
+				height: 100%;
+			}
+			.s4{
+				width: 50%;
+				height: 50%;
+			}
+			.s3{
+				width: 33.333339%;
+				height: 100%;
+			}
+			.s2{
+				width: 50%;
+				height: 100%;
+			}
+			.s1{
+				width: 100%;
+				height: 100%;
+			}
+			#setup{
+				display: none;
+				width: 30%;
+				height: 50%;
+				margin: 0 auto;
+				padding-top: 10%;
+				text-align: center;
+			}
+			#setup input{
+				float: left;
+				margin-bottom: 10px; 
+			}
+			#setup select{
+				float: left;		   
+			}
+		</style>
+		<!-- include flowplayer -->
+<!--	   <script src="http://jwpsrv.com/library/ioWQLoZIEeO2byIACi0I_Q.js"></script>-->
+<!--	   <script type="text/javascript" src="flowplayer.min.js"></script>-->
+		<script type="text/javascript">
+			createChat = function(service, ns, name) {
+				var chat = document.createElement("div")
+				chat.id = "chat-"+ns
+				chat.className = "chat-"+orientation
+				if(service == "beam")
+					chat.innerHTML = "<iframe src=\"https://beam.pro/embed/chat/"+name+"\" style='border:0px;height:100%;width:100%;'></iframe>"
+				if(service == "twitch")
+					chat.innerHTML = "<iframe src=\"https://twitch.tv/"+name+"/chat\" style='border:0px;height:100%;width:100%;'></iframe>"
+				if(service == "hitbox")
+					chat.innerHTML = "<iframe src=\"http://hitbox.tv/embedchat/"+name+"\" style='border:0px;height:100%;width:100%;'></iframe>"
+				document.getElementById(ns).appendChild(chat)
+			}
+			function initPlayer(service, id, n){
+				var ns = service+"-"+n
+				var div = document.createElement("div")
+				div.id = ns
+				div.className = "stream s" + channels.length
+				document.body.appendChild(div)
+				var video = document.createElement("span")
+				video.id = "video-" + ns
+				div.appendChild(video)
+				if(service == "beam"){
+					createChat("beam", ns, n)
+					document.getElementById("video-"+ns).innerHTML = '<iframe id="player-'+orientation+'" type="text/html" src="https://beam.pro/embed/player/'+n+'" frameborder="0"><p>Your browser does not support iframes.</p></iframe>'
+				}else if(service == "twitch"){
+					createChat("twitch", ns, n)
+					document.getElementById("video-"+ns).innerHTML = '<iframe id="player-'+orientation+'" type="text/html" src="http://www.twitch.tv/'+n+'/embed" frameborder="0"></iframe>'
+				}else if(service == "hitbox"){
+					createChat("hitbox", ns, n)
+					document.getElementById("video-"+ns).innerHTML = '<iframe id="player-'+orientation+'" type="text/html" src="http://hitbox.tv/#!/embed/'+n+'" frameborder="0"></iframe>'
+				}
+				return
+			}
+			function get(url){
+				var xml = new XMLHttpRequest()
+				xml.open("GET", url, false)
+				xml.send(null)
+				return JSON.parse(xml.responseText)
+			}
+			window.onload = function(){
+				channels_ = window.location.hash.substr(1).split("/"); channels = []
+				for(i in channels_){var a = channels_[i];if(a.length > 2){channels[channels.length] = a}}
+				if(window.location.hash.substr(1).length == 0){
+					document.getElementById("setup").style.display = "block"
+					addAnother()
+					return
+				}
+				// determine orientation, pre-programmed. because clean code
+				if(channels.length == 1) orientation = "horizontal"
+				if(channels.length == 2) orientation = "horizontal"
+				if(channels.length == 3) orientation = "horizontal"
+				if(channels.length == 4) orientation = "vertical"
+				if(channels.length == 5) orientation = "horizontal"
+				if(channels.length == 6) orientation = "vertical"
+				
+				for(i in channels){
+					var channel = channels[i].split(":")
+					if(channel[0] == "b"){
+						var r = get("https://beam.pro/api/v1/channels/" + channel[1])["id"]
+						console.log(channel[1]+": "+r)
+						initPlayer("beam", r, channel[1])
+					}
+					if(channel[0] == "t"){
+						initPlayer("twitch", null, channel[1])
+					}
+					if(channel[0] == "h"){
+						initPlayer("hitbox", null, channel[1])
+					}
+				}
+			}
+			window.onhashchange = function(){
+				location.reload()
+			}
+			function addAnother(){
+				var c = document.createElement("div")
+				c.innerHTML = "<select name=stream-service class=form-control style='float:left;'><option value=b>Beam</option><option value=t>Twitch</option><option value=h>Hitbox</option></select><input name=stream-name class='form-control' placeholder='Username'/><br/>"
+				document.getElementById("list").appendChild(c)
+			}
+			function cont(){
+				streams = document.getElementsByName("stream-name"); var url = ""
+				for(i in streams){
+					if(isNaN(i)) continue
+					var name = streams[i].value; var service = document.getElementsByName("stream-service")[i].value
+					url += service+":"+name+"/"
+				}
+				window.location = "#"+url
+			}
+		</script>
+	</head>
+	<body>
+		<div id="setup">
+		    <h3>Multi by BenBaptist</h3>
+		    <h4>This is a backup just in case his servers go down</h4>
+			<div id="list"></div>
+			<button onclick="addAnother()" class="btn btn-primary" style="margin-top: 10px;">+ Add Another Stream</button>
+			<button onclick="cont()" class="btn btn-success" style="margin-top: 10px;">Continue</button>
+		</div>
+		
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	</body>
+</html>
