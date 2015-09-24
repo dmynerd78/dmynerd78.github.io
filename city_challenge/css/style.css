@@ -1,0 +1,110 @@
+@import url(https://fonts.googleapis.com/css?family=Quantico:700);
+
+/* http://www.colourlovers.com/palette/623761/Walking_Away */
+
+html {
+    color: #F6F6F6;
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	font-family: 'Quantico', sans-serif;
+	background: #fff;
+	background-size: cover;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+nav {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 999;
+	height: 60px;
+	width: 100%;
+	color: #E8E8E8;
+	padding-left: 10px;
+	line-height: 60px;
+	box-sizing: border-box;
+	background: rgba(255, 255, 255, 0.25);
+	transition: background-color 0.5s;
+	text-shadow: 2px 2px 4px #000000;
+}
+
+nav a {
+    color: #B90504;
+    transition: text-shadow 0.5s;
+	transition: color 0.5s;
+	position: relative;
+	display: inline-block;
+	height: 60px;
+	width: 120px;
+	margin: 0;
+	box-sizing: border-box;
+	float: right;
+	text-align: center;
+	text-decoration: none;
+	transition:background 0.8s
+}
+
+nav a:hover {
+    background: #C9CACD;
+	background: rgba(255, 255, 255, 0.30);
+	transition: background 1s;
+}
+
+#body {
+    color: #F6F6F6;
+    padding-top: 3em;
+    text-align: center;
+}
+
+.title {
+    padding-top: 2em;
+}
+
+footer {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	left: 0;
+	right: 0;
+	text-align: right;
+	height: 30px;
+	line-height: 30px;
+	font-size: smaller;
+}
+
+/*  SECTIONS  */
+.section {
+	clear: both;
+	padding: 0px;
+	margin: 0px;
+}
+
+/*  COLUMN SETUP  */
+.col {
+	display: block;
+	float:left;
+	margin: 1% 0 1% 1.6%;
+}
+.col:first-child { margin-left: 0; }
+
+/*  GROUPING  */
+.group:before,
+.group:after { content:""; display:table; }
+.group:after { clear:both;}
+.group { zoom:1; /* For IE 6/7 */ }
+
+/*  GRID OF THREE  */
+.span_3_of_3 { width: 100%; }
+.span_2_of_3 { width: 66.13%; }
+.span_1_of_3 { width: 32.26%; }
+
+/*  GO FULL WIDTH BELOW 480 PIXELS */
+@media only screen and (max-width: 480px) {
+	.col {  margin: 1% 0 1% 0%; }
+	.span_3_of_3, .span_2_of_3, .span_1_of_3 { width: 100%; }
+}
