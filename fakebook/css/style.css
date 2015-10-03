@@ -1,0 +1,163 @@
+@import url(https://fonts.googleapis.com/css?family=Signika);
+
+html {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	font-family: 'Signika', sans-serif;
+	background-image: url("../images/bg.jpg");
+	background-size: cover;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+body {
+    color: #000;
+}
+
+#id {
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
+}
+
+img {
+    /*border-radius:20%;*/
+}
+
+nav {
+    color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    height: 60px;
+    width: 100%;
+    padding-left: 10px;
+    line-height: 60px;
+    box-sizing: border-box;
+    background: rgba(80, 71, 255, 0.2);
+    transition: background-color 0.5s;
+    text-shadow: 3px 3px 4px #000000;
+    box-shadow: 0px 3px 3px #333;
+    font-size: 250%;
+    
+}
+
+nav a {
+    padding-right: 1em;
+    padding-left: 1em;
+    color: #fff;
+    transition: text-shadow 0.5s;
+	transition: color 0.5s;
+	position: relative;
+	display: inline-block;
+	margin: 0;
+	box-sizing: border-box;
+	float: right;
+	text-align: center;
+	text-decoration: none;
+	transition:background 0.8s
+}
+
+nav a:hover {
+    background: #C9CACD;
+	background: rgba(51, 51, 51, 0.50);
+	transition: background 1s;
+}
+
+nav span {
+    font-size: 50%;
+    float: right;
+}
+
+span {
+    padding-right: 1em;
+}
+
+span img {
+    width: 30%;
+    height: 30%;
+}
+
+/* 10% 30% 50% 10% */
+
+.container {
+    padding-top: 5em;
+    padding-bottom: 5em;
+}
+
+.container > * {
+    padding-left: 1em;
+    padding-right: 2em;
+}
+
+#sidebar > * {
+    float: left;
+}
+
+#sidebar container {
+    padding-left: 2em;
+    padding-right: 1em;
+    float: left;
+    width: 25%;
+    background: #FFF;
+    background: rgba(255, 255, 255, 0.85);
+}
+
+#sidebar container img {
+    padding-top: 1em;
+}
+
+#sidebar container p {
+    border-bottom: 1px solid rgba(51, 51, 51, 0.25);
+    padding-bottom: 0.15em;
+}
+
+#body {
+    width: 65%;
+    float: right;
+    text-align: left;
+}
+
+.post {
+    padding-top: 1em;
+    padding-bottom: 1.5em;
+    background: rgba(255, 255, 255, 0.85);
+}
+
+.post iframe {
+    padding-left: 1em;
+    width: 45%;
+}
+
+.post img {
+    float: left;
+    padding-bottom: 2em;
+}
+
+span.icons {
+    padding-right: 1em;
+    padding-bottom: 0.25em;
+    float: right;
+}
+
+.icons span {
+    cursor: pointer;
+}
+
+.fa {
+    padding-left: 0.25em;
+    padding-right: 0.25em;
+}
+
+.fa-ellipsis-v {
+    float: right;
+    padding-left: 1em;
+    paddinr-right: 0em;
+}
