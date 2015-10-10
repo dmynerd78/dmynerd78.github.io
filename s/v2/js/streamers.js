@@ -24,9 +24,9 @@ var getStreamer = function(streamer) {
 
 	switch (streamer) {
 	    
-	    case "smbdnd":
-	        return [imageBeam("910"), "http://smbtabletop.smblive.net/", "[18+] SMB DnD"];
-			break;
+    case "smbdnd":
+        return [imageBeam("910"), "http://smbtabletop.smblive.net/", "[18+] SMB DnD"];
+		break;
 
 		// Beam Streamers 'https://s3.amazonaws.com/uploads.beam.pro/avatars/' + imgID +  '-128x128.jpg?v=0'
 		// https://beam.pro/api/v1/channels/USER
@@ -163,6 +163,10 @@ var getStreamer = function(streamer) {
 		case "g4":
 			username = "G4ivl3_0v3r";
 			return [imageTwitch("3fe25dcffe3750b2"), linkTwitch(username), "Game Over"];
+			break;
+		case "grates":
+			username = "wgrates";
+			return [imageTwitch("ec98015d7d4b7bb6"), linkTwitch(username), "W 'Corgi' Grates"];
 			break;
 		case "nihon":
 			username = "NihonTiger";
