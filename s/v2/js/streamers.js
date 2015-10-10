@@ -166,7 +166,7 @@ var getStreamer = function(streamer) {
 			break;
 		case "grates":
 			username = "wgrates";
-			return [imageTwitch("ec98015d7d4b7bb6"), linkTwitch(username), "W 'Corgi' Grates"];
+			return [imageTwitch("ec98015d7d4b7bb6", "jpeg"), linkTwitch(username), "W 'Corgi' Grates"];
 			break;
 		case "nihon":
 			username = "NihonTiger";
