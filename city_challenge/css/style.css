@@ -9,7 +9,7 @@ html {
 	margin: 0;
 	padding: 0;
 	font-family: 'Quantico', sans-serif;
-	background: #fff;
+	background: #333333;
 	background-size: cover;
 	background-attachment: fixed;
 	background-repeat: no-repeat;
@@ -28,9 +28,14 @@ nav {
 	padding-left: 10px;
 	line-height: 60px;
 	box-sizing: border-box;
-	background: rgba(255, 255, 255, 0.25);
+	background: rgba(255, 255, 255, 0.45);
 	transition: background-color 0.5s;
 	text-shadow: 2px 2px 4px #000000;
+	border-bottom: 2px solid rgba(246, 246, 246, 0.3);
+	
+	-webkit-box-shadow: 0px 10px 12px 0px rgba(51, 51, 51, 0.3);
+    -moz-box-shadow: 0px 10px 12px 0px rgba(51, 51, 51, 0.3);
+    box-shadow: 0px 10px 12px 0px rgba(51, 51, 51, 0.3);
 }
 
 nav a {
@@ -65,6 +70,29 @@ nav a:hover {
     padding-top: 2em;
 }
 
+ol {
+    list-style-type: decimal;
+    list-style-position: inside;
+    padding-bottom: 2em;
+}
+
+li {
+    color: #E8E8E8;
+    
+}
+
+.list {
+    color: #F6F6F6;
+}
+
+.notice {
+    text-shadow:
+   -1px -1px 0 rgba(185, 5, 4, 0.50),
+    1px -1px 0 rgba(185, 5, 4, 0.50),
+    -1px 1px 0 rgba(185, 5, 4, 0.50),
+     1px 1px 0 rgba(185, 5, 4, 0.50);
+}
+
 footer {
 	position: fixed;
 	bottom: 0;
@@ -76,6 +104,79 @@ footer {
 	line-height: 30px;
 	font-size: smaller;
 }
+
+.btn {
+    border-radius: 5px;
+    padding: 15px 25px;
+    text-decoration: none;
+    margin: 20px;
+    color: #F6F6F6;
+    position: relative;
+    display: inline-block;
+}
+
+
+/* Buttons by BenAGue */
+.btn:active {
+    transform: translate(0px, 5px);
+    -webkit-transform: translate(0px, 5px);
+    box-shadow: 0px 1px 0px 0px;
+}
+
+.blue {
+    background-color: #55acee;
+    box-shadow: 0px 5px 0px 0px #3C93D5;
+}
+
+.blue:hover {
+    background-color: #6FC6FF;
+}
+
+.green {
+    background-color: #2ecc71;
+    box-shadow: 0px 5px 0px 0px #15B358;
+}
+
+.green:hover {
+    background-color: #48E68B;
+}
+
+.red {
+    background-color: #e74c3c;
+    box-shadow: 0px 5px 0px 0px #CE3323;
+}
+
+.red:hover {
+    background-color: #FF6656;
+}
+
+.purple {
+    background-color: #9b59b6;
+    box-shadow: 0px 5px 0px 0px #82409D;
+}
+
+.purple:hover {
+    background-color: #B573D0;
+}
+
+.orange {
+    background-color: #e67e22;
+    box-shadow: 0px 5px 0px 0px #CD6509;
+}
+
+.orange:hover {
+    background-color: #FF983C;
+}
+
+.yellow {
+    background-color: #f1c40f;
+    box-shadow: 0px 5px 0px 0px #D8AB00;
+}
+
+.yellow:hover {
+    background-color: #FFDE29;
+}
+
 
 /*  SECTIONS  */
 .section {

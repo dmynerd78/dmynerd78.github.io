@@ -11,11 +11,9 @@ $.each(data.items, function(i, val) {
 
 var appendVideos = function() {
     for(i = 1; i <= 3; i++) {
-        document.getElementById(i).innerHTML = "<a href='https://www.youtube.com/watch?v=" + 
-                                                (videoObject[i]["id"]) + 
-                                                " ' target='_blank'><img class='thumbnail' src='https://i.ytimg.com/vi/"+ 
-                                                (videoObject[i]["id"]) + 
-                                                "/mqdefault.jpg' /></a>";
+        document.getElementById(i).innerHTML = "<a href='https://www.youtube.com/watch?v=" + (videoObject[i]["id"]) + " ' target='_blank' title='" + videoObject[i]["title"]  +  "'>" + 
+                                                    "<img class='thumbnail' src='https://i.ytimg.com/vi/"+ (videoObject[i]["id"]) + "/mqdefault.jpg' />" +
+                                                "</a>";
     }
 };
 

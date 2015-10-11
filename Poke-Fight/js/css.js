@@ -13,6 +13,8 @@ if(screen.width <= 700 || screen.height <= 700) {
         }
     );
     $('head').append('<link rel="stylesheet" href="css/style-desktop.css" type="text/css" />');
-    console.log("DESKTOP css sheet appended");
+    $('head').append('<script src="js/pace.min.js"></script>');
+	$('head').append('<link href="css/paceCustom.css" rel="stylesheet" />');
+	console.log("DESKTOP css sheet appended");
     mobile = false
 }
