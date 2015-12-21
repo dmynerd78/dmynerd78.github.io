@@ -1,0 +1,53 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+		<title>Beam Popper-outter</title>
+		<style type="text/css">
+			.centered{
+				margin: auto auto;
+				width: 30%;
+				text-align: center;
+				margin-top: 20%;
+			}
+			.in-thing{
+				height: 100%;
+				width: 100%;
+			}
+		</style>
+		<script type="text/javascript">
+			_go = function(){
+				var username = document.getElementById("username").value
+				window.open("#"+username, "", "width=1000, height=530")
+			}
+			window.onload = function(){
+				if(window.location.hash.length > 1){
+					var name = window.location.hash.substr(1)
+					document.getElementById("enter").style.display = "none"
+					document.getElementById("in-thing").style.display = "block"
+					document.getElementById("in-thing").innerHTML = "<iframe src=\"https://beam.pro/embed/player/"+name+"\" style=\"border:0px;height:100%;width:70%;\"></iframe><iframe src=\"https://beam.pro/embed/chat/"+name+"\" style=\"border:0px;height:100%;width:30%;\"></iframe>"
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id="enter">
+			<div class="centered">
+				<div class="input-group">
+					<input class="form-control next" placeholder="Beam username..." id="username" type="text">
+					<div class="input-group-btn"><input value="Popout" class="btn btn-primary" onclick="_go()" type="submit"></div>
+				</div>
+			</div>
+		</div>
+		<div id="in-thing" style="display:none;">
+			
+		</div>
+		
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="Beam%20Popper-outter_files/bootstrap.css">
+		
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="Beam%20Popper-outter_files/bootstrap-theme.css">
+		
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="Beam%20Popper-outter_files/bootstrap.js"></script>
+	
+</body></html>

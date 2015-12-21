@@ -85,16 +85,3 @@ aside footer {
     border: 3px solid rgba(0, 0, 0, 0.25);
     box-shadow: 8px 5px 5px rgba(255, 255, 255, 0.10);
 }
-
-footer {
-	position: fixed;
-	bottom: 0;
-	width: 100%;
-	left: 0;
-	right: 0;
-	text-align: right;
-	height: 30px;
-	line-height: 30px;
-	font-size: smaller;
-}
-

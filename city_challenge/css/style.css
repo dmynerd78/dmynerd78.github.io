@@ -1,6 +1,10 @@
 @import url(https://fonts.googleapis.com/css?family=Quantico:700);
 
 /* http://www.colourlovers.com/palette/623761/Walking_Away */
+/*
+    TODO:
+    Align all elements
+*/
 
 html {
     color: #F6F6F6;
@@ -78,7 +82,7 @@ ol {
 
 li {
     color: #E8E8E8;
-    
+    width: 100%;
 }
 
 .list {

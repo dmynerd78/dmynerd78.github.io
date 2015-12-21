@@ -1,10 +1,12 @@
 if(screen.width <= 700 || screen.height <= 700) {
     alert("Mobile site is still under construction. Sorry for the inconvenience");
     $('head').append('<link rel="stylesheet" href="css/style-mobile.css" type="text/css" />');
-    console.log("MOBILE css sheet appended");
-    mobile = true
+    var screen = "MOBILE";
 } else {
     $('head').append('<link rel="stylesheet" href="css/style-desktop.css" type="text/css" />');
-    console.log("DESKTOP css sheet appended");
-    mobile = false
+    $('head').append('<script src="js/pace.min.js"></script>');
+	$('head').append('<link href="css/paceCustom.css" rel="stylesheet" />');
+    var screen = "DESKTOP";
 }
+
+console.log(screen + " css sheet appended");

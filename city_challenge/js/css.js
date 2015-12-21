@@ -1,3 +1,5 @@
+//RENAME SCREEN VAR
+
 if(screen.width <= 700 || screen.height <= 700) {
     alert("Mobile site is still under construction. Sorry for the inconvenience");
     $('head').append('<link rel="stylesheet" href="css/style-mobile.css" type="text/css" />');
