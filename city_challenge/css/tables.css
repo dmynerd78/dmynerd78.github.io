@@ -1,0 +1,51 @@
+table {
+    margin: auto;
+	counter-reset: rowNumber;
+}
+
+table tr {
+	counter-increment: rowNumber;
+}
+
+table tr td:first-child::before {
+    content: counter(rowNumber);
+    min-width: 0.5em;
+    margin-right: 0.5em;
+	color: #B90504;
+	padding-right: 1em;
+	text-shadow: 0 0 3px #F6F6F6;
+	/* border-right: 1px solid #E1E1E8; */
+}
+
+td {
+    color: #F6F6F6;
+    text-shadow: 0 0 3px #333;
+}
+	
+.cRed {
+	color: #D44950;	
+}
+
+.cOrange {
+	color: #C30;
+}
+
+.cDarkBlue {
+	color: #2F6F9F;
+}
+
+.cLightBlue {
+	color: #4F9FCF;
+}
+
+.cCyan {
+	color: #099;
+}
+
+.cGray {
+	color: #999;
+}
+
+.cPurple {
+	color: #99F;
+}

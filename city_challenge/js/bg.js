@@ -7,6 +7,7 @@ if(screen.width <= 700 || screen.height <= 700) {
 }
     
 var images = ['1.jpg', '2.jpg', '3.jpg', '4.jpg'];
+var images = ['4.jpg'];
 
 var imageRandom = Math.floor(Math.random() * images.length);
 

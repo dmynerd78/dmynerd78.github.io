@@ -1,7 +1,8 @@
 @import url(https://fonts.googleapis.com/css?family=Quantico:700);
 
-/* http://www.colourlovers.com/palette/623761/Walking_Away */
 /*
+    http://www.colourlovers.com/palette/623761/Walking_Away
+    
     TODO:
     Align all elements
 */
@@ -45,6 +46,7 @@ nav {
 nav a {
     color: #B90504;
     transition: text-shadow 0.5s;
+    transition: background 0.8s;
 	transition: color 0.5s;
 	position: relative;
 	display: inline-block;
@@ -55,11 +57,10 @@ nav a {
 	float: right;
 	text-align: center;
 	text-decoration: none;
-	transition:background 0.8s
 }
 
 nav a:hover {
-    background: #C9CACD;
+    background: #c9cacd;
 	background: rgba(255, 255, 255, 0.30);
 	transition: background 1s;
 }
@@ -72,6 +73,11 @@ nav a:hover {
 
 .title {
     padding-top: 2em;
+	text-shadow: 2px 2px #333;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    text-shadow: 0 0 2px #333;
 }
 
 ol {
@@ -83,10 +89,6 @@ ol {
 li {
     color: #E8E8E8;
     width: 100%;
-}
-
-.list {
-    color: #F6F6F6;
 }
 
 .notice {
@@ -127,57 +129,57 @@ footer {
     box-shadow: 0px 1px 0px 0px;
 }
 
-.blue {
+.bBlue {
     background-color: #55acee;
     box-shadow: 0px 5px 0px 0px #3C93D5;
 }
 
-.blue:hover {
+.bBlue:hover {
     background-color: #6FC6FF;
 }
 
-.green {
+.bGreen {
     background-color: #2ecc71;
     box-shadow: 0px 5px 0px 0px #15B358;
 }
 
-.green:hover {
+.bGreen:hover {
     background-color: #48E68B;
 }
 
-.red {
+.bRed {
     background-color: #e74c3c;
     box-shadow: 0px 5px 0px 0px #CE3323;
 }
 
-.red:hover {
+.bRed:hover {
     background-color: #FF6656;
 }
 
-.purple {
+.bPurple {
     background-color: #9b59b6;
     box-shadow: 0px 5px 0px 0px #82409D;
 }
 
-.purple:hover {
+.bPurple:hover {
     background-color: #B573D0;
 }
 
-.orange {
+.bOrange {
     background-color: #e67e22;
     box-shadow: 0px 5px 0px 0px #CD6509;
 }
 
-.orange:hover {
+.bOrange:hover {
     background-color: #FF983C;
 }
 
-.yellow {
+.bYellow {
     background-color: #f1c40f;
     box-shadow: 0px 5px 0px 0px #D8AB00;
 }
 
-.yellow:hover {
+.bYellow:hover {
     background-color: #FFDE29;
 }
 
