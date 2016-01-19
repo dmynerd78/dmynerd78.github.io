@@ -1,7 +1,7 @@
-var Beam = function(imgID, username, displayName) {
+var Beam = function(userID, username, displayName) {
     displayName = typeof displayName !== 'undefined' ? displayName : username;
     username = username.toLowerCase();
-    img = "https://beam.pro/api/v1/users/" + imgID + "/avatar?w=128x128&h=128x128&v=0";
+    img = "https://beam.pro/api/v1/users/" + userID + "/avatar?w=128x128&h=128x128&v=0";
     _url = "http://beam.pro/" + username;
     
     return {"username": username, "displayName": displayName, "image": img, "url": _url};
@@ -50,6 +50,8 @@ var getStreamer = function(streamer) {
 			return Beam(2257, "DeciTM", "Deci™");
 		case "derpo":
 			return Beam(3579,"Home_Derpo", "Home Derpo");
+		case "dj":
+			return Beam(3675, "DJMuffinCrumbs");
 		case "dot":
 			return Beam(3652, "Dot83");
 		case "duke":
@@ -68,6 +70,8 @@ var getStreamer = function(streamer) {
 			return Beam(3924, "Lofty");
 		case "max":
 			return Beam(3532, "MaxAmpere");
+		case "quirky":
+			return Beam(26567, "QuirkySquid");
 		case "suego":
 			return Beam(13553, "SuegoFaults", "THe SuegoFaults Server");
 		case "smb":
@@ -98,12 +102,16 @@ var getStreamer = function(streamer) {
 			return Twitch("3c2dfd41fec490bc", "ESP4Him", "ES(nort)P", "jpeg");
 		case "g4":
 			return Twitch("3fe25dcffe3750b2", "G4ivl3_0v3r", "Game Over");
+		case "grates":
+			return Twitch("d19c415c3540edc7", "wgrates", "Grates the Corgi");
 		case "nihon":
 			return Twitch("961c7e8fbe67b6b5", "NihonTiger");
 		case "ick":
 			return Twitch("1f2f256239790c5d", "Ickabodx");
 		case "igamer":
 			return Twitch("c726d206e64c116e", "theofficialigamer", "iGamer");
+		case "jyggy":
+			return Twitch("c06a66ba699a321b", "jyggy11", "Jyggy");
 		case "kebb":
 			return Twitch("03507287bc00788b", "Kebbrokk");
 		case "maddiie":
