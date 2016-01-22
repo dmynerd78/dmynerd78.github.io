@@ -62,6 +62,8 @@ var getStreamer = function(streamer) {
 			return Beam(33937, "FerriaForever");
 		case "fullstack":
 			return Beam(19318, "FullstackGaming", "The Fullstack Server");
+		case "golf":
+			return Beam(5245, "Golfhaus");
 		case "graph":
 			return Beam(2266, "Graphoniac");
 		case "kirei":
@@ -85,7 +87,8 @@ var getStreamer = function(streamer) {
 
 		// Twitch Streamers http://static-cdn.jtvnw.net/jtv_user_pictures/" + username + "-profile_image-" + imgID + "-300x300." + imgExt;
 		// https://api.twitch.tv/kraken/users/USER
-
+		
+        // TODO Get JSON file for image. If no display name given use display name form JSON file
 		case "chaotic":
 			return Twitch("1884788acb7f31e5", "ChaoticIntake", "Chaotic Intake");
 		case "chough":
@@ -100,10 +103,12 @@ var getStreamer = function(streamer) {
 			return Twitch("ffcde58ae40d3752", "Erijah");
 		case "esp":
 			return Twitch("3c2dfd41fec490bc", "ESP4Him", "ES(nort)P", "jpeg");
+		case "fyp":
+			return Twitch("40dba330b9b080f7", "FYPme");
 		case "g4":
 			return Twitch("3fe25dcffe3750b2", "G4ivl3_0v3r", "Game Over");
 		case "grates":
-			return Twitch("d19c415c3540edc7", "wgrates", "Grates the Corgi");
+			return Twitch("09edef9ae344f7ea", "wgrates", "Grates the Corgi");
 		case "nihon":
 			return Twitch("961c7e8fbe67b6b5", "NihonTiger");
 		case "ick":
@@ -119,7 +124,7 @@ var getStreamer = function(streamer) {
 		case "mcg":
 			return Twitch("ca31240178193b90", "LegendofMCG", "MCG");
 		case "mk":
-			return Twitch("da828105cacf6407", "MKTheWorst", "MK (NOT) The Worst");
+			return Twitch("da828105cacf6407", "MKTheWorst", "MK (NOT) The Worst", "jpeg");
 		case "paul":
 			return Twitch("1994f8f767a37a01", "PaulFTW87", "Paul");
 		case "pixel":
@@ -136,7 +141,7 @@ var getStreamer = function(streamer) {
 			return Twitch("7d937ce8cdf9d6d2", "TattyBudderfly");
 		case "wyld":
 			username = "Wyld";
-			return Twitch("689b33e7c409d7fa", "Wyld", "Wyld", "jpeg");
+			return Twitch("09ab9735bfbb7697", "Wyld", "Wyld");
 
 		// Error finding streamer
 		default:
