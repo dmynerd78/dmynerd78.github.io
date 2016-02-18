@@ -84,6 +84,8 @@ var getStreamer = function(streamer) {
 			return Beam(3107, "xcentrik4", "#BlameX");
 		case "xyn":
 			return Beam(3599, "Xyntak");
+		case "ping":
+			return Beam(3430, "Pingpong");
 
 		// Twitch Streamers http://static-cdn.jtvnw.net/jtv_user_pictures/" + username + "-profile_image-" + imgID + "-300x300." + imgExt;
 		// https://api.twitch.tv/kraken/users/USER
