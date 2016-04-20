@@ -11,10 +11,10 @@ $.getJSON("https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxR
 
 var appendVideos = function() {
     for(i = 1; i <= 9; i++) {
-        document.getElementById(i).innerHTML = "<a href='https://www.youtube.com/watch?v=" + 
-                                                (videoObject[i])[1] + 
-                                                " ' target='_blank'><img class='thumbnail' src='https://i.ytimg.com/vi/"+ 
-                                                (videoObject[i])[1] + 
+        document.getElementById(i).innerHTML = "<a href='https://www.youtube.com/watch?v=" +
+                                                (videoObject[i])[1] +
+                                                " ' target='_blank'><img class='thumbnail' src='https://i.ytimg.com/vi/"+
+                                                (videoObject[i])[1] +
                                                 "/mqdefault.jpg' />"  + "</a>";
     }
 };
@@ -25,8 +25,3 @@ var detectVideos = function() {
         location.reload();
     }
 };
-
-setTimeout(function(){
-    appendVideos();
-    detectVideos();
-}, 1000);
