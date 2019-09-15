@@ -30,7 +30,7 @@ hr {
 	background-image: -webkit-linear-gradient(left, #2B2B2B, #D8D8D8, #2B2B2B);
 	background-image: -moz-linear-gradient(left, #2B2B2B, #D8D8D8, #2B2B2B);
 	background-image: -ms-linear-gradient(left, #2B2B2B, #D8D8D8, #2B2B2B);
-	background-image: -o-linear-gradient(left, #2B2B2B, #D8D8D8, #2B2B2B); 
+	background-image: -o-linear-gradient(left, #2B2B2B, #D8D8D8, #2B2B2B);
 }
 
 section:nth-of-type(1) {
@@ -59,7 +59,7 @@ nav a:hover {
 
 nav a .fa:hover {
     text-shadow:
-   -1px -1px 0 #fff,  
+   -1px -1px 0 #fff,
     1px -1px 0 #fff,
     -1px 1px 0 #fff,
      1px 1px 0 #fff;
@@ -83,6 +83,11 @@ nav a .fa:hover {
 
 .warning {
     color: #D25252;
+}
+
+#twitter {
+	width: 80%;
+	margin: 0 auto;
 }
 
 footer {

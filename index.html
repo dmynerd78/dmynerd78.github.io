@@ -6,25 +6,17 @@
     <head>
         <title>The site of the DMiner</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-		<meta name="description" content="Dminer78's official site" />
-		<meta name="keywords" content="beam, twitch, youtube, dminer, miner, dminer78" />
-		<meta name="author" content="Dminer78">
-		<meta property="og:url" content="https://dminer78.com"/>
-        <meta property="og:title" content="Dminer's Official Site!"/>
-        <meta property="og:description" content="Dminer78's official site filled to the brim with useful information"/>
-        <meta property="og:image" content="http://dminer78.com/images/social_card.png"/>
+		<meta name="description" content="Dmynerd78's website" />
+		<meta name="keywords" content="dmynerd78" />
+		<meta name="author" content="Dmynerd78">
+		<meta property="og:url" content="https://dmynerd78.me"/>
+        <meta property="og:title" content="Dmynerd78's Website"/>
+        <meta property="og:description" content="It has a bunch of random stuff"/>
         <meta property="og:locale" content="en_US"/>
         <meta property="og:type" content="website"/>
-        <meta property="og:site_name" content="Dminer78's Official Webstie"/>
-        <meta name="twitter:site" content="Dminer78's Official Website"/>
-        <meta name="twitter:card" content="summary"/>
-        <meta name="twitter:description" content="Dminer78's official site filled to the brim with useful information"/>
-        <meta name="twitter:title" content="Dminer78's Official Website"/>
-        <meta name="twitter:domain" content="Dminer78"/>
-        <meta property="og:image" content="http://dminer78.com/images/social_card.png"/>
+        <meta property="og:site_name" content="Dmynerd78's Webstie"/>
 
 		<link rel="icon" href="favicon.ico" type="image/x-icon">
-		<meta name="norton-safeweb-site-verification" content="crl3a23xq6qqm0-aptwlk6qh4pgg3mydegxuvjg9hourl4o7ie-etlw6azi6m33ojz7tnkn66milsvzh5b44zf2b-75oibck31gpqjikjkulhss4hxmanajetc9wy6il" />
 
 		<!-- Organize css sheets -->
 		<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
@@ -36,24 +28,6 @@
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		<script src="js/css.js"></script>
-
-		<script type="text/javascript">
-			var alertUser = function(text) {
-				console.log(text);
-				alert(text);
-			}
-			var url = window.location.href.split("?")[1];
-			if (typeof url === "undefined" || typeof url === "null" || url == "") {
-						console.log("No link in url to forward to. Add '?[url here]' to forward a user somewhere! :D");
-			} else {
-				if (url.startsWith("http")) {
-					window.location = "2CubedBot/forward.html?" + url;
-				} else {
-					console.log("'" + url + "' is not a valid URL. Make sure to include 'http://' or the equivalent of it in the URL."); //TODO Change to url=
-				}
-			}
-
-		</script>
     </head>
      <body>
       <nav>
@@ -73,69 +47,27 @@
 				<hr />
 				<h1>Welcome to my website thingy!</h1>
 				<p>Where I do things! And other things! And... uhm... What else do I do again?</p>
-				<br>
-				<div id="twitter">
-                    <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/dminer78" data-widget-id="571825589892284416">Tweets by @dminer78</a>
-                    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-
-				</div>
-
 			</div>
 			<footer>
-				Special thanks to <a href="http://chillibyte.github.io">Deep Sohelia</a> for help and the templates
+                <span>Special thanks to <a href="http://chillibyte.github.io">Deep Sohelia</a> for help and the templates</span>
 			</footer>
 		</aside>
 		<article class="body">
-            <h1 id="header">Some videos you might find interesting to watch</h1>
-            <div id="videos">
-                <div class="section group">
-                    <div id="1" class="col span_1_of_3"></div>
-                    <div id="2" class="col span_1_of_3"></div>
-                    <div id="3" class="col span_1_of_3"></div>
-                </div>
+            <h1 id="header">Some stuff used to show here. I'll fix it eventually</h1>
+            <br>
+            <br>
 
-                <div class="section group">
-                    <div id="4" class="col span_1_of_3"></div>
-                    <div id="5" class="col span_1_of_3"></div>
-                    <div id="6" class="col span_1_of_3"></div>
-                </div>
-
-                <div class="section group">
-                    <div id="7" class="col span_1_of_3"></div>
-                    <div id="8" class="col span_1_of_3"></div>
-                    <div id="9" class="col span_1_of_3"></div>
-                </div>
+            <div id="twitter">
+                <a class="twitter-timeline" data-height="500" data-dnt="true" data-theme="dark"
+                    href="https://twitter.com/dmynerd78?ref_src=twsrc%5Etfw">Tweets by dmynerd78</a>
+                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
             </div>
 		</article>
       </section>
       <footer>
-            &copy; dminer78 2016 &nbsp;
+            &copy; dminer78 2019 &nbsp;
       </footer>
 
-        <script src="js/getVideos.js"></script>
         <script src="js/copyright.js"></script>
-        <script src="js/ads.js"></script>
-        <script src="//korylprince.github.com/OldBrowserDetector/detect.min.js"></script> <!-- http://jreject.turnwheel.com/#demo3 -->
-        <script>
-            $(document).ready(function() {
-                setTimeout(function(){
-                    appendVideos();
-                    detectVideos();
-                }, 1000);
-            })
-
-            // Ad Detection
-            if(window.canRunAds === undefined) {
-                document.getElementById("twitter").innerHTML = "<p class='warning'>You currently have an ad blocker enabled which disables some of the icons<br /><br />There are <em>zero</em> on this site so you can disable it if you chose to</p>";
-            }
-
-            // Google Analytics
-            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-            ga('create', 'UA-62452305-1', 'auto');
-            ga('send', 'pageview');
-        </script>
     </body>
 </html>
