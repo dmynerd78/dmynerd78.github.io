@@ -1,9 +1,9 @@
-console.log("%c~~~~~~~~~~~~~~~~~~~~~~~~~", "color: #BBC0C2;")
+console.log("%c~~~~~~~~~~~~~~~~~~~~~~~~~", "color: #BBC0C2;");
 
-console.log("%c(c) dminer78", "color: #FB9C10;");
-console.log("%c<INSERT LOGO ASCII HERE />", "color: red;")
+console.log("%c(c) dmynerd78", "color: #FB9C10;");
+console.log("%c<INSERT LOGO ASCII HERE />", "color: red;");
 
-console.log("%c~~~~~~~~~~~~~~~~~~~~~~~~~", "color: #BBC0C2;")
+console.log("%c~~~~~~~~~~~~~~~~~~~~~~~~~", "color: #BBC0C2;");
 
 var food = function(answer) {
 	if (answer === undefined) {
@@ -12,16 +12,5 @@ var food = function(answer) {
 	} else {
 		console.log(options[answer]);
 	}
-		
-}
 
-
-/*
-For 2CubedBot add some kind of bot in console
-
-Conversation between me and a few other people. 
-Have inside jokes such as dhannah and cake and food
-make it interactive. Multiple options available for options you do
-Use konami code to start it off?
-Yaaaay easter eggs!
-*/
+};

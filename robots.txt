@@ -1,6 +1,2 @@
 User-agent: *
 Allow: /
-
-User-agent: Twitterbot
-Allow: /Poke-Fight
-Disallow: *

@@ -23,7 +23,7 @@ var imageTwitch = function(ID, ext) {
 var getStreamer = function(streamer) {
 
 	switch (streamer) {
-	    
+
     case "smbdnd":
         return [imageBeam("910"), "http://smbtabletop.smblive.net/", "[18+] SMB DnD"];
 		break;
