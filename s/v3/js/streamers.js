@@ -3,7 +3,7 @@ var Beam = function(userID, username, displayName) {
     username = username.toLowerCase();
     img = "https://beam.pro/api/v1/users/" + userID + "/avatar?w=128x128&h=128x128&v=0";
     _url = "http://beam.pro/" + username;
-    
+
     return {"username": username, "displayName": displayName, "image": img, "url": _url};
 };
 
@@ -13,16 +13,16 @@ var Twitch = function(imgID, username, displayName, imgExt) {
     imgExt = typeof imgExt !== 'undefined' ? imgExt : "png";
     img = "http://static-cdn.jtvnw.net/jtv_user_pictures/" + username + "-profile_image-" + imgID + "-300x300." + imgExt;
     _url = "http://twitch.tv/" + username;
-    
+
     return {"username": username, "displayName": displayName, "image": img, "url": _url};
 };
 
 var Youtube = function(displayName, username, imgID) {
     username = username.toLowerCase();
-    
+
     img = "";
     _url = "https://gaming.youtube.com/c/" + username + "/live";
-    
+
     return {"username": username, "displayName": displayName, "image": img, "url": _url};
 };
 
@@ -89,7 +89,7 @@ var getStreamer = function(streamer) {
 
 		// Twitch Streamers http://static-cdn.jtvnw.net/jtv_user_pictures/" + username + "-profile_image-" + imgID + "-300x300." + imgExt;
 		// https://api.twitch.tv/kraken/users/USER
-		
+
         // TODO Get JSON file for image. If no display name given use display name form JSON file
 		case "chaotic":
 			return Twitch("1884788acb7f31e5", "ChaoticIntake", "Chaotic Intake");
