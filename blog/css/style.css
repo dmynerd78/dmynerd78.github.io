@@ -1,0 +1,134 @@
+/* TODO Gridify https: //css-tricks.com/snippets/css/complete-guide-grid/ */
+
+:root {
+    --twitch-color: #6541A5;
+    --twitter-color: #6CADDE;
+    --youtube-color: #CC181E;
+    --github-color: #171515;
+    --warning-color: #D25252;
+
+    --white-rgb: 255, 255, 255;
+    --light-white-rgb: 128, 128, 128;
+    --dark-gray-rgb: 50, 50, 50;
+    --darker-gray-rgb: 35, 35, 35;
+    --black-rgb: 0, 0, 0;
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+
+    color: rgb(var(--white-rgb));
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background: linear-gradient(rgba(40, 40, 40, 0.7), rgba(40, 40, 40, 0.7)), url("../images/bg.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+body {
+    overflow-y: scroll;
+}
+
+a, a:visited {
+    color: rgb(var(--white-rgb));
+}
+
+nav {
+    height: 50px;
+    width: 100%;
+    z-index: 999;
+    line-height: 50px;
+    position: fixed;
+    background: rgba(var(--darker-gray-rgb), 0.8);
+    box-shadow: 8px 5px rgba(var(--dark-gray-rgb), 0.25);
+}
+
+nav .title {
+    padding-left: 20px;
+}
+
+nav .icons {
+    float: right;
+    font-size: 3em;
+}
+
+nav .icons a {
+    position: relative;
+    height: 50px;
+    width: 120px;
+    margin: 0;
+    box-sizing: border-box;
+    float: right;
+    text-align: center;
+    font-size: 0.5em;
+    text-decoration: none;
+    transition: background 0.8s;
+
+    /* text-shadow:
+        -1px -1px 0 rgb(var(--black-rgb)),
+        1px -1px 0 rgb(var(--black-rgb)),
+        -1px 1px 0 rgb(var(--black-rgb)),
+        1px 1px 0 rgb(var(--black-rgb)); */
+}
+
+.twitter:hover { color: var(--twitter-color); }
+.twitch:hover { color: var(--twitch-color); }
+.github:hover { color: var(--github-color); }
+
+nav .icons a:hover {
+    background: rgba(var(--white-rgb), 0.30);
+    transition: background 1s, color 0.5s ease;
+}
+
+nav .icons a:hover {
+    text-shadow:
+        -1px -1px 0 rgb(var(--white-rgb)),
+        1px -1px 0 rgb(var(--white-rgb)),
+        -1px 1px 0 rgb(var(--white-rgb)),
+        1px 1px 0 rgb(var(--white-rgb));
+}
+
+/* .icon {
+    height: 30px;
+    width: 120px;
+    padding-top: 10px;
+    fill: rgb(var(--white-rgb));
+} */
+
+
+#left {
+    width: 20%;
+    height: 100%;
+    float: left;
+    text-align: center;
+    position: fixed;
+    background-color: rgba(var(--dark-gray-rgb), 0.7);
+    border-right: 3px solid rgb(var(--darker-gray-rgb));
+}
+
+#left .content {
+    padding-top: 100px;
+    position: relative;
+}
+
+#right {
+    width: 70%;
+    height: calc(100% - 50px);
+    float: right;
+    margin-top: 50px;
+    padding-right: 5%;
+    text-align: center;
+    /* overflow-y: scroll; */
+}
+
+article {
+    background: rgba(var(--light-white-rgb), 0.4);
+    padding: 10px;
+    border: 2px solid rgb(var(--darker-gray-rgb));
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
