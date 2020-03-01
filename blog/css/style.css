@@ -37,6 +37,17 @@ a, a:visited {
     color: rgb(var(--white-rgb));
 }
 
+#copyright {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    text-align: left;
+    height: 30px;
+    line-height: 30px;
+    padding: 10px;
+}
+
 nav {
     height: 50px;
     width: 100%;
@@ -44,11 +55,13 @@ nav {
     line-height: 50px;
     position: fixed;
     background: rgba(var(--darker-gray-rgb), 0.8);
-    box-shadow: 8px 5px rgba(var(--dark-gray-rgb), 0.25);
+    border-bottom: 2px solid rgb(var(--darker-gray-rgb));
 }
 
 nav .title {
     padding-left: 20px;
+    text-decoration: none;
+    font-size: 150%;
 }
 
 nav .icons {
@@ -67,37 +80,29 @@ nav .icons a {
     font-size: 0.5em;
     text-decoration: none;
     transition: background 0.8s;
-
-    /* text-shadow:
-        -1px -1px 0 rgb(var(--black-rgb)),
-        1px -1px 0 rgb(var(--black-rgb)),
-        -1px 1px 0 rgb(var(--black-rgb)),
-        1px 1px 0 rgb(var(--black-rgb)); */
 }
 
-.twitter:hover { color: var(--twitter-color); }
-.twitch:hover { color: var(--twitch-color); }
-.github:hover { color: var(--github-color); }
+.icons a svg { transition: fill 0.5s ease; }
+.icons a .twitter:hover { fill: var(--twitter-color); }
+.icons a .twitch:hover { fill: var(--twitch-color); }
+.icons a .github:hover { fill: var(--github-color); }
 
 nav .icons a:hover {
     background: rgba(var(--white-rgb), 0.30);
-    transition: background 1s, color 0.5s ease;
+    transition: background 1s;
 }
 
 nav .icons a:hover {
-    text-shadow:
-        -1px -1px 0 rgb(var(--white-rgb)),
-        1px -1px 0 rgb(var(--white-rgb)),
-        -1px 1px 0 rgb(var(--white-rgb)),
-        1px 1px 0 rgb(var(--white-rgb));
+    stroke-width: 1;
+    stroke: rgb(var(--white-rgb));
 }
 
-/* .icon {
+.icon {
     height: 30px;
     width: 120px;
-    padding-top: 10px;
+    padding: 10px 0;
     fill: rgb(var(--white-rgb));
-} */
+}
 
 
 #left {
