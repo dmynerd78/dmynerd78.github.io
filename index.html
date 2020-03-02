@@ -1,77 +1,66 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
-    <head>
-        <title>The site of the Dmynerd</title>
-		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-		<meta name="description" content="Dmynerd78's website" />
-		<meta name="keywords" content="dmynerd78" />
-		<meta name="author" content="Dmynerd78">
-		<meta property="og:url" content="https://dmynerd78.me"/>
-        <meta property="og:title" content="Dmynerd78's Website"/>
-        <meta property="og:description" content="It doesn't really have that much stuff"/>
-        <meta property="og:locale" content="en_US"/>
-        <meta property="og:type" content="website"/>
-        <meta property="og:site_name" content="Dmynerd78's Website"/>
+<head>
+    <title>The site of the Dmynerd</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1">
 
-		<link rel="icon" href="favicon.ico" type="image/x-icon">
+    <meta name="description" content="Dmynerd78's website" />
+    <meta name="keywords" content="dmynerd78" />
+    <meta name="author" content="Dmynerd78">
+    <meta property="og:url" content="https://dmynerd78.me" />
+    <meta property="og:title" content="Dmynerd78's Website" />
+    <meta property="og:description" content="It doesn't really have that much stuff" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Dmynerd78's Website" />
 
-		<!-- Organize css sheets -->
-		<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
-		<noscript>
-		    <link rel="stylesheet" href="css/style-desktop.css" type="text/css" media="all" />
-		    <link rel="stylesheet" href="css/style-mobile.css" type="text/css" media="all and (max-width: 500px)" />
-		</noscript>
-		<link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
 
-        <!-- TODO Remove JQuery dependency -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-		<script src="js/css.js"></script>
-    </head>
-     <body>
-      <nav>
-        <!-- TODO: Mobile CSS Sheet -->
-        Hello!
-        <a href="http://github.com/dmynerd78" target="_blank" title="Github"><i class="fa fa-github github"></i></a>
-        <a href="http://twitch.tv/dmynerd78" target="_blank" title="Twitch"><i class="fa fa-twitch twitch"></i></a>
-        <a href="http://twitter.com/dmynerd78" target="_blank" title="Twitter"><i class="fa fa-twitter twitter"></i></a>
-        <a href="http://youtube.com/user/dmynerd78" target="_blank" title="Youtube"><i class="fa fa-youtube-play youtube"></i></a>
-      </nav>
-      <section>
-        <aside>
-			<div id="content">
-				<h1>Welcome!</h1>
-				<h2>To My <em>Lair!</em>&nbsp; Wait that's not right...</h2>
-				<hr />
-				<h1>Welcome to my website thingy!</h1>
-                <p>Where I do things! And other things! And... uhm... What else do I do again?</p>
-                <div id="twitter" style="padding-top: 1em; width: 80%;">
-                    <a class="twitter-timeline" data-height="500" style="width: 80%;" data-dnt="true" data-theme="dark"
-                        href="https://twitter.com/dmynerd78?ref_src=twsrc%5Etfw">Tweets by dmynerd78</a>
-                    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-                </div>
-			</div>
-			<footer>
-                <span>Special thanks to <a href="http://chillibyte.github.io">Deep Sohelia</a> for help and the templates</span>
-			</footer>
-		</aside>
-		<article class="body">
-            <h1 id="header">This site is really old. I'll fix the internals eventually</h1>
+    <!-- TODO Organize css sheets -->
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+    <!-- <link rel="stylesheet" href="css/style-desktop.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="css/style-mobile.css" type="text/css" media="all and (max-width: 500px)" /> -->
+</head>
+
+<body>
+    <nav>
+        <a href="/" class="title"><span>Dmynerd's Website</span></a>
+        <!-- TODO Use spritesheet https://css-tricks.com/svg-sprites-use-better-icon-fonts/ -->
+        <div class="icons">
+            <a href="http://github.com/dmynerd78" target="_blank" title="Github">
+                <svg class="icon github">
+                    <use xlink:href="images/icons.svg#github"></use>
+                </svg>
+            </a>
+            <a href="http://twitch.tv/dmynerd78" target="_blank" title="Twitch">
+                <svg class="icon twitch">
+                    <use xlink:href="images/icons.svg#twitch"></use>
+                </svg>
+            </a>
+            <a href="http://twitter.com/dmynerd78" target="_blank" title="Twitter">
+                <svg class="icon twitter">
+                    <use xlink:href="images/icons.svg#twitter"></use>
+                </svg>
+            </a>
+        </div>
+    </nav>
+    <div id="left">
+        <div class="content">
+            <h1>Welcome to my website!</h1>
+            <span>There's not much here but maybe in the future I'll have some time to add more stuff</span>
+        </div>
+        <span id="copyright">&copy; Dmynerd78 2020 &nbsp;</span>
+    </div>
+    <div id="right">
+        <div id="player" class="desktop-only" style="padding-top: 2em;">
+            <iframe src="https://player.twitch.tv/?channel=dmynerd78" frameborder="0" allowfullscreen="true"
+                scrolling="no" height="378" width="620"></iframe>
             <br>
-            <br>
-
-            <div id="player">
-                <iframe src="https://player.twitch.tv/?channel=dmynerd78" frameborder="0" allowfullscreen="true" scrolling="no"
-                    height="378" width="620"></iframe>
-                <br>
-                <a href="https://www.twitch.tv/dmynerd78?tt_content=text_link&tt_medium=live_embed">Watch live video from dmynerd78 on www.twitch.tv</a>
-            </div>
-            <h2 style="padding-top: 2em;"><a href="multi/index.html">Custom multistream tool</a></h2>
-		</article>
-      </section>
-      <footer>
-            &copy; Dmynerd78 2020 &nbsp;
-      </footer>
-
-        <script src="js/copyright.js"></script>
-    </body>
+            <a href="https://www.twitch.tv/dmynerd78?tt_content=text_link&tt_medium=live_embed">Watch dmynerd78 live on www.twitch.tv</a>
+        </div>
+        <h2 style="padding-top: 2em;"><a href="multi/index.html">Custom multistream tool</a></h2>
+        <h2><a href="blog/index.html">Blog Posts</a></h2>
+    </div>
+</body>
 </html>
