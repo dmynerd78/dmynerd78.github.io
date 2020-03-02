@@ -116,9 +116,12 @@ nav .icons a:hover {
 }
 
 #left .content {
-    padding-top: 80px;
     margin: 0 5%;
     position: relative;
+}
+
+#left .content h1 {
+    padding-top: 100px;
 }
 
 #right {
