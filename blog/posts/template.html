@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>The site of the Dmynerd</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <meta name="description" content="Dmynerd78's website" />
+    <meta name="keywords" content="dmynerd78" />
+    <meta name="author" content="Dmynerd78">
+    <meta property="og:url" content="https://dmynerd78.me" />
+    <meta property="og:title" content="Dmynerd78's Website" />
+    <meta property="og:description" content="It doesn't really have that much stuff" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Dmynerd78's Website" />
+
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+    <!-- TODO Organize css sheets -->
+    <link rel="stylesheet" href="/css/style.css" type="text/css" media="all" />
+    <!-- <link rel="stylesheet" href="css/style-desktop.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="css/style-mobile.css" type="text/css" media="all and (max-width: 500px)" /> -->
+</head>
+
+<body>
+    <nav>
+        <a href="/" class="title"><span>Dmynerd's Website</span></a>
+        <!-- TODO Use spritesheet https://css-tricks.com/svg-sprites-use-better-icon-fonts/ -->
+        <div class="icons">
+            <a href="http://github.com/dmynerd78" target="_blank" title="Github">
+                <svg class="icon github">
+                    <use xlink:href="/images/icon-sheet.svg#github"></use>
+                </svg>
+            </a>
+            <a href="http://twitch.tv/dmynerd78" target="_blank" title="Twitch">
+                <svg class="icon twitch">
+                    <use xlink:href="/images/icon-sheet.svg#twitch"></use>
+                </svg>
+            </a>
+            <a href="http://twitter.com/dmynerd78" target="_blank" title="Twitter">
+                <svg class="icon twitter">
+                    <use xlink:href="/images/icon-sheet.svg#twitter"></use>
+                </svg>
+            </a>
+        </div>
+    </nav>
+    <div id="left">
+        <div class="content">
+            <h1>Articles</h1>
+            <span>
+                I've always wanted to do reviews of my favorite games. It's also an archival place
+                where I can post random things that may be useful to others down the line trying
+                to 100% games or something. So hope you enjoy my little corner of the internet!
+                Even if there isn't much here yet...
+            </span>
+
+            <h1>Tools</h1>
+            <a href="/multi/index.html">Multistream Tool</a>
+            <br><br>
+            <a href="https://github.com/dmynerd78/switcheroo-lite" target="_blank">Nintendo Switch Album Manager</a>
+        </div>
+        <span id="copyright">&copy; Dmynerd78 2020 &nbsp;</span>
+    </div>
+    <div id="right">
+        <article style="margin-top: 2em;">
+            <h1>Title</h1>
+            <h2>Title</h2>
+            <h3>Title</h3>
+            <h4>Title</h4>
+            <h5>Title</h5>
+            <h6>Title</h6>
+
+            <details>
+                <summary>Click to expand</summary>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dictum hendrerit velit, quis
+                    ullamcorper sem congue ac. Quisque id magna rhoncus, sodales massa vel, vestibulum elit. Duis ornare
+                    accumsan egestas.</p>
+            </details>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Godzilla</td>
+                        <td>2</td>
+                        <td>$299.99</td>
+                    </tr>
+                    <tr>
+                        <td>Mozilla</td>
+                        <td>10</td>
+                        <td>$100,000.00</td>
+                    </tr>
+                    <tr>
+                        <td>Quesadilla</td>
+                        <td>1</td>
+                        <td>$2.22</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <code>
+                // This logs a message to the console and check out the scrollbar.
+                console.log('Hello, world!');
+
+                for(int x=0; x &lt; 5; x++) {
+                &nbsp;&nbsp;&nbsp;&nbsp;console.log(x);
+                }
+            </code>
+
+            <blockquote>
+                <h1>Block quote</h1>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dictum hendrerit velit, quis
+                ullamcorper sem congue ac. Quisque id magna rhoncus, sodales massa vel, vestibulum elit. Duis ornare
+                accumsan egestas. Proin maximus lacus interdum leo molestie convallis.
+            </blockquote>
+        </article>
+    </div>
+    <style>
+        h1, h2, h3, h4, h5, h6 {
+            margin: 10px;
+        }
+    </style>
+</body>
+
+</html>
