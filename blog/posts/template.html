@@ -18,16 +18,12 @@
 
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
 
-    <!-- TODO Organize css sheets -->
     <link rel="stylesheet" href="/css/style.css" type="text/css" media="all" />
-    <!-- <link rel="stylesheet" href="css/style-desktop.css" type="text/css" media="all" />
-    <link rel="stylesheet" href="css/style-mobile.css" type="text/css" media="all and (max-width: 500px)" /> -->
 </head>
 
 <body>
     <nav>
         <a href="/" class="title"><span>Dmynerd's Website</span></a>
-        <!-- TODO Use spritesheet https://css-tricks.com/svg-sprites-use-better-icon-fonts/ -->
         <div class="icons">
             <a href="http://github.com/dmynerd78" target="_blank" title="Github">
                 <svg class="icon github">
@@ -79,6 +75,12 @@
                     accumsan egestas.</p>
             </details>
 
+            <hr>
+
+            <spoiler>food is tasty</spoiler>
+
+            <button onclick="alert('yahaha!');">Click me!</button>
+
             <table>
                 <thead>
                     <tr>
@@ -128,6 +130,16 @@
             margin: 10px;
         }
     </style>
+    <script>
+        document.querySelectorAll("spoiler").forEach(function (el) {
+            el.title = "Click me!";
+            el.onclick = function (e) {
+                el.setAttribute("active", "");
+                e.preventDefault();
+                el.onclick = null;
+            }
+        });
+    </script>
 </body>
 
 </html>
