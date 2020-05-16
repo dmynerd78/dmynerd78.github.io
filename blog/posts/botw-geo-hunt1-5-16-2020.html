@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Breath of the Wild Geo Hunt</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <!-- TODO: Update meta data -->
+    <meta name="description" content="" />
+    <meta name="keywords" content="dmynerd78, botw, " />
+    <meta name="author" content="Dmynerd78">
+    <meta property="og:url" content="https://dmynerd78.me" />
+    <meta property="og:title" content="Dmynerd78's Website" />
+    <meta property="og:description" content="It doesn't really have that much stuff" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Dmynerd78's Website" />
+
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="/css/style.css" type="text/css" media="all" />
+</head>
+
+<body>
+    <nav>
+        <a href="/" class="title"><span>Dmynerd's Website</span></a>
+        <div class="icons">
+            <a href="http://github.com/dmynerd78" target="_blank" title="Github">
+                <svg class="icon github">
+                    <use xlink:href="/images/icon-sheet.svg#github"></use>
+                </svg>
+            </a>
+            <a href="http://twitch.tv/dmynerd78" target="_blank" title="Twitch">
+                <svg class="icon twitch">
+                    <use xlink:href="/images/icon-sheet.svg#twitch"></use>
+                </svg>
+            </a>
+            <a href="http://twitter.com/dmynerd78" target="_blank" title="Twitter">
+                <svg class="icon twitter">
+                    <use xlink:href="/images/icon-sheet.svg#twitter"></use>
+                </svg>
+            </a>
+        </div>
+    </nav>
+    <div id="left">
+        <div class="content">
+            <h1>Articles</h1>
+            <span>
+                I've always wanted to do reviews of my favorite games. It's also an archival place
+                where I can post random things that may be useful to others down the line trying
+                to 100% games or something. So hope you enjoy my little corner of the internet!
+                Even if there isn't much here yet...
+            </span>
+
+            <h1>Tools</h1>
+            <a href="/multi/index.html">Multistream Tool</a>
+            <br><br>
+            <a href="https://github.com/dmynerd78/switcheroo-lite" target="_blank">Nintendo Switch Album Manager</a>
+        </div>
+        <span id="copyright">&copy; Dmynerd78 2020 &nbsp;</span>
+    </div>
+    <div id="right">
+
+        <article style="margin-top: 2em;">
+            <h1 class="title">Breath of the Wild Geo Hunt</h1>
+            <h4 class="date">May 16, 2020</h4>
+            <a href="/blog/index.html"><button>&laquo; Go Back</button></a>
+
+            <p>Hey there! Welcome to my first article! I've actually had this idea
+                in the back of my head since 2017 (crazy to think it's been out for that long)
+                but I never actually finished it. I had the idea while I was replaying through
+                the game again and I thought it'd be super fun. So I've rounded up a handful
+                from my screenshots folder to try out!</p>
+
+            <h2>Geo Hunt?</h2>
+            <p>I'm not sure if "Geo Hunt" is the proper term, but the concept itself is straight forward. Basically
+                I've taken screenshots of random locations all around Hyrule.
+                Your job is to find where exactly these pictures were taken.
+                Try using context clues and hints to figure out where exactly it is!
+                If you find them all of them you get free
+                <span title="Cookies not included (unless you count browser cookies).">cookies!<sup>*</sup></span></p>
+
+            <p>If you need to see the image in higher detail, just click the image itself for the full resolution picture.
+               If you're stumped with an image, you can click the black hint box beneath an image for a bit more info. Happy hunting!</p>
+
+            <noscript><span style="color: red;">Javascript not supported. Can't display post.</span></noscript>
+            <div id="images"></div>
+
+            <p>Hope you have fun doing this little hunt. Let me know how many you find!</p>
+            <p>If you really like it, let me know &mdash; I may soon have enough for a second geo hunt.
+               And who knows, I may revisit this concept when BotW's sequel comes out.</p>
+            <a href="/blog/index.html"><button>&laquo; Go Back</button></a>
+        </article>
+    </div>
+
+    <script>
+        const IMG_PATH = "5-16-2020/";
+        const NUM_IMGS = 10;
+        const HINTS = [
+            "I hope there's not a korok on each one of those pillars...",
+            "Wow there's a lot of deer around here!",
+            "That ramp looks like it'd be fun to slide down",
+            "Wow that's really high up. I can also see a shrine and another tower off in the distance!",
+            "Every time I walk down this path, I'm greeted to the calm flapping of the flags in the breeze",
+            "I keep trying to put apples in those stone things but nothing happens",
+            "After practicing my archery, I like to camp here for the night. It lets me rest before I go battle those Hinoxes",
+            "Ah the fresh ocean breeze is always relaxing",
+            "I think I can see some island out there in the fog",
+            "I can still hear the murmor of shadows and the wise ones dispite how damaged it's become"
+        ];
+
+        function htmlToElement(html) {
+            var template = document.createElement('template');
+            html = html.trim();
+            template.innerHTML = html;
+            return template.content;
+        }
+
+        for(let i=1; i<=NUM_IMGS; i++) {
+            // TODO Low res image previews
+            let el = htmlToElement(`
+                <h4>Image #${i}</h4>
+                <a href="${IMG_PATH}/${i}.jpg" target="_blank" title='Click to view in new tab'>
+                    <img src="${IMG_PATH}/${i}_small.jpg" alt="Image #${i}" /></a>
+                <p>Hint: <spoiler>${HINTS[i-1]}</spoiler></p>
+                </p>
+            `);
+
+            el.appendChild(document.createElement("hr"));
+            document.getElementById("images").appendChild(el);
+        }
+
+        document.querySelectorAll("spoiler").forEach(function (el) {
+            el.title = "Click me!";
+            el.onclick = function (e) {
+                el.setAttribute("active", "");
+                e.preventDefault();
+                el.onclick = null;
+            }
+        });
+
+    </script>
+    <script src="/js/scroll.js" defer></script>
+</body>
+
+</html>
