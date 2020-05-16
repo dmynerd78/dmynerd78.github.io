@@ -149,17 +149,6 @@ blockquote {
     padding: 0.5em 1em;
 }
 
-#copyright {
-    position: fixed;
-    width: 100%;
-    left: 0;
-    bottom: 0;
-    text-align: left;
-    height: 30px;
-    line-height: 30px;
-    padding: 10px;
-}
-
 nav {
     height: 50px;
     width: 100%;
@@ -222,6 +211,34 @@ nav .icons a:hover {
 
 .date {
     margin-top: 0;
+}
+
+#gototop {
+    display: none;
+    position: fixed;
+    z-index: 99;
+    bottom: 15px;
+    right: 15px;
+    width: 30px;
+    height: 30px;
+    padding: 15px;
+    font-size: 18px;
+    cursor: pointer;
+    background-color: rgb(var(--dark-gray-rgb));
+    border: 3px solid rgb(var(--darker-gray-rgb));
+    border-radius: 4px;
+    fill: rgb(var(--white-rgb));
+}
+
+#copyright {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    text-align: left;
+    height: 30px;
+    line-height: 30px;
+    padding: 10px;
 }
 
 
