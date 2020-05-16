@@ -129,17 +129,21 @@
         h1, h2, h3, h4, h5, h6 {
             margin: 10px;
         }
+        #right article {
+            padding-bottom: 200%;
+        }
     </style>
     <script>
         document.querySelectorAll("spoiler").forEach(function (el) {
             el.title = "Click me!";
-            el.onclick = function (e) {
+            el.onclick = function (ev) {
                 el.setAttribute("active", "");
-                e.preventDefault();
+                ev.preventDefault();
                 el.onclick = null;
             }
         });
     </script>
+    <script src="/js/scroll.js" defer></script>
 </body>
 
 </html>
