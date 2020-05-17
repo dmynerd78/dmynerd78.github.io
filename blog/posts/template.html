@@ -109,7 +109,7 @@
             </table>
 
             <code>
-                // This logs a message to the console and check out the scrollbar.
+                // This logs a message to the console
                 console.log('Hello, world!');
 
                 for(int x=0; x &lt; 5; x++) {
@@ -133,17 +133,7 @@
             padding-bottom: 200%;
         }
     </style>
-    <script>
-        document.querySelectorAll("spoiler").forEach(function (el) {
-            el.title = "Click me!";
-            el.onclick = function (ev) {
-                el.setAttribute("active", "");
-                ev.preventDefault();
-                el.onclick = null;
-            }
-        });
-    </script>
-    <script src="/js/scroll.js" defer></script>
+    <script id="script-utils" src="/js/utils.js" defer data-enable="gototop,spoilers"></script>
 </body>
 
 </html>

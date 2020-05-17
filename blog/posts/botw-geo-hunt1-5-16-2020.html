@@ -117,30 +117,19 @@
         }
 
         for(let i=1; i<=NUM_IMGS; i++) {
-            // TODO Low res image previews
             let el = htmlToElement(`
                 <h4>Image #${i}</h4>
                 <a href="${IMG_PATH}/${i}.jpg" target="_blank" title='Click to view higher res version in new tab'>
                     <img src="${IMG_PATH}/${i}_small.jpg" alt="Image #${i}" /></a>
                 <p>Hint: <spoiler>${HINTS[i-1]}</spoiler></p>
-                </p>
-            `);
+                </p>`);
 
             el.appendChild(document.createElement("hr"));
             document.getElementById("images").appendChild(el);
         }
 
-        document.querySelectorAll("spoiler").forEach(function (el) {
-            el.title = "Click me!";
-            el.onclick = function (e) {
-                el.setAttribute("active", "");
-                e.preventDefault();
-                el.onclick = null;
-            }
-        });
-
     </script>
-    <script src="/js/scroll.js" defer></script>
+    <script id="script-utils" src="/js/utils.js" defer data-enable="gototop,spoilers"></script>
 </body>
 
 </html>

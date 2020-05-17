@@ -2,7 +2,7 @@ function scrollTop() {
     return window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
 }
 
-function insertGoToTop() {
+function enableGoToTop() {
     // TODO Fade in/out
     let goToTop = document.createElement('template');
     goToTop.innerHTML = `<div id="gototop">
@@ -28,4 +28,28 @@ function insertGoToTop() {
     document.querySelector("#right").appendChild(goToTop);
 }
 
-insertGoToTop();
+function enableSpoilers() {
+    document.querySelectorAll("spoiler").forEach(function (el) {
+        el.title = "Click me!";
+        el.onclick = function (ev) {
+            el.setAttribute("active", "");
+            ev.preventDefault();
+            el.onclick = null;
+        };
+    });
+}
+
+let settings = document.getElementById("script-utils").getAttribute("data-enable").split(",");
+for(var index in settings) {
+    switch(settings[index].trim()) {
+        case "gototop":
+            enableGoToTop();
+            break;
+        case "spoilers":
+            enableSpoilers();
+            break;
+        default:
+            console.warn(`${settings[index]} is an invalid option`);
+            break;
+    }
+}

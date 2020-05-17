@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>The site of the Dmynerd</title>
+    <title>Tutorial: OBS Countdown Script</title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1">
 
+    <!-- TODO: Update meta data -->
     <meta name="description" content="Dmynerd78's website" />
     <meta name="keywords" content="dmynerd78" />
     <meta name="author" content="Dmynerd78">
@@ -26,6 +28,7 @@
 <body>
     <nav>
         <a href="/" class="title"><span>Dmynerd's Website</span></a>
+        <!-- TODO Use spritesheet https://css-tricks.com/svg-sprites-use-better-icon-fonts/ -->
         <div class="icons">
             <a href="http://github.com/dmynerd78" target="_blank" title="Github">
                 <svg class="icon github">
@@ -62,29 +65,75 @@
         <span id="copyright">&copy; Dmynerd78 2020 &nbsp;</span>
     </div>
     <div id="right">
-        <h1>Articles and Stuff</h1>
-        <h3>Stuff ranging from random game ideas to programming stuff</h3>
+        <article style="margin-top: 2em;">
+            <h1>Title</h1>
+            <h2>Title</h2>
+            <h3>Title</h3>
+            <h4>Title</h4>
+            <h5>Title</h5>
+            <h6>Title</h6>
 
-        <article>
-            <h1 class="title">Breath of the Wild Scavenger Hunt</h1>
-            <h4 class="date">May 16, 2020</h4>
+            <details>
+                <summary>Click to expand</summary>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dictum hendrerit velit, quis
+                    ullamcorper sem congue ac. Quisque id magna rhoncus, sodales massa vel, vestibulum elit. Duis ornare
+                    accumsan egestas.</p>
+            </details>
 
-            <p>Hey there! Welcome to my first article! I've actually had this idea in the back of my head since 2017
-                (crazy to think game's been out for that long...) but I never actually finished it.
-                I had the idea while I was replaying through the game again and I thought it'd be super fun. So I've
-                rounded up a handful from my screenshots folder to try out!</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Godzilla</td>
+                        <td>2</td>
+                        <td>$299.99</td>
+                    </tr>
+                    <tr>
+                        <td>Mozilla</td>
+                        <td>10</td>
+                        <td>$100,000.00</td>
+                    </tr>
+                    <tr>
+                        <td>Quesadilla</td>
+                        <td>1</td>
+                        <td>$2.22</td>
+                    </tr>
+                </tbody>
+            </table>
 
-            <h2>Geo Hunt?</h2>
-            <p>I'm not sure if "Geo Hunt" is the proper term, but the concept itself is straight forward. Basically
-                I've taken screenshots of random locations all around Hyrule.
-                Your job is to find where exactly these pictures were taken.
-                Try using context clues and hints to figure out where exactly it is!
-                If you find them all of them you get...</p>
+            <code>
+                // This logs a message to the console and check out the scrollbar.
+                console.log('Hello, world!');
 
-            <a href="posts/botw-geo-hunt1-5-16-2020.html"><button>Read More...</button></a>
+                for(int x=0; x &lt; 5; x++) {
+                &nbsp;&nbsp;&nbsp;&nbsp;console.log(x);
+                }
+            </code>
+
+            <blockquote>
+                <h1>Block quote</h1>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dictum hendrerit velit, quis
+                ullamcorper sem congue ac. Quisque id magna rhoncus, sodales massa vel, vestibulum elit. Duis ornare
+                accumsan egestas. Proin maximus lacus interdum leo molestie convallis.
+            </blockquote>
         </article>
     </div>
-
-    <script id="script-utils" src="/js/utils.js" defer data-enable="gototop"></script>
+    <style>
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            margin: 10px;
+        }
+    </style>
 </body>
+
 </html>
