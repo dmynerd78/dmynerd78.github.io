@@ -94,7 +94,7 @@
     </div>
 
     <script>
-        const IMG_PATH = "5-16-2020/";
+        const IMG_PATH = "5-16-2020";
         const NUM_IMGS = 10;
         const HINTS = [
             "I hope there's not a korok on each one of those pillars...",
@@ -119,8 +119,14 @@
         for(let i=1; i<=NUM_IMGS; i++) {
             let el = htmlToElement(`
                 <h4>Image #${i}</h4>
-                <a href="${IMG_PATH}/${i}.jpg" target="_blank" title='Click to view higher res version in new tab'>
-                    <img src="${IMG_PATH}/${i}_small.jpg" alt="Image #${i}" /></a>
+                <a href="${IMG_PATH}/${i}.jpg" target="_blank" alt='Picture #${i}'
+                title='Click to view higher res version in new tab'>
+                    <picture>
+                        <source type="image/webp" srcset="${IMG_PATH}/${i}_small.webp">
+                        <source type="image/jpeg" srcset="${IMG_PATH}/${i}_small.jpg">
+                        <img src="${IMG_PATH}/${i}_small.jpg" alt="">
+                    </picture>
+                </a>
                 <p>Hint: <spoiler>${HINTS[i-1]}</spoiler></p>
                 </p>`);
 
