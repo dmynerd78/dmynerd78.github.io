@@ -13,6 +13,8 @@
     --darker-gray-rgb: 35, 35, 35;
     --black-rgb: 0, 0, 0;
 
+    /* Source: https://binaryify.github.io/OneDark-Pro/#/?id=colors-config */
+    --code-bg: #282C34;
     --code-red: #f44747;
     --code-purple: #c678dd;
     --code-gold: #e5c07b;
@@ -66,6 +68,11 @@ a, a:visited {
     color: rgb(var(--white-rgb));
 }
 
+ul, ol {
+    display: inline-block;
+    text-align: left;
+}
+
 button {
     cursor: pointer;
     color: rgb(var(--dark-gray-rgb));
@@ -108,7 +115,7 @@ code {
     margin: 0 auto;
     padding: 10px;
     text-align: left;
-    background: rgb(var(--darker-gray-rgb));
+    background: var(--code-bg);
     border-radius: 5px;
 
     page-break-inside: avoid;
@@ -161,7 +168,7 @@ details > :last-child {
 
 details {
     width: 90%;
-    margin: 10px auto;
+    margin: 20px auto;
     background: rgba(var(--dark-gray-rgb), 0.5);
 }
 
@@ -174,6 +181,8 @@ details summary {
 details code {
     margin-top: 5px;
     width: inherit;
+    overflow-x: auto;
+    white-space: pre;
 }
 
 blockquote {
@@ -247,6 +256,15 @@ nav .icons a:hover {
 
 .date {
     margin-top: 0;
+}
+
+.warning {
+    color: var(--warning-color);
+    text-shadow:
+    -1px -1px 0 #000,
+     1px -1px 0 #000,
+    -1px  1px 0 #000,
+     1px  1px 0 #000;
 }
 
 #gototop {
