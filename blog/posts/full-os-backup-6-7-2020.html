@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Dmynerd's Windows Archive Script using 7-Zip</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <!-- TODO: Change meta tags -->
+    <meta name="description" content="A simple windows batch script that aids in the creation of 7-Zip full system backups" />
+    <meta name="keywords" content="dmynerd78,7-zip,archive,backup" />
+    <meta name="author" content="Dmynerd78">
+    <meta property="og:url" content="https://dmynerd78.me/blog/posts/full-os-backup-6-7-2020.html" />
+    <meta property="og:title" content="Dmynerd78's Website" />
+    <meta property="og:description" content="It doesn't really have that much stuff" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Dmynerd78's Website" />
+
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="/css/style.css" type="text/css" media="all" />
+</head>
+
+<body>
+    <nav>
+        <a href="/" class="title"><span>Dmynerd's Website</span></a>
+        <div class="icons">
+            <a href="http://github.com/dmynerd78" target="_blank" rel="noopener" title="Github" aria-label="Github">
+                <svg class="icon github">
+                    <use xlink:href="/images/icon-sheet.svg#github"></use>
+                </svg>
+            </a>
+            <a href="http://twitch.tv/dmynerd78" target="_blank" rel="noopener" title="Twitch" aria-label="Twitch">
+                <svg class="icon twitch">
+                    <use xlink:href="/images/icon-sheet.svg#twitch"></use>
+                </svg>
+            </a>
+            <a href="http://twitter.com/dmynerd78" target="_blank" rel="noopener" title="Twitter" aria-label="Twitter">
+                <svg class="icon twitter">
+                    <use xlink:href="/images/icon-sheet.svg#twitter"></use>
+                </svg>
+            </a>
+        </div>
+    </nav>
+    <div id="left">
+        <div class="content">
+            <h1>Articles</h1>
+            <span>
+                I've always wanted to do reviews of my favorite games. It's also an archival place
+                where I can post random things that may be useful to others down the line trying
+                to 100% games or something. So hope you enjoy my little corner of the internet!
+                Even if there isn't much here yet...
+            </span>
+
+            <h1>Tools</h1>
+            <a href="/multi/index.html">Multistream Tool</a>
+            <br><br>
+            <a href="https://github.com/dmynerd78/switcheroo-lite" target="_blank" rel="noopener">Nintendo Switch Album Manager</a>
+        </div>
+        <span id="copyright">&copy; Dmynerd78 2020 &nbsp;</span>
+    </div>
+    <div id="right">
+        <article style="margin-top: 2em;">
+            <h1 class="title">Windows Archive Script using 7-Zip</h1>
+            <h4 class="date">June 7, 2020</h4>
+            <a href="/blog/index.html"><button>&laquo; Go Back</button></a>
+
+            <br><br>
+            <p>Back in the days I had an old prebuilt, I'd have to frequently reinstall windows since some part of the operating system didn't cooperate
+                with some part of the hardware. As a result, I ended up having to backup my data quite often. Because it was so frequent I made a script
+                to help automate it. I figured I might as well share it with the world in case someone else needs something like this.
+                Since it's geared towards backing up an entire system (including multiple drives), this script is highly multithreaded to
+                reduce the amount of time it takes to finish a backup.
+            </p>
+
+            <br><br>
+            <a href="full-os-backup/archive.bat"><button><strong>Download Script</strong></button></a>
+
+            <h4>Batch Script Source</h4>
+
+            <code>@<span class="purple">echo</span> <span class="blue">OFF</span>
+
+<span class="purple">REM</span> <span class="gray">Sets %$date% to M-D-YYYY</span>
+<span class="purple">set</span> <span class="red">$date</span><span class="cyan">=</span><span class="red">%date:~</span><span class="gold">4</span><span class="red">%</span>
+<span class="purple">set</span> <span class="red">$date</span><span  class="cyan">=</span><span class="red">%$date:</span>/<span class="red">=</span>-<span  class="red">%</span>
+
+
+<span class="purple">REM</span> <span class="gray">=========== CONFIG ===========</span>
+
+<span class="purple">set</span> <span class="red">COMPRESS_7Z_LOCATION</span>=<span class="green">"C:\Program Files\7-Zip\7zG.exe"</span>
+<span class="purple">set</span> <span class="red">COMPRESS_FLAGS</span>=<span class="red">-t7z -m0</span>=<span class="gold">lzma2</span> <span class="red">-mfb</span>=<span class="gold">64</span> <span class="red">-md</span>=<span class="gold">64m</span> <span class="red">-mmt6 -p -mhe</span>=<span class="gold">on</span> <span class="red">-spf</span>
+<span class="purple">set</span> <span class="red">ARCHIVE_PATHS</span>=<span class="green">"C:\Users\<span class="red">%USERNAME%</span>\"</span>
+<span class="purple">set</span> <span class="red">EXCLUDE_FOLDERS</span>=<span class="red">-xr!</span><span class="green">"3D Objects"</span> <span class="red">-xr!</span><span class="green">"Favorites"</span> <span class="red">-x!$RECYCLE.BIN -xr!</span><span class="green">"Application Data"</span> <span class="red">-xr!</span><span class="green">"Temp"</span> <span class="red">-xr!</span><span class="green">"Temporary Internet Files"</span> <span class="red">-xr!</span><span class="green">"Cookies"</span> <span class="red">-xr!</span><span class="green">"Cache"</span>
+<span class="purple">set</span> <span class="red">BACKUP_PATH</span>=<span class="red">%~d0</span>\Backups\Backup-<span class="red">%$date%</span>.7z
+
+<span class="purple">REM</span> <span class="gray">=========== CONFIG ===========</span>
+
+
+<span class="purple">echo</span> Starting 7-zip process...
+<span class="purple">start</span> <span class="green">"7z Backup"</span> <span class="red">%COMPRESS_7Z_LOCATION%</span> a <span class="red">%COMPRESS_FLAGS%</span> <span class="red">%BACKUP_PATH%</span> <span class="red">%ARCHIVE_PATHS%</span> <span class="red">%EXCLUDE_PATHS%</span>
+
+<span class="purple">pause</span></code>
+
+            <h4>7-Zip Parameters</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Parameter</th>
+                        <th>Descriptiony</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>-t7z</td>
+                        <td>Create a <code class="inline">.7z</code> file</td>
+                    </tr>
+                    <tr>
+                        <td>-m0</td>
+                        <td>Specify a compression method</td>
+                    </tr>
+                    <tr>
+                        <td>-mfb</td>
+                        <td>Specify number of LZMA fast bytes</td>
+                    </tr>
+                    <tr>
+                        <td>-md</td>
+                        <td>Specify dictionary size</td>
+                    </tr>
+                    <tr>
+                        <td>-mmt#</td>
+                        <td>Replace <code class="inline">#</code> with the number of threads to use; Higher = faster but with diminishing returns</td>
+                    </tr>
+                    <tr>
+                        <td>-p[PHRASE]</td>
+                        <td>Replace <code class="inline">[PHRASE]</code> with encoding phrase. Do not include <code class="inline">[PHRASE]</code> to be prompted for one</td>
+                    </tr>
+                    <tr>
+                        <td>-mhe</td>
+                        <td>Encrypt file header with above passphrase</td>
+                    </tr>
+                    <tr>
+                        <td>-spf</td>
+                        <td>Archive file as full path name (including drive letter). Allows for multiple different drives to be archived in a single file.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h4>Arguments</h4>
+            <ol>
+                <li><span class="warning">COMPRESS_7Z_LOCATION</span> - Full path to 7zG.exe (GUI version of 7-zip)</li>
+                <li><span class="warning">COMPRESS_FLAGS</span> - 7-Zip compression flags. See above description for breakdown on defaults</li>
+                <li><span class="warning">ARCHIVE_PATHS</span> - Paths to archive. This can include paths that are from drives other than the C drive. Use absolute paths</li>
+                <li><span class="warning">EXCLUDE_FOLDERS</span> - Folders to ignore (just name of the folder; no absolute path).
+                    Use <code class="inline"><span class="red">-xr!</span><span class="green">"NAME"</span></code> for folders and <code class="inline"><span class="red">-x!</span><span class="green">"NAME"</span></code> for an item</li>
+                <li><span class="warning">BACKUP_PATH</span> - Location to save backup file to. By default it's
+                    <code class="inline">[drive script is on]:/Backups/Backup-M-D-YYY.7z</code></li>
+            </ol>
+
+            <h4>Sources</h4>
+            <a href="https://sevenzip.osdn.jp/chm/cmdline/commands/add.htm" target="_blank" rel="noopener">7-Zip Docs</a>
+        </article>
+    </div>
+    <script id="script-utils" src="/js/utils.js" defer data-enable="gototop"></script>
+</body>
+
+</html>
