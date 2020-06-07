@@ -137,7 +137,7 @@ code {
 
 code.inline {
     display: inline;
-    padding: 4px;
+    padding: 2px 4px;
     margin: 0;
 
     overflow: initial;
@@ -164,8 +164,12 @@ thead {
     border-bottom: 1px solid rgba(var(--white-rgb), 0.5);
 }
 
+tbody tr {
+    line-height: 1.5;
+}
+
 tbody tr:nth-child(odd) {
-    background-color: rgba(var(--darker-gray-rgb), 0.3);
+    background-color: rgba(var(--darker-gray-rgb), 0.75);
 }
 
 tbody tr:nth-child(even) {
@@ -175,6 +179,12 @@ tbody tr:nth-child(even) {
 tbody tr td {
     border-left: 2px solid rgba(var(--white-rgb), 0.5);
     border-right: 2px solid rgba(var(--white-rgb), 0.5);
+    text-align: left;
+}
+
+tbody tr td:first-child {
+    padding-left: 5px;
+    padding-right: 10px;
 }
 
 tbody tr:last-of-type {
