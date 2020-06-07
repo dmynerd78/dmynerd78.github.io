@@ -6,13 +6,12 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1">
 
-    <!-- TODO: Change meta tags -->
     <meta name="description" content="A simple windows batch script that aids in the creation of 7-Zip full system backups" />
-    <meta name="keywords" content="dmynerd78,7-zip,archive,backup" />
+    <meta name="keywords" content="dmynerd78,7-zip,7zip,archive,backup" />
     <meta name="author" content="Dmynerd78">
     <meta property="og:url" content="https://dmynerd78.me/blog/posts/full-os-backup-6-7-2020.html" />
     <meta property="og:title" content="Dmynerd78's Website" />
-    <meta property="og:description" content="It doesn't really have that much stuff" />
+    <meta property="og:description" content="A simple windows batch script that aids in the creation of 7-Zip full system backups" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Dmynerd78's Website" />
@@ -77,7 +76,7 @@
             <br><br>
             <a href="full-os-backup/archive.bat"><button><strong>Download Script</strong></button></a>
 
-            <h4>Batch Script Source</h4>
+            <h2>Batch Script Source</h2>
 
             <code>@<span class="purple">echo</span> <span class="blue">OFF</span>
 
@@ -102,7 +101,7 @@
 
 <span class="purple">pause</span></code>
 
-            <h4>7-Zip Parameters</h4>
+            <h2>7-Zip Parameters</h2>
             <table>
                 <thead>
                     <tr>
@@ -146,18 +145,44 @@
                 </tbody>
             </table>
 
-            <h4>Arguments</h4>
-            <ol>
-                <li><span class="warning">COMPRESS_7Z_LOCATION</span> - Full path to 7zG.exe (GUI version of 7-zip)</li>
-                <li><span class="warning">COMPRESS_FLAGS</span> - 7-Zip compression flags. See above description for breakdown on defaults</li>
-                <li><span class="warning">ARCHIVE_PATHS</span> - Paths to archive. This can include paths that are from drives other than the C drive. Use absolute paths</li>
-                <li><span class="warning">EXCLUDE_FOLDERS</span> - Folders to ignore (just name of the folder; no absolute path).
-                    Use <code class="inline"><span class="red">-xr!</span><span class="green">"NAME"</span></code> for folders and <code class="inline"><span class="red">-x!</span><span class="green">"NAME"</span></code> for an item</li>
-                <li><span class="warning">BACKUP_PATH</span> - Location to save backup file to. By default it's
-                    <code class="inline">[drive script is on]:/Backups/Backup-M-D-YYY.7z</code></li>
-            </ol>
+            <h2>Arguments</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Parameter</th>
+                        <th>Descriptiony</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>COMPRESS_7Z_LOCATION</td>
+                        <td>Full path to 7zG.exe (GUI version of 7-zip)</td>
+                    </tr>
+                    <tr>
+                        <td>COMPRESS_FLAGS</td>
+                        <td>7-Zip compression flags. See above description for breakdown on defaults</td>
+                    </tr>
+                    <tr>
+                        <td>ARCHIVE_PATHS</td>
+                        <td>Paths to archive. This can include paths that are from drives other than the C drive. Use
+                            absolute paths</td>
+                    </tr>
+                    <tr>
+                        <td>EXCLUDE_FOLDERS</td>
+                        <td>Folders to ignore (just name of the folder; no absolute path).
+                            Use <code class="inline"><span class="red">-xr!</span><span
+                                    class="green">"NAME"</span></code> for folders and <code class="inline"><span
+                                    class="red">-x!</span><span class="green">"NAME"</span></code> for an item</td>
+                    </tr>
+                    <tr>
+                        <td>BACKUP_PATH</td>
+                        <td>Location to save backup file to. By default it's
+                            <code class="inline">[drive script is on]:/Backups/Backup-M-D-YYY.7z</code></td>
+                    </tr>
+                </tbody>
+            </table>
 
-            <h4>Sources</h4>
+            <h2>Sources</h2>
             <a href="https://sevenzip.osdn.jp/chm/cmdline/commands/add.htm" target="_blank" rel="noopener">7-Zip Docs</a>
         </article>
     </div>
