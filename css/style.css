@@ -5,7 +5,7 @@
     --twitter-color: #6CADDE;
     --youtube-color: #CC181E;
     --github-color: #171515;
-    --warning-color: #D25252;
+    --warning-color: #EB5B5B;
 
     --white-rgb: 255, 255, 255;
     --light-white-rgb: 128, 128, 128;
@@ -26,15 +26,15 @@
 
 @media screen and (max-width: 800px) {
     #left {
+        width: 0 !important;
         display: none;
     }
 
     #right {
-        width: 80% !important;
-        padding-right: 10% !important;
+        width: 90% !important;
     }
 
-    /* TODO: Display navbar button */
+    /* TODO: Display navbar buttons */
     nav .icons {
         display: none;
     }
@@ -71,6 +71,9 @@ a, a:visited {
 ul, ol {
     display: inline-block;
     text-align: left;
+
+    max-width: 80%;
+    word-break: break-word;
 }
 
 button {
@@ -99,6 +102,11 @@ article {
     margin-bottom: 30px;
 }
 
+article p {
+    width: 90%;
+    margin: 0 auto;
+}
+
 hr {
     width: 78%;
     /* border: 0; */
@@ -117,21 +125,23 @@ code {
     text-align: left;
     background: var(--code-bg);
     border-radius: 5px;
+    max-width: 95%;
 
     page-break-inside: avoid;
     line-height: 1.0;
     width: fit-content;
 
     overflow: auto;
-    overflow-x: auto;
-    white-space: pre-wrap;
-    counter-reset: line;
+    white-space: pre;
 }
 
 code.inline {
     display: inline;
     padding: 4px;
     margin: 0;
+
+    overflow: initial;
+    white-space: pre-wrap;
 }
 
 code .red { color: var(--code-red); }
@@ -151,7 +161,7 @@ table {
 }
 
 thead {
-    border-bottom: 1px solid rgb(var(--white-rgb));
+    border-bottom: 1px solid rgba(var(--white-rgb), 0.5);
 }
 
 tbody tr:nth-child(odd) {
@@ -160,6 +170,15 @@ tbody tr:nth-child(odd) {
 
 tbody tr:nth-child(even) {
     background-color: rgba(var(--dark-gray-rgb), 0.3);
+}
+
+tbody tr td {
+    border-left: 2px solid rgba(var(--white-rgb), 0.5);
+    border-right: 2px solid rgba(var(--white-rgb), 0.5);
+}
+
+tbody tr:last-of-type {
+    border-bottom: 1px solid rgba(var(--white-rgb), 0.5);
 }
 
 details > :last-child {
@@ -181,8 +200,6 @@ details summary {
 details code {
     margin-top: 5px;
     width: inherit;
-    overflow-x: auto;
-    white-space: pre;
 }
 
 blockquote {
