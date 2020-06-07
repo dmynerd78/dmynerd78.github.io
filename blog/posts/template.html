@@ -2,10 +2,12 @@
 <html>
 
 <head lang="en">
+    <!-- TODO Change title -->
     <title>The site of the Dmynerd</title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1">
 
+    <!-- TODO: Change meta tags -->
     <meta name="description" content="Dmynerd78's website" />
     <meta name="keywords" content="dmynerd78" />
     <meta name="author" content="Dmynerd78">
@@ -73,6 +75,18 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dictum hendrerit velit, quis
                     ullamcorper sem congue ac. Quisque id magna rhoncus, sodales massa vel, vestibulum elit. Duis ornare
                     accumsan egestas.</p>
+
+                <code><span class="purple">from</span> pprint <span class="purple">import</span> pprint
+
+<span class="purple">def</span> <span class="blue">main</span>():
+    <span class="blue">pprint</span>({
+        <span class="green">"hello"</span>: <span class="green">"world"</span>,
+        <span class="green">"food"</span>: [<span class="green">"is"</span>, <span class="green">"very"</span>, <span class="green">"tasty"</span>]
+    })
+
+
+<span class="purple">if</span> <span class="red">__name__</span> <span class="blue">==</span> <span class="green">"__main__"</span>:
+    <span class="purple">main</span>()</code>
             </details>
 
             <hr>
@@ -108,14 +122,12 @@
                 </tbody>
             </table>
 
-            <code>
-                // This logs a message to the console
-                console.log('Hello, world!');
+            <code><span class="gray">// This logs a message to the console</span>
+<span class="red">console</span>.<span class="blue">log</span>(<span class="green">"Hello, world!"</span>);
 
-                for(int x=0; x &lt; 5; x++) {
-                &nbsp;&nbsp;&nbsp;&nbsp;console.log(x);
-                }
-            </code>
+<span class="purple">for</span>(<span class="purple">let</span> <span class="red">x</span><span class="cyan">=</span><span class="gold">0</span>; <span class="red">x</span> <span class="cyan">&lt;</span> <span class="gold">5</span>; <span class="red">x</span><span class="cyan">++</span>) {
+    <span class="red">console</span>.<span class="blue">log</span>(<span class="red">x</span>);
+}</code>
 
             <blockquote>
                 <h1>Block quote</h1>
@@ -124,7 +136,14 @@
                 accumsan egestas. Proin maximus lacus interdum leo molestie convallis.
             </blockquote>
         </article>
+        <script>
+            // This logs a message to the console
+            console.log('Hello, world!');
+
+            for(let x=0; x < 5; x++) { console.log(x); }
+        </script>
     </div>
+    <!-- TODO: Remove -->
     <style>
         h1, h2, h3, h4, h5, h6 {
             margin: 10px;

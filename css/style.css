@@ -12,6 +12,14 @@
     --dark-gray-rgb: 50, 50, 50;
     --darker-gray-rgb: 35, 35, 35;
     --black-rgb: 0, 0, 0;
+
+    --code-red: #f44747;
+    --code-purple: #c678dd;
+    --code-gold: #e5c07b;
+    --code-gray: #7f848e;
+    --code-cyan: #56b6c2;
+    --code-green: #98c379;
+    --code-blue: #61afef;
 }
 
 @media screen and (max-width: 800px) {
@@ -96,15 +104,36 @@ hr {
 }
 
 code {
-    width: 80%;
     display: block;
     margin: 0 auto;
     padding: 10px;
     text-align: left;
     background: rgb(var(--darker-gray-rgb));
     border-radius: 5px;
-    white-space: pre-line;
+
+    page-break-inside: avoid;
+    line-height: 1.0;
+    width: fit-content;
+
+    overflow: auto;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    counter-reset: line;
 }
+
+code.inline {
+    display: inline;
+    padding: 4px;
+    margin: 0;
+}
+
+code .red { color: var(--code-red); }
+code .purple { color: var(--code-purple); }
+code .gold { color: var(--code-gold); }
+code .gray { color: var(--code-gray); }
+code .cyan { color: var(--code-cyan); }
+code .green { color: var(--code-green); }
+code .blue { color: var(--code-blue); }
 
 table {
     padding: 10px;
@@ -126,19 +155,25 @@ tbody tr:nth-child(even) {
     background-color: rgba(var(--dark-gray-rgb), 0.3);
 }
 
-details :last-child {
+details > :last-child {
     padding-bottom: 20px;
 }
 
 details {
-    width: 80%;
+    width: 90%;
     margin: 10px auto;
-    background: rgba(var(--dark-gray-rgb), 0.75);
+    background: rgba(var(--dark-gray-rgb), 0.5);
 }
 
 details summary {
     cursor: pointer;
     background: rgb(var(--darker-gray-rgb));
+}
+
+
+details code {
+    margin-top: 5px;
+    width: inherit;
 }
 
 blockquote {
