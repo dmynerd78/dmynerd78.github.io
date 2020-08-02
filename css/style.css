@@ -103,8 +103,9 @@ article {
 }
 
 article p {
+    /* TODO: text-align left? */
     width: 90%;
-    margin: 0 auto;
+    margin: 10px auto;
 }
 
 hr {

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- TODO Change title -->
+    <title>The site of the Dmynerd</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <!-- TODO: Change meta tags -->
+    <meta name="description" content="Dmynerd78's website" />
+    <meta name="keywords" content="dmynerd78" />
+    <meta name="author" content="Dmynerd78">
+    <meta property="og:url" content="https://dmynerd78.me" />
+    <meta property="og:title" content="Dmynerd78's Website" />
+    <meta property="og:description" content="It doesn't really have that much stuff" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Dmynerd78's Website" />
+
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="/css/style.css" type="text/css" media="all" />
+</head>
+
+<body>
+    <nav>
+        <a href="/" class="title"><span>Dmynerd&apos;s Website</span></a>
+        <div class="icons">
+            <a href="http://github.com/dmynerd78" target="_blank" rel="noopener" title="Github" aria-label="Github">
+                <svg class="icon github">
+                    <use xlink:href="/images/icon-sheet.svg#github"></use>
+                </svg>
+            </a>
+            <a href="http://twitch.tv/dmynerd78" target="_blank" rel="noopener" title="Twitch" aria-label="Twitch">
+                <svg class="icon twitch">
+                    <use xlink:href="/images/icon-sheet.svg#twitch"></use>
+                </svg>
+            </a>
+            <a href="http://twitter.com/dmynerd78" target="_blank" rel="noopener" title="Twitter" aria-label="Twitter">
+                <svg class="icon twitter">
+                    <use xlink:href="/images/icon-sheet.svg#twitter"></use>
+                </svg>
+            </a>
+        </div>
+    </nav>
+    <div id="left">
+        <div class="content">
+            <h1>Articles</h1>
+            <span>
+                I&apos;ve always wanted to do reviews of my favorite games. It&apos;s also an archival place
+                where I can post random things that may be useful to others down the line trying
+                to 100% games or something. So hope you enjoy my little corner of the internet!
+                Even if there isn&apos;t much here yet...
+            </span>
+
+            <h1>Tools</h1>
+            <a href="/multi/">Multistream Tool</a>
+            <br><br>
+            <a href="https://github.com/dmynerd78/switcheroo-lite" target="_blank" rel="noopener">Nintendo Switch Album Manager</a>
+        </div>
+        <span id="copyright">&copy; Dmynerd78 2020 &nbsp;</span>
+    </div>
+    <div id="right">
+        <article style="margin-top: 2em;">
+            <h1 class="title">The Struggles of a Programmer</h1>
+            <h4 class="date">August 1, 2020</h4>
+            <a href="/blog/"><button>&laquo; Go Back</button></a>
+
+            <br><br>
+
+            <p id="introduction">
+                Over the years, I&apos;ve spent countless hours programming. In fact, I&apos;ve enjoyed it so much that
+                I decided to pursue a degree in Computer Science! With me doing so much programming these days,
+                I&apos;ve learnt a lot more on how to think like a computer (well, minus all the proofs; computers
+                don&apos;t really think in those). The problem is many common words now have completely different
+                meanings to me now. I figure I might as well make a running list of all of these
+                just for the fun of it. Again, this is all in jest; as GLaDOS once said in
+                <a href="https://store.steampowered.com/app/620/Portal_2/" target="_blank" rel="noopener">Portal 2</a>,
+                &quot;Comedy equals tragedy plus time.&quot; So let the comedy begin!
+            </p>
+
+            <h2 id="counting">Counting</h2>
+            <p>
+                One of the more frustrating ones is counting. Normal people count by starting at 1. However computers
+                are anything but normal people. Instead of starting at one when I count, I keep catching myself starting at 0 (darn off-by-one errors amiright?).
+                Why would I start at 0? Well in programming, a common task is to go through a whole list of items by
+                accessing each one at it&apos;s index. However, the first item isn&apos;t at index one. Instead it&apos;s at index <em>zero</em>.
+                As a result, you often see code looking similar to this:
+
+                <br><br>
+                <code><span class="gray">// Create a list of elements</span>
+<span class="purple">var</span> <span class="red">items</span> = [<span class="green">"item1"</span>, <span class="green">"item2"</span>, <span class="green">"item3"</span>, <span class="green">"item4"</span>, <span class="gray">...,</span> <span class="green">"itemX"</span>];
+
+<span class="gray">// Notice how i starts at 0</span>
+<span class="gray">// So when getting item1, we use index 0</span>
+<span class="purple">for</span>(<span class="purple">var</span> <span class="red">i</span><span class="cyan">=</span><span class="gold">0</span>; <span class="red">i</span><span class="cyan">&lt;</span><span class="red">items.length</span>; <span class="red">i</span><span class="cyan">++</span>) {
+    <span class="blue">print</span>(<span class="red">items</span>[<span class="red">i</span>]); <span class="gray">// Printss item at index i</span>
+}
+</code>
+            </p>
+
+            <p>
+                While this may seem strange, it&apos;s due to how items are stored within memory. More specifically, it&apos;s
+                because of memory addressing and how offset on it works. It gets a little technical so I&apos;ll just leave
+                it as that. If you&apos;re curious feel free to do some research of your own!
+            </p>
+
+            <h2 id="number-base">Number Base</h2>
+            <p>
+                We humans use a numbering system that is Base 10. Meaning we have 10 different available numbers (0-9) in each 
+                position<span title="Make sure to starting counting at one and not zero">*</span>.
+                When we reach 9 and want to add 1 to it, we have to carry over to the tens place. As a budding computer
+                scientiest, you learn that computers do not use a Base 10 numbering scheme. Instead, they use Binary, or Base 2.
+                As the name implies, <em>bi</em>nary has 2 available numbers (0-1) in each position. So if we have the number
+                1<sub>2</sub> (the subscript denotes it&apos;s base 2), adding 1<sub>2</sub> to it would create the number 10<sub>2</sub>
+                (1<sub>2</sub> + 1<sub>2</sub> = 10<sub>2</sub> = 2<sub>10</sub>). Just like with our base 10 system when we hit 9<sub>10</sub>, we have to carry 
+                to the next digit.
+            </p>
+
+            <p>
+                To further complicate matters, binary is not the only base system used within computers. Another very common one is
+                Hexidecimal &dash; or Base 16. This means there are 16 different numbers to increment through before you have to carry.
+                These numbers 0-9 and then A-F (A-F stands for 10<sub>10</sub> to 15<sub>10</sub> respectively).
+                So this means F<sub>16</sub> + 1<sub>16</sub> = 10<sub>16</sub> = 16<sub>10</sub>
+            </p>
+
+            <p>
+                With just these three bases, the number "10" could mean 10<sub>10</sub>, 2<sub>10</sub>, or 16<sub>10</sub> depending
+                on the base in which the number is in! As a result, it&apos;s sometimes difficult to figure out
+                what number a number is when you&apos;re trying to read it. Especially after programming in a language called C
+                which makes heavy of shifting and modifying individual bits within numbers.
+            </p>
+
+            <h3 id="2s-compliment">2s Compliment</h3>
+            <p>
+                Further complicating matters, numbers can either be &quot;signed&quot; or &quot;unsigned&quot;.
+                I won&apos;t go into the specifics here, but essentially unsigned numbers can only represent
+                non-negative numbers. To allow for negative numbers, you have to make the number &quot;signed&quot;.
+                This is often done in the 2s Complement format where the far left (or most significant) number
+                is made one to denote it&apos;s negative.
+            </p>
+
+            <p>
+                This means that &quot;10&quot;, if unsigned, could be
+                10<sub>10</sub>, 2<sub>10</sub>, or 16<sub>10</sub> <em>or</em> some sort of negative number
+                if it&apos;s signed. Talk about confusing when you see something costs $10 and you accidentally
+                interpret it as $16!
+            </p>
+
+            <h2 id="ranges">Ranges</h2>
+            <p>
+                In many classes, it&apos;s typical to hear the teacher say something like &quot;reach chapters 3 to 5 for homework.&quot; A programmer may
+                ask, &quot;Is the 5 inclusive or exclusive?&quot; Why would they ask this? Let&apos;s take a look at some example Python code:
+
+                <code><span class="purple">for</span> num <span class="purple">in</span> <span class="cyan">range</span>(<span>3</span>, <span>5</span>):
+    <span class="cyan">print</span>(num)</code>
+
+                Looking at the <a href="https://docs.python.org/3/library/stdtypes.html#ranges" target="_blank" rel="noopener">Python Documentaiton</a>,
+                it notes that the range of values printed is <em>exclusive</em> i.e. it would print 3 and 4 but not 5. Many for loops have an exclusive range
+                &dash; especially when indexing within the loop (<a href="#counting">the for loop above</a> is also exclusive)
+            </p>
+
+            <p>
+                As a result, many ranges are exclusive within programming while many ranges used by people are inclusive ranges. It can be slightly confusing
+                to determine whether someone means inclusive or exclusive if they do not specify.
+            </p>
+
+            <h2 id="or">Or</h2>
+            <p>
+                &quot;Should I ride by bike today or go swimming?&quot; Similar to <a href="#ranges">ranges</a>, is the or exclusive or inclusive? Is the person
+                able to go biking <em>and</em> go swimming? Or can they only do one? In programming, there are two types of &quot;or&quot;s you can use.
+                Typically, the first one is <code class="inline">||</code> and one is <code class="inline">^</code> (no the caret does not mean exponent).
+                As alluded to, the first one allows for the both case whereas the second does not allow for it. Just like all the others, this leads to
+                the question &quot;Which or are you talking about?&quot;
+            </p>
+
+            <h2 id="conclusion">Conclusion</h2>
+            <p>
+                Basically, computers are really complicated. And many programmers often have to &quot;think like a computer.&quot; This mindset can lead to
+                confusion or miscounting. After a long week of looking at machine code, you may accidentally think the number 10 actually represents 16<sub>10</sub>
+                when in fact it&apos;10<sub>10</sub>. You may also get confused on what is exclusive or exclusive when it comes to options <span title="See what I did there?">or</span>
+                ranges. Implicit assumptions can sometimes lead to wrong conclusions. Again, while I have personally had all these issues after many long weeks of college programming
+                assignments, this is all in jest. Hope you enjoyed it! And if not, I think I may just be a bit of a nerd; don&apos;t mind me.
+            </p>
+        </article>
+    </div>
+    <script id="script-utils" src="/js/utils.js" defer data-enable="gototop,spoilers"></script>
+</body>
+
+</html>
