@@ -95,7 +95,7 @@
 <span class="gray">// Notice how i starts at 0</span>
 <span class="gray">// So when getting item1, we use index 0</span>
 <span class="purple">for</span>(<span class="purple">var</span> <span class="red">i</span><span class="cyan">=</span><span class="gold">0</span>; <span class="red">i</span><span class="cyan">&lt;</span><span class="red">items.length</span>; <span class="red">i</span><span class="cyan">++</span>) {
-    <span class="blue">print</span>(<span class="red">items</span>[<span class="red">i</span>]); <span class="gray">// Printss item at index i</span>
+    <span class="blue">print</span>(<span class="red">items</span>[<span class="red">i</span>]); <span class="gray">// Prints item at index i</span>
 }
 </code>
             </p>
@@ -108,19 +108,19 @@
 
             <h2 id="number-base">Number Base</h2>
             <p>
-                We humans use a numbering system that is Base 10. Meaning we have 10 different available numbers (0-9) in each 
+                We humans use a numbering system that is Base 10. Meaning we have 10 different available numbers (0-9) in each
                 position<span title="Make sure to starting counting at one and not zero">*</span>.
                 When we reach 9 and want to add 1 to it, we have to carry over to the tens place. As a budding computer
-                scientiest, you learn that computers do not use a Base 10 numbering scheme. Instead, they use Binary, or Base 2.
+                scientist, you learn that computers do not use a Base 10 numbering scheme. Instead, they use Binary, or Base 2.
                 As the name implies, <em>bi</em>nary has 2 available numbers (0-1) in each position. So if we have the number
                 1<sub>2</sub> (the subscript denotes it&apos;s base 2), adding 1<sub>2</sub> to it would create the number 10<sub>2</sub>
-                (1<sub>2</sub> + 1<sub>2</sub> = 10<sub>2</sub> = 2<sub>10</sub>). Just like with our base 10 system when we hit 9<sub>10</sub>, we have to carry 
+                (1<sub>2</sub> + 1<sub>2</sub> = 10<sub>2</sub> = 2<sub>10</sub>). Just like with our base 10 system when we hit 9<sub>10</sub>, we have to carry
                 to the next digit.
             </p>
 
             <p>
                 To further complicate matters, binary is not the only base system used within computers. Another very common one is
-                Hexidecimal &dash; or Base 16. This means there are 16 different numbers to increment through before you have to carry.
+                Hexadecimal &dash; or Base 16. This means there are 16 different numbers to increment through before you have to carry.
                 These numbers 0-9 and then A-F (A-F stands for 10<sub>10</sub> to 15<sub>10</sub> respectively).
                 So this means F<sub>16</sub> + 1<sub>16</sub> = 10<sub>16</sub> = 16<sub>10</sub>
             </p>
@@ -129,7 +129,7 @@
                 With just these three bases, the number "10" could mean 10<sub>10</sub>, 2<sub>10</sub>, or 16<sub>10</sub> depending
                 on the base in which the number is in! As a result, it&apos;s sometimes difficult to figure out
                 what number a number is when you&apos;re trying to read it. Especially after programming in a language called C
-                which makes heavy of shifting and modifying individual bits within numbers.
+                which makes heavy use of shifting and modifying individual bits within numbers.
             </p>
 
             <h3 id="2s-compliment">2s Compliment</h3>
@@ -156,7 +156,7 @@
                 <code><span class="purple">for</span> num <span class="purple">in</span> <span class="cyan">range</span>(<span>3</span>, <span>5</span>):
     <span class="cyan">print</span>(num)</code>
 
-                Looking at the <a href="https://docs.python.org/3/library/stdtypes.html#ranges" target="_blank" rel="noopener">Python Documentaiton</a>,
+                Looking at the <a href="https://docs.python.org/3/library/stdtypes.html#ranges" target="_blank" rel="noopener">Python Documentation</a>,
                 it notes that the range of values printed is <em>exclusive</em> i.e. it would print 3 and 4 but not 5. Many for loops have an exclusive range
                 &dash; especially when indexing within the loop (<a href="#counting">the for loop above</a> is also exclusive)
             </p>
