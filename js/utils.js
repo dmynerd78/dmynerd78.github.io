@@ -1,3 +1,9 @@
+/*
+Options:
+    gototop: When scrolling down the page, add a "go to top" button
+    spoilers: Allows for the use of <spoiler> tags which hide content until it's clicked
+*/
+
 function scrollTop() {
     return window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
 }
