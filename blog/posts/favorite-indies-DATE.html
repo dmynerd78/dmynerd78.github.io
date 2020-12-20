@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- TODO Change title -->
+    <title>Favorite Indies Over the Decade</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <!-- TODO: Update meta tags -->
+    <meta name="description" content="Dmynerd78's website" />
+    <meta name="keywords" content="dmynerd78" />
+    <meta name="author" content="Dmynerd78">
+    <meta property="og:url" content="https://dmynerd78.me" />
+    <meta property="og:title" content="Dmynerd78's Website" />
+    <meta property="og:description" content="It doesn't really have that much stuff" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Dmynerd78's Website" />
+
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="/css/style.css" type="text/css" media="all" />
+    <style>
+        #main-indies {
+            margin-bottom: 5em;
+        }
+
+        span.tag {
+            margin: 0 4px;
+            padding: 2px 4px;
+            display: inline-block;
+            border-radius: 2px;
+            background: var(--code-bg);
+        }
+
+        .gamebanners img {
+            width: 30%;
+            margin: 5px;
+            display: inline;
+            cursor: pointer;
+        }
+
+        a.storepage {
+            margin: 0 2px;
+        }
+
+        a.storepage button {
+            text-transform: capitalize;
+        }
+
+        @media screen and (max-width: 800px) {
+            .gamebanners img {
+                width: 45%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="/" class="title"><span>Dmynerd&apos;s Website</span></a>
+        <div class="icons">
+            <a href="http://github.com/dmynerd78" target="_blank" rel="noopener" title="Github" aria-label="Github">
+                <svg class="icon github">
+                    <use xlink:href="/images/icon-sheet.svg#github"></use>
+                </svg>
+            </a>
+            <a href="http://twitch.tv/dmynerd78" target="_blank" rel="noopener" title="Twitch" aria-label="Twitch">
+                <svg class="icon twitch">
+                    <use xlink:href="/images/icon-sheet.svg#twitch"></use>
+                </svg>
+            </a>
+            <a href="http://twitter.com/dmynerd78" target="_blank" rel="noopener" title="Twitter" aria-label="Twitter">
+                <svg class="icon twitter">
+                    <use xlink:href="/images/icon-sheet.svg#twitter"></use>
+                </svg>
+            </a>
+        </div>
+    </nav>
+    <div id="left">
+        <div class="content">
+            <h1>Articles</h1>
+            <span>
+                I've always wanted to do reviews of my favorite games. It's also an archival place
+                where I can post random things that may be useful to others down the line trying
+                to 100% games or something. So hope you enjoy my little corner of the internet!
+                Even if there isn't much here yet...
+            </span>
+
+            <h1>Tools</h1>
+            <a href="/multi/">Multistream Tool</a>
+            <br><br>
+            <a href="https://github.com/dmynerd78/switcheroo-lite" target="_blank" rel="noopener">Nintendo Switch Album Manager</a>
+        </div>
+        <span id="copyright">&copy; Dmynerd78 2020 &nbsp;</span>
+    </div>
+    <div id="right">
+        <article style="margin-top: 2em;">
+            <!-- TODO: Update -->
+            <h1 class="title">Favorite Indies Over the Decade</h1>
+            <h4 class="date">DATE</h4>
+            <a href="/blog/"><button>&laquo; Go Back</button></a>
+
+            <p>
+                TODO Introduction paragraph
+                <!-- Emphasis on singleplayer games (since that's what I usually play) -->
+                <!-- Not too familiar with microsoft/sony stores. You can always search in your region if not US -->
+            </p>
+
+            <div id="main-indies">
+                <div class="gamebanners"></div>
+
+                <div class="gameinfo">
+                    <h3>Click on one of the images for more info</h3>
+                </div>
+            </div>
+
+            <hr style="margin-top: 20px;">
+
+            <h2 title="I'm including them anyways because I can">Favorite Indies You've Probably Heard Of</h2>
+            <p>
+                TODO Introduction paragraph
+            </p>
+            <div id="wellknown-indies">
+                <div class="gamebanners"></div>
+
+                <div class="gameinfo">
+                    <h3>Click on one of the images for more info</h3>
+                </div>
+            </div>
+        </article>
+    </div>
+    <script defer src="/blog/posts/favorite-indies/games.js"></script>
+    <script defer id="script-utils" src="/js/utils.js" data-enable="gototop"></script>
+</body>
+
+</html>
