@@ -41,6 +41,10 @@
             cursor: pointer;
         }
 
+        img.picture {
+            width: 75%;
+        }
+
         a.storepage {
             margin: 0 2px;
         }
@@ -52,6 +56,10 @@
         @media screen and (max-width: 800px) {
             .gamebanners img {
                 width: 45%;
+            }
+
+            img.picture {
+                width: calc(100% - 40px);
             }
         }
     </style>
@@ -103,10 +111,20 @@
             <a href="/blog/"><button>&laquo; Go Back</button></a>
 
             <p>
-                TODO Introduction paragraph
-                <!-- Emphasis on singleplayer games (since that's what I usually play) -->
-                <!-- Not too familiar with microsoft/sony stores. You can always search in your region if not US -->
+                With the decade coming to a close, I figure I would share some of my favorite games in said decade.
+                Many of these games are singleplayer only since that&apos;s normally what I play - especially on my
+                <span title="Not to be confused with my ethernet switch or HDMI switch which are both connected to my Nintendo Switch">Switch.</span>
+                Below are the banners of the games. Clicking on them should show more info about them below
+                the group of images. I have also included links to their US digital store pages so you can learn
+                more about them if they interest you.
             </p>
+            <p>
+                I've split up my favorites into two categories so each has their own dedicated description area.
+                This is by no means an all-encompassing list&semi; it is simply a handful of games that I keep coming
+                back to even after I finish them (I also haven&apos;t played every indie game released in the past decade). If you have others that you think should be added, feel free to share them with your friends!
+            </p>
+
+            <h2 id="indies-you-may-not-have-heard-of">Indies You May Not Have Heard Of</h2>
 
             <div id="main-indies">
                 <div class="gamebanners"></div>
@@ -118,10 +136,7 @@
 
             <hr style="margin-top: 20px;">
 
-            <h2 title="I'm including them anyways because I can">Favorite Indies You've Probably Heard Of</h2>
-            <p>
-                TODO Introduction paragraph
-            </p>
+            <h2 id="indies-youve-probably-heard-of" title="I&apos;m including them anyways because I can">Indies You&apos;ve Probably Heard Of</h2>
             <div id="wellknown-indies">
                 <div class="gamebanners"></div>
 
