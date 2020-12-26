@@ -52,7 +52,7 @@ html, body {
     color: rgb(var(--white-rgb));
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     /* background: url("/images/bg.webp"), url("/images/bg.jpg"); */
-    background: url("/images/bg.jpg");
+    background: #555 url("/images/bg.jpg");
     background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -98,8 +98,9 @@ article {
 }
 
 article p {
-    /* TODO: text-align left? */
     width: 90%;
+    text-align: left;
+    text-indent: 2em;
     margin: 10px auto;
 }
 
@@ -314,7 +315,7 @@ nav .icons a:hover {
 
 #copyright {
     position: fixed;
-    width: 100%;
+    width: fit-content;
     left: 0;
     bottom: 0;
     text-align: left;
