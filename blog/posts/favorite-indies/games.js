@@ -17,7 +17,12 @@ function showGameInfo(that, gameID) {
               <h3>Store pages:</h4>
               ${Object.keys(stores).reduce((acc, key) => acc + `<a href="${stores[key]}" target="_blank" class="storepage"><button>${key}</button></a>`, "")}`;
 
-    that.parentElement.parentElement.querySelector(".gameinfo").innerHTML = el;
+    const domElement = that.parentElement.parentElement.querySelector(".gameinfo");
+    domElement.innerHTML = el;
+    setTimeout(() => { // Scroll after innerHTML is populated
+        const y = domElement.getBoundingClientRect().top + window.pageYOffset - 60; // Account for navbar height
+        window.scrollTo({ top: y, behavior: 'smooth' });
+    }, 200);
 }
 
 function displayBanners(gameIDs, parentElement) {
@@ -30,6 +35,7 @@ function displayBanners(gameIDs, parentElement) {
 }
 
 // TODO: Minify dict
+// Not SEO-friendly but it works
 const GAME_DICT = {
     "owlboy": {
         "name": "Owlboy",
@@ -43,7 +49,7 @@ const GAME_DICT = {
             "microsoft": "https://www.microsoft.com/en-us/p/owlboy/c1phtb54976g",
             "playstation": "https://store.playstation.com/?resolve=UP4218-CUSA09914_00-OWLBOY0000000000"
         },
-        "description": `<p>You play as a mute named Otus in a world full of floating islands. With your best friend Geddy by your side, you explore old temples, lush jungles, and more. Everything is beautifully drawn in &quot;Hi-Bit&quot; pixelart and topped off with an <em>amazing</em> soundtrack. Just listen to <a href="https://www.youtube.com/watch?v=xw0_Ne5Zh8o" target="_blank" rel="noopener">Tropos</a> - one of the starting areas. Coupled with an interesting story, this game is a joy to play.</p>`
+        "description": `<p>You play as a mute owl named Otus in a world full of floating islands. With your best friend Geddy by your side, you explore old temples, lush jungles, and more. Everything is beautifully drawn in &quot;Hi-Bit&quot; pixelart and topped off with an <em>amazing</em> soundtrack. Just listen to <a href="https://www.youtube.com/watch?v=xw0_Ne5Zh8o" target="_blank" rel="noopener">Tropos</a> - one of the starting areas. Coupled with an interesting story and mechanics, this game is a joy to play.</p>`
     },
     "findingparadise": {
         "name": "Finding Paradise",
@@ -66,7 +72,7 @@ const GAME_DICT = {
         "stores": {
             "steam": "https://store.steampowered.com/app/559210/Rakuen/",
         },
-        "description": `<p>Rakuen is a game about a young boy with cancer. To ease his pains, his mother takes the boy through a fantasy land in hopes of getting a wish from Morizora who is the guardian of the area. To get your wish, you help out different patients in the hospital learning more about them in the process. Each character arc has you doing tasks in both the fantasy world as well as the hospital world. On completing an arc, you get a wonderful voiced song which really wraps up the story well. Overall, this was a very enjoyable game if not a bit emotional towards the end.</p>`
+        "description": `<p>Rakuen is a game about a young boy with cancer. To ease his pains, his mother takes the boy through a fantasy land in hopes of getting a wish from Morizora - the guardian of the area. To get your wish, you need to help the different patients in the hospital and in doing so, learn more about each character. Each patient has you doing tasks in both the fantasy world as well as the hospital world. On completing a story arc, you get a wonderful voiced song which really vocalizes the story about that patient. Overall, this was a very enjoyable game if not a bit emotional towards the end.</p>`
     },
     "ahatintime": {
         "name": "A Hat in Time",
@@ -80,7 +86,7 @@ const GAME_DICT = {
             "microsoft": "https://www.microsoft.com/en-us/p/a-hat-in-time/bx91dhsr4c5t",
             "playstation": "https://store.playstation.com/?resolve=UP3864-CUSA09267_00-AHATINTIMEPS4000"
         },
-        "description": `<p>This game is all sorts of crazy and fun. The gist of the story is you play as an alien space kid who has to recollect hourglass time pieces to fuel your ship. The game is advertised as a &quot;cute-as-heck platformer&quot; and it definitely is. You gain abilities by knitting hats that let you run, slow down time, and throw potions to blow up crates and annoy the local residents. There are also plenty of customization options which only further adds to the cute-as-heck feel of the game.</p><p>The game also has local co-op which doubles the shenanigans you can have. If you get the Steam version of the game, you can also have access to online multiplayer when you get the Nyakuza Metro DLC. The DLCs only further adds onto what was a very fun game with new regions to explore and more character customizations. The Steam modding community is also very active and has thousands of levels to explore. They actually had so many mod submissions that they <a href="https://steamcommunity.com/games/AHatinTime/announcements/detail/2604720045601880682" target="_blank" rel="noopener">exceeded the games max ID number</a> for a time.</p>`
+        "description": `<p>This game is all sorts of crazy and fun. The gist of the story is you play as an alien space kid who has to recollect hourglass time pieces to fuel your ship. The game is advertised as a &quot;cute-as-heck platformer&quot; and it definitely is. You gain abilities by knitting hats that let you run, slow down time, and throw potions to blow up crates and annoy the local residents. There are also plenty of customization options which only further adds to the cute-as-heck feel of the game.</p><p>The game also has local co-op which doubles the shenanigans you can have. If you get the Steam version of the game, you can also have access to online multiplayer when you get the Nyakuza Metro DLC. The DLCs only further adds onto what was a very fun game with new regions to explore and more character customizations. The Steam modding community is also very active and has hundreds of levels to explore. They actually had so many mod submissions that they <a href="https://steamcommunity.com/games/AHatinTime/announcements/detail/2604720045601880682" target="_blank" rel="noopener">exceeded the games max ID number</a> for a time.</p>`
     },
     "wandersong": {
         "name": "Wandersong",
@@ -94,7 +100,7 @@ const GAME_DICT = {
             "microsoft": "https://www.microsoft.com/en-us/p/wandersong/9nd3z0qh0nkb",
             "playstation": "https://store.playstation.com/?resolve=UP3864-CUSA13934_00-APP0990000000022"
         },
-        "description": ``
+        "description": `<p>Wandersong is a game that feels distinctly unique to me. Just by looking at trailers and descriptions of the game, you would think it was anything special. You play as a bard with a single mechanic: singing. You partner with a witch who has awesome magical powers and yet the bard rarely uses them, instead opting for kindness or singing. This leads to the game exploring many topics that just aren&apos;t talked about much in many more mainstream games. So while it doesn&apos;t look like much on the cover, Wandersong&apos;s charm and unique mechanics lead to a very enjoyable game to play.</p>`
     },
     "gris": {
         "name": "GRIS",
@@ -108,7 +114,7 @@ const GAME_DICT = {
             "microsoft": "https://www.microsoft.com/en-us/p/gris/9nhhp2h0zp98",
             "playstation": "https://store.playstation.com/?resolve=UP3643-CUSA16694_00-GRISPS4SIEA00000"
         },
-        "description": `<p>GRIS feels more like an interactive art piece than it does a game - which isn&apos;t a bad thing. The game starts off as a clean black and white area but slowly adds different colors to create vibrant watercolor areas to explore. While you do unlock different abilities, the game is very linear and reminds me of games like Journey (<a href="#indies-youve-probably-heard-of">check below section</a>) with its storytelling.</p>`
+        "description": `<p>GRIS feels more like an interactive art piece than it does a game - which isn&apos;t a bad thing. The game starts off as a clean black and white area but slowly adds different colors to create vibrant watercolor areas to explore. While you do unlock different abilities, the game is very linear and reminds me of games like Journey (check below section) with its storytelling.</p>`
     },
     "farlonesails": {
         "name": "FAR: Lone Sails",
@@ -124,7 +130,7 @@ const GAME_DICT = {
             "google play": "https://play.google.com/store/apps/details?id=ch.misterwhale.far",
             "apple": "https://apps.apple.com/us/app/id1525515023"
         },
-        "description": ``
+        "description": `<p>This is a very short, linear game where you attempt to escape a dying civilization on your steampunk boat, car machine thing (I&apos;m honestly not really sure how else to describe it). The primary mechanic is finding fuel and upgrades for your machine to keep it running. It&apos;s a very atmospheric game where the enjoyment comes from the journey. The scenery also makes for some really good wallpapers.</p>`
     },
     "eastshade": {
         "name": "Eastshade",
@@ -152,8 +158,7 @@ const GAME_DICT = {
             "playstation": "https://store.playstation.com/?resolve=UP2388-CUSA20182_00-0000000000000000",
             "epic games": "https://www.epicgames.com/store/en-US/product/spiritfarer/home"
         },
-        // Also on game pass if you have that
-        "description": ``
+        "description": `<p>This game was something I desperately needed this year between being stuck at home all year and being swamped with schoolwork and just work in general. This game is heavily inspired by <a href="https://en.wikipedia.org/wiki/Charon" target="_blank" rel="noopener">Charon from Greek mythology</a>. Just like Charon, you ferry spirits and help them with their daily needs until they are ready to move on to the afterlife. This is done by expanding your ship&apos;s facilities by gathering resources from the surrounding islands. The game does an excellent job managing tasks which prevents them from getting monotonous. It also does an excellent job getting to that first step of talking about death in a creative way; your job as the spirit farer is to help spirits move on but in doing so, it becomes very hard to say that final goodbye. Overall, I would highly recommend this game.</p>`
     },
 
     "journey": {
@@ -240,7 +245,7 @@ const GAME_DICT = {
             "playstation": "https://store.playstation.com/?resolve=UP2120-CUSA11302_00-CELESTEXXCELESTE",
             "epic games": "https://www.epicgames.com/store/en-US/product/celeste/home"
         },
-        "description": ``
+        "description": `<p>Celeste is a 2D platformer about climbing a mountain. I don't usually play platformers but this one was an absolute joy to play. The controls are precise and the game does an excellent difficulty curve. While the game can be a bit difficult, it is very generous with saving progress and levels are laid out to help you learn and succeed. Furthering this, the soundtrack is <em>incredible</em> and really helped me keep going even when I was stuck. I would wholeheartedly recommend this game.</p>`
     },
     "honk": {
         "name": "Untitled Goose Game",
@@ -255,7 +260,7 @@ const GAME_DICT = {
             "playstation": "https://store.playstation.com/?resolve=UP3971-CUSA23079_00-HONKHONKHONKHONK",
             "epic games": "https://www.epicgames.com/store/en-US/product/untitled-goose-game/home"
         },
-        "description": ``
+        "description": `<p>This game absolutely took the internet by storm when it came out and for good reason. You are a goose whose only purpose in life is to ruin everyone's day. Activities on the agenda include: have a picnic (by stealing the local gardener's food), go shopping (forcing a kid to buy his own toys back in the process), and reign supreme as a bird of prey. It's a very silly game that will bring much laughter to those who play it. Plus there's a dedicated button for honking.</p>`
     },
     "hades": {
         "name": "Hades",
