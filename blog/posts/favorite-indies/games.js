@@ -34,8 +34,7 @@ function displayBanners(gameIDs, parentElement) {
     }
 }
 
-// TODO: Minify dict
-// Not SEO-friendly but it works
+// TODO Move to HTML to make it more SEO-friendly
 const GAME_DICT = {
     "owlboy": {
         "name": "Owlboy",
@@ -202,7 +201,7 @@ const GAME_DICT = {
             "google play": "https://play.google.com/store/apps/details?id=com.chucklefish.stardewvalley",
             "apple": "https://apps.apple.com/us/app/stardew-valley/id1406710800"
         },
-        "description": `<p>Stardew Valley is a very relaxing game that I really enjoy playing to wind down for the day. You can farm crops, explore abandoned mines, and get to know the local residents. It&apos;s a very relaxing game that, as said earlier, is just a really nice way to relax. The recent 1.5 update (only out on Steam at the time of writing) also added a lot of late-game content for free which only adds to the value.</p>`
+        "description": `<p>Stardew Valley is a very relaxing game that I really enjoy playing to wind down for the day. You can farm crops, explore abandoned mines, and get to know the local residents. It&apos;s a fun game that, as said earlier, is just a really nice way to relax. The recent 1.5 update (only out on Steam at the time of writing) also added a lot of late-game content for free which only adds to the value.</p>`
     },
     "ahatintime": {
         "name": "A Hat in Time",
