@@ -120,6 +120,7 @@ code {
     margin: 0 auto;
     padding: 10px;
     text-align: left;
+    text-indent: 0;
     background: var(--code-bg);
     border-radius: 5px;
     max-width: 95%;
@@ -274,6 +275,10 @@ nav .icons a:hover {
     width: 120px;
     padding: 10px 0;
     fill: rgb(var(--white-rgb));
+}
+
+.center {
+    text-align: center;
 }
 
 .title {
