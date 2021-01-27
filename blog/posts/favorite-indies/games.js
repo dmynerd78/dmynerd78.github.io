@@ -97,7 +97,9 @@ const GAME_DICT = {
             "steam": "https://store.steampowered.com/app/683320/GRIS/",
             "nintendo": "https://www.nintendo.com/games/detail/gris-switch/",
             "microsoft": "https://www.microsoft.com/en-us/p/gris/9nhhp2h0zp98",
-            "playstation": "https://store.playstation.com/?resolve=UP3643-CUSA16694_00-GRISPS4SIEA00000"
+            "playstation": "https://store.playstation.com/?resolve=UP3643-CUSA16694_00-GRISPS4SIEA00000",
+            "google play": "https://play.google.com/store/apps/details?id=com.devolver.grispaid",
+            "apple": "https://apps.apple.com/us/app/id1445379072"
         },
         "description": `<p>GRIS feels more like an interactive art piece than it does a game - which isn&apos;t a bad thing. The game starts off as a clean black and white area but slowly adds different colors to create vibrant watercolor areas to explore. While you do unlock different abilities, the game is very linear and reminds me of games like <a href="https://thatgamecompany.com/journey/" target="_blank" rel="noopener">Journey</a> with its storytelling.</p>`
     },
