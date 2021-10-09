@@ -24,7 +24,15 @@
     --code-blue: #61afef;
 }
 
-@media screen and (max-width: 800px) {
+:target {
+    /* TODO Change color to something more visible (and possible animate?) */
+    text-shadow: -1px 0  rgb(var(--black-rgb)),
+                  0 1px  rgb(var(--black-rgb)),
+                  1px 0  rgb(var(--black-rgb)),
+                  0 -1px rgb(var(--black-rgb));
+}
+
+@media screen and (max-width: 850px) {
     #left {
         width: 0 !important;
         display: none;
@@ -42,6 +50,11 @@
     .desktop-only {
         display: none;
     }
+
+    /* TODO: Do only for single article (not on main blog page) */
+    /*article {
+        margin-bottom: 6em;
+    }*/
 }
 
 html, body {
@@ -85,20 +98,21 @@ img {
     margin: 10px auto;
     border-radius: 5px;
     object-fit: contain;
-    width: calc(100% - 40px);
+    /* width: calc(100% - 40px); */
     border: 2px solid rgba(var(--darker-gray-rgb), 0.8);
 }
 
 article {
     background: rgba(var(--light-white-rgb), 0.4);
+    max-width: 1280px;
+    margin: 2em auto;
     padding: 10px;
     border: 2px solid rgb(var(--darker-gray-rgb));
     border-radius: 10px;
-    margin-bottom: 30px;
 }
 
 article p {
-    width: 90%;
+    width: 80%;
     text-align: left;
     text-indent: 2em;
     margin: 10px auto;
@@ -128,6 +142,7 @@ code {
     page-break-inside: avoid;
     line-height: 1.0;
     width: fit-content;
+    width: -moz-fit-content;
 
     overflow: auto;
     white-space: pre;
@@ -196,7 +211,7 @@ details > :last-child {
 }
 
 details {
-    width: 90%;
+    width: 80%;
     margin: 20px auto;
     background: rgba(var(--dark-gray-rgb), 0.5);
 }
@@ -206,6 +221,14 @@ details summary {
     background: rgb(var(--darker-gray-rgb));
 }
 
+details[open] {
+    padding-bottom: 10px;
+}
+
+details[open] summary {
+    margin-bottom: 10px;
+}
+
 
 details code {
     margin-top: 5px;
@@ -213,7 +236,7 @@ details code {
 }
 
 blockquote {
-    width: 80%;
+    width: 75%;
     display: block;
     text-align: left;
     border-left: 4px solid rgb(var(--white-rgb));
@@ -222,10 +245,10 @@ blockquote {
 }
 
 nav {
-    height: 50px;
+    height: 64px;
     width: 100%;
     z-index: 999;
-    line-height: 50px;
+    line-height: 64px;
     position: fixed;
     background: rgba(var(--darker-gray-rgb), 0.8);
     border-bottom: 2px solid rgb(var(--darker-gray-rgb));
@@ -234,7 +257,7 @@ nav {
 nav .title {
     padding-left: 20px;
     text-decoration: none;
-    font-size: 150%;
+    font-size: 2em;
 }
 
 nav .icons {
@@ -244,7 +267,7 @@ nav .icons {
 
 nav .icons a {
     position: relative;
-    height: 50px;
+    height: 64px;
     width: 120px;
     margin: 0;
     box-sizing: border-box;
@@ -271,7 +294,7 @@ nav .icons a:hover {
 }
 
 .icon {
-    height: 30px;
+    height: 45px;
     width: 120px;
     padding: 10px 0;
     fill: rgb(var(--white-rgb));
@@ -321,6 +344,7 @@ nav .icons a:hover {
 #copyright {
     position: fixed;
     width: fit-content;
+    width: -moz-fit-content;
     left: 0;
     bottom: 0;
     text-align: left;

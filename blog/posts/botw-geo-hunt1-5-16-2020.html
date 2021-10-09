@@ -122,9 +122,9 @@
                 <a href="${IMG_PATH}/${i}.jpg" target="_blank" alt='Picture #${i}'
                 title='Click to view higher res version in new tab'>
                     <picture>
-                        <source type="image/webp" srcset="${IMG_PATH}/${i}_small.webp">
-                        <source type="image/jpeg" srcset="${IMG_PATH}/${i}_small.jpg">
-                        <img src="${IMG_PATH}/${i}_small.jpg" alt="">
+                        <source type="image/webp" width="1280" height="720" srcset="${IMG_PATH}/${i}_small.webp">
+                        <source type="image/jpeg" width="1280" height="720" srcset="${IMG_PATH}/${i}_small.jpg">
+                        <img width="1280" height="720" src="${IMG_PATH}/${i}_small.jpg">
                     </picture>
                 </a>
                 <p class="center">Hint: <spoiler>${HINTS[i-1]}</spoiler></p>
