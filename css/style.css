@@ -98,7 +98,8 @@ img {
     margin: 10px auto;
     border-radius: 5px;
     object-fit: contain;
-    /* width: calc(100% - 40px); */
+    width: calc(100% - 40px);
+    height: auto;
     border: 2px solid rgba(var(--darker-gray-rgb), 0.8);
 }
 
