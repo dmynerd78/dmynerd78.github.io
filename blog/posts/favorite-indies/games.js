@@ -260,7 +260,7 @@ const GAME_DICT = {
             "nintendo": "https://www.nintendo.com/games/detail/hades-switch/",
             "epic games": "https://www.epicgames.com/store/en-US/product/hades/home"
         },
-        "description": `<p>Supergiant (makers of <a href="https://www.supergiantgames.com/games/bastion" target="_blank" rel="noopener">Bastion</a>, <a href="https://www.supergiantgames.com/games/transistor" target="_blank" rel="noopener">Transistor</a>, and <a href="https://www.supergiantgames.com/games/pyre" target="_blank" rel="noopener">Pyre</a>) has a way of introducing ideas in a unique and creative way and you can definitely see that in this dungeon crawler. The gist of the story is Zagreus is attempting to leave the underworld and gets aid from the Olympus gods. You go through three major areas each with different atmospheres and enemies. Each run (no matter how far you get) furthers your progress in the story making the inevitable death easier to bear.</p>`
+        "description": `<p>Supergiant (makers of <a href="https://www.supergiantgames.com/games/bastion" target="_blank" rel="noopener">Bastion</a>, <a href="https://www.supergiantgames.com/games/transistor" target="_blank" rel="noopener">Transistor</a>, and <a href="https://www.supergiantgames.com/games/pyre" target="_blank" rel="noopener">Pyre</a>) has a way of introducing ideas in a unique and creative way and you can definitely see that in this dungeon crawler. The gist of the story is Zagreus is attempting to leave the underworld and gets aid from the Olympus gods. You go through four major areas each with different atmospheres and enemies. Each run (no matter how far you get) furthers your progress in the story making the inevitable death easier to bear.</p>`
     }
 };
 
