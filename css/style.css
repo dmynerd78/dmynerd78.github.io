@@ -18,6 +18,7 @@
     --code-red: #f44747;
     --code-purple: #c678dd;
     --code-gold: #e5c07b;
+    /* TODO: Higher gray contrast */
     --code-gray: #7f848e;
     --code-cyan: #56b6c2;
     --code-green: #98c379;
@@ -65,6 +66,7 @@ html, body {
     color: rgb(var(--white-rgb));
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     /* background: url("/images/bg.webp"), url("/images/bg.jpg"); */
+    /* TODO: Parallax background https://medium.com/@dailyfire/pure-css-parallax-simple-tricks-da102d0ffdb9 */
     background: #555 url("/images/bg.jpg");
     background-size: cover;
     background-attachment: fixed;
@@ -92,6 +94,11 @@ button {
     border: 1px solid rgb(var(--darker-gray-rgb));
     padding: 5px;
 }
+
+/* TODO: Test (a tags are wider than the image if this isn't the case) */
+/* a img {
+    display: inline-block;
+} */
 
 img {
     display: block;
@@ -163,6 +170,7 @@ code.inline {
 code .red { color: var(--code-red); }
 code .purple { color: var(--code-purple); }
 code .gold { color: var(--code-gold); }
+code .grey,
 code .gray { color: var(--code-gray); }
 code .cyan { color: var(--code-cyan); }
 code .green { color: var(--code-green); }
@@ -395,5 +403,5 @@ spoiler[active], spoiler[active] * {
     background: rgba(var(--darker-gray-rgb), 0.3);
     color: inherit !important;
     user-select: inherit !important;
-    /* cursor: default; */
+    cursor: initial;
 }

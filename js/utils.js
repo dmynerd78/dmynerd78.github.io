@@ -36,7 +36,7 @@ function enableGoToTop() {
 
 function enableSpoilers() {
     document.querySelectorAll("spoiler").forEach(function (el) {
-        el.title = "Click me!";
+        el.title = "Click me to reveal text";
         el.onclick = function (ev) {
             el.setAttribute("active", "");
             ev.preventDefault();
