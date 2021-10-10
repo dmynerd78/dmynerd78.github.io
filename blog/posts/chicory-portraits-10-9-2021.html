@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Portraits of Pizza (from Chicory)</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <meta name="description" content="A small viewer which shows all the different portraits Chicory can draw of the main character Pizza" />
+    <meta name="keywords" content="dmynerd78,chicory,pizza,portraits,art" />
+    <meta name="author" content="Dmynerd78">
+    <meta property="og:url" content="https://dmynerd78.me/blog/posts/chicory-portraits-10-9-2021.html" />
+    <meta property="og:title" content="Portraits of Pizza (from Chicory)" />
+    <meta property="og:description" content="A small viewer which shows all the different portraits Chicory can draw of the main character Pizza" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Dmynerd78's Website" />
+
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="/css/style.css" type="text/css" media="all" />
+    <style>
+        picture source, picture img {
+            width: 256px;
+            height: 256px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="/" class="title"><span>Dmynerd&apos;s Website</span></a>
+        <div class="icons">
+            <a href="http://github.com/dmynerd78" target="_blank" rel="noopener" title="Github" aria-label="Github">
+                <svg class="icon github">
+                    <use xlink:href="/images/icon-sheet.svg#github"></use>
+                </svg>
+            </a>
+            <a href="http://twitch.tv/dmynerd78" target="_blank" rel="noopener" title="Twitch" aria-label="Twitch">
+                <svg class="icon twitch">
+                    <use xlink:href="/images/icon-sheet.svg#twitch"></use>
+                </svg>
+            </a>
+            <a href="http://twitter.com/dmynerd78" target="_blank" rel="noopener" title="Twitter" aria-label="Twitter">
+                <svg class="icon twitter">
+                    <use xlink:href="/images/icon-sheet.svg#twitter"></use>
+                </svg>
+            </a>
+        </div>
+    </nav>
+    <div id="left">
+        <div class="content">
+            <h1>Articles</h1>
+            <span>
+                I've always wanted to do reviews of my favorite games. It's also an archival place
+                where I can post random things that may be useful to others down the line trying
+                to 100% games or something. So hope you enjoy my little corner of the internet!
+                Even if there isn't much here yet...
+            </span>
+
+            <h1>Tools</h1>
+            <a href="/multi/">Multistream Tool</a>
+            <br><br>
+            <a href="https://github.com/dmynerd78/switcheroo-lite" target="_blank" rel="noopener">Nintendo Switch Album Manager</a>
+        </div>
+        <span id="copyright">&copy; Dmynerd78 2021 &nbsp;</span>
+    </div>
+    <div id="right">
+        <article>
+            <h1 class="title">Portraits of Pizza (from Chicory)</h1>
+            <h4 class="date">October 10, 2021</h4>
+            <a href="/blog/"><button>&laquo; Go Back</button></a>
+
+            <p>
+                I was recently replaying through a game called <a href="https://store.steampowered.com/app/1123450/Chicory_A_Colorful_Tale/" target="_blank" rel="noopener">Chicory</a>.
+                and came across a part where someone paints the main character.
+                Based on the player's responses, the game gives you a different
+                portrait of Pizza - the main character of the game. Depending
+                on what answers you give to a couple of questions, you get a
+                different portrait of your character. I really liked the variety of
+                options so I figured I'd try to capture all of them
+                so others can see them! (Also I was bored and had
+                nothing better to do).
+            </p>
+
+            <h4 id="imgTitle">Confused (RED)</h4>
+            <picture style="width: 256px; height: 256px;">
+                <source id="imgSrcWebp" type="image/webp" width="256" height="256" srcset="chicory-portraits/comfortable/red_small.webp">
+                <source id="imgSrcJpg" type="image/jpeg" width="256" height="256" srcset="chicory-portraits/comfortable/red_small.jpg">
+                <img id="imgSrcJpg2" type="image/jpg" width="256" height="256" src="chicory-portraits/comfortable/red_small.jpg">
+            </picture>
+
+            <select id="selectFeelings" name="feelings">
+                <option value="comfortable">Comfortable</option>
+                <option value="confused">Confused</option>
+                <option value="worried">Worried</option>
+                <option value="excited">Excited</option>
+                <option value="shy">Shy</option>
+                <option value="stressed">Stressed</option>
+            </select>
+            <select id="selectColors" name="colors">
+                <option value="red">Red</option>
+                <option value="orange">Orange</option>
+                <option value="yellow">Yellow</option>
+                <option value="green">Green</option>
+                <option value="teal">Teal</option>
+                <option value="blue">Blue</option>
+                <option value="purple">Purple</option>
+                <option value="pink">Pink</option>
+            </select>
+            <br />
+            <br />
+            <a id="imgHref" href="chicory-portraits/comfortable/red.jpg" target="_blank">
+                <button>Open Full Sized Image</button>
+            </a>
+
+            <h2 id="technical-details">Technical Details</h2>
+            <p>
+                I didn't see the portraits while looking through the game files and I don't know how
+                gamemaker stores it's files. Thus, I replayed the same cutscene over and over again and grabbed a screenshot
+                of the portraits. I was able to skip through most of the dialog using a keyboard macro script so that made things
+                go much faster.
+            </p>
+            <p>
+                Once I captured the portrait from the cutscene, the image was easy to crop via ffmpeg
+                (which is faster and easier when it comes to batch processing files).
+                Below is the first-pass ffmpeg command I used. This crops the image to be 1370x1370 (which is the portrait
+                resolution in my screenshots).
+            </p>
+            <code>ffmpeg -y -i <em><span class="gray">&lbrace;in_file&rbrace;</span></em> -vf <span class="green">"crop=1370:1370:596:36"</span> <em><span class="gray">&lbrace;out_file&rbrace;</span></em></code>
+            <p>
+                Then with a bit of bash magic (and another ffmpeg filter), I was able to create previews of all the portraits
+                and scale them down to reduce server bandwidth usage. Afterwards, I used
+                <a href="https://developers.google.com/speed/webp" target="_blank" rel="noopener">Google's cwebp utility</a>
+                to convert the jpegs to webp images which reduces file sizes even more. Browsers that support showing webp images
+                display the webp image while those that cannot display the jpg image.
+            </p>
+            <code><span class="purple">for</span> <span class="red">color</span> <span class="purple">in</span> *.jpg;
+<span class="purple">do</span>
+    ffmpeg -y -i <span class="red">$color</span> -vf <span class="green">"crop=1370:1370:596:36,scale=256:256"</span> <span class="red">${color%%.*}</span>_small.jpg
+    cwebp <span class="red">${color%%.*}</span>_small.jpg -o <span class="red">${color%%.*}</span>_small.webp
+<span class="purple">done</span>
+            </code>
+
+            <h2 id="buy-chicory">Buy Chicory</h2>
+            <p class="center">
+                Click the image below to check out Chicory. I am not affiliated in any way I just think it's a fun game.
+            </p>
+            <a href="https://store.steampowered.com/app/1123450/Chicory_A_Colorful_Tale/" target="_blank" rel="noopener">
+                <img loading="lazy" src="https://cdn.cloudflare.steamstatic.com/steam/apps/1123450/header.jpg" alt="Buy Chicory (Steam)" style="width: 50%; display: inline-block;">
+            </a>
+        </article>
+    </div>
+    <script id="script-utils" src="/js/utils.js" defer data-enable="gototop,spoilers"></script>
+    <script>
+        const IMG_PATH = "chicory-portraits";
+        const IMG_TITLE = document.getElementById("imgTitle");
+        const IMG_HREF = document.getElementById("imgHref");
+        const IMG_SRC_WEBP = document.getElementById("imgSrcWebp");
+        const IMG_SRC_JPG = document.getElementById("imgSrcJpg");
+        const IMG_SRC_JPG2 = document.getElementById("imgSrcJpg2");
+
+        const SELECT_FEELING = document.getElementById("selectFeelings");
+        const SELECT_COLORS = document.getElementById("selectColors");
+
+        function titleCase(str) {
+            return str[0].toUpperCase() + str.slice(1);
+        }
+
+        function updateImage() {
+            const selectedFeeling = SELECT_FEELING.value;
+            const selectedColor = SELECT_COLORS.value;
+
+            const title = `${titleCase(selectedFeeling)} (${selectedColor.toUpperCase()})`;
+            const imgPath = `${IMG_PATH}/${selectedFeeling}/${selectedColor}`;
+
+            IMG_TITLE.innerText = title;
+            IMG_HREF.href = `${imgPath}.jpg`;
+            IMG_SRC_WEBP.srcset = `${imgPath}_small.webp`;
+            IMG_SRC_JPG.srcset = `${imgPath}_small.jpg`;
+            IMG_SRC_JPG2.srcset = `${imgPath}_small.jpg`;
+
+        }
+
+        SELECT_FEELING.addEventListener("change", updateImage);
+        SELECT_COLORS.addEventListener("change", updateImage);
+    </script>
+</body>
+
+</html>

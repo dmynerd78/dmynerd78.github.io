@@ -1,0 +1,8 @@
+Image is assumed to be 2560x1440 with the image in the center of the screen
+Outputs a 1370x1370 image with the background cropped out
+
+COLOR=red && ffmpeg -y -i $COLOR.jpg -vf "crop=1370:1370:596:36" $COLOR.jpg
+for color in *.jpg; do ffmpeg -y -i $color -vf "crop=1370:1370:596:36" $color; done
+
+for color in */*.jpg; do ffmpeg -y -i $color -vf "scale=256:256" ${color%%.*}_small.jpg; done
+for small_file in */*_small.jpg; do cwebp.exe $small_file -o ${small_file%%.*}.webp; done
