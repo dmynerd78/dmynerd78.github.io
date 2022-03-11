@@ -9,7 +9,7 @@
 
     <!-- TODO: Change meta tags -->
     <meta name="description" content="Dmynerd78's website" />
-    <meta name="keywords" content="dmynerd78" />
+    <meta name="keywords" content="dmynerd78,sanctum,sanctum 2,comics,comic strip,loading screens,gallery" />
     <meta name="author" content="Dmynerd78">
     <meta property="og:url" content="https://dmynerd78.me" />
     <meta property="og:title" content="Dmynerd78's Website" />
@@ -22,6 +22,7 @@
 
     <link rel="stylesheet" href="/css/style.css" type="text/css" media="all" />
     <style>
+        /* TODO: Move more things to :root */
         :root {
             --scrollbar-width: 17px;
         }
@@ -70,25 +71,25 @@
 
         /* TODO Scrollbar for comicList only */
         /* https://webkit.org/blog/363/styling-scrollbars/ */
-        * {
+        .comicList {
             scrollbar-width: var(--scrollbar-width);
             scrollbar-color: #fff rgba(255, 255, 255, 0.5);
         }
 
-        *::-webkit-scrollbar-button {
+        .comicList::-webkit-scrollbar-button {
             color: #fff;
             background: #6C6D6D;
         }
 
-        *::-webkit-scrollbar {
+        .comicList::-webkit-scrollbar {
             width: var(--scrollbar-width);
         }
 
-        *::-webkit-scrollbar-track {
+        .comicList::-webkit-scrollbar-track {
             background: rgba(255, 255, 255, 0.5);
         }
 
-        *::-webkit-scrollbar-thumb {
+        .comicList::-webkit-scrollbar-thumb {
             background-color: #fff;
         }
 
@@ -175,15 +176,9 @@
 
 <!--
     TODO List:
-    - Adjust font size of buttons depending on screen resolution
-    - Show which comic/page is active (currently inferred by title but could be made more explicit via button state)
     - Getting better screenshots from the game
     - Getting the "Open Image" buttons working
     - Create mobile friendly version
-    - Move blanks to appropriate folders
-    - Create smaller webp/jpgs to reduce bandwidth usage
-    - Add small write-up explaining what the blog post is about
-    - Fix chrome scrollbar not having arrows on top and bottom
     - Cleanup code
     - Meta tags and stuff
     - Add article name, date, etc. (and rename file to include date)
@@ -230,19 +225,24 @@
     <div id="right">
         <article>
             <!-- TODO: Update -->
-            <h1 class="title">ARTICLE TITLE</h1>
+            <h1 class="title">Sanctum 2 Comics</h1>
             <h4 class="date">DATE</h4>
             <a href="/blog/"><button>&laquo; Go Back</button></a>
 
-            <!-- TODO Paragraph blurb
-            (Include hat in time loading screen reference? https://twitter.com/cyanatar/status/917399996617646081?lang=en) -->
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in ante nunc. Maecenas tempus est et enim condimentum semper. Proin vulputate tortor in libero posuere aliquet. Integer justo risus, dapibus et est in, condimentum scelerisque elit. Duis a augue id justo tincidunt rhoncus. In posuere tristique dictum. Praesent maximus cursus viverra.</p>
+            <p>Hey everyone time for another blog post! It's been a while since my last one! For roughly the past year, I've been playing the game Sanctum 2 relatively frequently with some of my friends. Before each map, the game shows a couple of comic strips that tell the story of the game. While we were playing it, I couldn't find many high-quality ways to view all of these comic strips. This is where this blog post comes into play! Only problem being I am terrible at SEO, so hopefully my simple meta tags are simple enough for people to find this.</p>
 
-            <p>Vivamus arcu mi, congue id purus dapibus, blandit tincidunt dolor. Curabitur efficitur enim sit amet ipsum porttitor, in aliquam leo suscipit. Fusce in sem id odio consectetur luctus sed eu augue. Cras laoreet lacus et mauris consequat tempus. Mauris consectetur euismod orci vitae egestas. Integer eros massa, dapibus nec vulputate a, euismod accumsan tortor. Nulla pretium velit a molestie dictum. Curabitur eros ante, pharetra sed nisi a, ultricies tempor leo. Etiam pretium facilisis massa, id iaculis elit porttitor vel. Sed porta metus nec turpis pretium pharetra ac nec ipsum. Nunc et ante eget arcu vulputate luctus. Aenean sed erat dictum, lacinia magna quis, egestas ipsum. Integer et est vel quam viverra mattis ultrices in diam. Sed ultrices efficitur sodales.</p>
+            <p>That aside, what in the world is Sanctum 2?? It's basically a first-person shooter with tower-defense elements mixed in. I typically don't play shooters&semi; instead opting for platform or puzzle games. As a result, the tower defense element is what got me interested in it. Essentially you have "Cores" which you must protect from many waves of enemies. Between waves, you create mazes for the enemies to go through. You can then strategically add various weapons and debuf towers to the maze to attack the enemies. During these waves, the players also have weapons that you can use to attack the enemies. This combination lets the players use both their brains to create the maze and let them have action during the wave. Here's what their <a href="https://store.steampowered.com/app/210770/Sanctum_2/" target="_blank" rel="noopener">Steam page</a> says:</p>
+
+            <blockquote>In Sanctum 2, you will utilize elements from multiple gameplay genres to succeed. Construct towers and walls during the building phase before the enemies attack, then jump into the fray and blast everything to pieces in FPS mode. You can progress through the single-player campaign yourself, or play with up to four friends in co-op to discover the secrets of the planet LOEK III and learn the backstory on why the aliens are so intent on destroying the Cores you are sworn to protect.</blockquote>
+
+            <p>This gameplay doesn't leave much room for story telling. As a result, Coffee Stain Studios (the makers of the game) decided to tell the story in various comic strips while the map is loading. These comic strips added a lot of personality to each of the characters and also gave context to each of the maps. Since you have to beat each level to unlock the comic strips, it can be a bit daunting to unlock all of them.</p>
+
+            <p>Since I've already beaten every level, I decided to get a screenshot of each one to publish it here. I've also grabbed the original blank comic strips from the game and figured I would share those too. Those can all be seen below in the sanctum-esque interface.</p>
 
             <br />
+            <p class="center"><strong>CONTENT WARNING:</strong> Some comics contain swearing</p>
             <br />
-
+            <br />
             <div class="grid-container">
                 <div id="chapterList" class="grid-item">
                     <ul class="comicList">
@@ -296,15 +296,13 @@
                     </div>
                     <br />
                     <div>
-                        <!-- TODO: Implement JS event handlers -->
                         <button id="prevPage" class="sanctumBtn" disabled>Previous Page</button>
                         <button id="nextPage" class="sanctumBtn">Next Page</button>
                     </div>
 
                     <picture>
-                        <!-- TODO Generate smaller images (see botw post) -->
-                        <!-- <source id="imgSrcWebp" type="image/webp" width="256" height="256" srcset="chicory-portraits/comfortable/red_small.webp">
-                        <source id="imgSrcJpg" type="image/jpeg" width="256" height="256" srcset="chicory-portraits/comfortable/red_small.jpg"> -->
+                        <!-- <source id="imgSrcWebp" type="image/webp" width="1280" height="720" srcset="sanctum-2-comics/english/introduction/1_small.webp">
+                        <source id="imgSrcJpg" type="image/jpeg" width="1280" height="720" srcset="sanctum-2-comics/english/introduction/1_small.jpg"> -->
                         <img id="imgSrcJpg2" type="image/jpg" width="2560" height="1440" src="sanctum-2-comics/english/introduction/1.jpg">
                     </picture>
 
@@ -320,13 +318,25 @@
 
             </div>
 
-            <!-- TODO Link to introduction/1_unused.png -->
+            <br />
+            <br />
+            <br />
             <!-- TODO: Link to see page with all comic strips shown at once -->
+            <a href="sanctum-2-comics/allcomics.html">
+                <button class="sanctumBtn">View all comics on one page</button>
+            </a>
             <br />
             <br />
-            <br />
-            <span>All comic strips are from Sanctum 2 and are owned by Coffeestain Studios</span>
-            <!-- https://steamdb.info/app/210770/graphs/#js-embed-code -->
+            <h2 id="buy-chicory">Check out Sanctum 2</h2>
+            <p class="center">
+                Click the image below to check out Sanctum 2.
+            </p>
+            <a href="https://www.coffeestainstudios.com/games/sanctum-2/" target="_blank" rel="noopener">
+                <img loading="lazy" src="https://cdn.cloudflare.steamstatic.com/steam/apps/210770/header.jpg" alt="Buy Chicory (Steam)" style="width: 50%; display: inline-block;">
+            </a>
+            <p class="center">
+                All Sanctum 2 content is owned by Coffeestain Studios. I am not affiliated in any way with them&semi; I just find their games fun.
+            </p>
 
         </article>
     </div>
@@ -343,8 +353,8 @@
         const IMG_TITLE = document.getElementById("imgTitle");
         const IMG_HREF = document.getElementById("imgHref");
         const IMG_HREF_BLANK = document.getElementById("imgHrefBlank");
-        // const IMG_SRC_WEBP = document.getElementById("imgSrcWebp");
-        // const IMG_SRC_JPG = document.getElementById("imgSrcJpg");
+        const IMG_SRC_WEBP = document.getElementById("imgSrcWebp");
+        const IMG_SRC_JPG = document.getElementById("imgSrcJpg");
         const IMG_SRC_JPG2 = document.getElementById("imgSrcJpg2");
 
         const PREV_PAGE = document.getElementById("prevPage");
@@ -432,7 +442,7 @@
 
             // Scroll chapter into view if it's not visible
             if(!isElementVisible(selectedChapter, CHAPTER_LIST)) {
-                selectedChapter.scrollIntoView();
+                selectedChapter.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
             }
 
             // Disable Previous Page/Next Page buttons when on first or last page
@@ -452,6 +462,8 @@
             Array.from(PAGE_SELECT.children).map((el) => el.dataset.page <= maxPages ? el.classList.remove("hide") : el.classList.add("hide"));
 
             // TODO Set all <picture> sources
+            // IMG_SRC_WEBP.src = `${IMG_PATH}/english/${chapter}/${page}_small.webp`;
+            // IMG_SRC_JPG.src = `${IMG_PATH}/english/${chapter}/${page}_small.jpg`;
             IMG_SRC_JPG2.src = `${IMG_PATH}/english/${chapter}/${page}.jpg`;
 
             // Set full-res links
