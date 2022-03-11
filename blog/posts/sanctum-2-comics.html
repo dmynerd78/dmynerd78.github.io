@@ -93,8 +93,6 @@
             background-color: #fff;
         }
 
-        /* TODO: Disabled state */
-
         /* TODO https://stackoverflow.com/questions/22168420/is-there-a-pointer-eventshoveronly-or-similar-in-css#answer-22170387 */
         .sanctumBtn[disabled] {
             background: #808080 !important;
@@ -139,6 +137,7 @@
             background: linear-gradient(0deg, #335F6E 0%, #336F82 50%, #357990 100%);
         }
 
+        /* Huge thanks to @Oliver-Akins for the help on the border styling */
         .sanctumBtn::after,
         .sanctumBtn::before {
             width: calc(100% + 8px);
@@ -176,7 +175,7 @@
 
 <!--
     TODO List:
-    - Getting better screenshots from the game
+    - Getting better screenshots from the game (should be 720p since that's the native image resolution)
     - Getting the "Open Image" buttons working
     - Create mobile friendly version
     - Cleanup code
@@ -454,7 +453,7 @@
             updateActives(chapterIndex, page);
 
             chapter = CHAPTERS[chapterIndex];
-            IMG_TITLE.textContent = `${chapter} (${page} / ${maxPages})`;
+            IMG_TITLE.textContent = `${chapter.replace("-", " ")} (${page} / ${maxPages})`;
 
             PAGE_SELECT.children[page-1].classList.add("active");
 
@@ -467,7 +466,7 @@
             IMG_SRC_JPG2.src = `${IMG_PATH}/english/${chapter}/${page}.jpg`;
 
             // Set full-res links
-            IMG_HREF.href = ``;  // TODO Implement
+            IMG_HREF.href = `${IMG_PATH}/english/${chapter}/${page}.jpg`;  // TODO Use new, better images
             IMG_HREF_BLANK.href = `${IMG_PATH}/english/${chapter}/${page}_blank.png`;
         }
 
