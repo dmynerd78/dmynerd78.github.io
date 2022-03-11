@@ -112,7 +112,7 @@ img {
 
 article {
     background: rgba(var(--light-white-rgb), 0.4);
-    max-width: 1280px;
+    /* max-width: 1280px; */
     margin: 2em auto;
     padding: 10px;
     border: 2px solid rgb(var(--darker-gray-rgb));
@@ -135,6 +135,11 @@ hr {
         background-image: -moz-linear-gradient(left, #ccc, #333, #ccc);
         background-image: -ms-linear-gradient(left, #ccc, #333, #ccc);
         background-image: -o-linear-gradient(left, #ccc, #333, #ccc); */
+}
+
+picture {
+    display: block;
+    margin: 0 auto;
 }
 
 code {
@@ -307,6 +312,10 @@ nav .icons a:hover {
     width: 120px;
     padding: 10px 0;
     fill: rgb(var(--white-rgb));
+}
+
+.hide {
+    display: none;
 }
 
 .center {

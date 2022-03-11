@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- TODO Change title -->
+    <title>The site of the Dmynerd</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <!-- TODO: Change meta tags -->
+    <meta name="description" content="Dmynerd78's website" />
+    <meta name="keywords" content="dmynerd78" />
+    <meta name="author" content="Dmynerd78">
+    <meta property="og:url" content="https://dmynerd78.me" />
+    <meta property="og:title" content="Dmynerd78's Website" />
+    <meta property="og:description" content="It doesn't really have that much stuff" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Dmynerd78's Website" />
+
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="/css/style.css" type="text/css" media="all" />
+    <style>
+        :root {
+            --scrollbar-width: 17px;
+        }
+
+        @font-face {
+            font-family: "BankGothic";
+            src: url("sanctum-2-comics/Bank\ Gothic\ Medium.otf") format("opentype");
+        }
+
+        /* TODO: CSS variables for colors */
+        #imgTitle {
+            font-family: "BankGothic", Arial, Helvetica, sans-serif;
+            text-transform: uppercase;
+        }
+
+        #pageSelect .sanctumBtn {
+            margin: 0 5px;
+        }
+
+        #prevPage, #nextPage {
+            width: 200px;
+        }
+
+        ul li {
+            width: calc(100% - var(--scrollbar-width));
+            padding: 5px 2px;
+        }
+
+        li .sanctumBtn {
+            width: 100%;
+        }
+
+        .comicList {
+            height: inherit;
+            width: 100%;
+            max-width: 100%;
+            display: block;
+            font-family: "BankGothic", Arial, Helvetica, sans-serif;
+            text-transform: uppercase;
+            list-style-type: none;
+            overflow: hidden;
+            overflow-y: scroll;
+            padding: 0;
+            margin: 0;
+        }
+
+        /* TODO Scrollbar for comicList only */
+        /* https://webkit.org/blog/363/styling-scrollbars/ */
+        * {
+            scrollbar-width: var(--scrollbar-width);
+            scrollbar-color: #fff rgba(255, 255, 255, 0.5);
+        }
+
+        *::-webkit-scrollbar-button {
+            color: #fff;
+            background: #6C6D6D;
+        }
+
+        *::-webkit-scrollbar {
+            width: var(--scrollbar-width);
+        }
+
+        *::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        *::-webkit-scrollbar-thumb {
+            background-color: #fff;
+        }
+
+        /* TODO: Disabled state */
+
+        /* TODO https://stackoverflow.com/questions/22168420/is-there-a-pointer-eventshoveronly-or-similar-in-css#answer-22170387 */
+        .sanctumBtn[disabled] {
+            background: #808080 !important;
+            pointer-events: none;
+            cursor: not-allowed;
+        }
+
+        .sanctumBtn.active, .sanctumBtn.active:focus {
+            background: #1a94a9;
+            background: linear-gradient(0deg, #2195AA 0%, #1db7d3 50%, #1AA4BE 100%);
+        }
+
+        .sanctumBtn {
+            font-size: 125%;
+            font-family: "BankGothic", Arial, Helvetica, sans-serif;
+            outline: none;
+            border: none;
+            margin: 5px;
+            position: relative;
+            text-transform: uppercase;
+            text-align: left;
+            color: #fff;
+            text-shadow: 1.5px 1px 1px black;
+            background: #336F82;
+            background: linear-gradient(0deg, #335F6E 0%, #336F82 50%, #357990 100%);
+        }
+
+        .sanctumBtn:hover {
+            background: #1a94a9;
+            background: linear-gradient(0deg, #2195AA 0%, #1db7d3 50%, #1AA4BE 100%);
+        }
+
+        .sanctumBtn:focus {
+            /*
+                Sanctum has a weird inconsistency where some UI elements revert to non-hover
+                colors when focused while other elements change all the colors
+                (including the white border) to a light blue color (#2BB4DD).
+                Since I didn't want to deal with modifying the ::before/::after
+                only when focused, I took the easy route out.
+            */
+            background: #336F82;
+            background: linear-gradient(0deg, #335F6E 0%, #336F82 50%, #357990 100%);
+        }
+
+        .sanctumBtn::after,
+        .sanctumBtn::before {
+            width: calc(100% + 8px);
+            height: 20%;
+            content: "";
+            border-width: 1px;
+            border-color: rgba(255, 255, 255, 0.75);
+            position: absolute;
+            margin: 0;
+        }
+
+        .sanctumBtn::before {
+            top: -20%;
+            left: -5px;
+            border-radius: 1px 1px 0 0;
+            border-style: solid solid none solid;
+        }
+        .sanctumBtn::after {
+            bottom: -20%;
+            left: -5px;
+            border-radius: 0 0 1px 1px;
+            border-style: none solid solid solid;
+        }
+
+        /* TODO: Mobile styling */
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+        }
+        .grid-item {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<!--
+    TODO List:
+    - Adjust font size of buttons depending on screen resolution
+    - Show which comic/page is active (currently inferred by title but could be made more explicit via button state)
+    - Getting better screenshots from the game
+    - Getting the "Open Image" buttons working
+    - Create mobile friendly version
+    - Move blanks to appropriate folders
+    - Create smaller webp/jpgs to reduce bandwidth usage
+    - Add small write-up explaining what the blog post is about
+    - Fix chrome scrollbar not having arrows on top and bottom
+    - Cleanup code
+    - Meta tags and stuff
+    - Add article name, date, etc. (and rename file to include date)
+-->
+
+<body>
+    <nav>
+        <a href="/" class="title"><span>Dmynerd&apos;s Website</span></a>
+        <div class="icons">
+            <a href="http://github.com/dmynerd78" target="_blank" rel="noopener" title="Github" aria-label="Github">
+                <svg class="icon github">
+                    <use xlink:href="/images/icon-sheet.svg#github"></use>
+                </svg>
+            </a>
+            <a href="http://twitch.tv/dmynerd78" target="_blank" rel="noopener" title="Twitch" aria-label="Twitch">
+                <svg class="icon twitch">
+                    <use xlink:href="/images/icon-sheet.svg#twitch"></use>
+                </svg>
+            </a>
+            <a href="http://twitter.com/dmynerd78" target="_blank" rel="noopener" title="Twitter" aria-label="Twitter">
+                <svg class="icon twitter">
+                    <use xlink:href="/images/icon-sheet.svg#twitter"></use>
+                </svg>
+            </a>
+        </div>
+    </nav>
+    <div id="left">
+        <div class="content">
+            <h1>Articles</h1>
+            <span>
+                I've always wanted to do reviews of my favorite games. It's also an archival place
+                where I can post random things that may be useful to others down the line trying
+                to 100% games or something. So hope you enjoy my little corner of the internet!
+                Even if there isn't much here yet...
+            </span>
+
+            <h1>Tools</h1>
+            <a href="/multi/">Multistream Tool</a>
+            <br><br>
+            <a href="https://github.com/dmynerd78/switcheroo-lite" target="_blank" rel="noopener">Nintendo Switch Album Manager</a>
+        </div>
+        <span id="copyright">&copy; Dmynerd78 2021 &nbsp;</span>
+    </div>
+    <div id="right">
+        <article>
+            <!-- TODO: Update -->
+            <h1 class="title">ARTICLE TITLE</h1>
+            <h4 class="date">DATE</h4>
+            <a href="/blog/"><button>&laquo; Go Back</button></a>
+
+            <!-- TODO Paragraph blurb
+            (Include hat in time loading screen reference? https://twitter.com/cyanatar/status/917399996617646081?lang=en) -->
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in ante nunc. Maecenas tempus est et enim condimentum semper. Proin vulputate tortor in libero posuere aliquet. Integer justo risus, dapibus et est in, condimentum scelerisque elit. Duis a augue id justo tincidunt rhoncus. In posuere tristique dictum. Praesent maximus cursus viverra.</p>
+
+            <p>Vivamus arcu mi, congue id purus dapibus, blandit tincidunt dolor. Curabitur efficitur enim sit amet ipsum porttitor, in aliquam leo suscipit. Fusce in sem id odio consectetur luctus sed eu augue. Cras laoreet lacus et mauris consequat tempus. Mauris consectetur euismod orci vitae egestas. Integer eros massa, dapibus nec vulputate a, euismod accumsan tortor. Nulla pretium velit a molestie dictum. Curabitur eros ante, pharetra sed nisi a, ultricies tempor leo. Etiam pretium facilisis massa, id iaculis elit porttitor vel. Sed porta metus nec turpis pretium pharetra ac nec ipsum. Nunc et ante eget arcu vulputate luctus. Aenean sed erat dictum, lacinia magna quis, egestas ipsum. Integer et est vel quam viverra mattis ultrices in diam. Sed ultrices efficitur sodales.</p>
+
+            <br />
+            <br />
+
+            <div class="grid-container">
+                <div id="chapterList" class="grid-item">
+                    <ul class="comicList">
+                        <li><button class="sanctumBtn active" data-chapter="1">introduction</button></li>
+                        <li><button class="sanctumBtn" data-chapter="2">park</button></li>
+                        <li><button class="sanctumBtn" data-chapter="3">bio lab</button></li>
+                        <li><button class="sanctumBtn" data-chapter="4">the gate</button></li>
+                        <li><button class="sanctumBtn" data-chapter="5">construction site</button></li>
+                        <li><button class="sanctumBtn" data-chapter="6">com tower</button></li>
+                        <li><button class="sanctumBtn" data-chapter="7">cliff lodge</button></li>
+                        <li><button class="sanctumBtn" data-chapter="8">outpost</button></li>
+                        <li><button class="sanctumBtn" data-chapter="9">train station</button></li>
+                        <li><button class="sanctumBtn" data-chapter="10">canopy</button></li>
+                        <li><button class="sanctumBtn" data-chapter="11">roadworks</button></li>
+                        <li><button class="sanctumBtn" data-chapter="12">abandoned lab</button></li>
+                        <li><button class="sanctumBtn" data-chapter="13">the depths</button></li>
+                        <li><button class="sanctumBtn" data-chapter="14">the labyrinth</button></li>
+                        <li><button class="sanctumBtn" data-chapter="15">the wilderness</button></li>
+                        <li><button class="sanctumBtn" data-chapter="16">the end</button></li>
+                        <li><button class="sanctumBtn" data-chapter="17">credits</button></li>
+                        <li><button class="sanctumBtn" data-chapter="18">cluster</button></li>
+                        <li><button class="sanctumBtn" data-chapter="19">the smasher</button></li>
+                        <li><button class="sanctumBtn" data-chapter="20">jellyfish cove</button></li>
+                        <li><button class="sanctumBtn" data-chapter="21">laser bridge</button></li>
+                        <li><button class="sanctumBtn" data-chapter="22">shortcut</button></li>
+                        <li><button class="sanctumBtn" data-chapter="23">the slums</button></li>
+                        <li><button class="sanctumBtn" data-chapter="24">power relay</button></li>
+                        <li><button class="sanctumBtn" data-chapter="25">sokol 1</button></li>
+                        <li><button class="sanctumBtn" data-chapter="26">sokol 2</button></li>
+                        <li><button class="sanctumBtn" data-chapter="27">sokol 3</button></li>
+                        <li><button class="sanctumBtn" data-chapter="28">dam</button></li>
+                        <li><button class="sanctumBtn" data-chapter="29">field</button></li>
+                        <li><button class="sanctumBtn" data-chapter="30">bog</button></li>
+                        <li><button class="sanctumBtn" data-chapter="31">last chance 1</button></li>
+                        <li><button class="sanctumBtn" data-chapter="32">last chance 2</button></li>
+                        <li><button class="sanctumBtn" data-chapter="33">last chance 3</button></li>
+                        <li><button class="sanctumBtn" data-chapter="34">below arc</button></li>
+                        <li><button class="sanctumBtn" data-chapter="35">arc</button></li>
+                        <li><button class="sanctumBtn" data-chapter="36">radar</button></li>
+                        <li><button class="sanctumBtn" data-chapter="37">the last stand 1</button></li>
+                        <li><button class="sanctumBtn" data-chapter="38">the last stand 2</button></li>
+                    </ul>
+                </div>
+                <div id="comicPreview" class="grid-item">
+                    <h2 id="imgTitle">Introduction (1 / 2)</h2>
+                    <div id="pageSelect">
+                        <button class="sanctumBtn active" data-page="1">1</button>
+                        <button class="sanctumBtn" data-page="2">2</button>
+                        <button class="sanctumBtn hide" data-page="3">3</button>
+                        <button class="sanctumBtn hide" data-page="4">4</button>
+                    </div>
+                    <br />
+                    <div>
+                        <!-- TODO: Implement JS event handlers -->
+                        <button id="prevPage" class="sanctumBtn" disabled>Previous Page</button>
+                        <button id="nextPage" class="sanctumBtn">Next Page</button>
+                    </div>
+
+                    <picture>
+                        <!-- TODO Generate smaller images (see botw post) -->
+                        <!-- <source id="imgSrcWebp" type="image/webp" width="256" height="256" srcset="chicory-portraits/comfortable/red_small.webp">
+                        <source id="imgSrcJpg" type="image/jpeg" width="256" height="256" srcset="chicory-portraits/comfortable/red_small.jpg"> -->
+                        <img id="imgSrcJpg2" type="image/jpg" width="2560" height="1440" src="sanctum-2-comics/english/introduction/1.jpg">
+                    </picture>
+
+                    <!-- FIXME: Random horizontal line between two buttons -->
+                    <!-- TODO: Correct image URL -->
+                    <a id="imgHref" href="chicory-portraits/comfortable/red.jpg" target="_blank">
+                        <button class="sanctumBtn">Open Full Res</button>
+                    </a>
+                    <a id="imgHrefBlank" href="sanctum-2-comics/english/introduction/1_blank.png" target="_blank">
+                        <button class="sanctumBtn">Open full Res Blank</button>
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- TODO Link to introduction/1_unused.png -->
+            <!-- TODO: Link to see page with all comic strips shown at once -->
+            <br />
+            <br />
+            <br />
+            <span>All comic strips are from Sanctum 2 and are owned by Coffeestain Studios</span>
+            <!-- https://steamdb.info/app/210770/graphs/#js-embed-code -->
+
+        </article>
+    </div>
+
+    <script id="script-utils" src="/js/utils.js" defer data-enable="gototop,spoilers"></script>
+    <script>
+        // All indexes start at 1 **NOT ZERO**
+
+        let currChapter = 1;
+        let currPage = 1;
+        let currMaxPage = 2;
+
+        const IMG_PATH = "sanctum-2-comics";
+        const IMG_TITLE = document.getElementById("imgTitle");
+        const IMG_HREF = document.getElementById("imgHref");
+        const IMG_HREF_BLANK = document.getElementById("imgHrefBlank");
+        // const IMG_SRC_WEBP = document.getElementById("imgSrcWebp");
+        // const IMG_SRC_JPG = document.getElementById("imgSrcJpg");
+        const IMG_SRC_JPG2 = document.getElementById("imgSrcJpg2");
+
+        const PREV_PAGE = document.getElementById("prevPage");
+        const NEXT_PAGE = document.getElementById("nextPage");
+        const PAGE_SELECT = document.getElementById("pageSelect");
+        const CHAPTER_LIST = document.getElementById("chapterList");
+        const COMIC_PREVIEW = document.getElementById("comicPreview");
+        const CHAPTERS = [
+            "", "introduction", "park", "bio-lab", "the-gate", "construction-site", "com-tower",
+            "cliff-lodge", "outpost", "train-station", "canopy", "roadworks", "abandoned-lab",
+            "the-depths", "the-labyrinth", "the-wilderness", "the-end", "credits", "cluster",
+            "the-smasher", "jellyfish-cove", "laser-bridge", "shortcut", "the-slums",
+            "power-relay", "sokol-1", "sokol-2", "sokol-3", "dam", "field", "bog",
+            "last-chance-1", "last-chance-2", "last-chance-3", "below-arc", "arc", "radar",
+            "the-last-stand-1", "the-last-stand-2"
+        ];
+        const PAGES = {
+            getMaxPage: function(chapName) {
+                // Pages that have more than 1 page. If not in here, the chapter has 1 page
+                return this[CHAPTERS[chapName]] || 1;
+            },
+
+            "introduction": 2,
+            "the-gate": 2,
+            "train-station": 2,
+            "abandoned-lab": 2,
+            "the-depths": 2,
+            "the-wilderness": 2,
+            "credits": 2,
+            "cluster": 3,
+            "the-smasher": 3,
+            "jellyfish-cove": 2,
+            "laser-bridge": 2,
+            "shortcut": 4,
+            "the-slums": 4,
+            "power-relay": 2,
+            "dam": 2,
+            "bog": 2,
+            "below-arc": 2,
+            "the-last-stand-1": 3,
+            "the-last-stand-2": 3
+        }
+
+        /**
+         * Returns the element height including margins
+         * https://stackoverflow.com/questions/10787782/full-height-of-a-html-element-div-including-border-padding-and-margin#answer-54095466
+         * @param element - element
+         * @returns {number}
+         */
+        function outerHeight(element) {
+            const height = element.offsetHeight;
+            let style = window.getComputedStyle(element);
+
+            return ['top', 'bottom']
+                .map(side => parseInt(style[`margin-${side}`]))
+                .reduce((total, side) => total + side, height)
+        }
+
+        function resizeChapterList() {
+            // TODO Only do for desktop (if mobile, return)
+            const previewHeight = Array.from(COMIC_PREVIEW.children).reduce((prev, curr) => prev + outerHeight(curr), 0);
+            CHAPTER_LIST.style.height = `${previewHeight}px`;
+        }
+
+        // https://stackoverflow.com/questions/487073/how-to-check-if-element-is-visible-after-scrolling#answer-41754707
+        function isElementVisible(el, holder) {
+            holder = holder || document.body
+            const { top, bottom, height } = el.getBoundingClientRect()
+            const holderRect = holder.getBoundingClientRect()
+
+            return top <= holderRect.top
+                ? holderRect.top - top <= height
+                : bottom - holderRect.bottom <= height;
+        }
+
+        function updateActives(newChapterIndex, newPageIndex) {
+            // Remove previous active markers
+            CHAPTER_LIST.querySelector(".active")?.classList.remove("active");
+            PAGE_SELECT.querySelector(".active")?.classList.remove("active");
+
+            // Add current active markers
+            const selectedChapter = CHAPTER_LIST.querySelector(`.sanctumBtn[data-chapter="${newChapterIndex}"]`);
+            selectedChapter.classList.add("active");
+            PAGE_SELECT.querySelector(`.sanctumBtn[data-page="${newPageIndex}"]`).classList.add("active");
+
+            // Scroll chapter into view if it's not visible
+            if(!isElementVisible(selectedChapter, CHAPTER_LIST)) {
+                selectedChapter.scrollIntoView();
+            }
+
+            // Disable Previous Page/Next Page buttons when on first or last page
+            PREV_PAGE.disabled = (currChapter == 1 && currPage == 1);
+            NEXT_PAGE.disabled = (currChapter == CHAPTERS.length - 1 && currPage == PAGES.getMaxPage(CHAPTERS.length - 1));
+        }
+
+        function displayPage(chapterIndex, page, maxPages) {
+            updateActives(chapterIndex, page);
+
+            chapter = CHAPTERS[chapterIndex];
+            IMG_TITLE.textContent = `${chapter} (${page} / ${maxPages})`;
+
+            PAGE_SELECT.children[page-1].classList.add("active");
+
+            // Hide appropriate #pageSelect buttons
+            Array.from(PAGE_SELECT.children).map((el) => el.dataset.page <= maxPages ? el.classList.remove("hide") : el.classList.add("hide"));
+
+            // TODO Set all <picture> sources
+            IMG_SRC_JPG2.src = `${IMG_PATH}/english/${chapter}/${page}.jpg`;
+
+            // Set full-res links
+            IMG_HREF.href = ``;  // TODO Implement
+            IMG_HREF_BLANK.href = `${IMG_PATH}/english/${chapter}/${page}_blank.png`;
+        }
+
+        CHAPTER_LIST.addEventListener("click", (e) => {
+            if(!e?.target || !e.target.dataset.chapter) {
+                return;
+            }
+            currChapter = parseInt(e.target.dataset.chapter);
+            currPage = 1;
+            currMaxPage = PAGES.getMaxPage(currChapter);
+            displayPage(currChapter, currPage, currMaxPage);
+        });
+
+        PAGE_SELECT.addEventListener("click", (e) => {
+            if(!e?.target || !e.target.dataset.page) {
+                return;
+            }
+
+            currPage = parseInt(e.target.dataset.page);
+            displayPage(currChapter, currPage, currMaxPage);
+        });
+
+        PREV_PAGE.addEventListener("click", () => {
+            if(currPage > 1) {
+                currPage--;
+            } else {
+                currChapter--;
+                currMaxPage = PAGES.getMaxPage(currChapter);
+                currPage = currMaxPage;
+            }
+
+            displayPage(currChapter, currPage, currMaxPage);
+        });
+
+        NEXT_PAGE.addEventListener("click", () => {
+            if(currPage < PAGES.getMaxPage(currChapter)) {
+                currPage++;
+            } else {
+                currPage = 1;
+                currChapter++;
+                currMaxPage = PAGES.getMaxPage(currChapter);
+            }
+
+            displayPage(currChapter, currPage, currMaxPage);
+        });
+
+        window.addEventListener("resize", resizeChapterList);
+        resizeChapterList();
+    </script>
+</body>
+
+</html>
