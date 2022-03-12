@@ -307,7 +307,7 @@
 
                     <!-- FIXME: Random horizontal line between two buttons -->
                     <!-- TODO: Correct image URL -->
-                    <a id="imgHref" href="chicory-portraits/comfortable/red.jpg" target="_blank">
+                    <a id="imgHref" href="sanctum-2-comics/english/introduction/1.jpg" target="_blank">
                         <button class="sanctumBtn">Open Full Res</button>
                     </a>
                     <a id="imgHrefBlank" href="sanctum-2-comics/english/introduction/1_blank.png" target="_blank">
@@ -453,7 +453,7 @@
             updateActives(chapterIndex, page);
 
             chapter = CHAPTERS[chapterIndex];
-            IMG_TITLE.textContent = `${chapter.replace("-", " ")} (${page} / ${maxPages})`;
+            IMG_TITLE.textContent = `${chapter.replaceAll("-", " ")} (${page} / ${maxPages})`;
 
             PAGE_SELECT.children[page-1].classList.add("active");
 
