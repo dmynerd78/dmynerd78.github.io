@@ -300,8 +300,9 @@
                     </div>
 
                     <picture>
+                        <source id="imgSrcAvif" type="image/avif" width="1280" height="720" srcset="sanctum-2-comics/english/introduction/1_small.avif">
                         <source id="imgSrcWebp" type="image/webp" width="1280" height="720" srcset="sanctum-2-comics/english/introduction/1_small.webp">
-                        <img id="imgSrcJpg2" src="sanctum-2-comics/english/introduction/1_small.jpg">
+                        <img id="imgSrcJpg" src="sanctum-2-comics/english/introduction/1_small.jpg">
                     </picture>
 
                     <!-- FIXME: Random horizontal line between two buttons -->
@@ -351,8 +352,9 @@
         const IMG_TITLE = document.getElementById("imgTitle");
         const IMG_HREF = document.getElementById("imgHref");
         const IMG_HREF_BLANK = document.getElementById("imgHrefBlank");
+        const IMG_SRC_AVIF = document.getElementById("imgSrcAvif");
         const IMG_SRC_WEBP = document.getElementById("imgSrcWebp");
-        const IMG_SRC_JPG = document.getElementById("imgSrcJpg2");
+        const IMG_SRC_JPG = document.getElementById("imgSrcJpg");
 
         const PREV_PAGE = document.getElementById("prevPage");
         const NEXT_PAGE = document.getElementById("nextPage");
@@ -459,6 +461,7 @@
             Array.from(PAGE_SELECT.children).map((el) => el.dataset.page <= maxPages ? el.classList.remove("hide") : el.classList.add("hide"));
 
             // Set image sources
+            IMG_SRC_AVIF.srcset = `${IMG_PATH}/english/${chapter}/${page}_small.avif`;
             IMG_SRC_WEBP.srcset = `${IMG_PATH}/english/${chapter}/${page}_small.webp`;
             IMG_SRC_JPG.src = `${IMG_PATH}/english/${chapter}/${page}_small.jpg`;
 
