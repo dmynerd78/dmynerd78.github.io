@@ -300,9 +300,8 @@
                     </div>
 
                     <picture>
-                        <!-- <source id="imgSrcWebp" type="image/webp" width="1280" height="720" srcset="sanctum-2-comics/english/introduction/1_small.webp">
-                        <source id="imgSrcJpg" type="image/jpeg" width="1280" height="720" srcset="sanctum-2-comics/english/introduction/1_small.jpg"> -->
-                        <img id="imgSrcJpg2" type="image/jpg" width="2560" height="1440" src="sanctum-2-comics/english/introduction/1.jpg">
+                        <source id="imgSrcWebp" type="image/webp" width="1280" height="720" srcset="sanctum-2-comics/english/introduction/1_small.webp">
+                        <img id="imgSrcJpg2" src="sanctum-2-comics/english/introduction/1_small.jpg">
                     </picture>
 
                     <!-- FIXME: Random horizontal line between two buttons -->
@@ -353,8 +352,7 @@
         const IMG_HREF = document.getElementById("imgHref");
         const IMG_HREF_BLANK = document.getElementById("imgHrefBlank");
         const IMG_SRC_WEBP = document.getElementById("imgSrcWebp");
-        const IMG_SRC_JPG = document.getElementById("imgSrcJpg");
-        const IMG_SRC_JPG2 = document.getElementById("imgSrcJpg2");
+        const IMG_SRC_JPG = document.getElementById("imgSrcJpg2");
 
         const PREV_PAGE = document.getElementById("prevPage");
         const NEXT_PAGE = document.getElementById("nextPage");
@@ -460,10 +458,9 @@
             // Hide appropriate #pageSelect buttons
             Array.from(PAGE_SELECT.children).map((el) => el.dataset.page <= maxPages ? el.classList.remove("hide") : el.classList.add("hide"));
 
-            // TODO Set all <picture> sources
-            // IMG_SRC_WEBP.src = `${IMG_PATH}/english/${chapter}/${page}_small.webp`;
-            // IMG_SRC_JPG.src = `${IMG_PATH}/english/${chapter}/${page}_small.jpg`;
-            IMG_SRC_JPG2.src = `${IMG_PATH}/english/${chapter}/${page}.jpg`;
+            // Set image sources
+            IMG_SRC_WEBP.srcset = `${IMG_PATH}/english/${chapter}/${page}_small.webp`;
+            IMG_SRC_JPG.src = `${IMG_PATH}/english/${chapter}/${page}_small.jpg`;
 
             // Set full-res links
             IMG_HREF.href = `${IMG_PATH}/english/${chapter}/${page}.jpg`;  // TODO Use new, better images
