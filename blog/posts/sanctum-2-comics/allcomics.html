@@ -59,15 +59,20 @@
         }
 
         @media screen and (max-width: 850px) {
+            table, tbody, tr, td {
+                width: inherit !important;
+            }
+
             tr td {
-                width: 100%;
+                width: inherit;
                 display: inline-block;
+                font-size: 80%;
                 text-align: left !important;
             }
 
             tr td:first-child {
-            padding-top: 10px;
-        }
+                padding-top: 10px;
+            }
 
             tr td:empty {
                 display: none;
@@ -116,14 +121,9 @@
         <span id="copyright">&copy; Dmynerd78 2021 &nbsp;</span>
     </div>
     <div id="right">
-        
         <article>
             <h1 class="title">Sanctum 2 Comics (All Pages)</h1>
             <a href="/blog/posts/sanctum-2-comics.html"><button>&laquo; Go Back</button></a>
-
-            <!-- TODO: Optimize for mobile -->
-            <!-- TODO: Use high-quality webps/jpgs for desktop -->
-            <!-- TODO: Lazy load images -->
 
             <h2>Introduction (Unused)</h2>
             <picture>
@@ -279,7 +279,18 @@
                 <img type="image/jpg" width="1280" height="720" src="english/construction-site/1_small.jpg" loading="lazy">
             </picture>
 
-            <!-- TODO Dialog -->
+            <blockquote>
+                <table>
+                    <tr>
+                        <td>Communicator</td>
+                        <td>the situation here seems to be under control. aggressive lume activity has been reported from a nearby construction site. this mission has top priority.</td>
+                    </tr>
+                    <tr>
+                        <td>Communicator</td>
+                        <td>infection seems to have been very limited. head to the dropshop and await further orders. they need you out there.</td>
+                    </tr>
+                </table>
+            </blockquote>
 
 
             <hr />
@@ -360,7 +371,7 @@
             <blockquote>
                 <table>
                     <tr>
-                        <td>Core Guardian Commander</td>
+                        <td>Guardian Commander</td>
                         <td>welcome to the last manned outpost before the wilderness. we've been seeing a heavy increase in attacks since the reports of earthquakes back at elysion one. defend this position until further orders.</td>
                     </tr>
                     <tr>
@@ -440,7 +451,26 @@
                 <img type="image/jpg" width="1280" height="720" src="english/canopy/1_small.jpg" loading="lazy">
             </picture>
 
-            <!-- TODO Populate -->
+            <blockquote>
+                <table>
+                    <tr>
+                        <td>Communicator</td>
+                        <td>the lumes are your position are bigger than the ones that got close to elysion one. proceed with caution.</td>
+                    </tr>
+                    <tr>
+                        <td>Skye Autumn</td>
+                        <td>caution? you obviously don't know me very well.</td>
+                    </tr>
+                    <tr>
+                        <td>Communicator</td>
+                        <td>just get me the data cg-01. we need to get a grasp of the situation to decide how serious it is.</td>
+                    </tr>
+                    <tr>
+                        <td>Skye Autumn</td>
+                        <td>oh i'm always serious.</td>
+                    </tr>
+                </table>
+            </blockquote>
 
             <hr />
 
@@ -463,7 +493,7 @@
                     </tr>
                     <tr>
                         <td>SiMo</td>
-                        <td>this place is reaky. numbers never lie.</td>
+                        <td>this place is freaky. numbers never lie.</td>
                     </tr>
                     <tr>
                         <td>Sweet Autumn</td>
@@ -542,7 +572,7 @@
                             - Lab results show gradual increase of spores at core activity<br />
                             - Hypothesis: Oxygen manipulation causes a toxic chemical reaction<br />
                             - Orders from brightholme: shut down all cores, evacuate<br />
-                            - Oxytem safety is put back to full coverage, all employees urged to caution<br />
+                            - Oxygen safety is put back to full coverage, all employees urged to caution<br />
                             - Panic amongst employees, order can not be maintained<br />
                             - Brightholme unresponsive</td>
                     </tr>
@@ -1946,7 +1976,7 @@
         </article>
     </div>
 
-    <script id="script-utils" src="/js/utils.js" defer data-enable="gototop,spoilers"></script>
+    <script id="script-utils" src="/js/utils.js" defer data-enable="gototop"></script>
 </body>
 
 </html>
