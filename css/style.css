@@ -33,7 +33,7 @@
                   0 -1px rgb(var(--black-rgb));
 }
 
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 900px) {
     #left {
         width: 0 !important;
         display: none;
