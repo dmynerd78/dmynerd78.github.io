@@ -23,6 +23,8 @@
     --code-cyan: #56b6c2;
     --code-green: #98c379;
     --code-blue: #61afef;
+
+    --nav-height: 64px;
 }
 
 :target {
@@ -34,6 +36,10 @@
 }
 
 @media screen and (max-width: 900px) {
+    :root {
+        --nav-height: 32px;
+    }
+
     #left {
         width: 0 !important;
         display: none;
@@ -259,10 +265,10 @@ blockquote {
 }
 
 nav {
-    height: 64px;
+    height: var(--nav-height);
     width: 100%;
     z-index: 999;
-    line-height: 64px;
+    line-height: var(--nav-height);
     position: fixed;
     background: rgba(var(--darker-gray-rgb), 0.8);
     border-bottom: 2px solid rgb(var(--darker-gray-rgb));
@@ -271,7 +277,7 @@ nav {
 nav .title {
     padding-left: 20px;
     text-decoration: none;
-    font-size: 2em;
+    font-size: calc(var(--nav-height) / 2);
 }
 
 nav .icons {
@@ -308,8 +314,8 @@ nav .icons a:hover {
 }
 
 .icon {
-    height: 45px;
-    width: 120px;
+    height: calc(0.75 * var(--nav-height));
+    width: calc(2 * var(--nav-height));
     padding: 10px 0;
     fill: rgb(var(--white-rgb));
 }
