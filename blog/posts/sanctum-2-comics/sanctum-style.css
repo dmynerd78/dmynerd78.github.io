@@ -1,6 +1,11 @@
-/* TODO: Move more things to :root */
 :root {
     --scrollbar-width: 17px;
+
+    --btn-disabled: #808080;
+    --btn-default-fallback: #336F82;
+    --btn-default: linear-gradient(0deg, #335F6E 0%, #336F82 50%, #357990 100%);
+    --btn-hover-fallback: #1A94A9;
+    --btn-hover: linear-gradient(0deg, #2195AA 0%, #1DB7D3 50%, #1AA4BE 100%);
 }
 
 @font-face {
@@ -13,7 +18,6 @@
     display: inline-block;
 }
 
-/* TODO: CSS variables for colors */
 #imgTitle {
     font-family: "BankGothic", Arial, Helvetica, sans-serif;
     text-transform: uppercase;
@@ -81,39 +85,16 @@ li .sanctumBtn {
     margin: 0;
 }
 
-/* https://webkit.org/blog/363/styling-scrollbars/ */
-/* .comicList {
-    scrollbar-width: var(--scrollbar-width);
-    scrollbar-color: #fff rgba(255, 255, 255, 0.5);
-}
-
-.comicList::-webkit-scrollbar-button {
-    color: #fff;
-    background: #6C6D6D;
-}
-
-.comicList::-webkit-scrollbar {
-    width: var(--scrollbar-width);
-}
-
-.comicList::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.5);
-}
-
-.comicList::-webkit-scrollbar-thumb {
-    background-color: #fff;
-} */
-
 /* TODO https://stackoverflow.com/questions/22168420/is-there-a-pointer-eventshoveronly-or-similar-in-css#answer-22170387 */
 .sanctumBtn[disabled] {
-    background: #808080 !important;
+    background: var(--btn-disabled) !important;
     pointer-events: none;
     cursor: not-allowed;
 }
 
 .sanctumBtn.active, .sanctumBtn.active:focus {
-    background: #1a94a9;
-    background: linear-gradient(0deg, #2195AA 0%, #1db7d3 50%, #1AA4BE 100%);
+    background: var(--btn-hover-fallback);
+    background: var(--btn-hover);
 }
 
 .sanctumBtn {
@@ -127,13 +108,13 @@ li .sanctumBtn {
     text-align: left;
     color: #fff;
     text-shadow: 1.5px 1px 1px black;
-    background: #336F82;
-    background: linear-gradient(0deg, #335F6E 0%, #336F82 50%, #357990 100%);
+    background: var(--btn-default-fallback);
+    background: var(--btn-default);
 }
 
 .sanctumBtn:hover {
-    background: #1a94a9;
-    background: linear-gradient(0deg, #2195AA 0%, #1db7d3 50%, #1AA4BE 100%);
+    background: var(--btn-hover-fallback);
+    background: var(--btn-hover);
 }
 
 .sanctumBtn:focus {
@@ -144,8 +125,8 @@ li .sanctumBtn {
         Since I didn't want to deal with modifying the ::before/::after
         only when focused, I took the easy route out.
     */
-    background: #336F82;
-    background: linear-gradient(0deg, #335F6E 0%, #336F82 50%, #357990 100%);
+    background: var(--btn-default-fallback);
+    background: var(--btn-default);
 }
 
 /* Huge thanks to @Oliver-Akins for the help on the border styling */

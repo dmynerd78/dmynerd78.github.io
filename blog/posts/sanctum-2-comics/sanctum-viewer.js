@@ -72,7 +72,12 @@ function outerHeight(element) {
 }
 
 function resizeChapterList() {
-    // TODO Only do for desktop (if mobile, return)
+    // Disable resizing for mobile
+    if(window.innerWidth <= MOBILE_WIDTH) {
+        CHAPTER_LIST.style.height = "";
+        return;
+    }
+
     const previewHeight = Array.from(COMIC_PREVIEW.children).reduce((prev, curr) => prev + outerHeight(curr), 0);
     CHAPTER_LIST.style.height = `${previewHeight}px`;
 }
@@ -80,8 +85,8 @@ function resizeChapterList() {
 // https://stackoverflow.com/questions/487073/how-to-check-if-element-is-visible-after-scrolling#answer-41754707
 function isElementVisible(el, holder) {
     holder = holder || document.body
-    const { top, bottom, height } = el.getBoundingClientRect()
-    const holderRect = holder.getBoundingClientRect()
+    const { top, bottom, height } = el.getBoundingClientRect();
+    const holderRect = holder.getBoundingClientRect();
 
     return top <= holderRect.top
         ? holderRect.top - top <= height
