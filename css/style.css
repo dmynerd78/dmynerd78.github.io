@@ -2,7 +2,7 @@
 
 :root {
     --twitch-color: #6541A5;
-    --twitter-color: #6CADDE;
+    --mastodon-color: #6364FF;
     --youtube-color: #CC181E;
     --github-color: #171515;
     --warning-color: #EB5B5B;
@@ -299,7 +299,7 @@ nav .icons a {
 }
 
 .icons a svg { transition: fill 0.5s ease; }
-.icons a .twitter:hover { fill: var(--twitter-color); }
+.icons a .mastodon:hover { fill: var(--mastodon-color); }
 .icons a .twitch:hover { fill: var(--twitch-color); }
 .icons a .github:hover { fill: var(--github-color); }
 
