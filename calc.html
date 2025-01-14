@@ -67,7 +67,10 @@
 
     function clearTextArea() {
       const textArea = document.getElementById("numbersGoHere");
+      const result = document.getElementById("results");
+
       textArea.value = "";
+      result.textContent = 0;
     }
 
     document.addEventListener("DOMContentLoaded", () => {
