@@ -8,7 +8,6 @@
   <meta name="googlebot" content="noindex, nofollow">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-
   <style id="compiled-css" type="text/css">
     body {
         display: grid;
@@ -23,6 +22,18 @@
     #left > * {
         width: 100%;
     }
+
+    #buttons {
+      display: flex;
+    }
+
+    #buttons button {
+      flex: 1;
+    }
+
+    #sumButton {
+      margin-right: 4px;
+    }
   </style>
 </head>
 
@@ -30,7 +41,10 @@
   <div id="left">
       <textarea id="numbersGoHere" rows="20"></textarea>
       <br>
-      <button id="sumButton">Sum all numbers</button>
+      <div id="buttons">
+        <button id="sumButton">Sum all numbers</button>
+        <button id="clearButton">Clear</button>
+      </div>
   </div>
   <div id="right">
     <h1>Total:</h1>
@@ -51,10 +65,17 @@
       result.textContent = total;
     }
 
+    function clearTextArea() {
+      const textArea = document.getElementById("numbersGoHere");
+      textArea.value = "";
+    }
+
     document.addEventListener("DOMContentLoaded", () => {
       const sumButton = document.getElementById("sumButton");
+      const clearButton = document.getElementById("clearButton");
       const textArea = document.getElementById("numbersGoHere");
 
+      clearButton.addEventListener("click", clearTextArea);
       sumButton.addEventListener("click", sumNumbers);
       textArea.addEventListener("input", sumNumbers);
     });
